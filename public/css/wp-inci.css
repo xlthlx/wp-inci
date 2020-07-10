@@ -1,0 +1,90 @@
+/**
+ * WP INCI
+ * Frontend CSS
+ *
+ * @package wp-inci
+ * @author  xlthlx <github@piccioni.london>
+ *
+ */
+
+table.wp-inci {
+	max-width: 100%;
+	margin-bottom: 1em
+}
+
+table.wp-inci th {
+	text-align: left;
+	padding: 5px
+}
+
+table.wp-inci td {
+	padding: 5px 5px 0;
+	vertical-align: top;
+	min-width: 55px
+}
+
+table.wp-inci h5 {
+	margin-bottom: 5px
+}
+
+table.wp-inci h6 {
+	margin-bottom: 5px;
+	font-size: small
+}
+
+table.wp-inci .disclaimer {
+	font-size: small
+}
+
+table.wp-inci .first {
+	margin-right: 1px;
+	margin-bottom: 5px
+}
+
+table.wp-inci div.g {
+	background-color: #32cd32;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 0;
+	color: #32cd32;
+	height: 20px;
+	width: 20px;
+	display: inline-table
+}
+
+table.wp-inci div.r {
+	background-color: #dc143c;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 0;
+	color: #dc143c;
+	height: 20px;
+	width: 20px;
+	display: inline-table
+}
+
+table.wp-inci div.y {
+	background-color: #ffd700;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 0;
+	color: #ffd700;
+	height: 20px;
+	width: 20px;
+	display: inline-table
+}
+
+table.wp-inci div.w {
+	background-color: #eee;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 0;
+	color: #eee;
+	height: 20px;
+	width: 20px;
+	display: inline-table
+}
