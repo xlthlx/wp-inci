@@ -62,7 +62,14 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 */
 		public function wp_inci_enqueue_style() {
 
+			$disable_style = cmb2_get_option( 'wp_inci_settings', 'disable_style' );
+
 			wp_enqueue_style( 'wp-inci', esc_url( plugins_url( 'css/wp-inci.min.css', __FILE__ ) ) );
+
+			if ( $disable_style == 'on' ) {
+				wp_dequeue_style( 'wp-inci' );
+			}
+
 
 		}
 
@@ -100,6 +107,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 
 		/**
 		 * Gets the HTML for all ingredients.
+		 *
 		 * @param $post_id
 		 *
 		 * @return string
@@ -132,6 +140,8 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				$output .= '</tbody>
 					</table>';
 			}
+
+			$output .= '<div class="disclaimer">' . cmb2_get_option( 'wp_inci_disclaimer_options', 'textarea_disclaimer', $this->wp_inci_default_disclaimer() ) . '</div>';
 
 			return $output;
 		}
@@ -174,6 +184,10 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 * @return string
 		 */
 		public function wp_inci_product_shortcode( $atts, $content, $shortcode ): string {
+
+			// Example: [wp_inci_product id="33591" title="My custom title" link="true" list="false"]
+			// Basic use: [wp_inci_product id="33591"]
+
 			// Normalize attribute keys, lowercase.
 			$atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
@@ -182,8 +196,8 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				array(
 					'id'    => 0,
 					'title' => '',
-					'list'  => true,
-					'link'  => false,
+					'link'  => 'false',
+					'list'  => 'true',
 				),
 				$atts,
 				$shortcode
@@ -196,10 +210,22 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				$output .= '<div class="wp-inci">';
 
 				if ( '' !== $atts['title'] ) {
-					$output .= '<h4>' . esc_html( $atts['title'] ) . '</h4>';
+					$title = esc_html( $atts['title'] );
+				} else {
+					$title = esc_html( get_the_title( $atts['id'] ) );
 				}
 
-				if ( $atts['list'] ) {
+				if ( 'true' === $atts['link'] ) {
+					$start = '<h4><a title="' . $title . '" href="' . get_permalink( $atts['id'] ) . '">';
+					$end   = '</a></h4>';
+				} else {
+					$start = '<h4>';
+					$end   = '</h4>';
+				}
+
+				$output .= $start . $title . $end;
+
+				if ( 'true' === $atts['list'] ) {
 					$output .= $this->wp_inci_get_ingredients_table( $atts['id'] );
 				}
 

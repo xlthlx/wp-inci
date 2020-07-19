@@ -156,11 +156,11 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'show_option_none' => true,
 				'before_field'     => array( $this, 'wp_inci_before_safety' ),
 				'options'          => array(
-					'gg' => __( 'Double green', 'wp-inci' ),
-					'g'  => __( 'Green', 'wp-inci' ),
-					'y'  => __( 'Yellow', 'wp-inci' ),
-					'r'  => __( 'Red', 'wp-inci' ),
-					'rr' => __( 'Double red', 'wp-inci' ),
+					'1' => __( 'Double green', 'wp-inci' ),
+					'2' => __( 'Green', 'wp-inci' ),
+					'3' => __( 'Yellow', 'wp-inci' ),
+					'4' => __( 'Red', 'wp-inci' ),
+					'5' => __( 'Double red', 'wp-inci' ),
 				),
 			) );
 
@@ -203,28 +203,11 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			echo ( WP_Inci::get_instance() )->wp_inci_get_safety_html( $field->object_id );
 		}
 
-
 		/**
-		 * Create WP INCI Settings page.
+		 * Sets CSS for default style.
 		 */
-		public function wp_inci_register_page_settings() {
-
-			$args = array(
-				'id'           => 'wp_inci_settings',
-				'title'        => __( 'WP INCI Settings', 'wp-inci' ),
-				'object_types' => array( 'options-page' ),
-				'option_key'   => 'wp_inci_settings',
-				'tab_group'    => 'wp_inci_settings',
-				'tab_title'    => __( 'Settings', 'wp-inci' ),
-				'parent_slug'  => 'options-general.php',
-			);
-
-			$main_options = new_cmb2_box( $args );
-
-			$desc = __( 'You can disable the frontend WP INCI style and add your own to your theme style.<br/>'
-			            . 'Just copy the standard WP INCI style above into your style.css and customize it.', 'wp-inci' );
-
-			$default_style = "
+		public function wp_inci_default_style(): string {
+			return "
 table.wp-inci {
 	max-width: 100%;
 	margin-bottom: 1em
@@ -305,7 +288,37 @@ table.wp-inci div.w {
 	height: 20px;
 	width: 20px;
 	display: inline-table
+}
+
+.disclaimer {
+	font-style: italic;
+	font-size: 80%;
+	font-weight: 400;
+	line-height: normal;
+	color: #6c757d !important;
 }";
+		}
+
+
+		/**
+		 * Create WP INCI Settings page.
+		 */
+		public function wp_inci_register_page_settings() {
+
+			$args = array(
+				'id'           => 'wp_inci_settings',
+				'title'        => __( 'WP INCI Settings', 'wp-inci' ),
+				'object_types' => array( 'options-page' ),
+				'option_key'   => 'wp_inci_settings',
+				'tab_group'    => 'wp_inci_settings',
+				'tab_title'    => __( 'Settings', 'wp-inci' ),
+				'parent_slug'  => 'options-general.php',
+			);
+
+			$main_options = new_cmb2_box( $args );
+
+			$desc = __( 'You can disable the WP INCI style and add your own to your theme.<br/>'
+			            . 'Just copy the standard WP INCI style above into your style.css and customize it.', 'wp-inci' );
 
 			/**
 			 * Create style settings.
@@ -324,7 +337,7 @@ table.wp-inci div.w {
 				'desc'       => $desc,
 				'id'         => 'textarea_style',
 				'type'       => 'textarea_code',
-				'default'    => $default_style,
+				'default_cb' => array( $this, 'wp_inci_default_style' ),
 				'save_field' => false,
 				'attributes' => array(
 					'readonly'        => 'readonly',
@@ -336,6 +349,7 @@ table.wp-inci div.w {
 					) ),
 				),
 			) );
+
 
 			/**
 			 * Create disclaimer settings.
@@ -352,14 +366,12 @@ table.wp-inci div.w {
 
 			$secondary_options = new_cmb2_box( $args );
 
-			$default_disclaimer = __( "<em>The evaluation of these ingredients reflects the opinion of the author, who is not a specialist in this field, which is based on some sources (e.g. <a title=\"CosIng - Cosmetic ingredients database\" href=\"https://ec.europa.eu/growth/sectors/cosmetics/cosing/\" target=\"_blank\">CosIng</a>).</em>", 'wp-inci' );
-
 			$secondary_options->add_field( array(
-				'name'    => __( 'Disclaimer', 'wp-inci' ),
-				'desc'    => __( 'Add a Disclaimer after WP INCI table of ingredients.', 'wp-inci' ),
-				'id'      => 'textarea_disclaimer',
-				'type'    => 'textarea_code',
-				'default' => $default_disclaimer,
+				'name'       => __( 'Disclaimer', 'wp-inci' ),
+				'desc'       => __( 'Add a disclaimer after WP INCI table of ingredients.', 'wp-inci' ),
+				'id'         => 'textarea_disclaimer',
+				'type'       => 'textarea_code',
+				'default_cb' => array( $this, 'wp_inci_default_disclaimer' ),
 			) );
 
 		}

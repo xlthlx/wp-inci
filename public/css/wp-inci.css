@@ -88,3 +88,11 @@ table.wp-inci div.w {
 	width: 20px;
 	display: inline-table
 }
+
+.disclaimer {
+	font-style: italic;
+	font-size: 80%;
+	font-weight: 400;
+	line-height: normal;
+	color: #6c757d !important;
+}

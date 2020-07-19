@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 0.2
 		 * @var string
 		 */
-		public $version = "0.2.0";
+		public $version = "1.0.0";
 
 		/**
 		 * release.minor.revision
@@ -32,8 +32,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 0.2
 		 * @var integer
 		 */
-		public $release = 0;
-		public $minor = 2;
+		public $release = 1;
+		public $minor = 0;
 		public $revision = 0;
 
 		/**
@@ -134,16 +134,16 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public function wp_inci_ingredients_post_type() {
 
-			$ingredients_labels = [
-				'name'                     => _x( 'Ingredients', 'post type general name', 'wp-inci' ),
-				'singular_name'            => _x( 'Ingredient', 'post type singular name', 'wp-inci' ),
+			$ingredients_labels = array(
+				'name'                     => __( 'Ingredients', 'wp-inci' ),
+				'singular_name'            => __( 'Ingredient', 'wp-inci' ),
 				'add_new'                  => __( 'Add new', 'wp-inci' ),
-				'add_new_item'             => __( 'Add new Ingredient', 'wp-inci' ),
-				'edit_item'                => __( 'Edit Ingredient', 'wp-inci' ),
-				'new_item'                 => __( 'New Ingredient', 'wp-inci' ),
-				'view_item'                => __( 'View Ingredient', 'wp-inci' ),
+				'add_new_item'             => __( 'Add new ingredient', 'wp-inci' ),
+				'edit_item'                => __( 'Edit ingredient', 'wp-inci' ),
+				'new_item'                 => __( 'New ingredient', 'wp-inci' ),
+				'view_item'                => __( 'View ingredient', 'wp-inci' ),
 				'view_items'               => __( 'View ingredients', 'wp-inci' ),
-				'search_items'             => __( 'Search Ingredient', 'wp-inci' ),
+				'search_items'             => __( 'Search ingredient', 'wp-inci' ),
 				'not_found'                => __( 'No ingredients found', 'wp-inci' ),
 				'not_found_in_trash'       => __( 'No ingredients found in trash', 'wp-inci' ),
 				'all_items'                => __( 'All ingredients', 'wp-inci' ),
@@ -151,10 +151,10 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'attributes'               => __( 'Ingredient attributes', 'wp-inci' ),
 				'insert_into_item'         => __( 'Insert into ingredient', 'wp-inci' ),
 				'uploaded_to_this_item'    => __( 'Uploaded to this ingredient', 'wp-inci' ),
-				'featured_image'           => _x( 'Featured image', 'ingredient', 'wp-inci' ),
-				'set_featured_image'       => _x( 'Set featured image', 'ingredient', 'wp-inci' ),
-				'remove_featured_image'    => _x( 'Remove featured image', 'ingredient', 'wp-inci' ),
-				'use_featured_image'       => _x( 'Use as featured image', 'ingredient', 'wp-inci' ),
+				'featured_image'           => __( 'Featured image', 'wp-inci' ),
+				'set_featured_image'       => __( 'Set featured image', 'wp-inci' ),
+				'remove_featured_image'    => __( 'Remove featured image', 'wp-inci' ),
+				'use_featured_image'       => __( 'Use as featured image', 'wp-inci' ),
 				'filter_items_list'        => __( 'Filter ingredients list', 'wp-inci' ),
 				'items_list_navigation'    => __( 'Ingredients list navigation', 'wp-inci' ),
 				'items_list'               => __( 'Ingredients list', 'wp-inci' ),
@@ -163,7 +163,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'item_reverted_to_draft'   => __( 'Ingredient reverted to draft.', 'wp-inci' ),
 				'item_scheduled'           => __( 'Ingredient scheduled.', 'wp-inci' ),
 				'item_updated'             => __( 'Ingredient updated.', 'wp-inci' ),
-			];
+			);
 
 
 			register_extended_post_type( 'ingredient', array(
@@ -185,25 +185,27 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 						'title'   => __( 'Ingredient', 'wp-inci' ),
 						'default' => 'ASC',
 					),
-					'safety'    => [
+					'safety'    => array(
 						'title'    => __( 'Safety', 'wp-inci' ),
 						'function' => function () {
 							global $post;
 							echo $this->wp_inci_get_safety_html( $post->ID );
 						},
-					],
+					),
 					'functions' => array(
+						'title'    => __( 'Functions', 'wp-inci' ),
 						'taxonomy' => 'functions'
 					),
 					'source'    => array(
+						'title'    => __( 'Source', 'wp-inci' ),
 						'taxonomy' => 'source'
 					),
 					'author'    => array(
-						'title'      => __( 'Author' ),
+						'title'      => __( 'Author', 'wp-inci' ),
 						'post_field' => 'post_author',
 					),
 					'date'      => array(
-						'title' => __( 'Date' ),
+						'title' => __( 'Date', 'wp-inci' ),
 					),
 				),
 				'admin_filters'      => array(
@@ -229,8 +231,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			) );
 
 			$functions_labels = array(
-				'name'                       => _x( 'Functions', 'taxonomy general name', 'wp-inci' ),
-				'singular_name'              => _x( 'Function', 'taxonomy singular name', 'wp-inci' ),
+				'name'                       => __( 'Functions', 'wp-inci' ),
+				'singular_name'              => __( 'Function', 'wp-inci' ),
 				'search_items'               => __( 'Search functions', 'wp-inci' ),
 				'popular_items'              => __( 'Popular functions', 'wp-inci' ),
 				'all_items'                  => __( 'All functions', 'wp-inci' ),
@@ -248,7 +250,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'no_terms'                   => __( 'No functions.', 'wp-inci' ),
 				'items_list_navigation'      => __( 'Functions list navigation', 'wp-inci' ),
 				'items_list'                 => __( 'Functions list', 'wp-inci' ),
-				'most_used'                  => _x( 'Most used', 'functions', 'wp-inci' ),
+				'most_used'                  => __( 'Most used', 'wp-inci' ),
 				'back_to_items'              => __( '&larr; Back to functions', 'wp-inci' ),
 			);
 
@@ -267,8 +269,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			) );
 
 			$source_labels = array(
-				'name'                       => _x( 'Sources', 'taxonomy general name', 'wp-inci' ),
-				'singular_name'              => _x( 'Source', 'taxonomy singular name', 'wp-inci' ),
+				'name'                       => __( 'Sources', 'wp-inci' ),
+				'singular_name'              => __( 'Source', 'wp-inci' ),
 				'search_items'               => __( 'Search sources', 'wp-inci' ),
 				'popular_items'              => __( 'Popular sources', 'wp-inci' ),
 				'all_items'                  => __( 'All sources', 'wp-inci' ),
@@ -286,7 +288,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'no_terms'                   => __( 'No sources.', 'wp-inci' ),
 				'items_list_navigation'      => __( 'Sources list navigation', 'wp-inci' ),
 				'items_list'                 => __( 'Sources list', 'wp-inci' ),
-				'most_used'                  => _x( 'Most used', 'source', 'wp-inci' ),
+				'most_used'                  => __( 'Most used', 'wp-inci' ),
 				'back_to_items'              => __( '&larr; Back to sources', 'wp-inci' ),
 			);
 
@@ -321,10 +323,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		public function wp_inci_get_safety_html( $post_id ): string {
 
 			$safety = $this->wp_inci_get_safety_value( $post_id );
-			$array  = str_split( $safety, 1 );
 
-			return '<div class="' . $array[0] . ' first">' . strtoupper( $array[0] ) . '</div>
-               <div class="' . $array[1] . ' second">' . strtoupper( $array[1] ) . '</div>';
+			return '<div class="' . $safety[0] . ' first">' . strtoupper( $safety[0] ) . '</div>
+               <div class="' . $safety[1] . ' second">' . strtoupper( $safety[1] ) . '</div>';
 		}
 
 		/**
@@ -332,17 +333,33 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @param $post_id
 		 *
-		 * @return mixed|string
+		 * @return array $safety
 		 */
-		public function wp_inci_get_safety_value( $post_id ): string {
+		public function wp_inci_get_safety_value( $post_id ): array {
 
 			$safety = get_post_meta( $post_id, 'safety', true );
-			if ( '' === $safety ) {
-				$safety = 'ww';
-			}
 
-			if ( 1 === ( strlen( $safety ) ) ) {
-				$safety .= 'w';
+			switch ( $safety ) {
+				case '1' :
+					$safety = array( 'g', 'g' );
+					break;
+				case '2' :
+					$safety = array( 'g', 'w' );
+					break;
+				case '3' :
+					$safety = array( 'y', 'w' );
+					break;
+				case '4' :
+					$safety = array( 'r', 'w' );
+					break;
+				case '5' :
+					$safety = array( 'r', 'r' );
+					break;
+				case '' :
+					$safety = array( 'w', 'w' );
+					break;
+				default:
+					$safety = array( 'w', 'w' );
 			}
 
 			return $safety;
@@ -354,9 +371,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public function wp_inci_products_post_type() {
 
-			$product_labels = [
-				'name'                     => _x( 'Products', 'post type general name', 'wp-inci' ),
-				'singular_name'            => _x( 'Product', 'post type singular name', 'wp-inci' ),
+			$product_labels = array(
+				'name'                     => __( 'Products', 'wp-inci' ),
+				'singular_name'            => __( 'Product', 'wp-inci' ),
 				'add_new'                  => __( 'Add new', 'wp-inci' ),
 				'add_new_item'             => __( 'Add new product', 'wp-inci' ),
 				'edit_item'                => __( 'Edit product', 'wp-inci' ),
@@ -371,10 +388,10 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'attributes'               => __( 'Product attributes', 'wp-inci' ),
 				'insert_into_item'         => __( 'Insert into product', 'wp-inci' ),
 				'uploaded_to_this_item'    => __( 'Uploaded to this product', 'wp-inci' ),
-				'featured_image'           => _x( 'Featured image', 'product', 'wp-inci' ),
-				'set_featured_image'       => _x( 'Set featured image', 'product', 'wp-inci' ),
-				'remove_featured_image'    => _x( 'Remove featured image', 'product', 'wp-inci' ),
-				'use_featured_image'       => _x( 'Use as featured image', 'product', 'wp-inci' ),
+				'featured_image'           => __( 'Featured image', 'wp-inci' ),
+				'set_featured_image'       => __( 'Set featured image', 'wp-inci' ),
+				'remove_featured_image'    => __( 'Remove featured image', 'wp-inci' ),
+				'use_featured_image'       => __( 'Use as featured image', 'wp-inci' ),
 				'filter_items_list'        => __( 'Filter products list', 'wp-inci' ),
 				'items_list_navigation'    => __( 'Products list navigation', 'wp-inci' ),
 				'items_list'               => __( 'Products list', 'wp-inci' ),
@@ -383,7 +400,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'item_reverted_to_draft'   => __( 'Product reverted to draft.', 'wp-inci' ),
 				'item_scheduled'           => __( 'Product scheduled.', 'wp-inci' ),
 				'item_updated'             => __( 'Product updated.', 'wp-inci' ),
-			];
+			);
 
 			register_extended_post_type( 'product', array(
 				'dashboard_activity' => true,
@@ -397,6 +414,40 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					'author',
 					'revisions',
 				),
+				'admin_cols'         => array(
+					'title'     => array(
+						'title'   => __( 'Product', 'wp-inci' ),
+						'default' => 'ASC',
+					),
+					'brand'     => array(
+						'title'    => __( 'Brand', 'wp-inci' ),
+						'taxonomy' => 'brand'
+					),
+					'shortcode' => array(
+						'title'    => __( 'Shortcode', 'wp-inci' ),
+						'function' => function () {
+							global $post;
+							echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . $post->ID . ' 7754952440]">';
+						},
+					),
+					'author'    => array(
+						'title'      => __( 'Author', 'wp-inci' ),
+						'post_field' => 'post_author',
+					),
+					'date'      => array(
+						'title' => __( 'Date', 'wp-inci' ),
+					),
+				),
+				'admin_filters'      => array(
+					'brand'  => array(
+						'title'    => __( 'All Brands', 'wp-inci' ),
+						'taxonomy' => 'brand',
+					),
+					'author' => array(
+						'title'       => __( 'All Authors', 'wp-inci' ),
+						'post_author' => true,
+					),
+				),
 
 			), array(
 
@@ -407,8 +458,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			) );
 
 			$brand_labels = array(
-				'name'                       => _x( 'Brands', 'taxonomy general name', 'wp-inci' ),
-				'singular_name'              => _x( 'Brand', 'taxonomy singular name', 'wp-inci' ),
+				'name'                       => __( 'Brands', 'wp-inci' ),
+				'singular_name'              => __( 'Brand', 'wp-inci' ),
 				'search_items'               => __( 'Search brands', 'wp-inci' ),
 				'popular_items'              => __( 'Popular brands', 'wp-inci' ),
 				'all_items'                  => __( 'All brands', 'wp-inci' ),
@@ -426,7 +477,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'no_terms'                   => __( 'No brands.', 'wp-inci' ),
 				'items_list_navigation'      => __( 'Brands list navigation', 'wp-inci' ),
 				'items_list'                 => __( 'Brands list', 'wp-inci' ),
-				'most_used'                  => _x( 'Most used', 'brand', 'wp-inci' ),
+				'most_used'                  => __( 'Most used', 'wp-inci' ),
 				'back_to_items'              => __( '&larr; Back to brands', 'wp-inci' ),
 			);
 
@@ -444,42 +495,13 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 
 			) );
 
-			$colour_labels = array(
-				'name'                       => _x( 'Colours', 'taxonomy general name', 'wp-inci' ),
-				'singular_name'              => _x( 'Colour', 'taxonomy singular name', 'wp-inci' ),
-				'search_items'               => __( 'Search colours', 'wp-inci' ),
-				'popular_items'              => __( 'Popular colours', 'wp-inci' ),
-				'all_items'                  => __( 'All colours', 'wp-inci' ),
-				'parent_item'                => __( 'Parent colour', 'wp-inci' ),
-				'parent_item_colon'          => __( 'Parent colour:', 'wp-inci' ),
-				'edit_item'                  => __( 'Edit colour', 'wp-inci' ),
-				'view_item'                  => __( 'View colour', 'wp-inci' ),
-				'update_item'                => __( 'Update colour', 'wp-inci' ),
-				'add_new_item'               => __( 'Add new colour', 'wp-inci' ),
-				'new_item_name'              => __( 'New colour name', 'wp-inci' ),
-				'separate_items_with_commas' => __( 'Separate colours with commas', 'wp-inci' ),
-				'add_or_remove_items'        => __( 'Add or remove colours', 'wp-inci' ),
-				'choose_from_most_used'      => __( 'Choose a colour from the most used', 'wp-inci' ),
-				'not_found'                  => __( 'No colours found.', 'wp-inci' ),
-				'no_terms'                   => __( 'No colours.', 'wp-inci' ),
-				'items_list_navigation'      => __( 'Colours list navigation', 'wp-inci' ),
-				'items_list'                 => __( 'Colours list', 'wp-inci' ),
-				'most_used'                  => _x( 'Most used', 'colour', 'wp-inci' ),
-				'back_to_items'              => __( '&larr; Back to colours', 'wp-inci' ),
-			);
+		}
 
-			register_extended_taxonomy( 'colour', 'product', array(
-				'public'       => true,
-				'rewrite'      => true,
-				'hierarchical' => false,
-				'labels'       => $colour_labels,
-			), array(
-				'singular' => __( 'Colour', 'wp-inci' ),
-				'plural'   => __( 'Colours', 'wp-inci' ),
-				'slug'     => __( 'colour', 'wp-inci' )
-
-			) );
-
+		/**
+		 * Sets text for default disclaimer.
+		 */
+		public function wp_inci_default_disclaimer() {
+			return __( "The evaluation of these ingredients reflects the opinion of the author, who is not a specialist in this field. This evaluation is based on some online databases (e.g. <a title=\"CosIng - Cosmetic ingredients database\" href=\"https://ec.europa.eu/growth/sectors/cosmetics/cosing/\" target=\"_blank\">CosIng</a>).", 'wp-inci' );
 		}
 
 	}
