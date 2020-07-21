@@ -427,7 +427,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 						'title'    => __( 'Shortcode', 'wp-inci' ),
 						'function' => function () {
 							global $post;
-							echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . $post->ID . ' 7754952440]">';
+							echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . $post->ID . ']">';
 						},
 					),
 					'author'    => array(
