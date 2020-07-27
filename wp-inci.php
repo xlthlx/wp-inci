@@ -5,19 +5,19 @@
  * @package           wp-inci
  * @author            xlthlx
  * @copyright         2020 xlthlx (email: github at piccioni.london)
- * @license           GPL v2
+ * @license           GPLv3+
  *
  * @wordpress-plugin
  * Plugin Name:       WP INCI
  * Plugin URI:        https://github.com/xlthlx/wp-inci
- * Description:       A WordPress plugin for the management of INCI (International Nomenclature of Cosmetic Ingredients).
+ * Description:       A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
  * Version:           1.0.0
  * Requires at least: 5.2
- * Requires PHP:      7.2
+ * Requires PHP:      7.0
  * Author:            xlthlx
  * Author URI:        https://piccioni.london
- * License:           GPL v2
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPLv3+
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       wp-inci
  * Domain Path:       /languages
  *
@@ -32,7 +32,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with WP INCI. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
+ * along with WP INCI. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
  */
 
 /**
@@ -50,17 +50,17 @@ if ( file_exists( __DIR__ . '/vendor/cmb2/cmb2/init.php' ) ) {
 }
 
 /**
- * CMB2 custom field "post_search_ajax" library.
+ * CMB2 custom field "input_search_ajax" library.
  */
-if ( file_exists( __DIR__ . '/includes/cmb2/cmb2-field-post-search-ajax/cmb2-field-post-search-ajax.php' ) ) {
-	require_once __DIR__ . '/includes/cmb2/cmb2-field-post-search-ajax/cmb2-field-post-search-ajax.php';
+if ( file_exists( __DIR__ . '/vendor/xlthlx/cmb2-field-input-search-ajax/cmb-field-input-search-ajax.php' ) ) {
+	require_once __DIR__ . '/vendor/xlthlx/cmb2-field-input-search-ajax/cmb-field-input-search-ajax.php';
 }
 
 /**
  * CMB2 Switch Button library.
  */
-if ( file_exists( __DIR__ . '/includes/cmb2/cmb2-switch-button/cmb2-switch-button.php' ) ) {
-	require_once __DIR__ . '/includes/cmb2/cmb2-switch-button/cmb2-switch-button.php';
+if ( file_exists( __DIR__ . '/vendor/xlthlx/cmb2-checkbox-switch-button/cmb2-switch-button.php' ) ) {
+	require_once __DIR__ . '/vendor/xlthlx/cmb2-checkbox-switch-button/cmb2-switch-button.php';
 }
 
 /**

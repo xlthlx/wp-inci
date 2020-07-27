@@ -1,3 +1,31 @@
+function copyShort(copyText) {
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+}
+
+function copyToClipboard(text) {
+	if (window.clipboardData && window.clipboardData.setData) {
+		return clipboardData.setData("Text", text);
+
+	} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+		var textarea = document.createElement("textarea");
+		textarea.textContent = text;
+		textarea.style.position = "fixed";
+		document.body.appendChild(textarea);
+		textarea.select();
+		try {
+			document.getElementById('msg').innerText = wi_msg;
+			return document.execCommand("copy");
+		} catch (ex) {
+			console.warn("Copy to clipboard failed.", ex);
+			return false;
+		} finally {
+			document.body.removeChild(textarea);
+		}
+	}
+}
+
 (function ($) {
 	$(document).ready(function () {
 		$("#safety").on("change", function () {
@@ -30,11 +58,10 @@
 			first.removeClass().addClass(new_first + " first").html(new_first.toUpperCase());
 			second.removeClass().addClass(new_second + " second").html(new_second.toUpperCase());
 		});
+
+		$("#copy_style").on("click", function (e) {
+			e.preventDefault();
+			copyToClipboard(wi_style);
+		});
 	});
 })(jQuery);
-
-function copyShort(copyText) {
-	copyText.select();
-	copyText.setSelectionRange(0, 99999)
-	document.execCommand("copy");
-}

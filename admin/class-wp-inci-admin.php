@@ -104,7 +104,10 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 				if ( __FILE__ !== WP_UNINSTALL_PLUGIN ) {
 					return;
 				}
-				//TODO
+
+				delete_option( 'wp_inci_disclaimer' );
+				delete_option( 'disable_style' );
+				
 			}
 
 			register_uninstall_hook( __FILE__, 'wp_inci_plugin_uninstall' );
@@ -136,7 +139,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 				wp_enqueue_script( 'jquery' );
 			}
 
-			wp_register_script( 'wp-inci-admin-js', $this->admin_url . '/js/wp-inci-admin.min.js', array( 'jquery' ), $this->version );
+			wp_register_script( 'wp-inci-admin-js', $this->admin_url . '/js/wp-inci-admin.js', array( 'jquery' ), $this->version );
 			wp_enqueue_script( 'wp-inci-admin-js' );
 		}
 

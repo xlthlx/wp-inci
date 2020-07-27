@@ -1,0 +1,19 @@
+{
+    "name": "xlthlx/cmb2-checkbox-switch-button",
+    "description": "Custom Checkbox Switch Button field type for CMB2 Metabox for WordPress. Based on https://github.com/themevan/CMB2-Switch-Button",
+    "homepage": "https://github.com/xlthlx/cmb2-checkbox-switch-button",
+    "version": "1.0.0",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "xlthlx",
+            "homepage": "https://github.com/xlthlx"
+        }
+    ],
+    "keywords": ["wordpress", "plugin", "metabox", "checkbox", "button", "switch", "cmb2"],
+    "type": "wordpress-plugin",
+    "require": {
+        "php": "^7.0",
+        "cmb2/cmb2": "^2.7"
+    }
+}

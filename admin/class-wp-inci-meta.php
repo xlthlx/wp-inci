@@ -34,6 +34,8 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_ingredients_repeater' ) );
 			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_safety_select' ) );
 			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_page_settings' ) );
+			add_action( 'admin_init', array( $this, 'wp_inci_remove_menu_page' ) );
+			add_filter( 'parent_file', array( $this, 'wp_inci_select_other_menu' ) );
 		}
 
 		/**
@@ -89,7 +91,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			$ingredients->add_field( array(
 				'name'       => __( 'Ingredient', 'wp-inci' ),
 				'id'         => 'ingredients',
-				'type'       => 'post_search_ajax',
+				'type'       => 'input_search_ajax',
 				'desc'       => __( 'Start typing ingredient name. No results found?',
 						'wp-inci' ) . ' <a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add New Ingredient',
 						'wp-inci' ) . '</a>',
@@ -116,7 +118,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			$may_contain->add_field( array(
 				'name'       => __( 'May Contain', 'wp-inci' ),
 				'id'         => 'may_contain',
-				'type'       => 'post_search_ajax',
+				'type'       => 'input_search_ajax',
 				'desc'       => __( 'Start typing ingredient name. No results found?',
 						'wp-inci' ) . ' <a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add New Ingredient',
 						'wp-inci' ) . '</a>',
@@ -301,6 +303,15 @@ table.wp-inci div.w {
 
 
 		/**
+		 * Returns the button to copy the WP INCI style.
+		 */
+		public function wp_inci_copy_button() {
+			echo "<script>var wi_style=`" . $this->wp_inci_default_style() . "`;";
+			echo "var wi_msg='". __( 'Style copied to clipboard.', 'wp-inci' ) ."';</script>";
+			echo '<button id="copy_style" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>';
+		}
+
+		/**
 		 * Create WP INCI Settings page.
 		 */
 		public function wp_inci_register_page_settings() {
@@ -333,13 +344,13 @@ table.wp-inci div.w {
 
 
 			$main_options->add_field( array(
-				'name'       => __( 'WP INCI Default Style', 'wp-inci' ),
-				'desc'       => $desc,
-				'id'         => 'textarea_style',
-				'type'       => 'textarea_code',
-				'default_cb' => array( $this, 'wp_inci_default_style' ),
-				'save_field' => false,
-				'attributes' => array(
+				'name'        => __( 'WP INCI Default Style', 'wp-inci' ),
+				'desc'        => $desc,
+				'id'          => 'textarea_style',
+				'type'        => 'textarea_code',
+				'default_cb'  => array( $this, 'wp_inci_default_style' ),
+				'save_field'  => false,
+				'attributes'  => array(
 					'readonly'        => 'readonly',
 					'data-codeeditor' => json_encode( array(
 						'codemirror' => array(
@@ -348,6 +359,7 @@ table.wp-inci div.w {
 						),
 					) ),
 				),
+				'after_field' => array( $this, 'wp_inci_copy_button' ),
 			) );
 
 
@@ -356,10 +368,10 @@ table.wp-inci div.w {
 			 */
 			$args = array(
 				'id'           => 'wp_inci_disclaimer',
-				'title'        => __( 'WP INCI Settings', 'wp-inci' ),
+				'title'        => __( 'WP INCI Disclaimer', 'wp-inci' ),
 				'object_types' => array( 'options-page' ),
-				'option_key'   => 'wp_inci_disclaimer_options',
-				'parent_slug'  => 'wp_inci_settings',
+				'option_key'   => 'wp_inci_disclaimer',
+				'parent_slug'  => 'options-general.php',
 				'tab_group'    => 'wp_inci_settings',
 				'tab_title'    => __( 'Disclaimer', 'wp-inci' ),
 			);
@@ -375,6 +387,32 @@ table.wp-inci div.w {
 			) );
 
 		}
+
+		/**
+		 * Remove the disclaimer menu.
+		 */
+		public function wp_inci_remove_menu_page() {
+			remove_submenu_page( 'options-general.php', 'wp_inci_disclaimer' );
+		}
+
+
+		/**
+		 * Highlight the setting menu.
+		 *
+		 * @param string $parent_file The parent file.
+		 *
+		 * @return string
+		 */
+		public function wp_inci_select_other_menu( $parent_file ) {
+			global $plugin_page;
+
+			if ( 'wp_inci_disclaimer' === $plugin_page ) {
+				$plugin_page = 'wp_inci_settings';
+			}
+
+			return $parent_file;
+		}
+
 	}
 
 	add_action( 'plugins_loaded', array( 'WP_Inci_Meta', 'get_instance_meta' ) );

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP-INCI Italian\n"
-"POT-Creation-Date: 2020-07-19 20:16+0100\n"
-"PO-Revision-Date: 2020-07-19 20:16+0100\n"
+"POT-Creation-Date: 2020-07-26 14:12+0100\n"
+"PO-Revision-Date: 2020-07-26 14:13+0100\n"
 "Last-Translator: xlthlx <github@piccioni.london>\n"
 "Language-Team: xlthlx <github@piccioni.london>\n"
 "Language: it\n"
@@ -24,77 +24,73 @@ msgstr "Per altre informazioni visita"
 msgid "on GitHub"
 msgstr "su GitHub"
 
-#: admin/class-wp-inci-admin.php:184 admin/class-wp-inci-meta.php:314
+#: admin/class-wp-inci-admin.php:184 admin/class-wp-inci-meta.php:298
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: admin/class-wp-inci-meta.php:60 admin/class-wp-inci-meta.php:67
+#: admin/class-wp-inci-meta.php:62 admin/class-wp-inci-meta.php:69
 #: class-wp-inci.php:302
 msgid "Url"
 msgstr "Link"
 
-#: admin/class-wp-inci-meta.php:82 class-wp-inci.php:138 class-wp-inci.php:228
+#: admin/class-wp-inci-meta.php:84 class-wp-inci.php:138 class-wp-inci.php:228
 msgid "Ingredients"
 msgstr "Ingredienti"
 
-#: admin/class-wp-inci-meta.php:90 class-wp-inci.php:139 class-wp-inci.php:185
+#: admin/class-wp-inci-meta.php:92 class-wp-inci.php:139 class-wp-inci.php:185
 #: class-wp-inci.php:227
 msgid "Ingredient"
 msgstr "Ingrediente"
 
-#: admin/class-wp-inci-meta.php:93 admin/class-wp-inci-meta.php:120
+#: admin/class-wp-inci-meta.php:95 admin/class-wp-inci-meta.php:122
 msgid "Start typing ingredient name. No results found?"
 msgstr "Comincia a scrivere il nome dell'ingrediente. Non lo trovi?"
 
-#: admin/class-wp-inci-meta.php:94 admin/class-wp-inci-meta.php:121
+#: admin/class-wp-inci-meta.php:96 admin/class-wp-inci-meta.php:123
 msgid "Add New Ingredient"
 msgstr "Aggiungi nuovo ingrediente"
 
-#: admin/class-wp-inci-meta.php:109 admin/class-wp-inci-meta.php:117
+#: admin/class-wp-inci-meta.php:111 admin/class-wp-inci-meta.php:119
 msgid "May Contain"
 msgstr "May Contain"
 
-#: admin/class-wp-inci-meta.php:144
+#: admin/class-wp-inci-meta.php:146
 msgid "INCI"
 msgstr "INCI"
 
-#: admin/class-wp-inci-meta.php:159
+#: admin/class-wp-inci-meta.php:161
 msgid "Double green"
 msgstr "Doppio verde"
 
-#: admin/class-wp-inci-meta.php:160
+#: admin/class-wp-inci-meta.php:162
 msgid "Green"
 msgstr "Verde"
 
-#: admin/class-wp-inci-meta.php:161
+#: admin/class-wp-inci-meta.php:163
 msgid "Yellow"
 msgstr "Giallo"
 
-#: admin/class-wp-inci-meta.php:162
+#: admin/class-wp-inci-meta.php:164
 msgid "Red"
 msgstr "Rosso"
 
-#: admin/class-wp-inci-meta.php:163
+#: admin/class-wp-inci-meta.php:165
 msgid "Double red"
 msgstr "Doppio rosso"
 
-#: admin/class-wp-inci-meta.php:171
-msgid "CAS #"
-msgstr "CAS #"
+#: admin/class-wp-inci-meta.php:283
+msgid "Style copied to clipboard."
+msgstr "Stile copiato negli appunti."
 
-#: admin/class-wp-inci-meta.php:180
-msgid "EC #"
-msgstr "EC #"
+#: admin/class-wp-inci-meta.php:284
+msgid "Copy style"
+msgstr "Copia stile"
 
-#: admin/class-wp-inci-meta.php:189
-msgid "Cosmetic Restriction"
-msgstr "Restrizioni cosmetiche"
-
-#: admin/class-wp-inci-meta.php:310 admin/class-wp-inci-meta.php:359
+#: admin/class-wp-inci-meta.php:294
 msgid "WP INCI Settings"
 msgstr "WP INCI Impostazioni"
 
-#: admin/class-wp-inci-meta.php:320
+#: admin/class-wp-inci-meta.php:304
 msgid ""
 "You can disable the WP INCI style and add your own to your theme.<br/>Just "
 "copy the standard WP INCI style above into your style.css and customize it."
@@ -103,23 +99,27 @@ msgstr ""
 ">Basta copiare lo stile predefinito di WP INCI qui sopra nel tuo style.css e "
 "personalizzarlo."
 
-#: admin/class-wp-inci-meta.php:327
+#: admin/class-wp-inci-meta.php:311
 msgid "Disable WP INCI style"
 msgstr "Disabilita il CSS di WP INCI"
 
-#: admin/class-wp-inci-meta.php:336
+#: admin/class-wp-inci-meta.php:320
 msgid "WP INCI Default Style"
 msgstr "Stile predefinito di WP INCI"
 
-#: admin/class-wp-inci-meta.php:364 admin/class-wp-inci-meta.php:370
+#: admin/class-wp-inci-meta.php:344
+msgid "WP INCI Disclaimer"
+msgstr "Disclaimer di WP INCI"
+
+#: admin/class-wp-inci-meta.php:349 admin/class-wp-inci-meta.php:355
 msgid "Disclaimer"
 msgstr "Disclaimer"
 
-#: admin/class-wp-inci-meta.php:371
+#: admin/class-wp-inci-meta.php:356
 msgid "Add a disclaimer after WP INCI table of ingredients."
 msgstr "Aggiunge un disclaimer dopo la tabella degli ingredienti di WP INCI."
 
-#: class-wp-inci.php:140 class-wp-inci.php:377
+#: class-wp-inci.php:140 class-wp-inci.php:376
 msgid "Add new"
 msgstr "Aggiungi nuovo"
 
@@ -175,19 +175,19 @@ msgstr "Inserisci negli ingredienti"
 msgid "Uploaded to this ingredient"
 msgstr "Caricato su questo ingrediente"
 
-#: class-wp-inci.php:154 class-wp-inci.php:391
+#: class-wp-inci.php:154 class-wp-inci.php:390
 msgid "Featured image"
 msgstr "Immagine in evidenza"
 
-#: class-wp-inci.php:155 class-wp-inci.php:392
+#: class-wp-inci.php:155 class-wp-inci.php:391
 msgid "Set featured image"
 msgstr "Imposta immagine in evidenza"
 
-#: class-wp-inci.php:156 class-wp-inci.php:393
+#: class-wp-inci.php:156 class-wp-inci.php:392
 msgid "Remove featured image"
 msgstr "Rimuovi immagine in evidenza"
 
-#: class-wp-inci.php:157 class-wp-inci.php:394
+#: class-wp-inci.php:157 class-wp-inci.php:393
 msgid "Use as featured image"
 msgstr "Usa come immagine in evidenza"
 
@@ -235,12 +235,12 @@ msgstr "Funzioni"
 msgid "Source"
 msgstr "Fonte"
 
-#: class-wp-inci.php:204 class-wp-inci.php:434
-#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:415
+#: class-wp-inci.php:204 class-wp-inci.php:433
+#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:436
 msgid "Author"
 msgstr "Autore"
 
-#: class-wp-inci.php:208 class-wp-inci.php:438
+#: class-wp-inci.php:208 class-wp-inci.php:437
 msgid "Date"
 msgstr "Data"
 
@@ -252,8 +252,8 @@ msgstr "Tutte le funzioni"
 msgid "All Sources"
 msgstr "Tutte le fonti"
 
-#: class-wp-inci.php:221 class-wp-inci.php:447
-#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:411
+#: class-wp-inci.php:221 class-wp-inci.php:446
+#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:432
 msgid "All Authors"
 msgstr "Tutti gli autori"
 
@@ -333,7 +333,7 @@ msgstr "Navigazione dell'elenco delle funzioni"
 msgid "Functions list"
 msgstr "Lista funzioni"
 
-#: class-wp-inci.php:253 class-wp-inci.php:291 class-wp-inci.php:480
+#: class-wp-inci.php:253 class-wp-inci.php:291 class-wp-inci.php:479
 msgid "Most used"
 msgstr "Più utilizzate"
 
@@ -425,187 +425,187 @@ msgstr "&larr; Torna alle fonti"
 msgid "source"
 msgstr "fonte"
 
-#: class-wp-inci.php:375 class-wp-inci.php:455
+#: class-wp-inci.php:374 class-wp-inci.php:454
 msgid "Products"
 msgstr "Prodotti"
 
-#: class-wp-inci.php:376 class-wp-inci.php:419 class-wp-inci.php:454
+#: class-wp-inci.php:375 class-wp-inci.php:418 class-wp-inci.php:453
 msgid "Product"
 msgstr "Prodotto"
 
-#: class-wp-inci.php:378
+#: class-wp-inci.php:377
 msgid "Add new product"
 msgstr "Aggiungi nuovo prodotto"
 
-#: class-wp-inci.php:379
+#: class-wp-inci.php:378
 msgid "Edit product"
 msgstr "Modifica prodotto"
 
-#: class-wp-inci.php:380
+#: class-wp-inci.php:379
 msgid "New product"
 msgstr "Nuovo prodotto"
 
-#: class-wp-inci.php:381
+#: class-wp-inci.php:380
 msgid "View product"
 msgstr "Visualizza prodotto"
 
-#: class-wp-inci.php:382
+#: class-wp-inci.php:381
 msgid "View products"
 msgstr "Visualizza prodotti"
 
-#: class-wp-inci.php:383
+#: class-wp-inci.php:382
 msgid "Search product"
 msgstr "Cerca prodotto"
 
-#: class-wp-inci.php:384
+#: class-wp-inci.php:383
 msgid "No products found"
 msgstr "Nessun prodotto trovato"
 
-#: class-wp-inci.php:385
+#: class-wp-inci.php:384
 msgid "No products found in trash"
 msgstr "Nessun prodotto trovato nel cestino"
 
-#: class-wp-inci.php:386
+#: class-wp-inci.php:385
 msgid "All products"
 msgstr "Tutti i prodotti"
 
-#: class-wp-inci.php:387
+#: class-wp-inci.php:386
 msgid "Products archives"
 msgstr "Archivio prodotti"
 
-#: class-wp-inci.php:388
+#: class-wp-inci.php:387
 msgid "Product attributes"
 msgstr "Attributi del prodotto"
 
-#: class-wp-inci.php:389
+#: class-wp-inci.php:388
 msgid "Insert into product"
 msgstr "Inserisci nel prodotto"
 
-#: class-wp-inci.php:390
+#: class-wp-inci.php:389
 msgid "Uploaded to this product"
 msgstr "Caricato su questo prodotto"
 
-#: class-wp-inci.php:395
+#: class-wp-inci.php:394
 msgid "Filter products list"
 msgstr "Filtra lista prodotti"
 
-#: class-wp-inci.php:396
+#: class-wp-inci.php:395
 msgid "Products list navigation"
 msgstr "Navigazione dell'elenco dei prodotti"
 
-#: class-wp-inci.php:397
+#: class-wp-inci.php:396
 msgid "Products list"
 msgstr "Lista prodotti"
 
-#: class-wp-inci.php:398
+#: class-wp-inci.php:397
 msgid "Product published."
 msgstr "Ingrediente pubblicato."
 
-#: class-wp-inci.php:399
+#: class-wp-inci.php:398
 msgid "Product published privately."
 msgstr "Prodotto pubblicato privatamente."
 
-#: class-wp-inci.php:400
+#: class-wp-inci.php:399
 msgid "Product reverted to draft."
 msgstr "Prodotto ripristinato come bozza."
 
-#: class-wp-inci.php:401
+#: class-wp-inci.php:400
 msgid "Product scheduled."
 msgstr "Ingredienti schedulato."
 
-#: class-wp-inci.php:402
+#: class-wp-inci.php:401
 msgid "Product updated."
 msgstr "Ingrediente aggiornato."
 
-#: class-wp-inci.php:423 class-wp-inci.php:462 class-wp-inci.php:492
+#: class-wp-inci.php:422 class-wp-inci.php:461 class-wp-inci.php:492
 msgid "Brand"
 msgstr "Marca"
 
-#: class-wp-inci.php:427
+#: class-wp-inci.php:426
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: class-wp-inci.php:443
+#: class-wp-inci.php:442
 msgid "All Brands"
 msgstr "Tutte le marche"
 
-#: class-wp-inci.php:456
+#: class-wp-inci.php:455
 msgid "product"
 msgstr "prodotto"
 
-#: class-wp-inci.php:461 class-wp-inci.php:493
+#: class-wp-inci.php:460 class-wp-inci.php:493
 msgid "Brands"
 msgstr "Marche"
 
-#: class-wp-inci.php:463
+#: class-wp-inci.php:462
 msgid "Search brands"
 msgstr "Cerca marca"
 
-#: class-wp-inci.php:464
+#: class-wp-inci.php:463
 msgid "Popular brands"
 msgstr "Marche più utilizzate"
 
-#: class-wp-inci.php:465
+#: class-wp-inci.php:464
 msgid "All brands"
 msgstr "Tutte le marche"
 
-#: class-wp-inci.php:466
+#: class-wp-inci.php:465
 msgid "Parent brand"
 msgstr "Marca genitore"
 
-#: class-wp-inci.php:467
+#: class-wp-inci.php:466
 msgid "Parent brand:"
 msgstr "Marca genitore:"
 
-#: class-wp-inci.php:468
+#: class-wp-inci.php:467
 msgid "Edit brand"
 msgstr "Modifica marca"
 
-#: class-wp-inci.php:469
+#: class-wp-inci.php:468
 msgid "View brand"
 msgstr "Visualizza marca"
 
-#: class-wp-inci.php:470
+#: class-wp-inci.php:469
 msgid "Update brand"
 msgstr "Aggiorna marca"
 
-#: class-wp-inci.php:471
+#: class-wp-inci.php:470
 msgid "Add new brand"
 msgstr "Aggiungi nuova marca"
 
-#: class-wp-inci.php:472
+#: class-wp-inci.php:471
 msgid "New brand name"
 msgstr "Nuovo nome per la marca"
 
-#: class-wp-inci.php:473
+#: class-wp-inci.php:472
 msgid "Separate brands with commas"
 msgstr "Separa le marche con una virgola"
 
-#: class-wp-inci.php:474
+#: class-wp-inci.php:473
 msgid "Add or remove brands"
 msgstr "Aggiungi o rimuovi marca"
 
-#: class-wp-inci.php:475
+#: class-wp-inci.php:474
 msgid "Choose a brand from the most used"
 msgstr "Scegli una marca tra le più utilizzate"
 
-#: class-wp-inci.php:476
+#: class-wp-inci.php:475
 msgid "No brands found."
 msgstr "Nessuna marca trovata."
 
-#: class-wp-inci.php:477
+#: class-wp-inci.php:476
 msgid "No brands."
 msgstr "Nessuna marca."
 
-#: class-wp-inci.php:478
+#: class-wp-inci.php:477
 msgid "Brands list navigation"
 msgstr "Navigazione dell'elenco delle marche"
 
-#: class-wp-inci.php:479
+#: class-wp-inci.php:478
 msgid "Brands list"
 msgstr "Lista delle marche"
 
-#: class-wp-inci.php:481
+#: class-wp-inci.php:480
 msgid "&larr; Back to brands"
 msgstr "&larr; Torna alle marche"
 
@@ -627,14 +627,6 @@ msgstr ""
 "database\" href=\"https://ec.europa.eu/growth/sectors/cosmetics/cosing/\" "
 "target=\"_blank\">CosIng</a>)."
 
-#: includes/cmb2/cmb2-field-post-search-ajax/cmb2-field-post-search-ajax.php:183
-msgid "No results found."
-msgstr "Nessun risultato trovato."
-
-#: includes/cmb2/cmb2-field-post-search-ajax/cmb2-field-post-search-ajax.php:195
-msgid "Error : Unauthorized action"
-msgstr "Errore: azione non autorizzata"
-
 #: public/class-wp-inci-frontend.php:132
 msgid "MAY CONTAIN"
 msgstr "MAY CONTAIN"
@@ -645,6 +637,7 @@ msgid ""
 "The \"%1$s\" field parameter has been deprecated in favor of the \"%2$s\" "
 "parameter."
 msgstr ""
+"Il parametro \"%1$s\" è stato deprecato a favore del parametro \"%2$s\"."
 
 #: vendor/cmb2/cmb2/includes/CMB2_Base.php:426
 #, php-format
@@ -652,6 +645,8 @@ msgid ""
 "Using the \"%1$s\" field parameter as a callback has been deprecated in "
 "favor of the \"%2$s\" parameter."
 msgstr ""
+"L'uso del parametro del campo \"%1$s\" come callback è stato deprecato a "
+"favore del parametro \"%2$s\"."
 
 #: vendor/cmb2/cmb2/includes/CMB2_Base.php:456
 #, php-format
@@ -659,6 +654,8 @@ msgid ""
 "%1$s was called with a parameter that is <strong>deprecated</strong> since "
 "version %2$s! %3$s"
 msgstr ""
+"%1$s è stato chiamato con un parametro <strong> deprecato </strong> dalla "
+"versione %2$s!%3$s"
 
 #: vendor/cmb2/cmb2/includes/CMB2_Base.php:458
 #, php-format
@@ -666,6 +663,8 @@ msgid ""
 "%1$s was called with a parameter that is <strong>deprecated</strong> since "
 "version %2$s with no alternative available."
 msgstr ""
+"%1$s è stato chiamato con un parametro <strong> deprecato </strong> dalla "
+"versione %2$s senza nessuna alternativa disponibile."
 
 #: vendor/cmb2/cmb2/includes/CMB2_Field_Display.php:453
 msgid "File:"
@@ -687,24 +686,27 @@ msgstr "Impostazioni salvate."
 #: vendor/cmb2/cmb2/includes/CMB2_Types.php:226
 msgid "Custom CMB2 field type classes must extend CMB2_Type_Base."
 msgstr ""
+"Le classi per campi CMB2 personalizzati devono estendere CMB2_Type_Base."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller.php:257
 msgid "This box does not have read permissions."
-msgstr ""
+msgstr "Questo box non ha permessi di lettura."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller.php:277
 msgid "This box does not have write permissions."
-msgstr ""
+msgstr "Questo box non ha permessi di scrittura."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller.php:300
 msgid ""
 "No box found by that id. A box needs to be registered with the \"show_in_rest"
 "\" parameter configured."
 msgstr ""
+"Nessun box trovato con quell'ID. Un box deve essere registrato con il "
+"parametro \"show_in_rest\" configurato."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller.php:378
 msgid "A human-readable description of the object."
-msgstr ""
+msgstr "Una descrizione leggibile dall'uomo dell'oggetto."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller.php:385
 msgid "The id for the object."
@@ -716,7 +718,7 @@ msgstr "Il titolo per l'oggetto."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php:51
 msgid "Includes the registered fields for the box in the response."
-msgstr ""
+msgstr "Include i campi registrati per il box nella risposta."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php:72
 msgid ""
@@ -724,6 +726,9 @@ msgid ""
 "as the enqueued 'js_dependencies' script handles, and 'css_dependencies' "
 "stylesheet handles."
 msgstr ""
+"Include gli attributi di rendering completo, 'form_open', 'form_close', "
+"nonché gli script accodati 'js_dependencies' e gli handle del foglio di "
+"stile 'css_dependencies'."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php:122
 msgid "No boxes found."
@@ -732,7 +737,7 @@ msgstr "Nessun risultato trovato."
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:27
 msgid ""
 "Includes the box object which the fields are registered to in the response."
-msgstr ""
+msgstr "Include l'oggetto box a cui sono registrati i campi nella risposta."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:30
 msgid ""
@@ -740,6 +745,10 @@ msgid ""
 "will be returned fully rendered. By default, the names of the callback "
 "handers for the renderable attributes will be returned."
 msgstr ""
+"Quando viene passato l'argomento '_rendered', gli attributi del campo "
+"renderizzabili verranno restituiti completamente renderizzati. Per "
+"impostazione predefinita, verranno restituiti i nomi dei gestori di callback "
+"per gli attributi renderizzabili."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:33
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:36
@@ -747,32 +756,38 @@ msgid ""
 "To view or modify the field's value, the 'object_id' and 'object_type' "
 "arguments are required."
 msgstr ""
+"Per visualizzare o modificare il valore del campo, sono richiesti gli "
+"argomenti 'object_id' e 'object_type'."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:236
 msgid ""
 "CMB2 Field value cannot be updated without the value parameter specified."
 msgstr ""
+"Il valore del campo CMB2 non può essere aggiornato senza il parametro valore "
+"specificato."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:297
 msgid ""
 "CMB2 Field value cannot be modified without the object_id and object_type "
 "parameters specified."
 msgstr ""
+"Il valore del campo CMB2 non può essere modificato senza i parametri "
+"object_id e object_type specificati."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:312
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:341
 msgid "No field found by that id."
-msgstr ""
+msgstr "Nessun campo trovato con quell'ID."
 
 #: vendor/cmb2/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:415
 #, php-format
 msgid "Value Error for %s"
-msgstr ""
+msgstr "Valore errato per %s"
 
 #: vendor/cmb2/cmb2/includes/shim/WP_REST_Controller.php:25
 #, php-format
 msgid "Method '%s' must be overridden."
-msgstr ""
+msgstr "Il metodo '%s' deve essere sovrascritto."
 
 #: vendor/cmb2/cmb2/includes/shim/WP_REST_Controller.php:35
 #: vendor/cmb2/cmb2/includes/shim/WP_REST_Controller.php:47
@@ -789,14 +804,15 @@ msgstr ""
 #, php-format
 msgid "Method '%s' not implemented. Must be overridden in subclass."
 msgstr ""
+"Il metodo '%s' non disponibile. Deve essere sovrascritto in una sottoclasse."
 
 #: vendor/cmb2/cmb2/includes/shim/WP_REST_Controller.php:273
 msgid "Current page of the collection."
-msgstr ""
+msgstr "Pagina corrente della collezione."
 
 #: vendor/cmb2/cmb2/includes/shim/WP_REST_Controller.php:281
 msgid "Maximum number of items to be returned in result set."
-msgstr ""
+msgstr "Numero massimo di articoli da restituire nel set di risultati."
 
 #: vendor/cmb2/cmb2/includes/shim/WP_REST_Controller.php:290
 msgid "Limit results to those matching a string."
@@ -806,9 +822,11 @@ msgstr "Limitare i risultati a quelli corrispondenti a una stringa."
 msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
+"Ambito di applicazione della richiesta; determina i campi presenti nella "
+"risposta."
 
-#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:1099
-#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:1126
+#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:1120
+#: vendor/johnbillion/extended-cpts/src/class-extended-cpt-admin.php:1147
 #, php-format
 msgid "Invalid connection type: %s"
 msgstr "Tipo di connessione non valida: %s"
@@ -818,17 +836,65 @@ msgstr "Tipo di connessione non valida: %s"
 msgid ""
 "Post type query var \"%s\" clashes with a taxonomy query var of the same name"
 msgstr ""
+"La query var del tipo di post \"%s\" si scontra con la query var di "
+"tassonomia con lo stesso nome"
 
 #: vendor/johnbillion/extended-cpts/src/class-extended-taxonomy.php:227
 #, php-format
 msgid ""
 "Taxonomy query var \"%s\" clashes with a post type query var of the same name"
 msgstr ""
+"La query var della tassonomia \"%s\" si scontra con la query var del tipo di "
+"post con lo stesso nome"
 
 #: vendor/johnbillion/extended-cpts/src/class-extended-taxonomy.php:233
 #, php-format
 msgid "Taxonomy query var \"%s\" is not allowed"
-msgstr ""
+msgstr "La query var  \"%s\"  per la tassonomia non è consentita"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/cmb-field-input-search-ajax.php:177
+msgid "No results found."
+msgstr "Nessun risultato trovato."
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/cmb-field-input-search-ajax.php:190
+msgid "Error : Unauthorized action"
+msgstr "Errore: azione non autorizzata"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:15
+msgid "Related Posts"
+msgstr "Post correlati"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:23
+msgid "Example Multiple"
+msgstr "Esempio multiplo"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:26
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:41
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:56
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:70
+msgid "(Start typing post title)"
+msgstr "(inizia a scrivere il titolo del post)"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:38
+msgid "Example Single"
+msgstr "Esempio singolo"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:53
+msgid "Test user multiple"
+msgstr "Test utente multiplo"
+
+#: vendor/xlthlx/cmb2-field-input-search-ajax/example-field-setup.php:67
+msgid "Test user single"
+msgstr "Test utente singolo"
+
+#~ msgid "CAS #"
+#~ msgstr "CAS #"
+
+#~ msgid "EC #"
+#~ msgstr "EC #"
+
+#~ msgid "Cosmetic Restriction"
+#~ msgstr "Restrizioni cosmetiche"
 
 #~ msgid "View Ingredient"
 #~ msgstr "Visualizza ingredienti"

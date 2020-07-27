@@ -20,7 +20,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Plugin version.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var string
 		 */
 		public $version = "1.0.0";
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * release.minor.revision
 		 * See split below.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var integer
 		 */
 		public $release = 1;
@@ -39,15 +39,15 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Plugin name
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var string
 		 */
 		public $plugin_name = "WP INCI";
 
 		/**
-		 * Added for Fix Administrator Permission Warning.
+		 * Main plugin slug.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var string
 		 */
 		public $plugin_slug = "wp-inci";
@@ -55,7 +55,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Setting from main file to __FILE__.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var string
 		 */
 		public $plugin_file = __DIR__ . '/wp-inci.php';
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Options array containing all options for this plugin.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var array
 		 */
 		public $options = array();
@@ -71,7 +71,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * This plugin url.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 * @var string
 		 */
 		public $url = "";
@@ -79,7 +79,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Constructor.
 		 *
-		 * @since 0.2
+		 * @since 1.0
 		 */
 		public function __construct() {
 			$this->init();
@@ -324,8 +324,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 
 			$safety = $this->wp_inci_get_safety_value( $post_id );
 
-			return '<div class="' . $safety[0] . ' first">' . strtoupper( $safety[0] ) . '</div>
-               <div class="' . $safety[1] . ' second">' . strtoupper( $safety[1] ) . '</div>';
+			return '<div class="' . $safety[0] . ' first">' . strtoupper( $safety[0] ) . '</div><div class="' . $safety[1] . ' second">' . strtoupper( $safety[1] ) . '</div>';
 		}
 
 		/**
@@ -487,6 +486,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'hierarchical' => false,
 				'exclusive'    => true,
 				'labels'       => $brand_labels,
+				'show_in_rest' => true,
 				'meta_box'     => 'dropdown',
 			), array(
 				'singular' => __( 'Brand', 'wp-inci' ),

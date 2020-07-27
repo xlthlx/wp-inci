@@ -1,0 +1,54 @@
+.cmb2-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 22px;
+}
+
+.cmb2-switch input {
+    display: none;
+}
+
+.cmb2-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.cmb2-slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+
+#side-sortables .cmb-row .cmb2-switch + .cmb2-metabox-description {
+    padding-bottom: 0;
+}
+
+input:checked + .cmb2-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+.cmb2-slider.round {
+    border-radius: 34px;
+}
+
+.cmb2-slider.round:before {
+    border-radius: 50%;
+}
