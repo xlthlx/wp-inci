@@ -1,5 +1,6 @@
 # ![WP Plugin](https://github.com/xlthlx/wp-inci/blob/master/admin/images/menu.png "WordPress Plugin") WP INCI
 A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
+
 You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
 There is an example product with ingredients into the [`data`](https://github.com/xlthlx/wp-inci/tree/master/data) directory that can be imported using the standard WordPress Importer.
 
@@ -23,14 +24,19 @@ If you need a different way to display it, you can:
 ## Screenshots
 
 1. Ingredients list and single ingredient
+
 ![Ingredients list and single ingredient](https://github.com/xlthlx/wp-inci/blob/master/screenshot-1.gif) 
 2. Product list and single product
+
 ![Product list and single product](https://github.com/xlthlx/wp-inci/blob/master/screenshot-2.gif) 
 3. How to manage options
+
 ![How to manage options](https://github.com/xlthlx/wp-inci/blob/master/screenshot-3.gif) 
 4. How to use the product shortcode
+
 ![How to use the product shortcode](https://github.com/xlthlx/wp-inci/blob/master/screenshot-4.gif) 
 5. Post example
+
 ![Post example](https://github.com/xlthlx/wp-inci/blob/master/screenshot-5.gif) 
 
 ### Changelog
@@ -51,5 +57,4 @@ If you need a different way to display it, you can:
 ## Frequently Asked Questions
 
 ### Can I translate the plugin interface?
-
 Yes, just edit .POT file in the [`languages`](https://github.com/xlthlx/wp-inci/tree/master/languages) folder.
