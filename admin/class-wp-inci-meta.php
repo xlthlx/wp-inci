@@ -165,33 +165,6 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'5' => __( 'Double red', 'wp-inci' ),
 				),
 			) );
-
-			/**
-			 * Create the CAS Number field.
-			 */
-			$safety->add_field( array(
-				'name' => __( 'CAS #', 'wp-inci' ),
-				'id'   => 'cas_number',
-				'type' => 'text_small',
-			) );
-
-			/**
-			 * Create the EC Number field.
-			 */
-			$safety->add_field( array(
-				'name' => __( 'EC #', 'wp-inci' ),
-				'id'   => 'ec_number',
-				'type' => 'text_small',
-			) );
-
-			/**
-			 * Create the Cosmetic Restriction field.
-			 */
-			$safety->add_field( array(
-				'name' => __( 'Cosmetic Restriction', 'wp-inci' ),
-				'id'   => 'cosmetic_restriction',
-				'type' => 'text_small',
-			) );
 		}
 
 
