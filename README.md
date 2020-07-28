@@ -25,16 +25,20 @@ If you need a different way to display it, you can:
 
 1. Ingredients list and single ingredient
 
-![Ingredients list and single ingredient](https://github.com/xlthlx/wp-inci/blob/master/screenshot-1.gif) 
+![Ingredients list and single ingredient](https://github.com/xlthlx/wp-inci/blob/master/screenshot-1.gif)
+
 2. Product list and single product
 
 ![Product list and single product](https://github.com/xlthlx/wp-inci/blob/master/screenshot-2.gif) 
+
 3. How to manage options
 
 ![How to manage options](https://github.com/xlthlx/wp-inci/blob/master/screenshot-3.gif) 
+
 4. How to use the product shortcode
 
 ![How to use the product shortcode](https://github.com/xlthlx/wp-inci/blob/master/screenshot-4.gif) 
+
 5. Post example
 
 ![Post example](https://github.com/xlthlx/wp-inci/blob/master/screenshot-5.gif) 
