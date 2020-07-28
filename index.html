@@ -22,7 +22,8 @@
             GitHub</a>
 
         <h1 id="project_title">WP INCI</h1>
-        <h2 id="project_tagline">A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).</h2>
+        <h2 id="project_tagline">A WordPress plugin to manage INCI
+            (International Nomenclature of Cosmetic Ingredients).</h2>
 
         <section id="downloads">
             <a class="zip_download_link"
@@ -44,7 +45,102 @@
                     class="octicon octicon-link"></span></a><img
                 src="https://raw.githubusercontent.com/xlthlx/wp-inci/master/admin/images/menu.png"
                 alt="WP Plugin" title="WordPress Plugin"> WP INCI</h1>
-        <p>A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).</p>
+        <p>A WordPress plugin to manage INCI (International Nomenclature of
+            Cosmetic Ingredients).</p>
+        A WordPress plugin to manage INCI (International Nomenclature of
+        Cosmetic Ingredients).
+
+        You can set up your database of ingredients and products and easily
+        insert a product table into posts and pages using a shortcode. There is
+        an example product with ingredients into the <a
+            href="https://github.com/xlthlx/wp-inci/tree/master/data"><code>data</code></a> directory
+        that can be imported using the standard WordPress Importer.
+        <h2>Plugin Features</h2>
+        <ul>
+            <li>Custom Post Type Ingredient: it comes with a function list, a
+                source list and a visual safety field.
+            </li>
+            <li>Custom Post Type Product: it comes with a brand taxonomy.</li>
+            <li>Options: possibility to exclude the default CSS, copy it into
+                your style.css and customize it; change the disclaimer content.
+            </li>
+            <li>Shortcode: in the product list, there is a column where you can
+                copy the 'basic' shortcode relative to a specific product. If
+                you need a different way to display it, you can:
+                <ol>
+                    <li>specify a different title Example: <code>[wp_inci_product
+                        id="33591" title="My custom title"]</code></li>
+                    <li>automatically insert the product permalink
+                        Example: <code>[wp_inci_product id="33591"
+                            link="true"]</code></li>
+                    <li>remove the ingredients listing Example: <code>[wp_inci_product
+                        id="33591" link="true" list="false"]</code></li>
+                </ol>
+            </li>
+            <li>Italian translation.</li>
+        </ul>
+        <h2>Screenshots</h2>
+        <ol>
+            <li>Ingredients list and single ingredient</li>
+        </ol>
+        <a href="https://github.com/xlthlx/wp-inci/blob/master/screenshot-1.gif"
+           target="_blank" rel="noopener noreferrer"><img
+                src="https://github.com/xlthlx/wp-inci/raw/master/screenshot-1.gif"
+                alt="Ingredients list and single ingredient"/></a>
+        <ol start="2">
+            <li>Product list and single product</li>
+        </ol>
+        <a href="https://github.com/xlthlx/wp-inci/blob/master/screenshot-2.gif"
+           target="_blank" rel="noopener noreferrer"><img
+                src="https://github.com/xlthlx/wp-inci/raw/master/screenshot-2.gif"
+                alt="Product list and single product"/></a>
+        <ol start="3">
+            <li>How to manage options</li>
+        </ol>
+        <a href="https://github.com/xlthlx/wp-inci/blob/master/screenshot-3.gif"
+           target="_blank" rel="noopener noreferrer"><img
+                src="https://github.com/xlthlx/wp-inci/raw/master/screenshot-3.gif"
+                alt="How to manage options"/></a>
+        <ol start="4">
+            <li>How to use the product shortcode</li>
+        </ol>
+        <a href="https://github.com/xlthlx/wp-inci/blob/master/screenshot-4.gif"
+           target="_blank" rel="noopener noreferrer"><img
+                src="https://github.com/xlthlx/wp-inci/raw/master/screenshot-4.gif"
+                alt="How to use the product shortcode"/></a>
+        <ol start="5">
+            <li>Post example</li>
+        </ol>
+        <a href="https://github.com/xlthlx/wp-inci/blob/master/screenshot-5.gif"
+           target="_blank" rel="noopener noreferrer"><img
+                src="https://github.com/xlthlx/wp-inci/raw/master/screenshot-5.gif"
+                alt="Post example"/></a>
+        <h3>Changelog</h3>
+        <h4>1.0</h4>
+        <ul>
+            <li>First release</li>
+        </ul>
+        <h2>Installation</h2>
+        <ol>
+            <li>Upload <code>wp-inci</code> folder to the <code>/wp-content/plugins/</code> directory
+            </li>
+            <li>Activate the plugin through the 'Plugins' menu in WordPress</li>
+            <li>Enjoy</li>
+        </ol>
+        <h2>Credits</h2>
+        <ul>
+            <li><a href="https://en-gb.wordpress.org/plugins/cmb2/"
+                   rel="nofollow">CMB2</a> by <a href="https://cmb2.io/"
+                                                 rel="nofollow">CMB2 team</a>
+            </li>
+            <li><a href="https://github.com/johnbillion/extended-cpts">Extended
+                CPTs</a> by <a href="https://johnblackbourn.com/"
+                               rel="nofollow">John Blackbourn</a></li>
+        </ul>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Can I translate the plugin interface?</h3>
+        Yes, just edit the .POT file in the <a
+            href="https://github.com/xlthlx/wp-inci/tree/master/languages"><code>languages</code></a> folder.
     </section>
 </div>
 
