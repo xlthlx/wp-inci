@@ -13,11 +13,11 @@ There is an example product with ingredients into the [`data`](https://github.co
 * Shortcode: in the product list, there is a column where you can copy the 'basic' shortcode relative to a specific product.
 If you need a different way to display it, you can:
 
-    1. specify a different title
+    * specify a different title
     Example: `[wp_inci_product id="33591" title="My custom title"]`
-    2. automatically insert the product permalink
+    * automatically insert the product permalink
     Example: `[wp_inci_product id="33591" link="true"]`
-    3. remove the ingredients listing
+    * remove the ingredients listing
     Example: `[wp_inci_product id="33591" link="true" list="false"]`
 
 * Italian translation.
