@@ -117,7 +117,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			$ingredients = get_post_meta( $post_id, 'ingredients', true );
 			if ( ! empty( $ingredients ) ) {
 				$output .= '
-				<table class="table-sm table-borderless table-responsive wp-inci">
+				<table class="wp-inci">
 						<tbody>';
 				foreach ( $ingredients as $ingredient ) {
 					$output .= $this->wp_inci_get_ingredient( $ingredient );
@@ -129,9 +129,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 
 			$may_contain = get_post_meta( $post_id, 'may_contain', true );
 			if ( ! empty( $may_contain ) ) {
-				$output .= '<h5>' . __( 'MAY CONTAIN', 'wp-inci' ) . '</h5>';
+				$output .= '<h4>' . __( 'MAY CONTAIN', 'wp-inci' ) . '</h4>';
 				$output .= '
-				<table class="table-sm table-borderless table-responsive wp-inci">
+				<table class="wp-inci">
 						<tbody>';
 				foreach ( $may_contain as $may ) {
 					$output .= $this->wp_inci_get_ingredient( $may );
@@ -157,7 +157,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			global $post;
 
 			if ( ( $post->post_type === 'product' ) && is_singular() && in_the_loop() && is_main_query() ) {
-				$output = $this->wp_inci_get_ingredients_table( $post->ID );
+				$output = '<div class="wp-inci">' . $this->wp_inci_get_ingredients_table( $post->ID ) . '</div>';
 
 				return $content . $output;
 			}

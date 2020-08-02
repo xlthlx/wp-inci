@@ -1,4 +1,4 @@
-# ![WP Plugin](https://github.com/xlthlx/wp-inci/blob/master/admin/images/menu.png "WordPress Plugin") WP INCI
+# ![WP Plugin](https://github.com/xlthlx/wp-inci/blob/master/admin/img/icon.png "WordPress Plugin") WP INCI
 A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
 
 You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
@@ -25,25 +25,33 @@ If you need a different way to display it, you can:
 
 1. Ingredients list and single ingredient
 
-![Ingredients list and single ingredient](https://github.com/xlthlx/wp-inci/blob/master/screenshot-1.gif)
+![Ingredients list and single ingredient](https://github.com/xlthlx/wp-inci/blob/master/img/screenshot-1.gif)
 
 2. Product list and single product
 
-![Product list and single product](https://github.com/xlthlx/wp-inci/blob/master/screenshot-2.gif) 
+![Product list and single product](https://github.com/xlthlx/wp-inci/blob/master/img/screenshot-2.gif)
 
 3. How to manage options
 
-![How to manage options](https://github.com/xlthlx/wp-inci/blob/master/screenshot-3.gif) 
+![How to manage options](https://github.com/xlthlx/wp-inci/blob/master/img/screenshot-3.gif)
 
 4. How to use the product shortcode
 
-![How to use the product shortcode](https://github.com/xlthlx/wp-inci/blob/master/screenshot-4.gif) 
+![How to use the product shortcode](https://github.com/xlthlx/wp-inci/blob/master/img/screenshot-4.gif)
 
 5. Post example
 
-![Post example](https://github.com/xlthlx/wp-inci/blob/master/screenshot-5.gif) 
+![Post example](https://github.com/xlthlx/wp-inci/blob/master/img/screenshot-5.gif)
 
 ### Changelog
+
+#### 1.0.2
+* Fixed CSS
+* Added safety to ingredients list
+
+#### 1.0.1
+* Tested up to 5.5
+* Bugfix
 
 #### 1.0
 * First release

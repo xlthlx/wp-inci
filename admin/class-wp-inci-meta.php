@@ -27,6 +27,8 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 */
 		public function init() {
 
+			global $CMB2_Field_Input_Search_Ajax;
+
 			/**
 			 * Include and setup custom meta boxes and fields.
 			 */
@@ -36,6 +38,8 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_page_settings' ) );
 			add_action( 'admin_init', array( $this, 'wp_inci_remove_menu_page' ) );
 			add_filter( 'parent_file', array( $this, 'wp_inci_select_other_menu' ) );
+			remove_action( 'cmb2_render_input_search_ajax', array( $CMB2_Field_Input_Search_Ajax, 'render' ) );
+			add_action( 'cmb2_render_input_search_ajax', array( $this, 'wp_inci_render_list' ), 10, 5 );
 		}
 
 		/**
@@ -165,6 +169,110 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'5' => __( 'Double red', 'wp-inci' ),
 				),
 			) );
+
+			/**
+			 * Create the CAS Number field.
+			 */
+			$safety->add_field( array(
+				'name' => __( 'CAS #', 'wp-inci' ),
+				'id'   => 'cas_number',
+				'type' => 'text_small',
+			) );
+
+			/**
+			 * Create the EC Number field.
+			 */
+			$safety->add_field( array(
+				'name' => __( 'EC #', 'wp-inci' ),
+				'id'   => 'ec_number',
+				'type' => 'text_small',
+			) );
+
+			/**
+			 * Create the Cosmetic Restriction field.
+			 */
+			$safety->add_field( array(
+				'name' => __( 'Cosmetic Restriction', 'wp-inci' ),
+				'id'   => 'cosmetic_restriction',
+				'type' => 'text_small',
+			) );
+		}
+
+
+		/**
+		 * Render list of ingredients with safety.
+		 *
+		 * @param $field
+		 * @param $value
+		 * @param $object_id
+		 * @param $object_type
+		 * @param $field_type
+		 */
+		public function wp_inci_render_list( $field, $value, $object_id, $object_type, $field_type ) {
+			global $CMB2_Field_Input_Search_Ajax;
+
+			$CMB2_Field_Input_Search_Ajax->setup_admin_scripts();
+			$field_name = $field->_name();
+
+			if ( 1 !== $field->args( 'limit' ) ) {
+				echo '<ul class="cmb-post-search-ajax-results" id="' . $field_name . '_results">';
+				if ( isset( $value ) && ! empty( $value ) ) {
+					if ( ! is_array( $value ) ) {
+						$value = array( $value );
+					}
+					foreach ( $value as $val ) {
+						$handle = ( $field->args( 'sortable' ) ) ? '<span class="handle"></span>' : '';
+						if ( $field->args( 'object_type' ) === 'user' ) {
+							$guid  = get_edit_user_link( $val );
+							$user  = get_userdata( $val );
+							$title = $user->display_name;
+						} else {
+							$guid  = get_edit_post_link( $val );
+							$title = get_the_title( $val );
+						}
+
+						$safety = ( WP_Inci::get_instance() )->wp_inci_get_safety_html( $val );
+						$title  = '<div class="wi_wrapper">' . $safety . '<div class="wi_value">' . $title . '</div></div>';
+
+						echo '<li>' . $handle . '<input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '"><a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
+					}
+				}
+				echo '</ul>';
+				$field_value = '';
+			} else {
+				if ( is_array( $value ) ) {
+					$value = $value[0];
+				}
+				if ( $field->args( 'object_type' ) === 'user' ) {
+					$field_value = ( $value ? get_userdata( $value )->display_name : '' );
+				} else {
+					$field_value = ( $value ? get_the_title( $value ) : '' );
+				}
+				echo $field_type->input( array(
+					'type'  => 'hidden',
+					'name'  => $field_name . '_results',
+					'value' => $value,
+					'desc'  => false
+				) );
+			}
+
+			echo $field_type->input( array(
+				'type'           => 'text',
+				'name'           => $field_name,
+				'id'             => $field_name,
+				'class'          => 'cmb-post-search-ajax',
+				'value'          => $field_value,
+				'desc'           => false,
+				'data-limit'     => $field->args( 'limit' ) ?: '1',
+				'data-sortable'  => $field->args( 'sortable' ) ?: '0',
+				'data-object'    => $field->args( 'object_type' ) ?: 'post',
+				'data-queryargs' => $field->args( 'query_args' ) ? htmlspecialchars( json_encode( $field->args( 'query_args' ) ), ENT_QUOTES, 'UTF-8' ) : ''
+			) );
+
+			echo '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb-post-search-ajax-spinner" />';
+
+			$field_type->_desc( true, true );
+
 		}
 
 
@@ -179,99 +287,55 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		}
 
 		/**
-		 * Sets CSS for default style.
+		 * Check filsystem credentials.
+		 *
+		 * @param $url
+		 * @param $method
+		 * @param $context
+		 * @param null $fields
+		 *
+		 * @return bool
 		 */
-		public function wp_inci_default_style(): string {
-			return "
-table.wp-inci {
-	max-width: 100%;
-	margin-bottom: 1em
-}
+		public function wp_inci_connect( $url, $method, $context, $fields = null ) {
 
-table.wp-inci th {
-	text-align: left;
-	padding: 5px
-}
+			if ( false === ( $credentials = request_filesystem_credentials( $url, $method, false, $context, $fields ) ) ) {
+				return false;
+			}
 
-table.wp-inci td {
-	padding: 5px 5px 0;
-	vertical-align: top;
-	min-width: 55px
-}
+			if ( ! WP_Filesystem( $credentials ) ) {
+				request_filesystem_credentials( $url, $method, true, $context );
 
-table.wp-inci h5 {
-	margin-bottom: 5px
-}
+				return false;
+			}
 
-table.wp-inci h6 {
-	margin-bottom: 5px;
-	font-size: small
-}
+			return true;
+		}
 
-table.wp-inci .disclaimer {
-	font-size: small
-}
+		/**
+		 * Sets CSS for default style reading the content of the CSS.
+		 */
+		public function wp_inci_default_style() {
+			global $wp_filesystem;
 
-table.wp-inci .first {
-	margin-right: 1px;
-	margin-bottom: 5px
-}
+			$url = wp_nonce_url( "options-general.php?page=wp_inci_settings" );
 
-table.wp-inci div.g {
-	background-color: #32cd32;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #32cd32;
-	height: 20px;
-	width: 20px;
-	display: inline-table
-}
+			if ( $this->wp_inci_connect( $url, "", WP_PLUGIN_DIR . "/wp-inci/public/css" ) ) {
+				$dir  = $wp_filesystem->find_folder( WP_PLUGIN_DIR . "/wp-inci/public/css" );
+				$file = trailingslashit( $dir ) . "wp-inci.css";
 
-table.wp-inci div.r {
-	background-color: #dc143c;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #dc143c;
-	height: 20px;
-	width: 20px;
-	display: inline-table
-}
-
-table.wp-inci div.y {
-	background-color: #ffd700;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #ffd700;
-	height: 20px;
-	width: 20px;
-	display: inline-table
-}
-
-table.wp-inci div.w {
-	background-color: #eee;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #eee;
-	height: 20px;
-	width: 20px;
-	display: inline-table
-}
-
-.disclaimer {
-	font-style: italic;
-	font-size: 80%;
-	font-weight: 400;
-	line-height: normal;
-	color: #6c757d !important;
-}";
+				if ( $wp_filesystem->exists( $file ) ) {
+					$text = $wp_filesystem->get_contents( $file );
+					if ( ! $text ) {
+						return "";
+					} else {
+						return $text;
+					}
+				} else {
+					return new WP_Error( "filesystem_error", "File doesn't exist" );
+				}
+			} else {
+				return new WP_Error( "filesystem_error", "Cannot initialize filesystem" );
+			}
 		}
 
 
@@ -280,7 +344,7 @@ table.wp-inci div.w {
 		 */
 		public function wp_inci_copy_button() {
 			echo "<script>var wi_style=`" . $this->wp_inci_default_style() . "`;";
-			echo "var wi_msg='". __( 'Style copied to clipboard.', 'wp-inci' ) ."';</script>";
+			echo "var wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>";
 			echo '<button id="copy_style" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>';
 		}
 

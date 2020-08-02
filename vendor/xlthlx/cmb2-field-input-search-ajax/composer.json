@@ -2,7 +2,7 @@
     "name": "xlthlx/cmb2-field-input-search-ajax",
     "description": "CMB2 field type input autocomplete to add a list of post or post type to another. Based on https://github.com/alexis-magina/cmb2-field-post-search-ajax",
     "homepage": "https://github.com/xlthlx/cmb2-field-input-search-ajax",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "GPL-3.0-or-later",
     "authors": [
         {

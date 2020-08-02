@@ -1,98 +1,81 @@
-/**
- * WP INCI
- * Frontend CSS
- *
- * @package wp-inci
- * @author  xlthlx <github@piccioni.london>
- *
- */
+.wp-inci h4 {
+    margin-bottom: 1em;
+    font-size: .83em
+}
 
 table.wp-inci {
-	max-width: 100%;
-	margin-bottom: 1em
+    max-width: 100% !important;
+    margin-bottom: 1em !important;
+    border: 0 !important
 }
 
 table.wp-inci th {
-	text-align: left;
-	padding: 5px
+    text-align: left;
+    padding: 5px
+}
+
+table.wp-inci tr {
+    font-size: .9rem;
+    line-height: 1.5
 }
 
 table.wp-inci td {
-	padding: 5px 5px 0;
-	vertical-align: top;
-	min-width: 55px
+    padding: 5px 5px 0;
+    vertical-align: middle;
+    min-width: 70px;
+    border: 0;
+    word-break: break-all
 }
 
-table.wp-inci h5 {
-	margin-bottom: 5px
-}
-
-table.wp-inci h6 {
-	margin-bottom: 5px;
-	font-size: small
+table.wp-inci td:first-child {
+    width: 70px
 }
 
 table.wp-inci .disclaimer {
-	font-size: small
+    font-size: small
 }
 
 table.wp-inci .first {
-	margin-right: 1px;
-	margin-bottom: 5px
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+table.wp-inci div {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    height: 25px;
+    width: 25px;
+    max-width: 25px;
+    max-height: 25px;
+    display: inline-table
 }
 
 table.wp-inci div.g {
-	background-color: #32cd32;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #32cd32;
-	height: 20px;
-	width: 20px;
-	display: inline-table
+    background-color: #32cd32;
+    color: #32cd32
 }
 
 table.wp-inci div.r {
-	background-color: #dc143c;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #dc143c;
-	height: 20px;
-	width: 20px;
-	display: inline-table
+    background-color: #dc143c;
+    color: #dc143c
 }
 
 table.wp-inci div.y {
-	background-color: #ffd700;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #ffd700;
-	height: 20px;
-	width: 20px;
-	display: inline-table
+    background-color: #ffd700;
+    color: #ffd700
 }
 
 table.wp-inci div.w {
-	background-color: #eee;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 0;
-	color: #eee;
-	height: 20px;
-	width: 20px;
-	display: inline-table
+    background-color: #eee;
+    color: #eee
 }
 
 .disclaimer {
-	font-style: italic;
-	font-size: 80%;
-	font-weight: 400;
-	line-height: normal;
-	color: #6c757d !important;
+    font-style: italic;
+    font-size: 80%;
+    font-weight: 400;
+    line-height: normal;
+    color: #6c757d !important
 }

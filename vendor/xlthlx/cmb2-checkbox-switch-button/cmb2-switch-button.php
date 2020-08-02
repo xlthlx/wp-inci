@@ -26,7 +26,7 @@ if ( ! class_exists( 'CMB2_Checkbox_Switch_Button' ) ) {
 		/**
 		 * Current version number.
 		 */
-		protected static $version = '1.0.0';
+		private $version = '1.0.1';
 
 		/**
 		 * Url for this plugin.
