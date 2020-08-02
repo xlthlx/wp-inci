@@ -1,4 +1,4 @@
-# ![WP Plugin](https://github.com/xlthlx/wp-inci/blob/master/admin/img/icon.png "WordPress Plugin") WP INCI
+# ![WP Plugin](https://github.com/xlthlx/wp-inci/blob/master/img/icon.png "WordPress Plugin") WP INCI
 A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
 
 You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
