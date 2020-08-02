@@ -27,27 +27,19 @@
 		<title>WP INCI</title>
 		<link>http://localhost</link>
 		<description>WP INCI Sample Product</description>
-		<pubDate>Fri, 24 Jul 2020 16:32:32 +0000</pubDate>
+		<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 		<language>en-US</language>
 		<wp:wxr_version>1.2</wp:wxr_version>
 		<wp:base_site_url>http://localhost</wp:base_site_url>
 		<wp:base_blog_url>http://localhost</wp:base_blog_url>
-
 		<wp:author>
 			<wp:author_id>1</wp:author_id>
-			<wp:author_login><![CDATA[admin]]></wp:author_login>
-			<wp:author_email><![CDATA[admin@localhost.invalid]]></wp:author_email>
-			<wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+			<wp:author_login><![CDATA[xlthlx]]></wp:author_login>
+			<wp:author_email><![CDATA[github@xlthlx.com]]></wp:author_email>
+			<wp:author_display_name><![CDATA[xlthlx]]></wp:author_display_name>
 			<wp:author_first_name><![CDATA[]]></wp:author_first_name>
 			<wp:author_last_name><![CDATA[]]></wp:author_last_name>
 		</wp:author>
-
-		<wp:category>
-			<wp:term_id>1</wp:term_id>
-			<wp:category_nicename><![CDATA[default]]></wp:category_nicename>
-			<wp:category_parent><![CDATA[]]></wp:category_parent>
-			<wp:cat_name><![CDATA[default]]></wp:cat_name>
-		</wp:category>
 		<wp:term>
 			<wp:term_id><![CDATA[34]]></wp:term_id>
 			<wp:term_taxonomy><![CDATA[functions]]></wp:term_taxonomy>
@@ -293,7 +285,7 @@
 		<item>
 			<title>AQUA / WATER</title>
 			<link>http://localhost/?ingredient=aqua</link>
-			<pubDate>Thu, 23 Jul 2020 18:02:30 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=35</guid>
 			<description></description>
@@ -325,7 +317,7 @@
 		<item>
 			<title>GLYCERIN</title>
 			<link>http://localhost/?ingredient=glycerin</link>
-			<pubDate>Thu, 23 Jul 2020 18:05:21 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=37</guid>
 			<description></description>
@@ -358,7 +350,7 @@
 		<item>
 			<title>CAPRYLYL METHICONE</title>
 			<link>http://localhost/?ingredient=caprylyl-methicone</link>
-			<pubDate>Thu, 23 Jul 2020 18:08:13 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=39</guid>
 			<description></description>
@@ -390,7 +382,7 @@
 		<item>
 			<title>PROPANEDIOL</title>
 			<link>http://localhost/?ingredient=propanediol</link>
-			<pubDate>Thu, 23 Jul 2020 18:13:36 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=41</guid>
 			<description></description>
@@ -425,7 +417,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>DIMETHICONE</title>
 			<link>http://localhost/?ingredient=dimethicone</link>
-			<pubDate>Thu, 23 Jul 2020 18:17:25 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=43</guid>
 			<description></description>
@@ -459,7 +451,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>PENTYLENE GLYCOL</title>
 			<link>http://localhost/?ingredient=pentylene-glycol</link>
-			<pubDate>Thu, 23 Jul 2020 18:36:28 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=45</guid>
 			<description></description>
@@ -493,7 +485,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>DIMETHICONE/PEG-10/15 CROSSPOLYMER</title>
 			<link>http://localhost/?ingredient=dimethicone-peg-10-15-crosspolymer</link>
-			<pubDate>Thu, 23 Jul 2020 18:38:41 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=48</guid>
 			<description></description>
@@ -525,7 +517,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>ALCOHOL DENAT.</title>
 			<link>http://localhost/?ingredient=alcohol-denat</link>
-			<pubDate>Thu, 23 Jul 2020 18:39:49 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=50</guid>
 			<description></description>
@@ -557,7 +549,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>SODIUM CHLORIDE</title>
 			<link>http://localhost/?ingredient=sodium-chloride</link>
-			<pubDate>Thu, 23 Jul 2020 18:41:50 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=52</guid>
 			<description></description>
@@ -590,7 +582,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>TRIETHOXYSILYLETHYL POLYDIMETHYLSILOXYETHYL DIMETHICONE</title>
 			<link>http://localhost/?ingredient=triethoxysilylethyl-polydimethylsiloxyethyl-dimethicone</link>
-			<pubDate>Thu, 23 Jul 2020 18:42:45 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=55</guid>
 			<description></description>
@@ -622,7 +614,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>ISOPROPYL TITANIUM TRIISOSTEARATE</title>
 			<link>http://localhost/?ingredient=isopropyl-titanium-triisostearate</link>
-			<pubDate>Thu, 23 Jul 2020 18:44:25 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=57</guid>
 			<description></description>
@@ -655,7 +647,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>ALUMINA</title>
 			<link>http://localhost/?ingredient=alumina</link>
-			<pubDate>Thu, 23 Jul 2020 18:47:57 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=59</guid>
 			<description></description>
@@ -691,7 +683,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<item>
 			<title>CAPRYLYL GLYCOL</title>
 			<link>http://localhost/?ingredient=caprylyl-glycol</link>
-			<pubDate>Thu, 23 Jul 2020 18:51:28 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=61</guid>
 			<description></description>
@@ -728,7 +720,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>PHENOXYETHANOL</title>
 			<link>http://localhost/?ingredient=phenoxyethanol</link>
-			<pubDate>Thu, 23 Jul 2020 18:54:59 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=66</guid>
 			<description></description>
@@ -761,7 +753,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>DISODIUM EDTA</title>
 			<link>http://localhost/?ingredient=disodium-edta</link>
-			<pubDate>Fri, 24 Jul 2020 07:55:56 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=71</guid>
 			<description></description>
@@ -794,7 +786,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>DIPROPYLENE GLYCOL</title>
 			<link>http://localhost/?ingredient=dipropylene-glycol</link>
-			<pubDate>Fri, 24 Jul 2020 07:57:27 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=73</guid>
 			<description></description>
@@ -827,7 +819,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>SODIUM HYALURONATE</title>
 			<link>http://localhost/?ingredient=sodium-hyaluronate</link>
-			<pubDate>Fri, 24 Jul 2020 07:58:34 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=75</guid>
 			<description></description>
@@ -860,7 +852,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>SODIUM CITRATE</title>
 			<link>http://localhost/?ingredient=sodium-citrate</link>
-			<pubDate>Fri, 24 Jul 2020 08:00:04 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=77</guid>
 			<description></description>
@@ -893,7 +885,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>TOCOPHEROL</title>
 			<link>http://localhost/?ingredient=tocopherol</link>
-			<pubDate>Fri, 24 Jul 2020 08:01:22 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=79</guid>
 			<description></description>
@@ -927,7 +919,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<item>
 			<title>Giorgio Armani Neo Nude Glow Foundation</title>
 			<link>http://localhost/product/giorgio-armani-neo-nude-glow-foundation/</link>
-			<pubDate>Thu, 23 Jul 2020 18:18:09 +0000</pubDate>
+			<pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
 			<dc:creator><![CDATA[admin]]></dc:creator>
 			<guid isPermaLink="false">http://localhost/?post_type=product&#038;p=31</guid>
 			<description></description>
