@@ -7,9 +7,7 @@
   "require": {
     "cmb2/cmb2": "^2.7",
     "composer/installers": "^1.9",
-    "johnbillion/extended-cpts": "^4.3",
-    "xlthlx/cmb2-checkbox-switch-button": "^1.0",
-    "xlthlx/cmb2-field-input-search-ajax": "^1.0"
+    "johnbillion/extended-cpts": "^4.3"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

@@ -5,8 +5,7 @@
  * Frontend Class
  *
  * @package         wp-inci
- * @subpackage      wp-inci_frontend.php
- * @author          xlthlx <github@piccioni.london>Wp_Inci_Frontend
+ * @author          xlthlx <wp-inci@piccioni.london>
  *
  */
 if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
@@ -38,9 +37,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			/**
 			 * Add CSS into queue, add content filter for ingredients table and product shortcode.
 			 */
-			add_action( 'wp_enqueue_scripts', array( $this, 'wp_inci_enqueue_style' ) );
-			add_filter( 'the_content', array( $this, 'wp_inci_show_ingredients_table' ), 10, 1 );
-			add_action( 'init', array( $this, 'wp_inci_add_product_shortcode' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'wi_enqueue_style' ) );
+			add_filter( 'the_content', array( $this, 'wi_content_ingredients' ), 10, 1 );
+			add_action( 'init', array( $this, 'wi_add_product_shortcode' ) );
 		}
 
 		/**
@@ -60,9 +59,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Load the plugin text domain for translation.
 		 */
-		public function wp_inci_enqueue_style() {
+		public function wi_enqueue_style() {
 
-			$disable_style = cmb2_get_option( 'wp_inci_settings', 'disable_style' );
+			$disable_style = cmb2_get_option( 'wi_settings', 'wi_disable_style' );
 
 			wp_enqueue_style( 'wp-inci', esc_url( plugins_url( 'css/wp-inci.min.css', __FILE__ ) ) );
 
@@ -80,7 +79,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return bool|string
 		 */
-		public function wp_inci_get_ingredient( $ingredient ) {
+		public function get_ingredient( $ingredient ) {
 			$output = false;
 			$post   = get_post( $ingredient );
 
@@ -94,7 +93,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				$output = '
 					<tr>
 							<td>';
-				$output .= ( WP_Inci::get_instance() )->wp_inci_get_safety_html( $post->ID );
+				$output .= ( WP_Inci::get_instance() )->get_safety_html( $post->ID );
 				$output .= '	</td>
 							<td>';
 				$output .= $post->post_title . $functions;
@@ -112,7 +111,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function wp_inci_get_ingredients_table( $post_id ): string {
+		public function get_ingredients_table( $post_id ): string {
 			$output      = '';
 			$ingredients = get_post_meta( $post_id, 'ingredients', true );
 			if ( ! empty( $ingredients ) ) {
@@ -120,7 +119,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				<table class="wp-inci">
 						<tbody>';
 				foreach ( $ingredients as $ingredient ) {
-					$output .= $this->wp_inci_get_ingredient( $ingredient );
+					$output .= $this->get_ingredient( $ingredient );
 				}
 
 				$output .= '</tbody>
@@ -134,14 +133,14 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				<table class="wp-inci">
 						<tbody>';
 				foreach ( $may_contain as $may ) {
-					$output .= $this->wp_inci_get_ingredient( $may );
+					$output .= $this->get_ingredient( $may );
 				}
 
 				$output .= '</tbody>
 					</table>';
 			}
 
-			$output .= '<div class="disclaimer">' . cmb2_get_option( 'wp_inci_disclaimer_options', 'textarea_disclaimer', $this->wp_inci_default_disclaimer() ) . '</div>';
+			$output .= '<div class="disclaimer">' . cmb2_get_option( 'wi_disclaimer', 'textarea_disclaimer', $this->wi_default_disclaimer() ) . '</div>';
 
 			return $output;
 		}
@@ -153,11 +152,14 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return string $content
 		 */
-		public function wp_inci_show_ingredients_table( $content ): string {
+		public function wi_content_ingredients( $content ): string {
 			global $post;
+			$output = '';
 
-			if ( ( $post->post_type === 'product' ) && is_singular() && in_the_loop() && is_main_query() ) {
-				$output = '<div class="wp-inci">' . $this->wp_inci_get_ingredients_table( $post->ID ) . '</div>';
+			if ( is_singular() && in_the_loop() && is_main_query() ) {
+				if ( $post->post_type == 'product' ) {
+					$output = '<div class="wp-inci">' . $this->get_ingredients_table( $post->ID ) . '</div>';
+				}
 
 				return $content . $output;
 			}
@@ -168,9 +170,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Add the product shortcode.
 		 */
-		public function wp_inci_add_product_shortcode() {
+		public function wi_add_product_shortcode() {
 			if ( ! shortcode_exists( 'wp_inci_product' ) ) {
-				add_shortcode( 'wp_inci_product', array( $this, 'wp_inci_product_shortcode' ) );
+				add_shortcode( 'wp_inci_product', array( $this, 'wi_product_shortcode' ) );
 			}
 		}
 
@@ -183,7 +185,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function wp_inci_product_shortcode( $atts, $content, $shortcode ): string {
+		public function wi_product_shortcode( $atts, $content, $shortcode ): string {
 
 			// Example: [wp_inci_product id="33591" title="My custom title" link="true" list="false"]
 			// Basic use: [wp_inci_product id="33591"]
@@ -226,7 +228,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				$output .= $start . $title . $end;
 
 				if ( 'true' === $atts['list'] ) {
-					$output .= $this->wp_inci_get_ingredients_table( $atts['id'] );
+					$output .= $this->get_ingredients_table( $atts['id'] );
 				}
 
 				if ( '' !== $content ) {

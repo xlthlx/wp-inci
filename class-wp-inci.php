@@ -6,7 +6,7 @@
  * Main class for subclassing backend and frontend class.
  *
  * @package         wp-inci
- * @author          xlthlx <github@piccioni.london>
+ * @author          xlthlx <wp-inci@piccioni.london>
  *
  */
 if ( ! class_exists( 'WP_Inci', false ) ) {
@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $version = "1.0.2";
+		public $version = "1.1.0";
 
 		/**
 		 * release.minor.revision
@@ -33,8 +33,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @var integer
 		 */
 		public $release = 1;
-		public $minor = 0;
-		public $revision = 2;
+		public $minor = 1;
+		public $revision = 0;
 
 		/**
 		 * Plugin name
@@ -98,6 +98,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 
 		}
 
+		/**
+		 * Standard init.
+		 */
 		public function init() {
 			/**
 			 * Add Custom Post Types.
@@ -124,15 +127,15 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * Add Custom Post Types and Taxonomies.
 		 */
 		public function post_type_init() {
-			$this->wp_inci_ingredients_post_type();
-			$this->wp_inci_products_post_type();
+			$this->ingredients_post_type();
+			$this->products_post_type();
 
 		}
 
 		/**
 		 * Register Custom Post Type Ingredient and Functions and Source Taxonomy.
 		 */
-		public function wp_inci_ingredients_post_type() {
+		public function ingredients_post_type() {
 
 			$ingredients_labels = array(
 				'name'                     => __( 'Ingredients', 'wp-inci' ),
@@ -189,7 +192,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 						'title'    => __( 'Safety', 'wp-inci' ),
 						'function' => function () {
 							global $post;
-							echo $this->wp_inci_get_safety_html( $post->ID );
+							echo $this->get_safety_html( $post->ID );
 						},
 					),
 					'functions' => array(
@@ -320,9 +323,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function wp_inci_get_safety_html( $post_id ): string {
+		public function get_safety_html( $post_id ): string {
 
-			$safety = $this->wp_inci_get_safety_value( $post_id );
+			$safety = $this->get_safety_value( $post_id );
 
 			return '<div class="' . $safety[0] . ' first">' . strtoupper( $safety[0] ) . '</div><div class="' . $safety[1] . ' second">' . strtoupper( $safety[1] ) . '</div>';
 		}
@@ -334,7 +337,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array $safety
 		 */
-		public function wp_inci_get_safety_value( $post_id ): array {
+		public function get_safety_value( $post_id ): array {
 
 			$safety = get_post_meta( $post_id, 'safety', true );
 
@@ -368,7 +371,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Register Custom Post Type Product and Brand Taxonomy.
 		 */
-		public function wp_inci_products_post_type() {
+		public function products_post_type() {
 
 			$product_labels = array(
 				'name'                     => __( 'Products', 'wp-inci' ),
@@ -484,10 +487,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'public'       => true,
 				'rewrite'      => true,
 				'hierarchical' => false,
-				'exclusive'    => true,
 				'labels'       => $brand_labels,
-				'show_in_rest' => true,
-				'meta_box'     => 'dropdown',
+				'meta_box_cb'  => false,
 			), array(
 				'singular' => __( 'Brand', 'wp-inci' ),
 				'plural'   => __( 'Brands', 'wp-inci' ),
@@ -500,7 +501,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Sets text for default disclaimer.
 		 */
-		public function wp_inci_default_disclaimer() {
+		public function wi_default_disclaimer() {
 			return __( "The evaluation of these ingredients reflects the opinion of the author, who is not a specialist in this field. This evaluation is based on some online databases (e.g. <a title=\"CosIng - Cosmetic ingredients database\" href=\"https://ec.europa.eu/growth/sectors/cosmetics/cosing/\" target=\"_blank\">CosIng</a>).", 'wp-inci' );
 		}
 

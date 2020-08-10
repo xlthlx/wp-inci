@@ -1,5 +1,5 @@
-# ![WP INCI](https://github.com/xlthlx/wp-inci/blob/master/img/banner.png "WordPress Plugin") 
- 
+# ![WP INCI](https://github.com/xlthlx/wp-inci/blob/master/img/banner.png "WordPress Plugin")
+
 **WP INCI** - A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
 
 You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
@@ -9,6 +9,7 @@ There is an example product with ingredients into the [`data`](https://github.co
 
 * Custom Post Type Ingredient: it comes with a function list, a source list and a visual safety field.
 * Custom Post Type Product: it comes with a brand taxonomy.
+* Single and multiple search for ingredients: check the ingredient against the local database, if no results get it from CosIng API
 * Options: possibility to exclude the default CSS, copy it into your style.css and customize it; change the disclaimer content.
 * Shortcode: in the product list, there is a column where you can copy the 'basic' shortcode relative to a specific product.
 If you need a different way to display it, you can:
@@ -46,6 +47,10 @@ If you need a different way to display it, you can:
 
 ### Changelog
 
+#### 1.1.0
+* New: ingredients multiple search
+* New: gets the ingredient from the CosIng API if not found on search
+
 #### 1.0.2
 * Fixed CSS
 * Added safety to ingredients list
@@ -66,6 +71,8 @@ If you need a different way to display it, you can:
 ## Credits
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
+* [CosIng, Cosmetic Ingredient Database API](https://public.opendatasoft.com/explore/dataset/cosmetic-ingredient-database-ingredients-and-fragrance-inventory/api/) by European Commission
+ Directorate-General for [Internal Market, Industry, Entrepreneurship and SMEs](https://ec.europa.eu/growth/index_en)
 
 ## Frequently Asked Questions
 

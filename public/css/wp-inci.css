@@ -16,19 +16,20 @@ table.wp-inci th {
 
 table.wp-inci tr {
     font-size: .9rem;
-    line-height: 1.5
+    line-height: initial
 }
 
 table.wp-inci td {
     padding: 5px 5px 0;
     vertical-align: middle;
-    min-width: 70px;
+    min-width: 60px;
     border: 0;
     word-break: break-all
 }
 
 table.wp-inci td:first-child {
-    width: 70px
+    width: 60px;
+    line-height: initial
 }
 
 table.wp-inci .disclaimer {
@@ -45,10 +46,10 @@ table.wp-inci div {
     -moz-border-radius: 3px;
     border-radius: 3px;
     border: 0;
-    height: 25px;
-    width: 25px;
-    max-width: 25px;
-    max-height: 25px;
+    height: 22px;
+    width: 22px;
+    max-width: 22px;
+    max-height: 22px;
     display: inline-table
 }
 

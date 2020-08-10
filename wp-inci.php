@@ -4,14 +4,14 @@
  *
  * @package           wp-inci
  * @author            xlthlx
- * @copyright         2020 xlthlx (email: github at piccioni.london)
+ * @copyright         2020 wp-inci (email: wp-inci at piccioni.london)
  * @license           GPLv3+
  *
  * @wordpress-plugin
  * Plugin Name:       WP INCI
- * Plugin URI:        https://github.com/xlthlx/wp-inci
+ * Plugin URI:        https://wordpress.org/plugins/wp-inci/
  * Description:       A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
- * Version:           1.0.2
+ * Version:           1.1.0
  * Requires at least: 5.2
  * Requires PHP:      7.0
  * Author:            xlthlx
@@ -50,24 +50,24 @@ if ( file_exists( __DIR__ . '/vendor/cmb2/cmb2/init.php' ) ) {
 }
 
 /**
- * CMB2 custom field "input_search_ajax" library.
- */
-if ( file_exists( __DIR__ . '/vendor/xlthlx/cmb2-field-input-search-ajax/cmb-field-input-search-ajax.php' ) ) {
-	require_once __DIR__ . '/vendor/xlthlx/cmb2-field-input-search-ajax/cmb-field-input-search-ajax.php';
-}
-
-/**
- * CMB2 Switch Button library.
- */
-if ( file_exists( __DIR__ . '/vendor/xlthlx/cmb2-checkbox-switch-button/cmb2-switch-button.php' ) ) {
-	require_once __DIR__ . '/vendor/xlthlx/cmb2-checkbox-switch-button/cmb2-switch-button.php';
-}
-
-/**
  * Main plugin class.
  */
 if ( file_exists( __DIR__ . '/class-wp-inci.php' ) ) {
 	require_once __DIR__ . '/class-wp-inci.php';
+}
+
+/**
+ * API class.
+ */
+if ( file_exists( __DIR__ . '/class-wp-inci-api.php' ) ) {
+	require_once __DIR__ . '/class-wp-inci-api.php';
+}
+
+/**
+ * CMB2 Fields.
+ */
+if ( file_exists( __DIR__ . '/class-wp-inci-fields.php' ) ) {
+	require_once __DIR__ . '/class-wp-inci-fields.php';
 }
 
 

@@ -5,7 +5,7 @@
  * Class for Manage Admin (back-end)
  *
  * @package         wp-inci
- * @author          xlthlx <github@piccioni.london>
+ * @author          xlthlx <wp-inci@piccioni.london>
  *
  */
 if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
@@ -23,23 +23,19 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		}
 
 		/**
-		 * Standard init
+		 * Standard init.
 		 */
 		public function init() {
-
-			global $CMB2_Field_Input_Search_Ajax;
-
 			/**
 			 * Include and setup custom meta boxes and fields.
 			 */
-			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_source_url' ) );
-			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_ingredients_repeater' ) );
-			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_safety_select' ) );
-			add_action( 'cmb2_admin_init', array( $this, 'wp_inci_register_page_settings' ) );
-			add_action( 'admin_init', array( $this, 'wp_inci_remove_menu_page' ) );
-			add_filter( 'parent_file', array( $this, 'wp_inci_select_other_menu' ) );
-			remove_action( 'cmb2_render_input_search_ajax', array( $CMB2_Field_Input_Search_Ajax, 'render' ) );
-			add_action( 'cmb2_render_input_search_ajax', array( $this, 'wp_inci_render_list' ), 10, 5 );
+			add_action( 'cmb2_admin_init', array( $this, 'register_source_url' ) );
+			add_action( 'cmb2_admin_init', array( $this, 'register_ingredients_repeater' ) );
+			add_action( 'cmb2_admin_init', array( $this, 'register_safety_select' ) );
+			add_action( 'cmb2_admin_init', array( $this, 'register_page_settings' ) );
+			add_action( 'cmb2_admin_init', array( $this, 'register_custom_brand_metabox' ) );
+			add_action( 'admin_init', array( $this, 'remove_menu_page' ) );
+			add_filter( 'parent_file', array( $this, 'select_other_menu' ) );
 		}
 
 		/**
@@ -59,10 +55,10 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		/**
 		 * Create new custom meta 'source_url' for Source taxonomy.
 		 */
-		public function wp_inci_register_source_url() {
+		public function register_source_url() {
 
 			$cmb_term = new_cmb2_box( array(
-				'id'               => 'wp_inci_source_url',
+				'id'               => 'source_url_add',
 				'title'            => __( 'Url', 'wp-inci' ),
 				'object_types'     => array( 'term' ),
 				'taxonomies'       => array( 'source' ),
@@ -81,7 +77,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		/**
 		 * Create new custom meta 'ingredients' and 'may_contain' for Product post type.
 		 */
-		public function wp_inci_register_ingredients_repeater() {
+		public function register_ingredients_repeater() {
 
 			$ingredients = new_cmb2_box( array(
 				'id'           => 'ingredients_search_ajax',
@@ -92,13 +88,12 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'show_names'   => false,
 			) );
 
+
 			$ingredients->add_field( array(
 				'name'       => __( 'Ingredient', 'wp-inci' ),
 				'id'         => 'ingredients',
-				'type'       => 'input_search_ajax',
-				'desc'       => __( 'Start typing ingredient name. No results found?',
-						'wp-inci' ) . ' <a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add New Ingredient',
-						'wp-inci' ) . '</a>',
+				'type'       => 'search_ajax',
+				'desc'       => __( 'Start typing ingredient name, then select one from the list. No results found?', 'wp-inci' ),
 				'sortable'   => true,
 				'limit'      => 10,
 				'query_args' => array(
@@ -115,17 +110,15 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'title'        => __( 'May Contain', 'wp-inci' ),
 				'object_types' => array( 'product' ),
 				'context'      => 'normal',
-				'priority'     => 'high',
+				'priority'     => 'default',
 				'show_names'   => false,
 			) );
 
 			$may_contain->add_field( array(
 				'name'       => __( 'May Contain', 'wp-inci' ),
 				'id'         => 'may_contain',
-				'type'       => 'input_search_ajax',
-				'desc'       => __( 'Start typing ingredient name. No results found?',
-						'wp-inci' ) . ' <a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add New Ingredient',
-						'wp-inci' ) . '</a>',
+				'type'       => 'search_ajax',
+				'desc'       => __( 'Start typing ingredient name, then select one from the list. No results found?', 'wp-inci' ),
 				'sortable'   => true,
 				'limit'      => 10,
 				'query_args' => array(
@@ -139,20 +132,18 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 
 		}
 
-
 		/**
 		 * Create the Safety select.
 		 */
-		public function wp_inci_register_safety_select() {
+		public function register_safety_select() {
 
 			$safety = new_cmb2_box( array(
 				'id'           => 'inci',
 				'title'        => __( 'INCI', 'wp-inci' ),
 				'object_types' => array( 'ingredient' ), // Post type
 				'context'      => 'side',
-				'priority'     => 'high',
+				'priority'     => 'default',
 				'show_names'   => true,
-				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 			$safety->add_field( array(
@@ -160,7 +151,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'id'               => 'safety',
 				'type'             => 'select',
 				'show_option_none' => true,
-				'before_field'     => array( $this, 'wp_inci_before_safety' ),
+				'before_field'     => array( $this, 'before_safety' ),
 				'options'          => array(
 					'1' => __( 'Double green', 'wp-inci' ),
 					'2' => __( 'Green', 'wp-inci' ),
@@ -168,6 +159,16 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'4' => __( 'Red', 'wp-inci' ),
 					'5' => __( 'Double red', 'wp-inci' ),
 				),
+			) );
+
+			$safety->add_field( array(
+				'id'   => 'cosing_id',
+				'type' => 'hidden',
+			) );
+
+			$safety->add_field( array(
+				'id'   => 'last_update',
+				'type' => 'hidden',
 			) );
 
 			/**
@@ -189,92 +190,14 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			) );
 
 			/**
-			 * Create the Cosmetic Restriction field.
+			 * Create the Restriction field.
 			 */
 			$safety->add_field( array(
-				'name' => __( 'Cosmetic Restriction', 'wp-inci' ),
-				'id'   => 'cosmetic_restriction',
+				'name' => __( 'Restrictions', 'wp-inci' ),
+				'id'   => 'restriction',
 				'type' => 'text_small',
 			) );
 		}
-
-
-		/**
-		 * Render list of ingredients with safety.
-		 *
-		 * @param $field
-		 * @param $value
-		 * @param $object_id
-		 * @param $object_type
-		 * @param $field_type
-		 */
-		public function wp_inci_render_list( $field, $value, $object_id, $object_type, $field_type ) {
-			global $CMB2_Field_Input_Search_Ajax;
-
-			$CMB2_Field_Input_Search_Ajax->setup_admin_scripts();
-			$field_name = $field->_name();
-
-			if ( 1 !== $field->args( 'limit' ) ) {
-				echo '<ul class="cmb-post-search-ajax-results" id="' . $field_name . '_results">';
-				if ( isset( $value ) && ! empty( $value ) ) {
-					if ( ! is_array( $value ) ) {
-						$value = array( $value );
-					}
-					foreach ( $value as $val ) {
-						$handle = ( $field->args( 'sortable' ) ) ? '<span class="handle"></span>' : '';
-						if ( $field->args( 'object_type' ) === 'user' ) {
-							$guid  = get_edit_user_link( $val );
-							$user  = get_userdata( $val );
-							$title = $user->display_name;
-						} else {
-							$guid  = get_edit_post_link( $val );
-							$title = get_the_title( $val );
-						}
-
-						$safety = ( WP_Inci::get_instance() )->wp_inci_get_safety_html( $val );
-						$title  = '<div class="wi_wrapper">' . $safety . '<div class="wi_value">' . $title . '</div></div>';
-
-						echo '<li>' . $handle . '<input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '"><a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
-					}
-				}
-				echo '</ul>';
-				$field_value = '';
-			} else {
-				if ( is_array( $value ) ) {
-					$value = $value[0];
-				}
-				if ( $field->args( 'object_type' ) === 'user' ) {
-					$field_value = ( $value ? get_userdata( $value )->display_name : '' );
-				} else {
-					$field_value = ( $value ? get_the_title( $value ) : '' );
-				}
-				echo $field_type->input( array(
-					'type'  => 'hidden',
-					'name'  => $field_name . '_results',
-					'value' => $value,
-					'desc'  => false
-				) );
-			}
-
-			echo $field_type->input( array(
-				'type'           => 'text',
-				'name'           => $field_name,
-				'id'             => $field_name,
-				'class'          => 'cmb-post-search-ajax',
-				'value'          => $field_value,
-				'desc'           => false,
-				'data-limit'     => $field->args( 'limit' ) ?: '1',
-				'data-sortable'  => $field->args( 'sortable' ) ?: '0',
-				'data-object'    => $field->args( 'object_type' ) ?: 'post',
-				'data-queryargs' => $field->args( 'query_args' ) ? htmlspecialchars( json_encode( $field->args( 'query_args' ) ), ENT_QUOTES, 'UTF-8' ) : ''
-			) );
-
-			echo '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb-post-search-ajax-spinner" />';
-
-			$field_type->_desc( true, true );
-
-		}
-
 
 		/**
 		 * Returns the safety custom meta with HTML before the Safety select.
@@ -282,12 +205,12 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @param $field_args
 		 * @param $field
 		 */
-		public function wp_inci_before_safety( $field_args, $field ) {
-			echo ( WP_Inci::get_instance() )->wp_inci_get_safety_html( $field->object_id );
+		public function before_safety( $field_args, $field ) {
+			echo ( WP_Inci::get_instance() )->get_safety_html( $field->object_id );
 		}
 
 		/**
-		 * Check filsystem credentials.
+		 * Check filesystem credentials.
 		 *
 		 * @param $url
 		 * @param $method
@@ -296,7 +219,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return bool
 		 */
-		public function wp_inci_connect( $url, $method, $context, $fields = null ) {
+		public function connect( $url, $method, $context, $fields = null ) {
 
 			if ( false === ( $credentials = request_filesystem_credentials( $url, $method, false, $context, $fields ) ) ) {
 				return false;
@@ -314,12 +237,12 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		/**
 		 * Sets CSS for default style reading the content of the CSS.
 		 */
-		public function wp_inci_default_style() {
+		public function default_style() {
 			global $wp_filesystem;
 
-			$url = wp_nonce_url( "options-general.php?page=wp_inci_settings" );
+			$url = wp_nonce_url( "options-general.php?page=settings" );
 
-			if ( $this->wp_inci_connect( $url, "", WP_PLUGIN_DIR . "/wp-inci/public/css" ) ) {
+			if ( $this->connect( $url, "", WP_PLUGIN_DIR . "/wp-inci/public/css" ) ) {
 				$dir  = $wp_filesystem->find_folder( WP_PLUGIN_DIR . "/wp-inci/public/css" );
 				$file = trailingslashit( $dir ) . "wp-inci.css";
 
@@ -338,29 +261,29 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			}
 		}
 
-
 		/**
 		 * Returns the button to copy the WP INCI style.
 		 */
-		public function wp_inci_copy_button() {
-			echo "<script>var wi_style=`" . $this->wp_inci_default_style() . "`;";
+		public function copy_button() {
+			echo "<script>var wi_style=`" . $this->default_style() . "`;";
 			echo "var wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>";
-			echo '<button id="copy_style" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>';
+			echo '<button id="copy_style" type="button" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>';
 		}
 
 		/**
 		 * Create WP INCI Settings page.
 		 */
-		public function wp_inci_register_page_settings() {
+		public function register_page_settings() {
 
 			$args = array(
-				'id'           => 'wp_inci_settings',
+				'id'           => 'wi_settings',
 				'title'        => __( 'WP INCI Settings', 'wp-inci' ),
 				'object_types' => array( 'options-page' ),
-				'option_key'   => 'wp_inci_settings',
-				'tab_group'    => 'wp_inci_settings',
+				'option_key'   => 'wi_settings',
+				'tab_group'    => 'wi_settings',
 				'tab_title'    => __( 'Settings', 'wp-inci' ),
 				'parent_slug'  => 'options-general.php',
+				'message_cb'   => array( $this, 'options_page_message_callback' ),
 			);
 
 			$main_options = new_cmb2_box( $args );
@@ -372,23 +295,15 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			 * Create style settings.
 			 */
 			$main_options->add_field( array(
-				'name'    => __( 'Disable WP INCI style', 'wp-inci' ),
-				'id'      => 'disable_style',
-				'desc'    => '',
-				'type'    => 'switch',
-				'default' => 'off',
-			) );
-
-
-			$main_options->add_field( array(
 				'name'        => __( 'WP INCI Default Style', 'wp-inci' ),
-				'desc'        => $desc,
+				'desc'        => '',
 				'id'          => 'textarea_style',
 				'type'        => 'textarea_code',
-				'default_cb'  => array( $this, 'wp_inci_default_style' ),
+				'default_cb'  => array( $this, 'default_style' ),
 				'save_field'  => false,
 				'attributes'  => array(
 					'readonly'        => 'readonly',
+					'disabled'        => 'disabled',
 					'data-codeeditor' => json_encode( array(
 						'codemirror' => array(
 							'mode'     => 'css',
@@ -396,21 +311,31 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 						),
 					) ),
 				),
-				'after_field' => array( $this, 'wp_inci_copy_button' ),
+				'after_field' => array( $this, 'copy_button' ),
 			) );
 
+			$main_options->add_field( array(
+				'name'           => __( 'Disable WP INCI style', 'wp-inci' ),
+				'id'             => 'wi_disable_style',
+				'desc'           => $desc,
+				'type'           => 'switch',
+				'default'        => 'off',
+				'active_value'   => 'on',
+				'inactive_value' => 'off',
+			) );
 
 			/**
 			 * Create disclaimer settings.
 			 */
 			$args = array(
-				'id'           => 'wp_inci_disclaimer',
+				'id'           => 'wi_disclaimer',
 				'title'        => __( 'WP INCI Disclaimer', 'wp-inci' ),
 				'object_types' => array( 'options-page' ),
-				'option_key'   => 'wp_inci_disclaimer',
+				'option_key'   => 'wi_disclaimer',
 				'parent_slug'  => 'options-general.php',
-				'tab_group'    => 'wp_inci_settings',
+				'tab_group'    => 'wi_settings',
 				'tab_title'    => __( 'Disclaimer', 'wp-inci' ),
+				'message_cb'   => array( $this, 'options_page_message_callback' ),
 			);
 
 			$secondary_options = new_cmb2_box( $args );
@@ -420,7 +345,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'desc'       => __( 'Add a disclaimer after WP INCI table of ingredients.', 'wp-inci' ),
 				'id'         => 'textarea_disclaimer',
 				'type'       => 'textarea_code',
-				'default_cb' => array( $this, 'wp_inci_default_disclaimer' ),
+				'default_cb' => array( $this, 'wi_default_disclaimer' ),
 			) );
 
 		}
@@ -428,10 +353,9 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		/**
 		 * Remove the disclaimer menu.
 		 */
-		public function wp_inci_remove_menu_page() {
-			remove_submenu_page( 'options-general.php', 'wp_inci_disclaimer' );
+		public function remove_menu_page() {
+			remove_submenu_page( 'options-general.php', 'wi_disclaimer' );
 		}
-
 
 		/**
 		 * Highlight the setting menu.
@@ -440,16 +364,58 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function wp_inci_select_other_menu( $parent_file ) {
+		public function select_other_menu( $parent_file ) {
 			global $plugin_page;
 
-			if ( 'wp_inci_disclaimer' === $plugin_page ) {
-				$plugin_page = 'wp_inci_settings';
+			if ( 'wi_disclaimer' === $plugin_page ) {
+				$plugin_page = 'wi_settings';
 			}
 
 			return $parent_file;
 		}
 
+
+		/**
+		 * Modify the updated message.
+		 *
+		 * @param $cmb
+		 * @param $args
+		 */
+		public function options_page_message_callback( $cmb, $args ) {
+			if ( ! empty( $args['should_notify'] ) ) {
+
+				if ( ( 'updated' == $args['type'] ) || ( 'notice-warning' == $args['type'] ) ) {
+					$args['message'] = __( 'Settings saved.' );
+				}
+
+				add_settings_error( $args['setting'], $args['code'], $args['message'], 'success' );
+
+			}
+		}
+
+		/**
+		 * Custom metabox for brand taxonomy.
+		 */
+		public function register_custom_brand_metabox() {
+
+			$brand = new_cmb2_box( array(
+				'id'           => 'brand_box',
+				'title'        => __( 'Brand', 'wp-inci' ),
+				'object_types' => array( 'product' ),
+				'context'      => 'side',
+				'priority'     => 'default',
+				'show_names'   => false,
+			) );
+
+			$brand->add_field( array(
+				'name'        => __( 'Brand', 'wp-inci' ),
+				'desc'        => '',
+				'id'          => 'taxonomy_brand',
+				'taxonomy'    => 'brand',
+				'type'        => 'taxonomy_select',
+				'after_field' => '<br/><a style="" target="_blank" href="' . esc_url( admin_url( 'edit-tags.php?taxonomy=brand' ) ) . '" class="button brand">' . __( 'Add new brand', 'wp-inci' ) . '</a>',
+			) );
+		}
 	}
 
 	add_action( 'plugins_loaded', array( 'WP_Inci_Meta', 'get_instance_meta' ) );
