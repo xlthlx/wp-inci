@@ -6,6 +6,7 @@
  * @author  xlthlx <wp-inci@piccioni.london>
  *
  */
+
 .wi_wrapper {
     display: inline-table
 }
@@ -15,6 +16,34 @@
     margin-left: 10px;
     margin-top: 1px;
     vertical-align: middle
+}
+
+h2.wi_single {
+    font-weight: bold !important;
+    padding: 0 12px 8px 4px !important
+}
+
+h2.wi_multiple {
+    font-weight: bold !important;
+    padding: 24px 12px 8px 4px !important
+}
+
+.wi_info {
+    color: #9c27b0
+}
+
+.wi_info a {
+    color: #9c27b0;
+    text-decoration: underline
+}
+
+#wi_disable_style {
+    display: none
+}
+
+.wi_menu {
+    vertical-align: middle;
+    margin-right: 5px
 }
 
 .first {
@@ -179,16 +208,6 @@ table.wp-inci div.w {
     width: 48%
 }
 
-h2.wi_single {
-    font-weight: bold !important;
-    padding: 0 12px 8px 4px !important
-}
-
-h2.wi_multiple {
-    font-weight: bold !important;
-    padding: 24px 12px 8px 4px !important
-}
-
 .button.desc {
     font-style: normal !important;
     margin-top: 10px !important;
@@ -216,15 +235,6 @@ h2.wi_multiple {
 
 #side-sortables #inci .cmb-th {
     padding: 0 !important
-}
-
-.wi_info {
-    color: #9c27b0
-}
-
-.wi_info a {
-    color: #9c27b0;
-    text-decoration: underline
 }
 
 .tagsdiv .newtag {
@@ -429,6 +439,15 @@ input.cmb2-search-ajax {
     margin: 15px 0 0 0 !important
 }
 
-#wi_disable_style {
-    display: none
+.edit-post-meta-boxes-area #poststuff .stuffbox > h3, .edit-post-meta-boxes-area #poststuff h2.hndle, .edit-post-meta-boxes-area #poststuff h3.hndle {
+    border-bottom: 0 !important
+}
+
+.edit-post-layout .interface-interface-skeleton__content {
+    background-color: #ffffff !important
+}
+
+
+.edit-post-layout__metaboxes:not(:empty) .edit-post-meta-boxes-area {
+    margin: auto 10px !important
 }

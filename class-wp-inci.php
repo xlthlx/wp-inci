@@ -171,12 +171,14 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 
 			register_extended_post_type( 'ingredient', array(
 				'publicly_queryable' => false,
-				'menu_icon'          => esc_url( plugins_url( 'admin/images/menu.png', __FILE__ ) ),
+				'menu_icon'          => esc_url( plugins_url( 'admin/images/menu.svg', __FILE__ ) ),
 				'rewrite'            => false,
 				'labels'             => $ingredients_labels,
 				'capability_type'    => 'page',
 				'has_archive'        => false,
 				'hierarchical'       => false,
+				'show_in_rest'       => true,
+				'block_editor'       => true,
 				'supports'           => array(
 					'title',
 					'editor',
@@ -261,6 +263,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'hierarchical' => false,
 				'labels'       => $functions_labels,
 				'public'       => false,
+				'show_in_rest' => true,
 				'rewrite'      => false,
 
 			), array(
@@ -299,6 +302,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'public'       => false,
 				'labels'       => $source_labels,
 				'rewrite'      => false,
+				'show_in_rest' => true,
 				'hierarchical' => true,
 				'admin_cols'   => array(
 					'url' => array(
@@ -406,9 +410,12 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 
 			register_extended_post_type( 'product', array(
 				'dashboard_activity' => true,
-				'menu_icon'          => esc_url( plugins_url( 'admin/images/menu.png', __FILE__ ) ),
+				'menu_icon'          => esc_url( plugins_url( 'admin/images/menu.svg', __FILE__ ) ),
 				'labels'             => $product_labels,
 				'capability_type'    => 'page',
+				'show_in_feed'       => true,
+				'show_in_rest'       => true,
+				'block_editor'       => true,
 				'rewrite'            => true,
 				'supports'           => array(
 					'title',
@@ -487,6 +494,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'public'       => true,
 				'rewrite'      => true,
 				'hierarchical' => false,
+				'show_in_rest' => true,
 				'labels'       => $brand_labels,
 				'meta_box_cb'  => false,
 			), array(
