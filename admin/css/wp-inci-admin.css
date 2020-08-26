@@ -451,3 +451,7 @@ input.cmb2-search-ajax {
 .edit-post-layout__metaboxes:not(:empty) .edit-post-meta-boxes-area {
     margin: auto 10px !important
 }
+
+input#source_url.cmb2-text-url.cmb2-text-medium {
+    width: 95% !important
+}

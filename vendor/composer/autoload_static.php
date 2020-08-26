@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd5bb2d75ea502e67a073c1e0d56b23cb
+class ComposerStaticInit85cde9c9654f74dda0efb9fd30164263
 {
     public static $files = array (
         'a2c48002d05f7782d8b603bd2bcb5252' => __DIR__ . '/..' . '/johnbillion/extended-cpts/extended-cpts.php',
@@ -35,8 +35,8 @@ class ComposerStaticInitd5bb2d75ea502e67a073c1e0d56b23cb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd5bb2d75ea502e67a073c1e0d56b23cb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd5bb2d75ea502e67a073c1e0d56b23cb::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit85cde9c9654f74dda0efb9fd30164263::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit85cde9c9654f74dda0efb9fd30164263::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

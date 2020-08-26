@@ -18,18 +18,12 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		private static $instance;
 
 		/**
-		 * A static reference to track the single instance of this class.
-		 */
-		public $api;
-
-		/**
 		 * Constructor.
 		 */
 		public function __construct() {
 			( WP_Inci::get_instance() )->__construct();
 			$this->init();
 			$this->url = plugins_url( "", __FILE__ );
-			$this->api = Wp_Inci_Api::get_instance_api();
 		}
 
 		/**
@@ -67,6 +61,19 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			}
 
 			return self::$instance;
+		}
+
+		public function set_title_filter( $where, $wp_query ) {
+
+			global $wpdb;
+			if ( $search_term = $wp_query->get( 'title_filter' ) ) :
+				$search_term           = $wpdb->esc_like( $search_term );
+				$search_term           = ' \'' . $search_term . '%\'';
+				$title_filter_relation = ( strtoupper( $wp_query->get( 'title_filter_relation' ) ) === 'OR' ? 'OR' : 'AND' );
+				$where                 .= ' ' . $title_filter_relation . ' ' . $wpdb->posts . '.post_title LIKE ' . $search_term;
+			endif;
+
+			return $where;
 		}
 
 		/**
@@ -277,9 +284,10 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				die( json_encode( array( 'error' => __( 'Error : Unauthorized action' ) ) ) );
 			}
 
-			$args      = json_decode( stripslashes( htmlspecialchars_decode( $_POST['query_args'] ) ), true );
-			$args['s'] = $_POST['query'];
-			$data      = array();
+			$args = json_decode( stripslashes( htmlspecialchars_decode( $_POST['query_args'] ) ), true );
+			add_filter( 'posts_where', array( $this, 'set_title_filter' ), 10, 2 );
+			$args['title_filter'] = $_POST['query'];
+			$data                 = array();
 
 			$results = new WP_Query( $args );
 			if ( $results->have_posts() ) :
@@ -292,30 +300,10 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 						'safety' => ( WP_Inci::get_instance() )->get_safety_html( get_the_ID() )
 					) );
 				endwhile;
-			else:
-
-				$fields = $this->api->get_from_api( $_POST['query'] );
-
-				if ( ! $fields ) {
-					$fields = $this->api->get_from_api( $_POST['query'], 'q' );
-				}
-
-				if ( $fields ) {
-					$id = $this->api->insert_ingredient( $fields );
-
-					if ( $id ) {
-						$data[] = apply_filters( 'cmb2_search_ajax_result', array(
-							'value'  => get_the_title( $id ),
-							'data'   => $id,
-							'guid'   => get_edit_post_link( $id ),
-							'safety' => ( WP_Inci::get_instance() )->get_safety_html( $id )
-						) );
-					}
-				}
-
 			endif;
 
 			wp_reset_postdata();
+			remove_filter( 'posts_where', array( $this, 'set_title_filter' ) );
 			die( json_encode( $data ) );
 		}
 
@@ -334,7 +322,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			$data   = [];
 			$i      = 0;
 
-			$results  = explode( ',', $_POST['text'] );
+			$results  = explode( ',', trim( $_POST['text'] ) );
 			$field_id = $_POST['field_id'];
 
 			foreach ( $results as $result ) {
@@ -342,32 +330,14 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				$name = strtoupper( trim( $result ) );
 
 				$ingredient_id = $wpdb->get_col( "SELECT ID from $wpdb->posts 
-                WHERE ( post_title = '" . $name . "' OR post_content LIKE '%" . $name . "%')
+                WHERE ( post_title = '" . $name . "' OR post_title LIKE '" . $name . "%' OR post_content LIKE '%" . $name . "%')
 				AND post_type = 'ingredient' 
 				AND post_status = 'publish' " );
 
 				if ( $ingredient_id ) {
 					$data['row'][] = $this->set_results( $ingredient_id[0], $field_id );
 				} else {
-
-					$fields = $this->api->get_from_api( $name );
-
-					if ( ! $fields ) {
-						$fields = $this->api->get_from_api( $name, 'q' );
-					}
-
-					if ( $fields ) {
-						$id = $this->api->insert_ingredient( $fields );
-
-						if ( $id ) {
-							$data['row'][] = $this->set_results( $id, $field_id );
-						} else {
-							$string .= $i . ". " . $name . ": " . __( 'Not found', 'wp-inci' ) . " \n";
-						}
-
-					} else {
-						$string .= $i . ". " . $name . ": " . __( 'Not found', 'wp-inci' ) . " \n";
-					}
+					$string .= $i . ". " . $name . ": " . __( 'Not found', 'wp-inci' ) . " \n";
 				}
 
 				$data['string'] = $string;

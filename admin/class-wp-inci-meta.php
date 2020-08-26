@@ -277,7 +277,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 
 			$args = array(
 				'id'           => 'wi_settings',
-				'title'        => '<img title="WP INCI" alt="WP INCI" class="wi_menu" src="' . esc_url( plugins_url( 'images/menu.svg', __FILE__ ) ) . '"/> ' . __( 'WP INCI', 'wp-inci' ),
+				'title'        => __( 'WP INCI', 'wp-inci' ),
 				'object_types' => array( 'options-page' ),
 				'option_key'   => 'wi_settings',
 				'tab_group'    => 'wi_settings',
@@ -329,7 +329,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			 */
 			$args = array(
 				'id'           => 'wi_disclaimer',
-				'title'        => '<img title="WP INCI" alt="WP INCI" class="wi_menu" src="' . esc_url( plugins_url( 'images/menu.svg', __FILE__ ) ) . '"/> ' . __( 'WP INCI', 'wp-inci' ),
+				'title'        => __( 'WP INCI', 'wp-inci' ),
 				'object_types' => array( 'options-page' ),
 				'option_key'   => 'wi_disclaimer',
 				'parent_slug'  => 'options-general.php',

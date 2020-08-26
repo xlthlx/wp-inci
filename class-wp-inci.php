@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $version = "1.1.0";
+		public $version = "1.1.2";
 
 		/**
 		 * release.minor.revision
@@ -34,7 +34,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public $release = 1;
 		public $minor = 1;
-		public $revision = 0;
+		public $revision = 2;
 
 		/**
 		 * Plugin name
@@ -307,7 +307,11 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'admin_cols'   => array(
 					'url' => array(
 						'title'    => __( 'Url', 'wp-inci' ),
-						'meta_key' => 'source_url',
+						'function' => function ( $term_id ) {
+							$term = get_term_by( 'id', $term_id, 'source' );
+							$url  = get_term_meta( $term_id, 'source_url', true );
+							echo '<a href="' . $url . '" target="_blank">' . $term->name . ' &#x2197;</a>';
+						},
 					),
 				),
 

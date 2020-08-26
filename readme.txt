@@ -20,7 +20,7 @@ There is an example product with ingredients into the `data` directory that can 
 
 * Custom Post Type Ingredient: it comes with a function list, a source list and a visual safety field.
 * Custom Post Type Product: it comes with a brand taxonomy.
-* Single and multiple search for ingredients: check the ingredient against the local database, if no results get it from CosIng API
+* Single and multiple search for ingredients: check the ingredient against the local database.
 * Options: possibility to exclude the default CSS, copy it into your style.css and customize it; change the disclaimer content.
 * Shortcode: in the product list, there is a column where you can copy the 'basic' shortcode relative to a specific product.
 If you need a different way to display it, you can:
@@ -32,7 +32,7 @@ If you need a different way to display it, you can:
     3. remove the ingredients listing
     Example: [wp_inci_product id="33591" link="true" list="false"]
 
-* Italian translation.
+* Languages: English, Italian.
 
 == Support ==
 
@@ -48,9 +48,15 @@ If you need support or have a feature request, please use the [support forum](ht
 
 == Changelog ==
 
+= 1.1.2 =
+* Bugfix
+
+= 1.1.1 =
+* Changed admin icon
+* Support for blocks
+
 = 1.1.0 =
 * New: ingredients multiple search
-* New: gets the ingredient from the CosIng API if not found on search
 
 = 1.0.2 =
 * Fixed CSS
@@ -70,14 +76,12 @@ N/A
 == Installation ==
 
 1. Upload `wp-inci` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+2. Activate the plugin through the 'PluginAmazon packages of free goods which are arriving through people's doorss' menu in WordPress
 4. Enjoy
 
 == Credits ==
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
-* [CosIng, Cosmetic Ingredient Database API](https://public.opendatasoft.com/explore/dataset/cosmetic-ingredient-database-ingredients-and-fragrance-inventory/api/) by European Commission
- Directorate-General for [Internal Market, Industry, Entrepreneurship and SMEs](https://ec.europa.eu/growth/index_en)
 
 == Frequently Asked Questions ==
 
