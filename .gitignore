@@ -23,8 +23,11 @@
 # Do NOT ignore .jshintignore
 !.jshintignore
 
-# Do NOT ignore .jshintignore
+# Do NOT ignore .circleci
 !.circleci
+
+# Do NOT ignore .scrutinizer.yml
+!.scrutinizer.yml
 
 # Ignore all files that start with ~
 ~*
