@@ -2,6 +2,10 @@
 
 **WP INCI** - A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
 
+[![Version](https://img.shields.io/badge/version-1.1.2-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/master/LICENSE)
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet) ![WordPress Plugin: Required WP Version](https://img.shields.io/wordpress/plugin/wp-version/wp-inci?color=blueviolet) ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/xlthlx/wp-inci/master?color=blueviolet) 
+[![WP compatibility](https://plugintests.com/plugins/wporg/wp-inci/wp-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![PHP compatibility](https://plugintests.com/plugins/wporg/wp-inci/php-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest)
+
 You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
 There is an example product with ingredients into the [`data`](https://github.com/xlthlx/wp-inci/tree/master/data) directory that can be imported using the standard WordPress Importer.
 
@@ -9,7 +13,7 @@ There is an example product with ingredients into the [`data`](https://github.co
 
 * Custom Post Type Ingredient: it comes with a function list, a source list and a visual safety field.
 * Custom Post Type Product: it comes with a brand taxonomy.
-* Single and multiple search for ingredients: check the ingredient against the local database, if no results get it from CosIng API
+* Single and multiple search for ingredients: check the ingredient against the local database.
 * Options: possibility to exclude the default CSS, copy it into your style.css and customize it; change the disclaimer content.
 * Shortcode: in the product list, there is a column where you can copy the 'basic' shortcode relative to a specific product.
 If you need a different way to display it, you can:
@@ -21,7 +25,7 @@ If you need a different way to display it, you can:
     * remove the ingredients listing
     Example: `[wp_inci_product id="33591" link="true" list="false"]`
 
-* Italian translation.
+* Languages: English, Italian.
 
 ## Screenshots
 
@@ -47,6 +51,13 @@ If you need a different way to display it, you can:
 
 ### Changelog
 
+#### 1.1.2
+* Bugfix
+
+#### 1.1.1
+* Changed admin icon
+* Support for blocks
+
 #### 1.1.0
 * New: ingredients multiple search
 * New: gets the ingredient from the CosIng API if not found on search
@@ -71,8 +82,6 @@ If you need a different way to display it, you can:
 ## Credits
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
-* [CosIng, Cosmetic Ingredient Database API](https://public.opendatasoft.com/explore/dataset/cosmetic-ingredient-database-ingredients-and-fragrance-inventory/api/) by European Commission
- Directorate-General for [Internal Market, Industry, Entrepreneurship and SMEs](https://ec.europa.eu/growth/index_en)
 
 ## Frequently Asked Questions
 
