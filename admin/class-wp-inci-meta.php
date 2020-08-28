@@ -215,7 +215,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @param $url
 		 * @param $method
 		 * @param $context
-		 * @param null $fields
+		 * @param $fields
 		 *
 		 * @return bool
 		 */
@@ -250,15 +250,15 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					$text = $wp_filesystem->get_contents( $file );
 					if ( ! $text ) {
 						return "";
-					} else {
-						return $text;
 					}
-				} else {
-					return new WP_Error( "filesystem_error", "File doesn't exist" );
+
+					return $text;
 				}
-			} else {
-				return new WP_Error( "filesystem_error", "Cannot initialize filesystem" );
+
+				return "File doesn't exist";
 			}
+
+			return "Cannot initialize filesystem";
 		}
 
 		/**

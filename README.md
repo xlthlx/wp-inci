@@ -1,10 +1,10 @@
 # ![WP INCI](https://github.com/xlthlx/wp-inci/blob/master/img/banner.png "WordPress Plugin")
 
-**WP INCI** - A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
-
 [![Version](https://img.shields.io/badge/version-1.1.2-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/master/LICENSE)
-![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet) ![WordPress Plugin: Required WP Version](https://img.shields.io/wordpress/plugin/wp-version/wp-inci?color=blueviolet) ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/xlthlx/wp-inci/master?color=blueviolet) 
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet)  ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/xlthlx/wp-inci/master) 
 [![WP compatibility](https://plugintests.com/plugins/wporg/wp-inci/wp-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![PHP compatibility](https://plugintests.com/plugins/wporg/wp-inci/php-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest)
+
+**WP INCI** - A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
 
 You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
 There is an example product with ingredients into the [`data`](https://github.com/xlthlx/wp-inci/tree/master/data) directory that can be imported using the standard WordPress Importer.
