@@ -327,11 +327,11 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Returns the safety custom meta with HTML.
 		 *
-		 * @param int $post_id
+		 * @param int|false $post_id
 		 *
 		 * @return string
 		 */
-		public function get_safety_html( $post_id ): string {
+		public function get_safety_html( int $post_id ): string {
 
 			$safety = $this->get_safety_value( $post_id );
 
