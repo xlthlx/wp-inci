@@ -24,7 +24,9 @@
 	<!-- Add in some extra rules from other standards. -->
 	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
 	<rule ref="Generic.Commenting.Todo"/>
-	<rule ref="Squiz.Commenting.FunctionComment.SpacingAfter"/>
+	<rule ref="Squiz">
+		<exclude name="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
+	</rule>
 
 	<!-- Only enforce aligning assignment operators when difference is 2 or less. -->
 	<rule ref="Generic.Formatting.MultipleStatementAlignment">

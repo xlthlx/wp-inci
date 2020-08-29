@@ -331,7 +331,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function get_safety_html( int $post_id ): string {
+		public function get_safety_html( $post_id ) {
 
 			$safety = $this->get_safety_value( $post_id );
 
@@ -345,7 +345,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array $safety
 		 */
-		public function get_safety_value( $post_id ): array {
+		public function get_safety_value( $post_id ) {
 
 			$safety = get_post_meta( $post_id, 'safety', true );
 
