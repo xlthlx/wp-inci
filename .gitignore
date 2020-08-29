@@ -26,9 +26,6 @@
 # Do NOT ignore .circleci
 !.circleci
 
-# Do NOT ignore .scrutinizer.yml
-!.scrutinizer.yml
-
 # Ignore all files that start with ~
 ~*
 
