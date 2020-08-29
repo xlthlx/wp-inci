@@ -29,9 +29,6 @@
 # Do NOT ignore .scrutinizer.yml
 !.scrutinizer.yml
 
-# Do NOT ignore .scrutinizer.yml
-!.phpcs.xml
-
 # Ignore all files that start with ~
 ~*
 
