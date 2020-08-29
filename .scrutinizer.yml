@@ -3,7 +3,8 @@ build:
     analysis:
       dependencies:
         before:
-          - composer require --dev johnpbloch/wordpress
+          - composer require --dev johnpbloch/wordpress --no-interaction
+          - composer install --no-interaction --no-scripts
       project_setup:
         override:
           - 'true'
@@ -13,13 +14,11 @@ build:
           -
             command: phpcs-run
             use_website_config: true
-          - js-scrutinizer-run
     tests: true
 filter:
   dependency_paths:
     - 'wordpress/'
   excluded_paths:
-    - 'vendor/*'
     - 'vendor/*'
 checks:
   php: true
