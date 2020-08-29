@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ruleset name="WP">
+	<description>The PHP CodeSniffer rules for WP INCI.</description>
+
+	<file>./</file>
+
+	<!-- Exclude the Composer Vendor directory. -->
+	<exclude-pattern>/vendor/*</exclude-pattern>
+
+	<!-- Exclude all Javascript files. -->
+	<exclude-pattern>*.js</exclude-pattern>
+
+	<!-- Exclude minified CSS file. -->
+	<exclude-pattern>*.min.css</exclude-pattern>
+
+	<!-- Include the WordPress-Extra standard. -->
+	<rule ref="WordPress-Extra">
+		<!--
+		Example of removing a rule.
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
+		-->
+	</rule>
+
+	<!-- Add in some extra rules from other standards. -->
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+	<rule ref="Generic.Commenting.Todo"/>
+	<rule ref="Squiz.Commenting.FunctionComment.SpacingAfter"/>
+
+	<!-- Only enforce aligning assignment operators when difference is 2 or less. -->
+	<rule ref="Generic.Formatting.MultipleStatementAlignment">
+		<properties>
+			<property name="maxPadding" value="2" />
+		</properties>
+	</rule>
+	
+	<!-- Follow WordPress class name naming requirements -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="strict_class_file_names" value="true" />
+		</properties>
+	</rule>
+
+</ruleset>
