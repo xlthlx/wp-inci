@@ -30,7 +30,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * See split below.
 		 *
 		 * @since 1.0
-		 * @var integer
+		 * @var string
 		 */
 		public $release = 1;
 		public $minor = 1;
