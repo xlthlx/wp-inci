@@ -36,6 +36,8 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			add_action( 'cmb2_admin_init', array( $this, 'register_custom_brand_metabox' ) );
 			add_action( 'admin_init', array( $this, 'remove_menu_page' ) );
 			add_filter( 'parent_file', array( $this, 'select_other_menu' ) );
+			add_action( 'admin_head', array( $this, 'remove_gutenberg_tips' ) );
+			add_action( 'enqueue_block_editor_assets', array( $this, 'disable_editor_fullscreen' ) );
 		}
 
 		/**
@@ -416,6 +418,51 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'after_field' => '<br/><a style="" target="_blank" href="' . esc_url( admin_url( 'edit-tags.php?taxonomy=brand' ) ) . '" class="button brand">' . __( 'Add new brand', 'wp-inci' ) . '</a>',
 			) );
 		}
+
+		/**
+		 * Hides the very annoying Welcome Tips popup for Gutenberg.
+		 */
+		public function remove_gutenberg_tips() {
+			global $pagenow;
+
+			if ( 'post.php' == $pagenow && isset( $_GET['post'] ) ) {
+
+				$post_type = get_post_type( $_GET['post'] );
+
+				if ( ( 'ingredient' == $post_type ) || ( 'product' == $post_type ) ) {
+					?>
+                    <style>
+                        .components-modal__frame.components-guide {
+                            display: none !important;
+                        }
+
+                        .components-modal__screen-overlay {
+                            display: none !important;
+                        }
+                    </style>
+					<?php
+				}
+			}
+		}
+
+		/**
+		 * Disable the very annoying fullscreen mode for Gutenberg.
+		 */
+		public function disable_editor_fullscreen() {
+			global $pagenow;
+
+			if ( 'post.php' == $pagenow && isset( $_GET['post'] ) ) {
+
+				$post_type = get_post_type( $_GET['post'] );
+				if ( ( 'ingredient' == $post_type ) || ( 'product' == $post_type ) ) {
+
+					$script = "window.onload = function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } }";
+
+					wp_add_inline_script( 'wp-blocks', $script );
+				}
+			}
+		}
+
 	}
 
 	add_action( 'plugins_loaded', array( 'WP_Inci_Meta', 'get_instance_meta' ) );

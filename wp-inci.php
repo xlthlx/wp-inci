@@ -4,14 +4,14 @@
  *
  * @package           wp-inci
  * @author            xlthlx
- * @copyright         2020 wp-inci (email: wp-inci at piccioni.london)
+ * @copyright         wp-inci (email: wp-inci at piccioni.london)
  * @license           GPLv3+
  *
  * @wordpress-plugin
  * Plugin Name:       WP INCI
  * Plugin URI:        https://wordpress.org/plugins/wp-inci/
  * Description:       A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
- * Version:           1.1.2
+ * Version:           1.2
  * Requires at least: 5.2
  * Requires PHP:      7.0
  * Author:            xlthlx
