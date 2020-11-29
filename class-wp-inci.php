@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $version = "1.2.0";
+		public $version = "1.2.1";
 
 		/**
 		 * release.minor.revision
@@ -34,7 +34,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public $release = 1;
 		public $minor = 2;
-		public $revision = 0;
+		public $revision = 1;
 
 		/**
 		 * Plugin name

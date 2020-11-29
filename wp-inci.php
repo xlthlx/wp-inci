@@ -11,7 +11,7 @@
  * Plugin Name:       WP INCI
  * Plugin URI:        https://wordpress.org/plugins/wp-inci/
  * Description:       A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
- * Version:           1.2
+ * Version:           1.2.1
  * Requires at least: 5.2
  * Requires PHP:      7.0
  * Author:            xlthlx
@@ -36,10 +36,10 @@
  */
 
 /**
- * Extended CPTs library.
+ * Vendors.
  */
-if ( file_exists( __DIR__ . '/vendor/johnbillion/extended-cpts/extended-cpts.php' ) ) {
-	require_once __DIR__ . '/vendor/johnbillion/extended-cpts/extended-cpts.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
 }
 
 /**
