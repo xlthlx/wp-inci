@@ -48,30 +48,6 @@ If you need a different way to display it, you can:
 
 ![Post example](https://github.com/xlthlx/wp-inci/blob/master/img/screenshot-5.gif)
 
-### Changelog
-
-#### 1.1.2
-* Bugfix
-
-#### 1.1.1
-* Changed admin icon
-* Support for blocks
-
-#### 1.1.0
-* New: ingredients multiple search
-* New: gets the ingredient from the CosIng API if not found on search
-
-#### 1.0.2
-* Fixed CSS
-* Added safety to ingredients list
-
-#### 1.0.1
-* Tested up to 5.5
-* Bugfix
-
-#### 1.0
-* First release
-
 ## Installation
 
 1. Upload `wp-inci` folder to the `/wp-content/plugins/` directory
