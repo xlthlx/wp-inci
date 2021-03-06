@@ -1,25 +1,16 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => '__root__',
+    'reference' => '6fcd16a0bd7e9404459223c5b6e70adeda97d584',
+    'name' => 'xlthlx/wp-inci',
   ),
   'versions' => 
   array (
-    '__root__' => 
-    array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
-    ),
     'cmb2/cmb2' => 
     array (
       'pretty_version' => 'v2.9.0',
@@ -63,21 +54,21 @@
         0 => '*',
       ),
     ),
-    'seravo/wp-custom-bulk-actions' => 
-    array (
-      'pretty_version' => '0.1.4',
-      'version' => '0.1.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b31da03919186b1065616743a54995b7e4f29d4a',
-    ),
     'shama/baton' => 
     array (
       'replaced' => 
       array (
         0 => '*',
       ),
+    ),
+    'xlthlx/wp-inci' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6fcd16a0bd7e9404459223c5b6e70adeda97d584',
     ),
   ),
 );

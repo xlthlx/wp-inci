@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a346d2b5a2817b091e7e0e58c6be2251",
+    "content-hash": "3731f0cd181a164052d33868a68430c7",
     "packages": [
         {
             "name": "cmb2/cmb2",
@@ -280,46 +280,6 @@
                 }
             ],
             "time": "2021-01-26T10:10:55+00:00"
-        },
-        {
-            "name": "seravo/wp-custom-bulk-actions",
-            "version": "0.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seravo/wp-custom-bulk-actions.git",
-                "reference": "b31da03919186b1065616743a54995b7e4f29d4a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seravo/wp-custom-bulk-actions/zipball/b31da03919186b1065616743a54995b7e4f29d4a",
-                "reference": "b31da03919186b1065616743a54995b7e4f29d4a",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPLv3"
-            ],
-            "authors": [
-                {
-                    "name": "Onni Hakala",
-                    "email": "onni@seravo.fi",
-                    "homepage": "https://github.com/onnimonni"
-                }
-            ],
-            "description": "Custom bulk actions for any type of posts in WordPress.",
-            "homepage": "https://github.com/Seravo/wp-custom-bulk-actions",
-            "keywords": [
-                "bulk action",
-                "custom",
-                "posts",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/Seravo/wp-custom-bulk-actions/issues",
-                "source": "https://github.com/Seravo/wp-custom-bulk-actions/tree/master"
-            },
-            "time": "2018-04-01T20:16:31+00:00"
         }
     ],
     "packages-dev": [

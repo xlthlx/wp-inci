@@ -613,49 +613,6 @@
                 }
             ],
             "install-path": null
-        },
-        {
-            "name": "seravo/wp-custom-bulk-actions",
-            "version": "0.1.4",
-            "version_normalized": "0.1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seravo/wp-custom-bulk-actions.git",
-                "reference": "b31da03919186b1065616743a54995b7e4f29d4a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seravo/wp-custom-bulk-actions/zipball/b31da03919186b1065616743a54995b7e4f29d4a",
-                "reference": "b31da03919186b1065616743a54995b7e4f29d4a",
-                "shasum": ""
-            },
-            "time": "2018-04-01T20:16:31+00:00",
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPLv3"
-            ],
-            "authors": [
-                {
-                    "name": "Onni Hakala",
-                    "email": "onni@seravo.fi",
-                    "homepage": "https://github.com/onnimonni"
-                }
-            ],
-            "description": "Custom bulk actions for any type of posts in WordPress.",
-            "homepage": "https://github.com/Seravo/wp-custom-bulk-actions",
-            "keywords": [
-                "bulk action",
-                "custom",
-                "posts",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/Seravo/wp-custom-bulk-actions/issues",
-                "source": "https://github.com/Seravo/wp-custom-bulk-actions/tree/master"
-            },
-            "install-path": "../seravo/wp-custom-bulk-actions"
         }
     ],
     "dev": true,
