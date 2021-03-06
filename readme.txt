@@ -3,7 +3,7 @@ Contributors: xlthlx
 Donate link: https://paypal.me/xlthlx
 Tags: inci, ingredients, cosmetics, make-up
 Requires at least: 5.2
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: 5.2
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -47,6 +47,11 @@ If you need support or have a feature request, please use the [support forum](ht
 5. Post example
 
 == Changelog ==
+
+= 1.3 =
+* Tested up to 5.7
+* Updated dependencies
+* Added numbers to multiple ingredients list
 
 = 1.2.1 =
 * Tested up to 5.6

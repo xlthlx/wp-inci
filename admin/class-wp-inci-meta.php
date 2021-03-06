@@ -68,10 +68,11 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			) );
 
 			$cmb_term->add_field( array(
-				'name'      => __( 'Url', 'wp-inci' ),
-				'id'        => 'source_url',
-				'type'      => 'text_url',
-				'protocols' => array( 'http', 'https' ),
+				'name'         => __( 'Url', 'wp-inci' ),
+				'id'           => 'source_url',
+				'type'         => 'text_url',
+				'protocols'    => array( 'http', 'https' ),
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 		}
@@ -92,19 +93,20 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 
 
 			$ingredients->add_field( array(
-				'name'       => __( 'Ingredient', 'wp-inci' ),
-				'id'         => 'ingredients',
-				'type'       => 'search_ajax',
-				'desc'       => __( 'Start typing ingredient name, then select one from the list. No results found?', 'wp-inci' ),
-				'sortable'   => true,
-				'limit'      => 10,
-				'query_args' => array(
+				'name'         => __( 'Ingredient', 'wp-inci' ),
+				'id'           => 'ingredients',
+				'type'         => 'search_ajax',
+				'desc'         => __( 'Start typing ingredient name, then select one from the list. No results found?', 'wp-inci' ),
+				'sortable'     => true,
+				'limit'        => 10,
+				'query_args'   => array(
 					'post_type'      => 'ingredient',
 					'posts_per_page' => - 1,
 					'post_status'    => 'publish',
 					'order'          => 'ASC',
 					'orderby'        => 'title',
-				)
+				),
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 			$may_contain = new_cmb2_box( array(
@@ -117,19 +119,20 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			) );
 
 			$may_contain->add_field( array(
-				'name'       => __( 'May Contain', 'wp-inci' ),
-				'id'         => 'may_contain',
-				'type'       => 'search_ajax',
-				'desc'       => __( 'Start typing ingredient name, then select one from the list. No results found?', 'wp-inci' ),
-				'sortable'   => true,
-				'limit'      => 10,
-				'query_args' => array(
+				'name'         => __( 'May Contain', 'wp-inci' ),
+				'id'           => 'may_contain',
+				'type'         => 'search_ajax',
+				'desc'         => __( 'Start typing ingredient name, then select one from the list. No results found?', 'wp-inci' ),
+				'sortable'     => true,
+				'limit'        => 10,
+				'query_args'   => array(
 					'post_type'      => 'ingredient',
 					'posts_per_page' => - 1,
 					'post_status'    => 'publish',
 					'order'          => 'ASC',
 					'orderby'        => 'title',
-				)
+				),
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 		}
@@ -161,6 +164,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'4' => __( 'Red', 'wp-inci' ),
 					'5' => __( 'Double red', 'wp-inci' ),
 				),
+				'show_in_rest'     => WP_REST_Server::ALLMETHODS,
 			) );
 
 			$safety->add_field( array(
@@ -177,27 +181,30 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			 * Create the CAS Number field.
 			 */
 			$safety->add_field( array(
-				'name' => __( 'CAS #', 'wp-inci' ),
-				'id'   => 'cas_number',
-				'type' => 'text_small',
+				'name'         => __( 'CAS #', 'wp-inci' ),
+				'id'           => 'cas_number',
+				'type'         => 'text_small',
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 			/**
 			 * Create the EC Number field.
 			 */
 			$safety->add_field( array(
-				'name' => __( 'EC #', 'wp-inci' ),
-				'id'   => 'ec_number',
-				'type' => 'text_small',
+				'name'         => __( 'EC #', 'wp-inci' ),
+				'id'           => 'ec_number',
+				'type'         => 'text_small',
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 			/**
 			 * Create the Restriction field.
 			 */
 			$safety->add_field( array(
-				'name' => __( 'Restrictions', 'wp-inci' ),
-				'id'   => 'restriction',
-				'type' => 'text_small',
+				'name'         => __( 'Restrictions', 'wp-inci' ),
+				'id'           => 'restriction',
+				'type'         => 'text_small',
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 		}
 
@@ -297,13 +304,13 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			 * Create style settings.
 			 */
 			$main_options->add_field( array(
-				'name'        => __( 'WP INCI Default Style', 'wp-inci' ),
-				'desc'        => '',
-				'id'          => 'textarea_style',
-				'type'        => 'textarea_code',
-				'default_cb'  => array( $this, 'default_style' ),
-				'save_field'  => false,
-				'attributes'  => array(
+				'name'         => __( 'WP INCI Default Style', 'wp-inci' ),
+				'desc'         => '',
+				'id'           => 'textarea_style',
+				'type'         => 'textarea_code',
+				'default_cb'   => array( $this, 'default_style' ),
+				'save_field'   => false,
+				'attributes'   => array(
 					'readonly'        => 'readonly',
 					'disabled'        => 'disabled',
 					'data-codeeditor' => json_encode( array(
@@ -313,7 +320,8 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 						),
 					) ),
 				),
-				'after_field' => array( $this, 'copy_button' ),
+				'after_field'  => array( $this, 'copy_button' ),
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 			$main_options->add_field( array(
@@ -324,6 +332,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 				'default'        => 'off',
 				'active_value'   => 'on',
 				'inactive_value' => 'off',
+				'show_in_rest'   => WP_REST_Server::ALLMETHODS,
 			) );
 
 			/**
@@ -343,11 +352,12 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			$secondary_options = new_cmb2_box( $args );
 
 			$secondary_options->add_field( array(
-				'name'       => __( 'Disclaimer', 'wp-inci' ),
-				'desc'       => __( 'Add a disclaimer after WP INCI table of ingredients.', 'wp-inci' ),
-				'id'         => 'textarea_disclaimer',
-				'type'       => 'textarea_code',
-				'default_cb' => array( $this, 'wi_default_disclaimer' ),
+				'name'         => __( 'Disclaimer', 'wp-inci' ),
+				'desc'         => __( 'Add a disclaimer after WP INCI table of ingredients.', 'wp-inci' ),
+				'id'           => 'textarea_disclaimer',
+				'type'         => 'textarea_code',
+				'default_cb'   => array( $this, 'wi_default_disclaimer' ),
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 
 		}
@@ -410,12 +420,13 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			) );
 
 			$brand->add_field( array(
-				'name'        => __( 'Brand', 'wp-inci' ),
-				'desc'        => '',
-				'id'          => 'taxonomy_brand',
-				'taxonomy'    => 'brand',
-				'type'        => 'taxonomy_select',
-				'after_field' => '<br/><a style="" target="_blank" href="' . esc_url( admin_url( 'edit-tags.php?taxonomy=brand' ) ) . '" class="button brand">' . __( 'Add new brand', 'wp-inci' ) . '</a>',
+				'name'         => __( 'Brand', 'wp-inci' ),
+				'desc'         => '',
+				'id'           => 'taxonomy_brand',
+				'taxonomy'     => 'brand',
+				'type'         => 'taxonomy_select',
+				'after_field'  => '<br/><a style="" target="_blank" href="' . esc_url( admin_url( 'edit-tags.php?taxonomy=brand' ) ) . '" class="button brand">' . __( 'Add new brand', 'wp-inci' ) . '</a>',
+				'show_in_rest' => WP_REST_Server::ALLMETHODS,
 			) );
 		}
 

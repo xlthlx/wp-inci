@@ -1,13 +1,18 @@
 {
+  "name": "xlthlx/wp-inci",
+  "description": "A WordPress plugin to manage INCI",
   "extra": {
     "installer-paths": {
-      "vendor/{$vendor}/{$name}/": ["type:wordpress-plugin"]
+      "vendor/{$vendor}/{$name}/": [
+        "type:wordpress-plugin"
+      ]
     }
   },
   "require": {
     "cmb2/cmb2": "^2.7",
     "composer/installers": "^1.9",
-    "johnbillion/extended-cpts": "^4.3"
+    "johnbillion/extended-cpts": "^4.3",
+    "seravo/wp-custom-bulk-actions": "^0.1.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

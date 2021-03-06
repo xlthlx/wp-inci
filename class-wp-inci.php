@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $version = "1.2.1";
+		public $version = "1.3.0";
 
 		/**
 		 * release.minor.revision
@@ -33,8 +33,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @var string
 		 */
 		public $release = 1;
-		public $minor = 2;
-		public $revision = 1;
+		public $minor = 3;
+		public $revision = 0;
 
 		/**
 		 * Plugin name
@@ -498,7 +498,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'public'       => true,
 				'rewrite'      => true,
 				'hierarchical' => false,
-				'show_in_rest' => true,
+				'show_in_rest' => false,
 				'labels'       => $brand_labels,
 				'meta_box_cb'  => false,
 			), array(

@@ -198,7 +198,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			echo '<div class="container-search-right">';
 
 			if ( 1 !== $field->args( 'limit' ) ) {
-				echo '<ul class="cmb2-search-ajax-results" id="' . $field_name . '_results">';
+				echo '<ol class="cmb2-search-ajax-results" id="' . $field_name . '_results">';
 				if ( isset( $value ) && ! empty( $value ) ) {
 					if ( ! is_array( $value ) ) {
 						$value = array( $value );
@@ -217,10 +217,10 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 						$safety = ( WP_Inci::get_instance() )->get_safety_html( $val );
 						$title  = '<div class="wi_wrapper">' . $safety . '<div class="wi_value">' . $title . '</div></div>';
 
-						echo '<li>' . $handle . '<input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '"><a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
+						echo '<li><input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '">' . $handle . '<a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
 					}
 				}
-				echo '</ul>';
+				echo '</ol>';
 			}
 
 			echo '</div>';
@@ -336,6 +336,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 
 				if ( $ingredient_id ) {
 					$data['row'][] = $this->set_results( $ingredient_id[0], $field_id );
+					$i ++;
 				} else {
 					$string .= $i . ". " . $name . ": " . __( 'Not found', 'wp-inci' ) . " \n";
 				}

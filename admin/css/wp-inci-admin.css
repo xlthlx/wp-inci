@@ -8,14 +8,15 @@
  */
 
 .wi_wrapper {
-    display: inline-table
+    display: inline
 }
 
 .wi_value {
-    display: inline-table;
+    display: inline;
     margin-left: 10px;
     margin-top: 1px;
-    vertical-align: middle
+    vertical-align: middle;
+    word-break: break-word
 }
 
 h2.wi_single {
@@ -104,7 +105,7 @@ div.w {
     width: 22px;
     max-width: 22px;
     max-height: 22px;
-    display: inline-table
+    display: inline-block
 }
 
 .wp-inci h4 {
@@ -377,7 +378,7 @@ input.cmb2-search-ajax {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    display: inline-block
+    display: inline
 }
 
 .cmb2-search-ajax-results li a.edit-link:hover {
