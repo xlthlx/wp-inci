@@ -336,7 +336,6 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 
 				if ( $ingredient_id ) {
 					$data['row'][] = $this->set_results( $ingredient_id[0], $field_id );
-					$i ++;
 				} else {
 					$string .= $i . ". " . $name . ": " . __( 'Not found', 'wp-inci' ) . " \n";
 				}
