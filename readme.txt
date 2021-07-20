@@ -48,6 +48,10 @@ If you need support or have a feature request, please use the [support forum](ht
 
 == Changelog ==
 
+= 1.4 =
+* Tested up to 5.8
+* Updated dependencies
+
 = 1.3 =
 * Tested up to 5.7
 * Updated dependencies

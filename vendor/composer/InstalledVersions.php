@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '6fcd16a0bd7e9404459223c5b6e70adeda97d584',
+    'reference' => 'dbcdd497260ff2e10b7f27ac816f82b8f17dd300',
     'name' => 'xlthlx/wp-inci',
   ),
   'versions' => 
@@ -35,30 +35,31 @@ private static $installed = array (
     ),
     'composer/installers' => 
     array (
-      'pretty_version' => 'v1.10.0',
-      'version' => '1.10.0.0',
+      'pretty_version' => 'v1.11.0',
+      'version' => '1.11.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
+      'reference' => 'ae03311f45dfe194412081526be2e003960df74b',
     ),
     'johnbillion/extended-cpts' => 
     array (
-      'pretty_version' => '4.5.1',
-      'version' => '4.5.1.0',
+      'pretty_version' => '4.5.2',
+      'version' => '4.5.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'b8aef5ef64335d51784e391c9393145f50482fb4',
+      'reference' => '59ce9f4e0422512eec6f698ccba4a6a81b018fdb',
     ),
     'roave/security-advisories' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-latest',
+      'version' => 'dev-latest',
       'aliases' => 
       array (
+        0 => '9999999-dev',
       ),
-      'reference' => '0745f820eed6cb92603ca44a9c137ff8ce315e86',
+      'reference' => '736d41298189b79074e555d056bfe040b4970f47',
     ),
     'roundcube/plugin-installer' => 
     array (
@@ -81,7 +82,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '6fcd16a0bd7e9404459223c5b6e70adeda97d584',
+      'reference' => 'dbcdd497260ff2e10b7f27ac816f82b8f17dd300',
     ),
   ),
 );

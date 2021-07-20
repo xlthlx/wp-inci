@@ -150,9 +150,11 @@ class Extended_Taxonomy {
 			'menu_name'                  => $this->tax_plural,
 			'name'                       => $this->tax_plural,
 			'singular_name'              => $this->tax_singular,
+			'name_admin_bar'             => $this->tax_singular,
 			'search_items'               => sprintf( 'Search %s', $this->tax_plural ),
 			'popular_items'              => sprintf( 'Popular %s', $this->tax_plural ),
 			'all_items'                  => sprintf( 'All %s', $this->tax_plural ),
+			'archives'                   => sprintf( '%s Archives', $this->tax_plural ),
 			'parent_item'                => sprintf( 'Parent %s', $this->tax_singular ),
 			'parent_item_colon'          => sprintf( 'Parent %s:', $this->tax_singular ),
 			'edit_item'                  => sprintf( 'Edit %s', $this->tax_singular ),
@@ -165,10 +167,13 @@ class Extended_Taxonomy {
 			'choose_from_most_used'      => sprintf( 'Choose from most used %s', $this->tax_plural_low ),
 			'not_found'                  => sprintf( 'No %s found', $this->tax_plural_low ),
 			'no_terms'                   => sprintf( 'No %s', $this->tax_plural_low ),
+			'filter_by_item'             => sprintf( 'Filter by %s', $this->tax_singular_low ),
 			'items_list_navigation'      => sprintf( '%s list navigation', $this->tax_plural ),
 			'items_list'                 => sprintf( '%s list', $this->tax_plural ),
 			'most_used'                  => 'Most Used',
 			'back_to_items'              => sprintf( '&larr; Back to %s', $this->tax_plural ),
+			'item_link'                  => sprintf( '%s Link', $this->tax_singular ),
+			'item_link_description'      => sprintf( 'A link to a %s.', $this->tax_singular_low ),
 			'no_item'                    => sprintf( 'No %s', $this->tax_singular_low ), # Custom label
 			'filter_by'                  => sprintf( 'Filter by %s', $this->tax_singular_low ), # Custom label
 		];
