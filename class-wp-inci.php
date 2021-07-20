@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $version = "1.3.0";
+		public $version = "1.4.0";
 
 		/**
 		 * release.minor.revision
@@ -33,7 +33,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @var string
 		 */
 		public $release = 1;
-		public $minor = 3;
+		public $minor = 4;
 		public $revision = 0;
 
 		/**
