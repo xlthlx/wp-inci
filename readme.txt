@@ -3,7 +3,7 @@ Contributors: xlthlx
 Donate link: https://paypal.me/xlthlx
 Tags: inci, ingredients, cosmetics, make-up
 Requires at least: 5.2
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 5.2
 Requires PHP: 7.0
 License: GPLv3 or later
