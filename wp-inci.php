@@ -63,7 +63,6 @@ if ( file_exists( __DIR__ . '/class-wp-inci-fields.php' ) ) {
 	require_once __DIR__ . '/class-wp-inci-fields.php';
 }
 
-
 if ( is_admin() ) {
 	if ( file_exists( __DIR__ . '/admin/class-wp-inci-admin.php' ) ) {
 		require_once __DIR__ . '/admin/class-wp-inci-admin.php';
