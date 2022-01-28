@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '522840909d3de794553eeba776c424b4beb6059a',
+    'reference' => '75b12f67c67ae63824ba19da5d14a93f570d4dd2',
     'name' => 'xlthlx/wp-inci',
   ),
   'versions' => 
@@ -77,7 +77,7 @@ private static $installed = array (
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '25a216c5c0426f341fbff7f045fa3946c8041521',
+      'reference' => '6e213f05f59444f9e6f5a7c438bf130ae74aed32',
     ),
     'roundcube/plugin-installer' => 
     array (
@@ -100,7 +100,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '522840909d3de794553eeba776c424b4beb6059a',
+      'reference' => '75b12f67c67ae63824ba19da5d14a93f570d4dd2',
     ),
   ),
 );
