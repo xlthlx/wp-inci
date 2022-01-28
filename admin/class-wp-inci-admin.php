@@ -1,5 +1,4 @@
 <?php
-
 /**
  * WP_Inci_Admin
  *
@@ -43,7 +42,8 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 			/**
 			 * Add hooks and queue.
 			 */
-			add_action( 'admin_init', array( $this, 'register_plugin_settings' ) );
+			add_action( 'admin_init',
+				array( $this, 'register_plugin_settings' ) );
 			add_action( 'admin_init', array( $this, 'plugin_init' ) );
 			add_action( 'admin_menu', array( $this, 'plugin_setup' ) );
 		}
@@ -125,7 +125,9 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 * Add queue for CSS.
 		 */
 		public function plugin_admin_styles() {
-			wp_register_style( 'wp-inci-admin-css', $this->admin_url . '/css/wp-inci-admin.min.css', array(), $this->version );
+			wp_register_style( 'wp-inci-admin-css',
+				$this->admin_url . '/css/wp-inci-admin.min.css', array(),
+				$this->version );
 			wp_enqueue_style( 'wp-inci-admin-css' );
 		}
 
@@ -137,7 +139,9 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 				wp_enqueue_script( 'jquery' );
 			}
 
-			wp_register_script( 'wp-inci-admin-js', $this->admin_url . '/js/wp-inci-admin.min.js', array( 'jquery' ), $this->version );
+			wp_register_script( 'wp-inci-admin-js',
+				$this->admin_url . '/js/wp-inci-admin.min.js',
+				array( 'jquery' ), $this->version );
 			wp_enqueue_script( 'wp-inci-admin-js' );
 		}
 
@@ -145,7 +149,8 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 * Attach settings in WordPress Plugins list.
 		 */
 		public function register_plugin_settings() {
-			add_action( 'plugin_action_links', array( $this, 'add_plugin_settings' ), 10, 2 );
+			add_action( 'plugin_action_links',
+				array( $this, 'add_plugin_settings' ), 10, 2 );
 		}
 
 		/**
@@ -157,16 +162,21 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 * @return array
 		 * @since  1.0
 		 */
-		public function add_plugin_settings( array $plugin_actions, string $plugin_file ) {
+		public function add_plugin_settings(
+			array $plugin_actions,
+			string $plugin_file
+		) {
 			$new_actions = array();
 
 			if ( $plugin_file === plugin_basename( $this->plugin_file ) ) {
-				$new_actions['wi_settings'] = '<a href="' . esc_url( admin_url( 'options-general.php?page=wi_settings' ) ) . '">' . __( 'Settings' ) . '</a>';
+				$new_actions['wi_settings'] = '<a href="' . esc_url( admin_url( 'options-general.php?page=wi_settings' ) ) . '">' . __( 'Settings',
+						'wp-inci' ) . '</a>';
 			}
 
 			return array_merge( $new_actions, $plugin_actions );
 		}
 	}
 
-	add_action( 'plugins_loaded', array( 'WP_Inci_Admin', 'get_instance_admin' ) );
+	add_action( 'plugins_loaded',
+		array( 'WP_Inci_Admin', 'get_instance_admin' ) );
 }

@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'a2c48002d05f7782d8b603bd2bcb5252' => $vendorDir . '/johnbillion/extended-cpts/extended-cpts.php',
+    'ac773ca18bc86f9208de2ed8068423eb' => $vendorDir . '/johnbillion/extended-cpts/functions.php',
 );

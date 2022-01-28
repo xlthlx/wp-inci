@@ -397,7 +397,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			if ( ! empty( $args['should_notify'] ) ) {
 
 				if ( ( 'updated' == $args['type'] ) || ( 'notice-warning' == $args['type'] ) ) {
-					$args['message'] = __( 'Settings saved.' );
+					$args['message'] = __( 'Settings saved.', 'wp-inci' );
 				}
 
 				add_settings_error( $args['setting'], $args['code'], $args['message'], 'success' );

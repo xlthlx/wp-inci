@@ -1,6 +1,6 @@
 # ![WP INCI](https://github.com/xlthlx/wp-inci/blob/main/img/banner.png "WordPress Plugin")
 
-[![Version](https://img.shields.io/badge/version-1.4-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/version-1.5-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet)  ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/xlthlx/wp-inci/main) 
 
 **WP INCI** - A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
@@ -23,6 +23,8 @@ If you need a different way to display it, you can:
     Example: `[wp_inci_product id="33591" link="true"]`
     * remove the ingredients listing
     Example: `[wp_inci_product id="33591" link="true" list="false"]`
+    * remove the safety from ingredients listing
+    Example: `[wp_inci_product id="33591" safety="false"]`
 
 * Languages: English, Italian.
 
@@ -57,6 +59,7 @@ If you need a different way to display it, you can:
 ## Credits
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
+* [Carbon Fields](https://github.com/htmlburger/carbon-fields) by [htmlBurger](https://htmlburger.com/)
 
 ## Frequently Asked Questions
 

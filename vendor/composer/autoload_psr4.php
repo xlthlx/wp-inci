@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ExtCPTs\\Tests\\' => array($vendorDir . '/johnbillion/extended-cpts/tests/phpunit'),
+    'ExtCPTs\\Tests\\' => array($vendorDir . '/johnbillion/extended-cpts/tests/integration'),
+    'ExtCPTs\\' => array($vendorDir . '/johnbillion/extended-cpts/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
+    'Carbon_Fields\\' => array($vendorDir . '/htmlburger/carbon-fields/core'),
+    'Args\\' => array($vendorDir . '/johnbillion/args/src'),
 );

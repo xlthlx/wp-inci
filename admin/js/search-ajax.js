@@ -2,9 +2,9 @@
     $(function () {
         $('.cmb2-search-ajax').each(
             function () {
-                var fid = $(this).attr('id');
-                var query_args = $(this).attr('data-queryargs');
-                var object = $(this).attr('data-object');
+                const fid = $(this).attr('id');
+                const query_args = $(this).attr('data-queryargs');
+                const object = $(this).attr('data-object');
                 $(this).devbridgeAutocomplete({
                     serviceUrl: wi.ajaxurl,
                     type: 'POST',
@@ -12,15 +12,15 @@
                     showNoSuggestionNotice: true,
                     noSuggestionNotice: wi.notice,
                     transformResult: function (r) {
-                        var suggestions = $.parseJSON(r);
-                        if ($('#' + fid + '_results li').length) {
-                            var selected_vals = Array();
-                            var d = 0;
-                            $('#' + fid + '_results input').each(function (index, element) {
+                        const suggestions = $.parseJSON(r);
+                        if ( $('#' + fid + '_results li').length ) {
+                            const selected_vals = Array();
+                            let d = 0;
+                            $('#' + fid + '_results input').each(function () {
                                 selected_vals.push($(this).val());
                             });
                             $(suggestions).each(function (ri, re) {
-                                if ($.inArray((re.data).toString(), selected_vals) > -1) {
+                                if ( $.inArray((re.data).toString(), selected_vals) > -1 ) {
                                     suggestions.splice(ri - d, 1);
                                     d++;
                                 }
@@ -45,14 +45,14 @@
                     },
                     onSelect: function (suggestion) {
                         $(this).devbridgeAutocomplete('clearCache');
-                        var lid = $(this).attr('id') + '_results';
-                        var limit = $(this).attr('data-limit');
-                        var sortable = $(this).attr('data-sortable');
-                        if (1 !== limit) {
-                            var handle = (sortable == 1) ? '<span class="handle"></span>' : '';
+                        const lid = $(this).attr('id') + '_results';
+                        const limit = $(this).attr('data-limit');
+                        const sortable = $(this).attr('data-sortable');
+                        if ( 1 !== limit ) {
+                            const handle = (sortable === 1) ? '<span class="handle"></span>' : '';
                             $('#' + lid).append('<li>' + handle + '<input type="hidden" name="' + lid + '[]" value="' + suggestion.data + '"><a href="' + suggestion.guid + '" target="_blank" class="edit-link"><div class="wi_wrapper">' + suggestion.safety + '<div class="wi_value">' + suggestion.value + '</div></div></a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>');
                             $(this).val('');
-                            if (limit === $('#' + lid + ' li').length) {
+                            if ( limit === $('#' + lid + ' li').length ) {
                                 $(this).prop('disabled', 'disabled');
                             } else {
                                 $(this).focus();
@@ -63,7 +63,7 @@
                     }
                 });
 
-                if ($(this).attr('data-sortable') == 1) {
+                if ( $(this).attr('data-sortable') === '1' ) {
                     $('#' + fid + '_results').sortable({
                         handle: '.handle',
                         placeholder: 'ui-state-highlight',
@@ -71,10 +71,10 @@
                     });
                 }
 
-                if ($(this).attr('data-limit') == 1) {
+                if ( $(this).attr('data-limit') === '1' ) {
                     $(this).on('blur', function () {
-                        if ($(this).val() === '') {
-                            var lid = $(this).attr('id') + '_results';
+                        if ( $(this).val() === '' ) {
+                            const lid = $(this).attr('id') + '_results';
                             $('input[name=' + lid + ']').val('');
                         }
                     });
@@ -84,10 +84,11 @@
 
         $('.cmb2-search-ajax-results').on('click', 'a.remover', function () {
             $(this).parent('li').fadeOut(400, function () {
-                var iid = $(this).parents('ul').attr('id').replace('_results', '');
+                const iid = $(this).parents('ul').attr('id');
                 $(this).remove();
-                $('#' + iid).removeProp('disabled');
-                $('#' + iid).devbridgeAutocomplete('clearCache');
+                const remove = '#' + iid
+                $(remove).removeProp('disabled');
+                $(remove).devbridgeAutocomplete('clearCache');
             });
         });
 

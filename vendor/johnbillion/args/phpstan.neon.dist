@@ -1,0 +1,16 @@
+includes:
+  - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+  - vendor/phpstan/phpstan-phpunit/extension.neon
+  - vendor/phpstan/phpstan-phpunit/rules.neon
+parameters:
+  level: 8
+  paths:
+    - src
+    - tests
+    - generate.php
+  bootstrapFiles:
+    - tests/stubs.php
+  ignoreErrors:
+    -
+      message: '#^Access to an undefined property Args\\#'
+      path: tests/phpunit

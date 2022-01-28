@@ -1,8 +1,3 @@
-.wp-inci h4 {
-    margin-bottom: 1em;
-    font-size: .83em
-}
-
 table.wp-inci {
     max-width: 100% !important;
     margin-bottom: 1em !important;
@@ -15,7 +10,6 @@ table.wp-inci th {
 }
 
 table.wp-inci tr {
-    font-size: .9rem;
     line-height: initial
 }
 
@@ -30,6 +24,12 @@ table.wp-inci td {
 table.wp-inci td:first-child {
     width: 60px;
     line-height: initial
+}
+
+table.wp-inci td.nofirst {
+    min-width: 100% !important;
+    width: 100% !important;
+    padding-bottom: 10px
 }
 
 table.wp-inci .disclaimer {
@@ -75,7 +75,6 @@ table.wp-inci div.w {
 
 .disclaimer {
     font-style: italic;
-    font-size: 80%;
     font-weight: 400;
     line-height: normal;
     color: #6c757d !important

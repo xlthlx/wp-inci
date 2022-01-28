@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'dbcdd497260ff2e10b7f27ac816f82b8f17dd300',
+    'reference' => '522840909d3de794553eeba776c424b4beb6059a',
     'name' => 'xlthlx/wp-inci',
   ),
   'versions' => 
@@ -35,21 +35,39 @@ private static $installed = array (
     ),
     'composer/installers' => 
     array (
-      'pretty_version' => 'v1.11.0',
-      'version' => '1.11.0.0',
+      'pretty_version' => 'v1.12.0',
+      'version' => '1.12.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'ae03311f45dfe194412081526be2e003960df74b',
+      'reference' => 'd20a64ed3c94748397ff5973488761b22f6d3f19',
+    ),
+    'htmlburger/carbon-fields' => 
+    array (
+      'pretty_version' => 'v3.3.2',
+      'version' => '3.3.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dd5663e14c6db365323b688dbae1cfbeaf14bee7',
+    ),
+    'johnbillion/args' => 
+    array (
+      'pretty_version' => '0.9.0',
+      'version' => '0.9.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a1a3feb05cc9fc3914ed96eeab009259aea326c1',
     ),
     'johnbillion/extended-cpts' => 
     array (
-      'pretty_version' => '4.5.2',
-      'version' => '4.5.2.0',
+      'pretty_version' => '5.0.0',
+      'version' => '5.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '59ce9f4e0422512eec6f698ccba4a6a81b018fdb',
+      'reference' => 'fded84c6aa241405e73f43f74f869685b61a396d',
     ),
     'roave/security-advisories' => 
     array (
@@ -59,7 +77,7 @@ private static $installed = array (
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '736d41298189b79074e555d056bfe040b4970f47',
+      'reference' => '25a216c5c0426f341fbff7f045fa3946c8041521',
     ),
     'roundcube/plugin-installer' => 
     array (
@@ -82,7 +100,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'dbcdd497260ff2e10b7f27ac816f82b8f17dd300',
+      'reference' => '522840909d3de794553eeba776c424b4beb6059a',
     ),
   ),
 );

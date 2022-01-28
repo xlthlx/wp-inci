@@ -5,11 +5,11 @@ function copyShort(copyText) {
 }
 
 function copyToClipboard(text) {
-    if (window.clipboardData && window.clipboardData.setData) {
-        return clipboardData.setData("Text", text);
+    if ( window.clipboardData && window.clipboardData.setData ) {
+        return window.clipboardData.setData("Text", text);
 
-    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-        var textarea = document.createElement("textarea");
+    } else {
+        const textarea = document.createElement("textarea");
         textarea.textContent = text;
         textarea.style.position = "fixed";
         document.body.appendChild(textarea);
@@ -30,7 +30,7 @@ function copyToClipboard(text) {
 (function ($) {
     $(document).ready(function () {
         $("#safety").on("change", function () {
-            var new_safety = $(this).val();
+            let new_safety = $(this).val();
 
             switch (new_safety) {
                 case "1":
@@ -50,11 +50,11 @@ function copyToClipboard(text) {
                     break;
             }
 
-            var new_first = new_safety.substring(0, 1);
-            var new_second = new_safety.substring(1, 2);
+            const new_first = new_safety.substring(0, 1);
+            const new_second = new_safety.substring(1, 2);
 
-            var first = $("div.first");
-            var second = $("div.second");
+            const first = $("div.first");
+            const second = $("div.second");
 
             first.removeClass().addClass(new_first + " first").html(new_first.toUpperCase());
             second.removeClass().addClass(new_second + " second").html(new_second.toUpperCase());
@@ -68,11 +68,11 @@ function copyToClipboard(text) {
         });
 
         $('.cmb2-switch').each(function () {
-            var checkbox = $(this).find('input[type="checkbox"]');
-            var inactiveValue = checkbox.data('inactive-value');
-            var activeValue = checkbox.val();
+            const checkbox = $(this).find('input[type="checkbox"]');
+            const inactiveValue = checkbox.data('inactive-value');
+            const activeValue = checkbox.val();
             $(this).on('click', function () {
-                if (checkbox.prop('checked')) {
+                if ( checkbox.prop('checked') ) {
                     checkbox.val(activeValue);
                 } else {
                     checkbox.val(inactiveValue);

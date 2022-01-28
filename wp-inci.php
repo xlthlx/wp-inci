@@ -11,9 +11,9 @@
  * Plugin Name:       WP INCI
  * Plugin URI:        https://wordpress.org/plugins/wp-inci/
  * Description:       A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients).
- * Version:           1.4
+ * Version:           1.5
  * Requires at least: 5.2
- * Requires PHP:      7.0
+ * Requires PHP:      7.4
  * Author:            xlthlx
  * Author URI:        https://piccioni.london
  * License:           GPLv3+
@@ -35,42 +35,21 @@
  * along with WP INCI. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
  */
 
-/**
- * Vendors.
- */
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
-}
+define( 'WPINCI_BASE_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WPINCI_BASE_URL', plugins_url() );
 
-/**
- * CMB2 library.
- */
-if ( file_exists( __DIR__ . '/vendor/cmb2/cmb2/init.php' ) ) {
-	require_once __DIR__ . '/vendor/cmb2/cmb2/init.php';
-}
-
-/**
- * Main plugin class.
- */
-if ( file_exists( __DIR__ . '/class-wp-inci.php' ) ) {
-	require_once __DIR__ . '/class-wp-inci.php';
-}
-
-/**
- * CMB2 Fields.
- */
-if ( file_exists( __DIR__ . '/class-wp-inci-fields.php' ) ) {
-	require_once __DIR__ . '/class-wp-inci-fields.php';
-}
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/cmb2/cmb2/init.php';
+require_once __DIR__ . '/class-wp-inci.php';
+require_once __DIR__ . '/class-wp-inci-fields.php';
 
 if ( is_admin() ) {
-	if ( file_exists( __DIR__ . '/admin/class-wp-inci-admin.php' ) ) {
-		require_once __DIR__ . '/admin/class-wp-inci-admin.php';
-	}
-	if ( file_exists( __DIR__ . '/admin/class-wp-inci-meta.php' ) ) {
-		require_once __DIR__ . '/admin/class-wp-inci-meta.php';
-	}
-
-} else if ( file_exists( __DIR__ . '/public/class-wp-inci-frontend.php' ) ) {
+	require_once __DIR__ . '/admin/class-wp-inci-admin.php';
+	require_once __DIR__ . '/admin/class-wp-inci-meta.php';
+} else {
 	require_once __DIR__ . '/public/class-wp-inci-frontend.php';
+}
+
+foreach ( glob( __DIR__ . "/blocks/*.php" ) as $filename ) {
+	require_once $filename;
 }

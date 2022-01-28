@@ -1,0 +1,61 @@
+{
+	"name": "johnbillion/args",
+	"description": "I don't want to get into an argument about this.",
+	"type": "library",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "John Blackbourn",
+			"homepage": "https://johnblackbourn.com/"
+		}
+	],
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"require": {
+		"php": ">=7.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Args\\": "src/"
+		}
+	},
+	"scripts": {
+		"generate": [
+			"@php generate.php"
+		],
+		"test:phpcs": [
+			"phpcs -p --cache=tests/cache/phpcs.json ."
+		],
+		"test:phpunit": [
+			"phpunit --testdox"
+		],
+		"test:phpstan": [
+			"phpstan analyze"
+		],
+		"test": [
+			"@test:phpcs",
+			"@test:phpunit",
+			"@test:phpstan"
+		]
+	},
+	"extra": {
+		"wordpress-install-dir": "vendor/wordpress/wordpress"
+	},
+	"require-dev": {
+		"humanmade/coding-standards": "^1.1",
+		"johnbillion/falsey-assertequals-detector": "^3",
+		"phpdocumentor/reflection": "~4.0",
+		"phpstan/phpstan": "^1.0",
+		"phpstan/phpstan-phpunit": "^1.0",
+		"phpunit/phpunit": "^9.0",
+		"roots/wordpress": "^5.7.0"
+	},
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/johnbillion"
+		}
+	]
+}
