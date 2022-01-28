@@ -18,13 +18,17 @@ There is an example product with ingredients into the [`data`](https://github.co
 If you need a different way to display it, you can:
 
     * specify a different title
-    Example: `[wp_inci_product id="33591" title="My custom title"]`
+  
+      Example: `[wp_inci_product id="33591" title="My custom title"]`
     * automatically insert the product permalink
-    Example: `[wp_inci_product id="33591" link="true"]`
+  
+      Example: `[wp_inci_product id="33591" link="true"]`
     * remove the ingredients listing
-    Example: `[wp_inci_product id="33591" link="true" list="false"]`
+  
+      Example: `[wp_inci_product id="33591" link="true" list="false"]`
     * remove the safety from ingredients listing
-    Example: `[wp_inci_product id="33591" safety="false"]`
+  
+      Example: `[wp_inci_product id="33591" safety="false"]`
 
 * Languages: English, Italian.
 
