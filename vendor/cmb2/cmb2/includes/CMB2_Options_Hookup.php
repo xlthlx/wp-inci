@@ -136,11 +136,11 @@ class CMB2_Options_Hookup extends CMB2_Hookup {
 		$is_updated      = $should_notify && 'true' === $_GET['settings-updated'];
 		$setting         = "{$this->option_key}-notices";
 		$code            = '';
-		$message         = __( 'Nothing to update.', 'cmb2' );
+		$message         = __( 'Nothing to update.', 'wp-inci' );
 		$type            = 'notice-warning';
 
 		if ( $is_updated ) {
-			$message = __( 'Settings updated.', 'cmb2' );
+			$message = __( 'Settings updated.', 'wp-inci' );
 			$type    = 'updated';
 		}
 
@@ -366,7 +366,7 @@ class CMB2_Options_Hookup extends CMB2_Hookup {
 			case 'cmb':
 				return $this->{$field};
 			default:
-				throw new Exception( sprintf( esc_html__( 'Invalid %1$s property: %2$s', 'cmb2' ), __CLASS__, $field ) );
+				throw new Exception( sprintf( esc_html__( 'Invalid %1$s property: %2$s', 'wp-inci' ), __CLASS__, $field ) );
 		}
 	}
 }

@@ -50,6 +50,10 @@ If you need support or have a feature request, please use the [support forum](ht
 
 == Changelog ==
 
+= 1.5.1 =
+* Updated translation
+* Bugfix
+
 = 1.5 =
 * Tested up to 5.9
 * Updated dependencies
@@ -100,7 +104,7 @@ N/A
 == Installation ==
 
 1. Upload `wp-inci` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'PluginAmazon packages of free goods which are arriving through people's doorss' menu in WordPress
+2. Activate the plugin through the 'Plugins' menu in WordPress
 4. Enjoy
 
 == Credits ==

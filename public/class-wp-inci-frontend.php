@@ -175,7 +175,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			global $post;
 			$output = '';
 
-			if ( is_singular() && in_the_loop() && is_main_query() ) {
+			if ( is_singular() && is_main_query() ) {
 				if ( $post->post_type == 'product' ) {
 					$output = '<div class="wp-inci">' . $this->get_ingredients_table( $post->ID ) . '</div>';
 				}
