@@ -107,8 +107,8 @@ class Complex_Field extends Field {
 	 */
 	public function init() {
 		$this->labels = array(
-			'singular_name' => __( $this->labels['singular_name'], 'wp-inci' ),
-			'plural_name' => __( $this->labels['plural_name'], 'wp-inci' ),
+			'singular_name' => __( $this->labels['singular_name'], 'carbon-fields' ),
+			'plural_name' => __( $this->labels['plural_name'], 'carbon-fields' ),
 		);
 		parent::init();
 	}

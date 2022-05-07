@@ -185,11 +185,11 @@ class CMB2_Hookup extends CMB2_Hookup_Base {
 
 	public function term_hooks() {
 		if ( ! function_exists( 'get_term_meta' ) ) {
-			wp_die( esc_html__( 'Term Metadata is a WordPress 4.4+ feature. Please upgrade your WordPress install.', 'wp-inci' ) );
+			wp_die( esc_html__( 'Term Metadata is a WordPress 4.4+ feature. Please upgrade your WordPress install.', 'cmb2' ) );
 		}
 
 		if ( ! $this->cmb->prop( 'taxonomies' ) ) {
-			wp_die( esc_html__( 'Term metaboxes configuration requires a "taxonomies" parameter.', 'wp-inci' ) );
+			wp_die( esc_html__( 'Term metaboxes configuration requires a "taxonomies" parameter.', 'cmb2' ) );
 		}
 
 		$this->taxonomies = (array) $this->cmb->prop( 'taxonomies' );
@@ -557,7 +557,7 @@ class CMB2_Hookup extends CMB2_Hookup_Base {
 				: '';
 		}
 
-		$toggle_button = '<button type="button" class="handlediv button-link" aria-expanded="true"><span class="screen-reader-text">' . sprintf( __( 'Toggle panel: %s', 'wp-inci' ), $title ) . '</span><span class="toggle-indicator" aria-hidden="true"></span></button>';
+		$toggle_button = '<button type="button" class="handlediv button-link" aria-expanded="true"><span class="screen-reader-text">' . sprintf( __( 'Toggle panel: %s' ), $title ) . '</span><span class="toggle-indicator" aria-hidden="true"></span></button>';
 		$title_tag = '<h2 class="hndle"><span>' . esc_attr( $title ) . '</span></h2>' . "\n";
 
 		echo '<div id="' . $cmb_id . '" class="' . postbox_classes( $cmb_id, $page ) . $hidden_class . '">' . "\n";

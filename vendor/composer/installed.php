@@ -1,93 +1,79 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '1fa3fd3b027952380746adbcd9f58b13b67f562e',
+        'name' => 'xlthlx/wp-inci',
+        'dev' => true,
     ),
-    'reference' => '75b12f67c67ae63824ba19da5d14a93f570d4dd2',
-    'name' => 'xlthlx/wp-inci',
-  ),
-  'versions' => 
-  array (
-    'cmb2/cmb2' => 
-    array (
-      'pretty_version' => 'v2.9.0',
-      'version' => '2.9.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'cacbc8cedbfdf8ffe0e840858e6860f9333c33f2',
+    'versions' => array(
+        'cmb2/cmb2' => array(
+            'pretty_version' => 'v2.10.1',
+            'version' => '2.10.1.0',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../cmb2/cmb2',
+            'aliases' => array(),
+            'reference' => '4afc4bb7b92ab6d93aac2247c9a84af773e42532',
+            'dev_requirement' => false,
+        ),
+        'composer/installers' => array(
+            'pretty_version' => 'v2.1.1',
+            'version' => '2.1.1.0',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/./installers',
+            'aliases' => array(),
+            'reference' => 'af93ba6e52236418f07a278033eba6959ee5b983',
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-fields' => array(
+            'pretty_version' => 'v3.3.4',
+            'version' => '3.3.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../htmlburger/carbon-fields',
+            'aliases' => array(),
+            'reference' => '2ae6773c004b873a1b0456613b14852c1a436a96',
+            'dev_requirement' => false,
+        ),
+        'johnbillion/args' => array(
+            'pretty_version' => '0.9.0',
+            'version' => '0.9.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../johnbillion/args',
+            'aliases' => array(),
+            'reference' => 'a1a3feb05cc9fc3914ed96eeab009259aea326c1',
+            'dev_requirement' => false,
+        ),
+        'johnbillion/extended-cpts' => array(
+            'pretty_version' => '5.0.2',
+            'version' => '5.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../johnbillion/extended-cpts',
+            'aliases' => array(),
+            'reference' => '6b208d7b46fb065a4da426ab4502fdf4de0c1446',
+            'dev_requirement' => false,
+        ),
+        'roave/security-advisories' => array(
+            'pretty_version' => 'dev-latest',
+            'version' => 'dev-latest',
+            'type' => 'metapackage',
+            'install_path' => NULL,
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '6e213f05f59444f9e6f5a7c438bf130ae74aed32',
+            'dev_requirement' => true,
+        ),
+        'xlthlx/wp-inci' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '1fa3fd3b027952380746adbcd9f58b13b67f562e',
+            'dev_requirement' => false,
+        ),
     ),
-    'composer/installers' => 
-    array (
-      'pretty_version' => 'v1.12.0',
-      'version' => '1.12.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd20a64ed3c94748397ff5973488761b22f6d3f19',
-    ),
-    'htmlburger/carbon-fields' => 
-    array (
-      'pretty_version' => 'v3.3.2',
-      'version' => '3.3.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'dd5663e14c6db365323b688dbae1cfbeaf14bee7',
-    ),
-    'johnbillion/args' => 
-    array (
-      'pretty_version' => '0.9.0',
-      'version' => '0.9.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a1a3feb05cc9fc3914ed96eeab009259aea326c1',
-    ),
-    'johnbillion/extended-cpts' => 
-    array (
-      'pretty_version' => '5.0.0',
-      'version' => '5.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'fded84c6aa241405e73f43f74f869685b61a396d',
-    ),
-    'roave/security-advisories' => 
-    array (
-      'pretty_version' => 'dev-latest',
-      'version' => 'dev-latest',
-      'aliases' => 
-      array (
-        0 => '9999999-dev',
-      ),
-      'reference' => '6e213f05f59444f9e6f5a7c438bf130ae74aed32',
-    ),
-    'roundcube/plugin-installer' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-    'shama/baton' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-    'xlthlx/wp-inci' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '75b12f67c67ae63824ba19da5d14a93f570d4dd2',
-    ),
-  ),
 );

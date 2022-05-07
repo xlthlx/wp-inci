@@ -40,7 +40,7 @@ if ( ! isset( $container_css_class ) ) {
 					<?php do_action( "{$container_id}_before_sidebar" ); ?>
 
 					<div id="submitdiv" class="postbox">
-						<h3><?php _e( 'Actions', 'wp-inci' ); ?></h3>
+						<h3><?php _e( 'Actions', 'carbon-fields' ); ?></h3>
 
 						<div id="major-publishing-actions">
 
@@ -49,7 +49,7 @@ if ( ! isset( $container_css_class ) ) {
 
 								<?php
 									$filter_name  = 'carbon_fields_' . str_replace( '-', '_', sanitize_title( $this->title ) ) . '_button_label';
-									$button_label = apply_filters( $filter_name, __( 'Save Changes', 'wp-inci' ) );
+									$button_label = apply_filters( $filter_name, __( 'Save Changes', 'carbon-fields' ) );
 								?>
 
 								<input type="submit" value="<?php echo esc_attr( $button_label ); ?>" name="publish" id="publish" class="button button-primary button-large">

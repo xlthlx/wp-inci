@@ -204,7 +204,7 @@ class Theme_Options_Container extends Container {
 		$input = stripslashes_deep( $_GET );
 		$request_settings_updated = isset( $input['settings-updated'] ) ? $input['settings-updated'] : '';
 		if ( $request_settings_updated === 'true' ) {
-			$this->notifications[] = __( 'Settings saved.', 'wp-inci' );
+			$this->notifications[] = __( 'Settings saved.', 'carbon-fields' );
 		}
 
 		include \Carbon_Fields\DIR . '/templates/Container/' . $this->type . '.php';

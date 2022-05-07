@@ -8,13 +8,18 @@
       ]
     }
   },
-  "require": {
-    "cmb2/cmb2": "^2.9.0",
-    "composer/installers": "^1.9",
-    "johnbillion/extended-cpts": "^5.0.0",
-    "htmlburger/carbon-fields": "^3.3"
-  },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "require": {
+    "cmb2/cmb2": "^2.10",
+    "johnbillion/extended-cpts": "^5.0",
+    "composer/installers": "^2.1",
+    "htmlburger/carbon-fields": "^3.3"
   }
 }

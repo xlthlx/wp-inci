@@ -71,7 +71,7 @@ class Sidebar_Field extends Select_Field {
 		if ( $this->enable_add_new ) {
 			$options[] = array(
 				'value' => '__add_new',
-				'label' => _x( 'Add New', 'sidebar', 'wp-inci' ),
+				'label' => _x( 'Add New', 'sidebar', 'carbon-fields' ),
 			);
 		}
 

@@ -61,6 +61,11 @@ class PostType {
 	 * @param string               $post_type The post type name.
 	 * @param array<string,mixed>  $args      Optional. The post type arguments.
 	 * @param array<string,string> $names     Optional. The plural, singular, and slug names.
+	 * @phpstan-param array{
+	 *   plural?: string,
+	 *   singular?: string,
+	 *   slug?: string,
+	 * } $names
 	 */
 	public function __construct( string $post_type, array $args = [], array $names = [] ) {
 		/**
@@ -766,7 +771,7 @@ class PostType {
 						esc_html(
 							sprintf(
 								/* translators: %s: Post type query variable name */
-								__( 'Post type query var "%s" clashes with a taxonomy query var of the same name', 'wp-inci' ),
+								__( 'Post type query var "%s" clashes with a taxonomy query var of the same name', 'extended-cpts' ),
 								$query_var
 							)
 						),

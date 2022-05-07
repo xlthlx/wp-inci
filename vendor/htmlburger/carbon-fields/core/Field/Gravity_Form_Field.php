@@ -44,7 +44,7 @@ class Gravity_Form_Field extends Select_Field {
 		}
 
 		$options = array(
-			'' => __( 'No form', 'wp-inci' ),
+			'' => __( 'No form', 'carbon-fields' ),
 		);
 
 		foreach ( $forms as $form ) {

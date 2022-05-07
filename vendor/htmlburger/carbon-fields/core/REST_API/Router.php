@@ -395,7 +395,7 @@ class Router {
 		$options = $request->get_params();
 
 		if ( empty( $options ) ) {
-			return new \WP_REST_Response( __( 'No option names provided', 'wp-inci' ) );
+			return new \WP_REST_Response( __( 'No option names provided', 'carbon-fields' ) );
 		}
 
 		foreach ( $options as $key => $value ) {
@@ -406,7 +406,7 @@ class Router {
 			}
 		}
 
-		return new \WP_REST_Response( __( 'Theme Options updated.', 'wp-inci' ), 200 );
+		return new \WP_REST_Response( __( 'Theme Options updated.', 'carbon-fields' ), 200 );
 	}
 
 	/**
@@ -428,7 +428,7 @@ class Router {
 			if ( ! $post || ! current_user_can( 'edit_post', $post->ID ) ) {
 				return new \WP_Error(
 					'block_cannot_read',
-					__( 'Sorry, you are not allowed to read blocks of this post.', 'wp-inci' ),
+					__( 'Sorry, you are not allowed to read blocks of this post.', 'carbon-fields' ),
 					array(
 						'status' => rest_authorization_required_code(),
 					)
@@ -438,7 +438,7 @@ class Router {
 			if ( ! current_user_can( 'edit_posts' ) ) {
 				return new \WP_Error(
 					'block_cannot_read',
-					__( 'Sorry, you are not allowed to read blocks as this user.', 'wp-inci' ),
+					__( 'Sorry, you are not allowed to read blocks as this user.', 'carbon-fields' ),
 					array(
 						'status' => rest_authorization_required_code(),
 					)
@@ -459,12 +459,12 @@ class Router {
 			'type'       => array(
 				'type'        => 'string',
 				'required'    => true,
-				'description' => __( 'The requested type: ID or URL.', 'wp-inci' ),
+				'description' => __( 'The requested type: ID or URL.', 'carbon-fields' ),
 			),
 			'value'    => array(
 				'type'        => 'string',
 				'required'    => true,
-				'description' => __( 'The ID / URL of the attachment', 'wp-inci' ),
+				'description' => __( 'The ID / URL of the attachment', 'carbon-fields' ),
 			),
 		);
 	}
@@ -481,16 +481,16 @@ class Router {
 			'name'       => array(
 				'type'        => 'string',
 				'required'    => true,
-				'description' => __( 'The name of the block.', 'wp-inci' ),
+				'description' => __( 'The name of the block.', 'carbon-fields' ),
 			),
 			'content'    => array(
 				'type'        => 'string',
 				'required'    => true,
-				'description' => __( 'The content of the block.', 'wp-inci' ),
+				'description' => __( 'The content of the block.', 'carbon-fields' ),
 			),
 			'post_id'    => array(
 				'type'        => 'integer',
-				'description' => __( 'ID of the post context.', 'wp-inci' ),
+				'description' => __( 'ID of the post context.', 'carbon-fields' ),
 			),
 		);
 	}
@@ -521,7 +521,7 @@ class Router {
 		if ( null === $block ) {
 			return new \WP_Error(
 				'block_invalid',
-				__( 'Invalid block.', 'wp-inci' ),
+				__( 'Invalid block.' ),
 				array(
 					'status' => 404,
 				)

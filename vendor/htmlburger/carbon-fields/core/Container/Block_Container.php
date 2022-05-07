@@ -213,7 +213,7 @@ class Block_Container extends Container {
 	 */
 	protected function set_style_handle( $key, $handle ) {
 		if ( ! wp_style_is( $handle ) ) {
-			throw new \Exception( __( "Style '$handle' is not enqueued.", 'wp-inci' ) );
+			throw new \Exception( __( "Style '$handle' is not enqueued.", 'crb' ) );
 		}
 
 		$this->settings[ $key ] = $handle;
@@ -284,7 +284,7 @@ class Block_Container extends Container {
 	 */
 	public function set_parent( $parent = null ) {
 		if ( ! is_array( $parent ) && ! is_string( $parent ) && ! is_null( $parent ) ) {
-			throw new \Exception( __( "The parent must be 'array', 'string' or 'null'.", 'wp-inci' ) );
+			throw new \Exception( __( "The parent must be 'array', 'string' or 'null'.", 'crb' ) );
 		}
 
 		$this->settings[ 'parent' ] = is_string( $parent ) ? array( $parent ) : $parent;
@@ -313,7 +313,7 @@ class Block_Container extends Container {
 	 */
 	public function set_inner_blocks_position( $position = 'above' ) {
 		if ( ! in_array( $position, [ 'above', 'below' ] ) ) {
-			throw new \Exception( __( "The position of inner blocks must be 'above' or 'below'.", 'wp-inci' ) );
+			throw new \Exception( __( "The position of inner blocks must be 'above' or 'below'.", 'crb' ) );
 		}
 
 		$this->settings[ 'inner_blocks' ][ 'position' ] = $position;
@@ -331,7 +331,7 @@ class Block_Container extends Container {
 	 */
 	public function set_inner_blocks_template( $template = null ) {
 		if ( ! is_array( $template ) && ! is_null( $template ) ) {
-			throw new \Exception( __( "The template must be an 'array' or 'null'.", 'wp-inci' ) );
+			throw new \Exception( __( "The template must be an 'array' or 'null'.", 'crb' ) );
 		}
 
 		$this->settings[ 'inner_blocks' ][ 'template' ] = $template;
@@ -349,7 +349,7 @@ class Block_Container extends Container {
 	 */
 	public function set_inner_blocks_template_lock( $lock = null ) {
 		if ( is_string( $lock ) && ! in_array( $lock, [ 'all', 'insert' ] ) ) {
-			throw new \Exception( __( "The template lock must be 'all', 'insert', 'false' or 'null'.", 'wp-inci' ) );
+			throw new \Exception( __( "The template lock must be 'all', 'insert', 'false' or 'null'.", 'crb' ) );
 		}
 
 		$this->settings[ 'inner_blocks' ][ 'template_lock' ] = $lock;
@@ -367,7 +367,7 @@ class Block_Container extends Container {
 	 */
 	public function set_allowed_inner_blocks( $blocks = null ) {
 		if ( ! is_array( $blocks ) && ! is_null( $blocks ) ) {
-			throw new \Exception( __( "The allowed blocks must be an 'array' or 'null'.", 'wp-inci' ) );
+			throw new \Exception( __( "The allowed blocks must be an 'array' or 'null'.", 'crb' ) );
 		}
 
 		if ( is_array( $blocks ) ) {
@@ -434,11 +434,11 @@ class Block_Container extends Container {
 	 */
 	protected function register_block() {
 		if ( is_null( $this->render_callback ) ) {
-			throw new \Exception( __( "'render_callback' is required for the blocks.", 'wp-inci' ) );
+			throw new \Exception( __( "'render_callback' is required for the blocks.", 'crb' ) );
 		}
 
 		if ( ! is_callable( $this->render_callback ) ) {
-			throw new \Exception( __( "'render_callback' must be a callable.", 'wp-inci' ) );
+			throw new \Exception( __( "'render_callback' must be a callable.", 'crb' ) );
 		}
 
 		$style = isset( $this->settings[ 'style' ] ) ? $this->settings[ 'style' ] : null;

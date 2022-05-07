@@ -45,11 +45,16 @@ use ExtCPTs\TaxonomyAdmin;
  *     @type string $singular The singular form of the post type name.
  *     @type string $slug     The slug used in the permalinks for this post type.
  * }
+ * @phpstan-param array{
+ *   plural?: string,
+ *   singular?: string,
+ *   slug?: string,
+ * } $names
  * @return PostType
  */
 function register_extended_post_type( string $post_type, array $args = [], array $names = [] ): PostType {
 	if ( ! did_action( 'init' ) ) {
-		trigger_error( esc_html__( 'Post types must be registered on the "init" hook.', 'wp-inci' ), E_USER_WARNING );
+		trigger_error( esc_html__( 'Post types must be registered on the "init" hook.', 'extended-cpts' ), E_USER_WARNING );
 	}
 
 	$cpt = new PostType( $post_type, $args, $names );
@@ -107,11 +112,16 @@ function register_extended_post_type( string $post_type, array $args = [], array
  *     @type string $singular The singular form of the taxonomy name.
  *     @type string $slug     The slug used in the term permalinks for this taxonomy.
  * }
+ * @phpstan-param array{
+ *   plural?: string,
+ *   singular?: string,
+ *   slug?: string,
+ * } $names
  * @return Taxonomy
  */
 function register_extended_taxonomy( string $taxonomy, $object_type, array $args = [], array $names = [] ): Taxonomy {
 	if ( ! did_action( 'init' ) ) {
-		trigger_error( esc_html__( 'Taxonomies must be registered on the "init" hook.', 'wp-inci' ), E_USER_WARNING );
+		trigger_error( esc_html__( 'Taxonomies must be registered on the "init" hook.', 'extended-cpts' ), E_USER_WARNING );
 	}
 
 	$taxo = new Taxonomy( $taxonomy, (array) $object_type, $args, $names );

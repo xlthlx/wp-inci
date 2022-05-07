@@ -314,7 +314,7 @@ class PostTypeAdmin {
 						'orderby'         => 'name',
 						'selected_cats'   => $tax->query_var ? get_query_var( $tax->query_var ) : [],
 						'id'              => $id,
-						'name'            => $tax->query_var,
+						'name'            => (string) $tax->query_var,
 						'taxonomy'        => $filter['taxonomy'],
 						'walker'          => $walker,
 					]
@@ -478,11 +478,11 @@ class PostTypeAdmin {
 				$value = wp_unslash( get_query_var( 'author' ) );
 
 				if ( ! isset( $filter['title'] ) ) {
-					$filter['title'] = __( 'All Authors', 'wp-inci' );
+					$filter['title'] = __( 'All Authors', 'extended-cpts' );
 				}
 
 				if ( ! isset( $filter['label'] ) ) {
-					$filter['label'] = __( 'Author', 'wp-inci' );
+					$filter['label'] = __( 'Author', 'extended-cpts' );
 				}
 
 				printf(
@@ -518,7 +518,7 @@ class PostTypeAdmin {
 						'include'           => $filter['options'],
 						'name'              => 'author',
 						'option_none_value' => '0',
-						'selected'          => $value,
+						'selected'          => (int) $value,
 						'show_option_none'  => $filter['title'],
 					]
 				);
@@ -886,7 +886,7 @@ ICONCSS;
 				} else {
 					$k = 'author';
 				}
-				$new_cols[ $k ] = esc_html__( 'Author', 'wp-inci' );
+				$new_cols[ $k ] = esc_html__( 'Author', 'extended-cpts' );
 			} elseif ( is_array( $col ) ) {
 				if ( isset( $col['cap'] ) && ! current_user_can( $col['cap'] ) ) {
 					continue;
@@ -1215,7 +1215,7 @@ ICONCSS;
 			echo esc_html(
 				sprintf(
 					/* translators: %s: The ID of the Posts 2 Posts connection type */
-					__( 'Invalid connection type: %s', 'wp-inci' ),
+					__( 'Invalid connection type: %s', 'extended-cpts' ),
 					$connection
 				)
 			);
@@ -1244,7 +1244,7 @@ ICONCSS;
 				echo esc_html(
 					sprintf(
 						/* translators: %s: The ID of the Posts 2 Posts connection type */
-						__( 'Invalid connection type: %s', 'wp-inci' ),
+						__( 'Invalid connection type: %s', 'extended-cpts' ),
 						$connection
 					)
 				);
@@ -1396,7 +1396,9 @@ ICONCSS;
 	 * @return string The item title.
 	 */
 	protected function get_item_title( array $item, string $fallback = '' ): string {
-		if ( isset( $item['taxonomy'] ) ) {
+		if ( isset( $item['title'] ) ) {
+			return $item['title'];
+		} elseif ( isset( $item['taxonomy'] ) ) {
 			$tax = get_taxonomy( $item['taxonomy'] );
 			if ( $tax ) {
 				if ( ! empty( $tax->exclusive ) ) {

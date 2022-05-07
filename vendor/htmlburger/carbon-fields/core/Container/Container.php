@@ -724,7 +724,7 @@ abstract class Container implements Datastore_Holder_Interface {
 
 		if ( ! empty( $untabbed_fields ) ) {
 			$this->create_tab(
-				apply_filters( 'carbon_fields_untabbed_fields_tab_title', __( 'General', 'wp-inci' ), $this ),
+				apply_filters( 'carbon_fields_untabbed_fields_tab_title', __( 'General', 'carbon-fields' ), $this ),
 				$untabbed_fields,
 				static::TABS_HEAD
 			);

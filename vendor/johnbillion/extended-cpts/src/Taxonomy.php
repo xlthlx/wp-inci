@@ -51,6 +51,11 @@ class Taxonomy {
 	 * @param array<int,string>    $object_type Names of the object types for the taxonomy.
 	 * @param array<string,mixed>  $args        Optional. The taxonomy arguments.
 	 * @param array<string,string> $names       Optional. An associative array of the plural, singular, and slug names.
+	 * @phpstan-param array{
+	 *   plural?: string,
+	 *   singular?: string,
+	 *   slug?: string,
+	 * } $names
 	 */
 	public function __construct( string $taxonomy, array $object_type, array $args = [], array $names = [] ) {
 		/**
@@ -242,7 +247,7 @@ class Taxonomy {
 				esc_html(
 					sprintf(
 						/* translators: %s: Taxonomy query variable name */
-						__( 'Taxonomy query var "%s" clashes with a post type query var of the same name', 'wp-inci' ),
+						__( 'Taxonomy query var "%s" clashes with a post type query var of the same name', 'extended-cpts' ),
 						$query_var
 					)
 				),
@@ -253,7 +258,7 @@ class Taxonomy {
 				esc_html(
 					sprintf(
 						/* translators: %s: Taxonomy query variable name */
-						__( 'Taxonomy query var "%s" is not allowed', 'wp-inci' ),
+						__( 'Taxonomy query var "%s" is not allowed', 'extended-cpts' ),
 						$query_var
 					)
 				),
