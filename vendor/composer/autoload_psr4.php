@@ -6,8 +6,18 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'eftec\\bladeone\\' => array($vendorDir . '/eftec/bladeone/lib'),
+    'WP_CLI\\I18n\\' => array($vendorDir . '/wp-cli/i18n-command/src'),
+    'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
+    'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
+    'Peast\\test\\' => array($vendorDir . '/mck89/peast/test/Peast'),
+    'Peast\\' => array($vendorDir . '/mck89/peast/lib/Peast'),
+    'Mustangostang\\' => array($vendorDir . '/wp-cli/mustangostang-spyc/src'),
+    'Gettext\\Languages\\' => array($vendorDir . '/gettext/languages/src'),
+    'Gettext\\' => array($vendorDir . '/gettext/gettext/src'),
     'ExtCPTs\\Tests\\' => array($vendorDir . '/johnbillion/extended-cpts/tests/integration'),
     'ExtCPTs\\' => array($vendorDir . '/johnbillion/extended-cpts/src'),
+    'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Carbon_Fields\\' => array($vendorDir . '/htmlburger/carbon-fields/core'),
     'Args\\' => array($vendorDir . '/johnbillion/args/src'),

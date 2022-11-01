@@ -1,6 +1,16 @@
 {
   "name": "xlthlx/wp-inci",
   "description": "A WordPress plugin to manage INCI",
+  "keywords": [
+    "WordPress",
+    "Plugin"
+  ],
+  "authors": [
+    {
+      "name": "xlthlx",
+      "homepage": "https://piccioni.london"
+    }
+  ],
   "extra": {
     "installer-paths": {
       "vendor/{$vendor}/{$name}/": [
@@ -8,12 +18,24 @@
       ]
     }
   },
+  "homepage": "https://github.com/xlthlx",
   "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "wptrt/wpthemereview": "^0.2.1",
+    "php-parallel-lint/php-parallel-lint": "^1.2.0",
+    "wp-cli/i18n-command": "^2.2.5",
     "roave/security-advisories": "dev-latest"
+  },
+  "scripts": {
+    "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor/*,node_modules/* --extensions=php . -n -v --report-file=report.txt",
+    "lint:wpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor/*,node_modules/* --extensions=php .",
+    "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
+    "make-pot": "wp i18n make-pot . languages/wp-inci.pot"
   },
   "config": {
     "allow-plugins": {
-      "composer/installers": true
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "require": {

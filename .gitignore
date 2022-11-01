@@ -51,6 +51,4 @@ Thumbs.db
 .idea
 !/vendor/
 !/vendor/*
-/Gruntfile.js
-/package.json
 /package-lock.json
