@@ -1,10 +1,10 @@
 === WP INCI ===
 Contributors: xlthlx
 Donate link: https://paypal.me/xlthlx
-Tags: inci, ingredients, cosmetics, make-up
-Requires at least: 5.2
+Tags: inci,ingredients,cosmetics,make-up
+Requires at least: 5.9
 Tested up to: 6.1
-Stable tag: 5.2
+Stable tag: 1.6
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -49,6 +49,10 @@ If you need support or have a feature request, please use the [support forum](ht
 5. Post example
 
 == Changelog ==
+
+= 1.6.1 =
+* Linted PHP
+* Updated dependencies
 
 = 1.6.0 =
 * Tested up to 6.1
@@ -117,7 +121,7 @@ N/A
 
 1. Upload `wp-inci` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-4. Enjoy
+3. Enjoy
 
 == Credits ==
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)

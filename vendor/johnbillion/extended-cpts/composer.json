@@ -18,14 +18,11 @@
 		}
 	},
 	"extra": {
-		"branch-alias": {
-			"dev-develop": "5.0-dev"
-		},
 		"wordpress-install-dir": "tests/wordpress"
 	},
 	"require": {
 		"php": ">= 7.4.0",
-		"johnbillion/args": "^0.9.0"
+		"johnbillion/args": "^1.4.1"
 	},
 	"require-dev": {
 		"automattic/phpcs-neutron-standard": "1.7.0",
@@ -36,8 +33,9 @@
 		"phpstan/phpstan": "^1.0",
 		"phpstan/phpstan-phpunit": "^1.0",
 		"phpunit/phpunit": "^9",
-		"roots/wordpress": "^5.8.0",
-		"szepeviktor/phpstan-wordpress": "^1.0",
+		"roots/wordpress-core-installer": "^1.0.0",
+		"roots/wordpress-full": "~6.1.0",
+		"szepeviktor/phpstan-wordpress": "1.1.6",
 		"vlucas/phpdotenv": "^3",
 		"wp-cli/core-command": "^2",
 		"wp-cli/db-command": "^2",
@@ -51,7 +49,7 @@
 			"phpcs -nps --colors --report-code --report-summary --report-width=80 --cache=tests/cache/phpcs --basepath='./' ."
 		],
 		"test:analyze": [
-			"phpstan analyze"
+			"phpstan analyze --memory-limit=1024M"
 		],
 		"test:integration": [
 			"codecept run integration"

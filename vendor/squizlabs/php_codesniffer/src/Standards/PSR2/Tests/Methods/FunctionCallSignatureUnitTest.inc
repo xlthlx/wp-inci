@@ -180,7 +180,7 @@ $var = foo('Testing
 
 class Test
 {
-    public function getInstance()
+    public function get_instance()
     {
         return new static(
           'arg',

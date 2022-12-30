@@ -32,7 +32,7 @@ class MyClass
 
 abstract class Foo
 {
-    public static function getInstance()
+    public static function get_instance()
     {
         return new static();
     }
@@ -48,7 +48,7 @@ class MyClass1 {
 
 abstract class Foo
 {
-    public static function getInstance()
+    public static function get_instance()
     {
         return new /* comment */   static();
     }

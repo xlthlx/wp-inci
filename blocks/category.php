@@ -12,28 +12,32 @@
 /**
  * Add block category WP INCI.
  *
- * @param array $categories Block categories array
+ * @param array $categories Block categories array.
  *
  * @return array
  */
-function Wi_Blocks_category( $categories )
-{
-    $block_category = [ 'title' => 'WP INCI', 'slug' => 'wp-inci' ];
-    $category_slugs = array_column($categories, 'slug');
+function wi_blocks_category( $categories ) {
+	$block_category = array(
+		'title' => 'WP INCI',
+		'slug'  => 'wp-inci',
+	);
+	// @codingStandardsIgnoreStart
+	$category_slugs = array_column( $categories, 'slug' );
+	// @codingStandardsIgnoreEnd
 
-    if (! in_array($block_category['slug'], $category_slugs, true) ) {
-        $categories = array_merge(
-            [
-            [
-            'title' => $block_category['title'],
-            'slug'  => $block_category['slug'],
-            ],
-            ],
-            $categories
-        );
-    }
+	if ( ! in_array( $block_category['slug'], $category_slugs, true ) ) {
+		$categories = array_merge(
+			array(
+				array(
+					'title' => $block_category['title'],
+					'slug'  => $block_category['slug'],
+				),
+			),
+			$categories
+		);
+	}
 
-    return $categories;
+	return $categories;
 }
 
-add_filter('block_categories_all', 'Wi_Blocks_category', 10, 1);
+add_filter( 'block_categories_all', 'wi_blocks_category' );

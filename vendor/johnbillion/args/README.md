@@ -7,18 +7,18 @@ Many functions and methods in WordPress accept arguments as an associative array
 ```php
 $query = new WP_Query( [
 	'post_type' => 'post',
-	'category_something' => 'does this accept an integer or a string?',
+	'category' => 'does this accept an ID or a slug?',
 	'number_of_...errr'
 ] );
 ```
 
 This library provides well-documented classes which represent many of the associative array parameters used throughout WordPress. Using them at the point where you populate the arguments means you get autocompletion and intellisense in your code editor, and strict typing thanks to typed properties in PHP 7.4. Comprehensive types and constraints for [PHPStan](https://phpstan.org/) are also included.
 
-![](assets/screenshot.png)
+![](.github/assets/screenshot.png)
 
 ## Current Status
 
-Beta. This library was last updated for WordPress 5.7.
+Last updated for WordPress 6.1.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ Beta. This library was last updated for WordPress 5.7.
 
 ## Installation
 
-```
+```shell
 composer require johnbillion/args
 ```
 
@@ -64,7 +64,7 @@ Creating a `meta_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\MetaQueryClause;
+$clause = new \Args\MetaQuery\Clause;
 $clause->key = 'my_meta_key';
 $clause->value = 'my_meta_value';
 
@@ -80,12 +80,12 @@ Creating a `tax_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\TaxQueryClause;
+$clause = new \Args\TaxQuery\Clause;
 $clause->taxonomy = 'post_tag';
 $clause->terms = [ 'amazing' ];
 
 // Add the clause
-$args->meta_query->clauses[] = $clause;
+$args->tax_query->clauses[] = $clause;
 
 $query = new \WP_Query( $args->toArray() );
 ```
@@ -96,12 +96,12 @@ Creating a `date_query` argument:
 $args = new \Args\WP_Query;
 
 // Create a clause
-$clause = new \Args\Shared\DateQueryClause;
+$clause = new \Args\DateQuery\Clause;
 $clause->year = 2000;
 $clause->compare = '>=';
 
 // Add the clause
-$args->meta_query->clauses[] = $clause;
+$args->date_query->clauses[] = $clause;
 
 $query = new \WP_Query( $args->toArray() );
 ```
@@ -112,12 +112,13 @@ Alternatively you can construct a complete query object by calling the `fromArra
 $args = new \Args\WP_Query;
 
 // Set the meta query from an array
-$args->meta_query = $args->meta_query::fromArray( [
+$array = [
 	[
 		'key' => 'my_meta_key',
 		'value' => 'my_meta_value',
 	]
-] );
+];
+$args->meta_query = $args->meta_query::fromArray( $array );
 
 $query = new \WP_Query( $args->toArray() );
 ```
@@ -146,6 +147,7 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\register_term_meta`
 * `\Args\wp_count_terms`
 * `\Args\wp_get_object_terms`
+* `\Args\wp_dropdown_categories`
 
 ### Users
 
@@ -165,25 +167,45 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\wp_remote_post`
 * `\Args\wp_remote_head`
 * `\Args\wp_remote_request`
+* `\Args\wp_safe_remote_get`
+* `\Args\wp_safe_remote_post`
+* `\Args\wp_safe_remote_head`
+* `\Args\wp_safe_remote_request`
+
+### Blocks
+
+* `\Args\WP_Block_Type`
+* `\Args\register_block_type`
+
+### Customizer
+
+* `\Args\WP_Customize_Control`
+* `\Args\WP_Customize_Manager`
+* `\Args\WP_Customize_Panel`
+* `\Args\WP_Customize_Section`
+* `\Args\WP_Customize_Setting`
 
 ### Everything Else
 
-* `\Args\register_block_type`
+* `\Args\paginate_links`
 * `\Args\register_meta`
 * `\Args\register_rest_field`
 * `\Args\wp_get_nav_menus`
+* `\Args\wp_nav_menu`
 * `\Args\wp_die`
+* `\Args\wp_dropdown_languages`
+* `\Args\wp_generate_tag_cloud`
 
 ## Type Checking
 
-PHP 7.4 supports typed class properties, which are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
+Typed class properties are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
 
 ```php
 <?php
 declare( strict_types=1 );
 ```
 
-No more mystery bugs due to incorrect types.
+No more mysterious bugs due to incorrect types.
 
 Note that several parameters in WordPress accept multiple types, for example the `$ignore_sticky_posts` argument for `\WP_Query` can be a boolean or an integer. In some of these cases I've opted to type the parameter with the most appropriate type even though it can technically accept other types.
 
@@ -205,11 +227,11 @@ I have a name for these array-type parameters for passing arguments. I call them
 
 The time that I spend maintaining this library and others is in part sponsored by:
 
-[![Automattic](assets/gh/automattic.png)](https://automattic.com)
+[![Automattic](.github/assets/gh/automattic.png)](https://automattic.com)
 
 Plus all my kind sponsors on GitHub:
 
-[![Sponsors](assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
+[![Sponsors](.github/assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
 
 [Click here to find out about supporting this library and my other WordPress development tools and plugins](https://github.com/sponsors/johnbillion).
 

@@ -10,8 +10,8 @@ namespace Args;
  * @link https://developer.wordpress.org/reference/functions/wp_insert_post/
  */
 class wp_insert_post extends Shared\Base {
-	const COMMENT_STATUS_OPEN = 'open';
-	const COMMENT_STATUS_CLOSED = 'closed';
+	public const COMMENT_STATUS_OPEN = 'open';
+	public const COMMENT_STATUS_CLOSED = 'closed';
 
 	/**
 	 * The post ID. If equal to something other than 0, the post with that ID will be updated.
@@ -172,6 +172,13 @@ class wp_insert_post extends Shared\Base {
 	public string $guid;
 
 	/**
+	 * Page template to use.
+	 *
+	 * Default empty.
+	 */
+	public string $page_template;
+
+	/**
 	 * Array of category IDs.
 	 *
 	 * Defaults to value of the 'default_category' option.
@@ -206,4 +213,11 @@ class wp_insert_post extends Shared\Base {
 	 * @var array<string,mixed>
 	 */
 	public array $meta_input;
+
+	/**
+	 *  The post ID to be used when inserting a new post. If specified, must not match any existing post ID.
+	 *
+	 * Default 0.
+	 */
+	public int $import_id;
 }
