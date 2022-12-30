@@ -1,4 +1,7 @@
-# WP INCI
+# ![WP INCI](https://github.com/xlthlx/wp-inci/blob/main/img/banner.png "WordPress Plugin")
+
+[![Version](https://img.shields.io/badge/version-1.6.1-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet)
 
 **Contributors:** xlthlx \
 **Donate link:** https://paypal.me/xlthlx \
