@@ -62,10 +62,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 			/**
 			 * Add hooks and queue.
 			 */
-			add_action(
-				'admin_init',
-				array( $this, 'registerPluginSettings' )
-			);
+			add_action( 'admin_init', array( $this, 'registerPluginSettings' ) );
 			add_action( 'admin_init', array( $this, 'pluginInit' ) );
 			add_action( 'admin_menu', array( $this, 'pluginSetup' ) );
 		}

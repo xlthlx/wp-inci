@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd33a7b900223051b927b534f1472e42e354d5fa0',
+        'reference' => 'e7451270e57873e7a56a04b143b0e5d67b4742ff',
         'name' => 'xlthlx/wp-inci',
         'dev' => true,
     ),
@@ -270,7 +270,7 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'reference' => '57a3ee3eb79b9538f3012e6b66c04cdac0b551d1',
+            'reference' => 'ef9dca6c49faa06e7203bbed30411e26e474a8fb',
             'dev_requirement' => true,
         ),
         'squizlabs/php_codesniffer' => array(
@@ -459,7 +459,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd33a7b900223051b927b534f1472e42e354d5fa0',
+            'reference' => 'e7451270e57873e7a56a04b143b0e5d67b4742ff',
             'dev_requirement' => false,
         ),
     ),

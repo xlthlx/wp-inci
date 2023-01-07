@@ -73,7 +73,7 @@
 	<!-- Allow for theme specific exceptions to the file name rules based on the theme hierarchy. -->
 	<rule ref="WordPress.Files.FileName">
 		<properties>
-			<property name="is_theme" value="false"/>
+			<property name="is_plugin" value="true"/>
 		</properties>
 	</rule>
 

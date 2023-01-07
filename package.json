@@ -11,7 +11,7 @@
   "scripts": {
     "minify:js": "uglifyjs admin/js/jquery.autocomplete.js --compress --mangle --warn --output admin/js/jquery.autocomplete.min.js && uglifyjs admin/js/multiple-search-ajax.js --compress --mangle --output admin/js/multiple-search-ajax.min.js && uglifyjs admin/js/search-ajax.js --compress --mangle --output admin/js/search-ajax.min.js && uglifyjs admin/js/wp-inci-admin.js --compress --mangle --output admin/js/wp-inci-admin.min.js",
     "minify:css": "cleancss -o admin/css/wp-inci-admin.min.css admin/css/wp-inci-admin.css && cleancss -o public/css/wp-inci.min.css public/css/wp-inci.css",
-    "minify:img": "imagemin img/* --out-dir=img",
+    "minify:img": "imagemin assets/* --out-dir=img",
     "watch:css": "onchange 'admin/css/*.css' -- npm run minify:css && onchange 'public/css/*.css' -- npm run minify:css",
     "watch:js": "onchange 'admin/js/*.js' -- npm run minify:js",
     "watch": "run-p watch:*",
