@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $version = '1.6.0';
+		public $version = '1.6.1';
 
 		/**
 		 * Release.
