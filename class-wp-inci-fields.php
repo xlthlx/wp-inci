@@ -56,22 +56,19 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				'cmb2_render_search_ajax',
 				array( $this, 'renderSearchAjax' ),
 				10,
-				5 
+				5
 			);
 			add_action(
 				'cmb2_sanitize_search_ajax',
 				array( $this, 'sanitizeSearchAjax' ),
 				10,
-				4 
+				4
 			);
 			add_action( 'admin_enqueue_scripts', array( $this, 'setupAdminScripts' ) );
 			add_action( 'wp_ajax_cmb2_search_ajax_get_results', array( $this, 'cmb2SearchAjaxGetResults' ) );
 			add_action(
 				'wp_ajax_cmb2_multiple_search_ajax_get_results',
-				array(
-					$this,
-					'cmb2MultipleSearchAjaxGetResults',
-				) 
+				array( $this, 'cmb2MultipleSearchAjaxGetResults' ) 
 			);
 
 		}
@@ -170,7 +167,6 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			$toggle_color = ! empty( $scheme_colors ) ? end( $scheme_colors ) : '#2196F3';
 			?>
 			<style>
-
 				input:checked + .cmb2-slider {
 					background-color: <?php echo $toggle_color; ?>;
 				}
@@ -224,15 +220,9 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 
 			$field_type->_desc( true, true );
 
-			echo '<a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __(
-				'Add new ingredient',
-				'wp-inci' 
-			) . '</a>';
+			echo '<a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add new ingredient', 'wp-inci' ) . '</a>';
 
-			echo '<h2 class="wi_multiple">' . __(
-				'Multiple search',
-				'wp-inci' 
-			) . '</h2>';
+			echo '<h2 class="wi_multiple">' . __( 'Multiple search', 'wp-inci' ) . '</h2>';
 
 			echo $field_type->textarea(
 				array(
@@ -320,26 +310,22 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				'jquery-autocomplete',
 				$this->url . '/admin/js/jquery.autocomplete.min.js',
 				array( 'jquery' ),
-				$this->version 
+				$this->version
 			);
 			wp_register_script(
 				'search-ajax',
 				$this->url . '/admin/js/search-ajax.min.js',
-				array(
-					'jquery',
-					'jquery-autocomplete',
-					'jquery-ui-sortable',
-				),
-				$this->version 
+				array( 'jquery', 'jquery-autocomplete', 'jquery-ui-sortable' ),
+				$this->version
 			);
 			wp_localize_script(
 				'search-ajax',
 				'wi',
 				array(
-					'ajaxurl' => admin_url( 'admin-ajax.php' ),
-					'nonce'   => wp_create_nonce( 'cmb2_search_ajax_get_results' ),
-					'notice'  => __( 'No results found.', 'wp-inci' ),
-				) 
+					'ajaxurl'    => admin_url( 'admin-ajax.php' ),
+					'nonce'      => wp_create_nonce( 'cmb2_search_ajax_get_results' ),
+					'notice'     => __( 'No results found.', 'wp-inci' ),
+				)
 			);
 			wp_enqueue_script( 'search-ajax' );
 
@@ -347,7 +333,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				'multiple-search-ajax',
 				$this->url . '/admin/js/multiple-search-ajax.min.js',
 				array( 'jquery' ),
-				$this->version 
+				$this->version
 			);
 			wp_localize_script(
 				'multiple-search-ajax',
@@ -368,23 +354,11 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 */
 		public function cmb2SearchAjaxGetResults() {
 			if ( ! wp_verify_nonce( $_POST['wicheck'], 'cmb2_search_ajax_get_results' ) ) {
-				die(
-					json_encode(
-						array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) )
-					) 
-				);
+				die( json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ) ) );
 			}
 
-			$args = json_decode(
-				stripslashes( htmlspecialchars_decode( $_POST['query_args'] ) ),
-				true 
-			);
-			add_filter(
-				'posts_where',
-				array( $this, 'setTitleFilter' ),
-				10,
-				2 
-			);
+			$args = json_decode( stripslashes( wp_specialchars_decode( $_POST['query_args'] ) ), true );
+			add_filter( 'posts_where', array( $this, 'setTitleFilter' ), 10, 2 );
 			$args['title_filter'] = $_POST['query'];
 			$data                 = array();
 
@@ -419,11 +393,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			global $wpdb;
 
 			if ( ! wp_verify_nonce( $_POST['wimucheck'], 'cmb2_multiple_search_ajax_get_results' ) ) {
-				die(
-					json_encode(
-						array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) )
-					) 
-				);
+				die( json_encode( array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) ) ) );
 			}
 
 			$string = '';
@@ -443,9 +413,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 
 				$ingredient_id = $wpdb->prepare(
 					$wpdb->get_col(
-						"SELECT ID from $wpdb->posts 
-                WHERE ( post_title = %s OR post_title LIKE s OR post_content LIKE s )
-				AND post_type = 'ingredient' AND post_status = 'publish' " 
+						"SELECT ID from $wpdb->posts WHERE ( post_title = %s OR post_title LIKE s OR post_content LIKE s ) AND post_type = 'ingredient' AND post_status = 'publish' " 
 					),
 					$name,
 					$like_first,
@@ -453,15 +421,9 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				);
 
 				if ( $ingredient_id ) {
-					$data['row'][] = $this->setResults(
-						$ingredient_id[0],
-						$field_id 
-					);
+					$data['row'][] = $this->setResults( $ingredient_id[0], $field_id );
 				} else {
-					$string .= $i . '. ' . $name . ': ' . __(
-						'Not found',
-						'wp-inci' 
-					) . " \n";
+					$string .= $i . '. ' . $name . ': ' . __( 'Not found', 'wp-inci' ) . " \n";
 				}
 
 				$data['string'] = $string;
