@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e7451270e57873e7a56a04b143b0e5d67b4742ff',
+        'reference' => '038f3ed5fbdc2918d854019d791530b2625f0179',
         'name' => 'xlthlx/wp-inci',
         'dev' => true,
     ),
@@ -270,7 +270,7 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'reference' => 'ef9dca6c49faa06e7203bbed30411e26e474a8fb',
+            'reference' => '3fb5c587e6f149553b51f1f9a1e8dd1e2b4dd6e9',
             'dev_requirement' => true,
         ),
         'squizlabs/php_codesniffer' => array(
@@ -400,12 +400,12 @@
             'dev_requirement' => true,
         ),
         'wp-cli/php-cli-tools' => array(
-            'pretty_version' => 'v0.11.16',
-            'version' => '0.11.16.0',
+            'pretty_version' => 'v0.11.17',
+            'version' => '0.11.17.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../wp-cli/php-cli-tools',
             'aliases' => array(),
-            'reference' => 'c32e51a5c9993ad40591bc426b21f5422a5ed293',
+            'reference' => 'f6be76b7c4ee2ef93c9531b8a37bdb7ce42c3728',
             'dev_requirement' => true,
         ),
         'wp-cli/wp-cli' => array(
@@ -459,7 +459,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e7451270e57873e7a56a04b143b0e5d67b4742ff',
+            'reference' => '038f3ed5fbdc2918d854019d791530b2625f0179',
             'dev_requirement' => false,
         ),
     ),
