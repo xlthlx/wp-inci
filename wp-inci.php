@@ -41,7 +41,9 @@ define( 'WPINCI_BASE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WPINCI_BASE_URL', plugins_url() );
 
 require_once dirname( __FILE__ ) . '/vendor/autoload.php';
-require_once dirname( __FILE__ ) . '/vendor/cmb2/cmb2/init.php';
+if ( ! defined( 'CMB2_VERSION' ) ) {
+	require_once dirname( __FILE__ ) . '/vendor/cmb2/cmb2/init.php';
+}
 require_once dirname( __FILE__ ) . '/class-wp-inci.php';
 require_once dirname( __FILE__ ) . '/class-wp-inci-fields.php';
 
