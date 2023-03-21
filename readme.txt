@@ -1,10 +1,10 @@
 === WP INCI ===
 Contributors: xlthlx
 Donate link: https://paypal.me/xlthlx
-Tags: inci,ingredients,cosmetics,make-up
+Tags: INCI, ingredients, cosmetics, makeup
 Requires at least: 5.9
-Tested up to: 6.1
-Stable tag: 1.6
+Tested up to: 6.2
+Stable tag: 1.6.2
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -49,6 +49,11 @@ If you need support or have a feature request, please use the [support forum](ht
 5. Post example
 
 == Changelog ==
+
+= 1.6.2 =
+* Tested up to 6.2
+* Bugfix
+* Updated dependencies
 
 = 1.6.1 =
 * Linted PHP

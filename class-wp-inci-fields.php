@@ -351,13 +351,18 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * Ajax request: get results for single search.
 		 *
 		 * @return void
+		 * @throws JsonException Throws an exception.
 		 */
 		public function cmb2SearchAjaxGetResults() {
 			if ( ! wp_verify_nonce( $_POST['wicheck'], 'cmb2_search_ajax_get_results' ) ) {
-				die( json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ) ) );
+				// @codingStandardsIgnoreStart
+				die( json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
+				// @codingStandardsIgnoreEnd
 			}
 
-			$args = json_decode( stripslashes( wp_specialchars_decode( $_POST['query_args'] ) ), true );
+			// @codingStandardsIgnoreStart
+			$args = json_decode( stripslashes( wp_specialchars_decode( $_POST['query_args'] ) ), true, 512, JSON_THROW_ON_ERROR );
+			// @codingStandardsIgnoreEnd
 			add_filter( 'posts_where', array( $this, 'setTitleFilter' ), 10, 2 );
 			$args['title_filter'] = $_POST['query'];
 			$data                 = array();
@@ -388,12 +393,15 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * Ajax request: get results for multiple search.
 		 *
 		 * @return void
+		 * @throws JsonException Throws an exception.
 		 */
 		public function cmb2MultipleSearchAjaxGetResults() {
 			global $wpdb;
 
 			if ( ! wp_verify_nonce( $_POST['wimucheck'], 'cmb2_multiple_search_ajax_get_results' ) ) {
-				die( json_encode( array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) ) ) );
+				// @codingStandardsIgnoreStart
+				die( json_encode( array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
+				// @codingStandardsIgnoreEnd
 			}
 
 			$string = '';
@@ -408,16 +416,19 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				$name = strtoupper( trim( $result ) );
 
 				$wild        = '%';
-				$like_first  = $wpdb->esc_like( $name ) . $wild;
-				$like_second = $wild . $wpdb->esc_like( $name ) . $wild;
+				$like_single = $wild . $wpdb->esc_like( $name ) . $wild;
+				$like_double = $wpdb->esc_like( $name ) . $wild;
 
-				$ingredient_id = $wpdb->prepare(
-					$wpdb->get_col(
-						"SELECT ID from $wpdb->posts WHERE ( post_title = %s OR post_title LIKE s OR post_content LIKE s ) AND post_type = 'ingredient' AND post_status = 'publish' " 
-					),
-					$name,
-					$like_first,
-					$like_second
+				$ingredient_id = $wpdb->get_col(
+					$wpdb->prepare(
+						"SELECT ID from $wpdb->posts 
+                    WHERE ( post_title = %s OR post_title LIKE %s OR post_content LIKE %s ) 
+                    AND post_type = 'ingredient' 
+                    AND post_status = 'publish';",
+						$name,
+						$like_single,
+						$like_double
+					) 
 				);
 
 				if ( $ingredient_id ) {
@@ -429,7 +440,9 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				$data['string'] = $string;
 			}
 
-			die( json_encode( $data ) );
+			// @codingStandardsIgnoreStart
+			die( json_encode( $data, JSON_THROW_ON_ERROR ) );
+			// @codingStandardsIgnoreEnd
 		}
 
 		/**

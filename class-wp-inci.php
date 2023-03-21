@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $version = '1.6.1';
+		public $version = '1.6.2';
 
 		/**
 		 * Release.
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $revision = 1;
+		public $revision = 2;
 
 		/**
 		 * Plugin name
@@ -120,7 +120,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			/**
 			 * Sets url for the plugin.
 			 */
-			$this->url = plugins_url( '', dirname( __FILE__ ) . '/wp-inci.php' );
+			$this->url = WPINCI_BASE_URL . 'wp-inci.php';
 
 		}
 
@@ -171,11 +171,11 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Callback for safety HTML.
 		 *
-		 * @return string
+		 * @return void
 		 */
 		public function show_safety_html() {
 			global $post;
-			return $this->get_safety_html( $post->ID );
+			echo $this->get_safety_html( $post->ID );
 		}
 
 		/**
@@ -183,13 +183,13 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @param int $term_id Term ID.
 		 *
-		 * @return string
+		 * @return void
 		 */
 		public function show_source( $term_id ) {
 			$term = get_term_by( 'id', $term_id, 'source' );
 			$url  = get_term_meta( $term_id, 'source_url', true );
 
-			return '<a href="' . $url . '" target="_blank">' . $term->name . ' &#x2197;</a>';
+			echo '<a href="' . $url . '" target="_blank">' . $term->name . ' &#x2197;</a>';
 		}
 
 		/**
@@ -231,22 +231,24 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			register_extended_post_type(
 				'ingredient',
 				array(
-					'publicly_queryable' => false,
-					'menu_icon'          => 'dashicons-wi-menu',
-					'rewrite'            => false,
-					'labels'             => $ingredients_labels,
-					'capability_type'    => 'page',
-					'has_archive'        => false,
-					'hierarchical'       => false,
-					'show_in_rest'       => true,
-					'block_editor'       => true,
-					'supports'           => array(
+					'public'            => false,
+					'show_in_nav_menus' => true,
+					'show_ui'           => true,
+					'menu_icon'         => 'dashicons-wi-menu',
+					'rewrite'           => false,
+					'labels'            => $ingredients_labels,
+					'capability_type'   => 'page',
+					'has_archive'       => false,
+					'hierarchical'      => false,
+					'show_in_rest'      => true,
+					'block_editor'      => true,
+					'supports'          => array(
 						'title',
 						'editor',
 						'author',
 						'revisions',
 					),
-					'admin_cols'         => array(
+					'admin_cols'        => array(
 						'title'     => array(
 							'title'   => __( 'Ingredient', 'wp-inci' ),
 							'default' => 'ASC',
@@ -271,7 +273,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 							'title' => __( 'Date', 'wp-inci' ),
 						),
 					),
-					'admin_filters'      => array(
+					'admin_filters'     => array(
 						'functions' => array(
 							'title'    => __( 'All Functions', 'wp-inci' ),
 							'taxonomy' => 'functions',
@@ -287,11 +289,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					),
 				),
 				array(
-
 					'singular' => __( 'Ingredient', 'wp-inci' ),
 					'plural'   => __( 'Ingredients', 'wp-inci' ),
 					'slug'     => __( 'ingredient', 'wp-inci' ),
-
 				) 
 			);
 

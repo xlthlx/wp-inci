@@ -337,7 +337,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 */
 		public function copyButton() {
 			echo '<script>var wi_style=`' . $this->defaultStyle() . '`;';
-			echo "var wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>";
+			echo "const wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>";
 			echo '<button id="copy_style" type="button" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>';
 		}
 

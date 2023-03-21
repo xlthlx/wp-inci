@@ -15,7 +15,7 @@ use Carbon_Fields\Carbon_Fields;
 use Carbon_Fields\Field;
 // @codingStandardsIgnoreEnd
 
-require_once WPINCI_BASE_PATH . '/public/class-wp-inci-frontend.php';
+require_once WPINCI_BASE_PATH . 'public/class-wp-inci-frontend.php';
 
 /**
  * Load Carbon Fields.
@@ -66,24 +66,24 @@ function wi_get_products() {
  */
 function wi_product_block() {
 	Block::make( __( 'Product', 'wp-inci' ) )
-	     ->add_fields(
-		     array(
-			     Field::make( 'text', 'title', __( 'Custom title', 'wp-inci' ) )->set_help_text( 'Leave blank to show the product title' ),
-			     Field::make( 'select', 'product', __( 'Select product', 'wp-inci' ) )->add_options( 'wi_get_products' ),
-			     Field::make( 'checkbox', 'linked', __( 'Show link', 'wp-inci' ) )->set_option_value( 'yes' ),
-			     Field::make( 'checkbox', 'list', __( 'Hide ingredient list', 'wp-inci' ) )->set_option_value( 'yes' ),
-			     Field::make( 'checkbox', 'safety', __( 'Hide safety', 'wp-inci' ) )->set_option_value( 'yes' )->set_conditional_logic(
-				     array(
-					     array(
-						     'field' => 'list',
-						     'value' => false,
-					     ),
-				     )
-			     ),
-		     )
-	     )
-	     ->set_category( 'wp-inci' )
-	     ->set_icon( 'wp-inci' )
+		->add_fields(
+			array(
+				Field::make( 'text', 'title', __( 'Custom title', 'wp-inci' ) )->set_help_text( 'Leave blank to show the product title' ),
+				Field::make( 'select', 'product', __( 'Select product', 'wp-inci' ) )->add_options( 'wi_get_products' ),
+				Field::make( 'checkbox', 'linked', __( 'Show link', 'wp-inci' ) )->set_option_value( 'yes' ),
+				Field::make( 'checkbox', 'list', __( 'Hide ingredient list', 'wp-inci' ) )->set_option_value( 'yes' ),
+				Field::make( 'checkbox', 'safety', __( 'Hide safety', 'wp-inci' ) )->set_option_value( 'yes' )->set_conditional_logic(
+					array(
+						array(
+							'field' => 'list',
+							'value' => false,
+						),
+					)
+				),
+			)
+		)
+		 ->set_category( 'wp-inci' )
+		 ->set_icon( 'wp-inci' )
 		// @codingStandardsIgnoreStart
 		 ->set_render_callback(
 			function ( $fields, $attributes, $inner_blocks ) {
@@ -125,7 +125,7 @@ function wi_product_block() {
 				echo $output;
 			}
 		// @codingStandardsIgnoreEnd
-		);
+		 );
 }
 
 add_action( 'carbon_fields_register_fields', 'wi_product_block' );
