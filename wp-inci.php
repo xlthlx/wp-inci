@@ -17,7 +17,7 @@
  * Requires at least: 5.9
  * Requires PHP:      7.4
  * Author:            xlthlx
- * Author URI:        https://piccioni.london
+ * Author URI:        https://profiles.wordpress.org/xlthlx/
  * License:           GPLv3+
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       wp-inci
