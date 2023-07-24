@@ -212,17 +212,17 @@
         },
         {
             "name": "htmlburger/carbon-fields",
-            "version": "v3.5.3",
-            "version_normalized": "3.5.3.0",
+            "version": "v3.6.0",
+            "version_normalized": "3.6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/carbon-fields.git",
-                "reference": "fe95143dc8db6b9b0f17b1a0c4d28aab98008470"
+                "reference": "47f1538cca6cd2860d1b37a040a42c59eb798d76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/fe95143dc8db6b9b0f17b1a0c4d28aab98008470",
-                "reference": "fe95143dc8db6b9b0f17b1a0c4d28aab98008470",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/47f1538cca6cd2860d1b37a040a42c59eb798d76",
+                "reference": "47f1538cca6cd2860d1b37a040a42c59eb798d76",
                 "shasum": ""
             },
             "require": {
@@ -233,7 +233,7 @@
                 "phpunit/phpunit": "7.5.20|9.6.3",
                 "yoast/phpunit-polyfills": "^1.0"
             },
-            "time": "2023-03-10T09:21:11+00:00",
+            "time": "2023-04-04T08:41:31+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -355,17 +355,17 @@
         },
         {
             "name": "johnbillion/args",
-            "version": "1.6.0",
-            "version_normalized": "1.6.0.0",
+            "version": "1.7.2",
+            "version_normalized": "1.7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/args.git",
-                "reference": "0a94706015471d72d6c227ff494a002a6275b28b"
+                "reference": "1aa5ff807b096a8e449f1401d2ebfba53b3258bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/args/zipball/0a94706015471d72d6c227ff494a002a6275b28b",
-                "reference": "0a94706015471d72d6c227ff494a002a6275b28b",
+                "url": "https://api.github.com/repos/johnbillion/args/zipball/1aa5ff807b096a8e449f1401d2ebfba53b3258bc",
+                "reference": "1aa5ff807b096a8e449f1401d2ebfba53b3258bc",
                 "shasum": ""
             },
             "require": {
@@ -382,9 +382,9 @@
                 "phpstan/phpstan-strict-rules": "^1.1",
                 "phpunit/phpunit": "^9.0",
                 "roots/wordpress-core-installer": "^1.0.0",
-                "roots/wordpress-full": "~6.1.0"
+                "roots/wordpress-full": "~6.2.0"
             },
-            "time": "2022-11-10T14:09:31+00:00",
+            "time": "2023-05-01T22:34:53+00:00",
             "type": "library",
             "extra": {
                 "args-shapes": [
@@ -458,7 +458,7 @@
             "description": "I don't want to get into an argument about this.",
             "support": {
                 "issues": "https://github.com/johnbillion/args/issues",
-                "source": "https://github.com/johnbillion/args/tree/1.6.0"
+                "source": "https://github.com/johnbillion/args/tree/1.7.2"
             },
             "funding": [
                 {
@@ -470,17 +470,17 @@
         },
         {
             "name": "johnbillion/extended-cpts",
-            "version": "5.0.3",
-            "version_normalized": "5.0.3.0",
+            "version": "5.0.4",
+            "version_normalized": "5.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/extended-cpts.git",
-                "reference": "4daaaef8acfff72f108e5f69c3f6cddb37b64a38"
+                "reference": "9188059dc74eb38ea8513bc093f640f78ade486c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/4daaaef8acfff72f108e5f69c3f6cddb37b64a38",
-                "reference": "4daaaef8acfff72f108e5f69c3f6cddb37b64a38",
+                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/9188059dc74eb38ea8513bc093f640f78ade486c",
+                "reference": "9188059dc74eb38ea8513bc093f640f78ade486c",
                 "shasum": ""
             },
             "require": {
@@ -508,7 +508,7 @@
                 "seravo/wp-custom-bulk-actions": "Custom Bulk Actions",
                 "wpackagist-plugin/rewrite-testing": "Rewrite Rule Testing"
             },
-            "time": "2022-12-14T00:07:21+00:00",
+            "time": "2023-06-23T20:59:13+00:00",
             "type": "library",
             "extra": {
                 "wordpress-install-dir": "tests/wordpress"
@@ -525,7 +525,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -537,7 +537,7 @@
             "homepage": "https://github.com/johnbillion/extended-cpts/",
             "support": {
                 "issues": "https://github.com/johnbillion/extended-cpts/issues",
-                "source": "https://github.com/johnbillion/extended-cpts/tree/5.0.3"
+                "source": "https://github.com/johnbillion/extended-cpts/tree/5.0.4"
             },
             "funding": [
                 {

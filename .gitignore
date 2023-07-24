@@ -26,6 +26,9 @@
 # Do NOT ignore .circleci
 !.circleci
 
+# Do NOT ignore .wp-env.json
+!.wp-env.json
+
 # Ignore all files that start with ~
 ~*
 
@@ -53,3 +56,4 @@ Thumbs.db
 !/vendor/*
 /package-lock.json
 /composer.lock
+/content/

@@ -31,9 +31,11 @@ add_action( 'after_setup_theme', 'wi_load_cb' );
 /**
  * Get list of products.
  *
+ * @param bool $select If the callback is for a select.
+ *
  * @return array
  */
-function wi_get_products() {
+function wi_get_products( $select = false ) {
 
 	$results = array();
 
@@ -56,7 +58,21 @@ function wi_get_products() {
 
 	wp_reset_postdata();
 
+	if ( $select ) {
+		$results[0] = __( 'Select a product', 'wp-inci' );
+		ksort( $results );
+	}
+
 	return $results;
+}
+
+/**
+ * Populate the block select.
+ *
+ * @return array
+ */
+function wi_populate_select() {
+	return wi_get_products( true );
 }
 
 /**
@@ -69,7 +85,7 @@ function wi_product_block() {
 		->add_fields(
 			array(
 				Field::make( 'text', 'title', __( 'Custom title', 'wp-inci' ) )->set_help_text( 'Leave blank to show the product title' ),
-				Field::make( 'select', 'product', __( 'Select product', 'wp-inci' ) )->add_options( 'wi_get_products' ),
+				Field::make( 'select', 'product', __( 'Select product', 'wp-inci' ) )->add_options( 'wi_populate_select' ),
 				Field::make( 'checkbox', 'linked', __( 'Show link', 'wp-inci' ) )->set_option_value( 'yes' ),
 				Field::make( 'checkbox', 'list', __( 'Hide ingredient list', 'wp-inci' ) )->set_option_value( 'yes' ),
 				Field::make( 'checkbox', 'safety', __( 'Hide safety', 'wp-inci' ) )->set_option_value( 'yes' )->set_conditional_logic(
@@ -82,7 +98,9 @@ function wi_product_block() {
 				),
 			)
 		)
+		 ->set_description( __( 'A block to insert a Product into content.', 'wp-inci' ) )
 		 ->set_category( 'wp-inci' )
+		 ->set_keywords( array( __( 'product', 'wp-inci' ), __( 'inci', 'wp-inci' ), __( 'ingredients', 'wp-inci' ) ) )
 		 ->set_icon( 'wp-inci' )
 		// @codingStandardsIgnoreStart
 		 ->set_render_callback(
@@ -122,6 +140,7 @@ function wi_product_block() {
 		        </div>
             </div>';
 
+				//echo '<pre>' . print_r($fields, true) . '</pre>';
 				echo $output;
 			}
 		// @codingStandardsIgnoreEnd

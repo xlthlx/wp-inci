@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $version = '1.6.2';
+		public $version = '1.6.3';
 
 		/**
 		 * Release.
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $revision = 2;
+		public $revision = 3;
 
 		/**
 		 * Plugin name
@@ -447,11 +447,11 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Callback for shortcode.
 		 *
-		 * @return string
+		 * @return void
 		 */
 		public function click_on_shortcode() {
 			global $post;
-			return '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . $post->ID . ']">';
+			echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . $post->ID . ']">';
 		}
 
 		/**
