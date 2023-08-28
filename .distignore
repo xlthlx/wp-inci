@@ -1,0 +1,63 @@
+# Files to exclude from the distribution
+
+.distignore
+.git
+.gitignore
+bin
+build
+.circleci
+.circleci/config.yml
+composer.json
+composer.lock
+package.json
+package-lock.json
+README.md
+.wp-env.json
+
+# Ignore packaged files
+*.7z
+*.csv
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.sql
+*.tar.gz
+
+# Ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore lock files
+*.lock
+
+# Build Tools
+.idea
+node_modules
+
+# Project specific
+content
+vendor/dealerdirect/
+vendor/eftec/
+vendor/gettext/
+vendor/guzzlehttp/
+vendor/mck89/
+vendor/bin/
+vendor/mustache/
+vendor/php-parallel-lint/
+vendor/phpcompatibility/
+vendor/psr/
+vendor/ralouphie/
+vendor/squizlabs/
+vendor/symfony/
+vendor/wp-cli/
+vendor/wp-coding-standards/
+vendor/wpreadme2markdown/
+vendor/wptrt/

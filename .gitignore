@@ -2,12 +2,6 @@
 .*
 ._*
 
-# Do NOT ignore .editorconfig
-!.editorconfig
-
-# Do NOT ignore .gitattributes
-!.gitattributes
-
 # Do NOT ignore .gitignore
 !.gitignore
 
@@ -15,13 +9,7 @@
 !.distignore
 
 # Do NOT ignore .readme.md
-!readme.md
-
-# Do NOT ignore .jscsrc
-!.jscsrc
-
-# Do NOT ignore .jshintignore
-!.jshintignore
+!README.md
 
 # Do NOT ignore .circleci
 !.circleci
@@ -42,18 +30,41 @@
 *.rar
 *.tar
 *.zip
+*.sql
+*.tar.gz
 
 # Ignore OS generated files
 ehthumbs.db
 Thumbs.db
+.DS_Store
 
-# Ignore log files and databases
+# Ignore log files
 *.log
+
+# Ignore lock files
+*.lock
 
 # Build Tools
 .idea
-!/vendor/
-!/vendor/*
-/package-lock.json
-/composer.lock
+package-lock.json
+/node_modules
+
+# Project specific
 /content/
+/vendor/dealerdirect/
+/vendor/eftec/
+/vendor/gettext/
+/vendor/guzzlehttp/
+/vendor/mck89/
+/vendor/bin/
+/vendor/mustache/
+/vendor/php-parallel-lint/
+/vendor/phpcompatibility/
+/vendor/psr/
+/vendor/ralouphie/
+/vendor/squizlabs/
+/vendor/symfony/
+/vendor/wp-cli/
+/vendor/wp-coding-standards/
+/vendor/wpreadme2markdown/
+/vendor/wptrt/

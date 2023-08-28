@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/github/workflow/status/johnbillion/extended-cpts/Test/develop?style=flat-square)](https://github.com/johnbillion/extended-cpts/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/johnbillion/extended-cpts/test.yml?branch=develop&style=flat-square)](https://github.com/johnbillion/extended-cpts/actions)
 [![Stable Release](https://img.shields.io/packagist/v/johnbillion/extended-cpts.svg?style=flat-square)](https://packagist.org/packages/johnbillion/extended-cpts)
 [![License](https://img.shields.io/badge/license-GPL_v2%2B-blue.svg?style=flat-square)](https://github.com/johnbillion/extended-cpts/blob/trunk/LICENSE)
 [![PHP 7 and 8](https://img.shields.io/badge/php-7%20/%208-blue.svg?style=flat-square)](https://wordpress.org/support/update-php/)
@@ -62,7 +62,7 @@ Not your first time here? See [Recent Changes for Developers](https://github.com
 * **PHP:** 7.4  
   - Tested up to PHP 8.2
 * **WordPress:** 5.6  
-  - Tested up to WP 6.2
+  - Tested up to WP 6.3
 
 ## Installation ##
 
