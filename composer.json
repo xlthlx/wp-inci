@@ -28,10 +28,10 @@
     "wpreadme2markdown/wp2md": "^4.0.2"
   },
   "scripts": {
-    "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor/*,node_modules/*,content/* --extensions=php . -n -v --report-file=report.txt",
-    "lint:wpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor/*,node_modules/*,content/* --extensions=php .",
+    "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor/*,node_modules/*,wp-content/*,_backup/* --extensions=php . -n -v --report-file=report.txt",
+    "lint:wpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor/*,node_modules/*,wp-content/*,_backup/* --extensions=php .",
     "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-    "make-pot": "wp i18n make-pot . languages/wp-inci.pot",
+    "make:pot": "wp i18n make-pot . languages/wp-inci.pot",
     "readme": "@php ./vendor/wpreadme2markdown/wp2md/bin/wp2md -i readme.txt -o README.md"
   },
   "config": {
@@ -44,7 +44,6 @@
   "require": {
     "cmb2/cmb2": "^2.10",
     "johnbillion/extended-cpts": "^5.0",
-    "composer/installers": "^2.1",
-    "htmlburger/carbon-fields": "^3.3"
+    "composer/installers": "^2.2"
   }
 }

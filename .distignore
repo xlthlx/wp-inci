@@ -43,7 +43,7 @@ Thumbs.db
 node_modules
 
 # Project specific
-content
+wp-content
 vendor/dealerdirect/
 vendor/eftec/
 vendor/gettext/

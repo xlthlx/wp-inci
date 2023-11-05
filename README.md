@@ -1,15 +1,16 @@
 # ![WP INCI](https://ps.w.org/wp-inci/assets/banner-772x250.png "WordPress Plugin")
 
-[![Version](https://img.shields.io/badge/version-1.6.3-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/version-1.6.4-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f744e8a17b364a569db5/maintainability)](https://codeclimate.com/github/xlthlx/wp-inci/maintainability)
+
 
 **Contributors:** xlthlx \
 **Donate link:** https://paypal.me/xlthlx \
 **Tags:** INCI, ingredients, cosmetics, makeup \
 **Requires at least:** 5.9 \
-**Tested up to:** 6.3 \
-**Stable tag:** 1.6.3 \
+**Tested up to:** 6.4 \
+**Stable tag:** 1.6.4 \
 **Requires PHP:** 7.4 \
 **License:** GPLv3 or later \
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +20,7 @@ A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingred
 ## Description
 
 A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients). You can set up your database of ingredients and products and easily insert a product table into posts and pages using a shortcode.
-There is an example product with ingredients into the `data` directory that can be imported using the standard WordPress Importer.
+There are two example products with ingredients into the `data` directory that can be imported using the standard WordPress Importer.
 
 ### Plugin Features
 
@@ -69,6 +70,13 @@ If you need support or have a feature request, please use the [support forum](ht
 
 
 ## Changelog
+
+### 1.6.4
+
+* Tested up to 6.4
+* Updated dependencies
+* Removed Product Gutenberg block
+* Updated data xml
 
 ### 1.6.3
 
@@ -162,7 +170,10 @@ If you need support or have a feature request, please use the [support forum](ht
 
 ## Upgrade Notice
 
-N/A
+### 1.6.4
+
+* If you were using the Product Gutenberg block,
+you should change every block into a shortcode before upgrading.
 
 ## Installation
 
@@ -174,7 +185,6 @@ N/A
 
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
-* [Carbon Fields](https://github.com/htmlburger/carbon-fields) by [htmlBurger](https://htmlburger.com/)
 
 ## Frequently Asked Questions
 

@@ -2,16 +2,16 @@
 # This file is distributed under the GPLv3+.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP INCI 1.6.2\n"
+"Project-Id-Version: WP INCI 1.6.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-inci\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-24T08:54:16+01:00\n"
+"POT-Creation-Date: 2023-11-05T20:04:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.8.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: wp-inci\n"
 
 #. Plugin Name of the plugin
@@ -149,54 +149,6 @@ msgstr ""
 
 #: admin/class-wp-inci-meta.php:517
 msgid "Add new brand"
-msgstr ""
-
-#: blocks/product.php:60
-msgid "Select a product"
-msgstr ""
-
-#: blocks/product.php:77
-#: class-wp-inci.php:466
-#: class-wp-inci.php:511
-#: class-wp-inci.php:544
-msgid "Product"
-msgstr ""
-
-#: blocks/product.php:80
-msgid "Custom title"
-msgstr ""
-
-#: blocks/product.php:81
-msgid "Select product"
-msgstr ""
-
-#: blocks/product.php:82
-msgid "Show link"
-msgstr ""
-
-#: blocks/product.php:83
-msgid "Hide ingredient list"
-msgstr ""
-
-#: blocks/product.php:84
-msgid "Hide safety"
-msgstr ""
-
-#: blocks/product.php:94
-msgid "A block to insert a Product into content."
-msgstr ""
-
-#: blocks/product.php:96
-#: class-wp-inci.php:546
-msgid "product"
-msgstr ""
-
-#: blocks/product.php:96
-msgid "inci"
-msgstr ""
-
-#: blocks/product.php:96
-msgid "ingredients"
 msgstr ""
 
 #: class-wp-inci-fields.php:196
@@ -551,6 +503,12 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
+#: class-wp-inci.php:466
+#: class-wp-inci.php:511
+#: class-wp-inci.php:544
+msgid "Product"
+msgstr ""
+
 #: class-wp-inci.php:467
 msgid "All Products"
 msgstr ""
@@ -646,6 +604,11 @@ msgstr ""
 #: class-wp-inci.php:532
 #: class-wp-inci.php:556
 msgid "All Brands"
+msgstr ""
+
+#: class-wp-inci.php:546
+#: _backup/blocks/product.php:72
+msgid "product"
 msgstr ""
 
 #: class-wp-inci.php:552
@@ -984,4 +947,36 @@ msgstr ""
 
 #: public/class-wp-inci-frontend.php:170
 msgid "MAY CONTAIN"
+msgstr ""
+
+#: _backup/blocks/product.php:46
+msgid "Select a product"
+msgstr ""
+
+#: _backup/blocks/product.php:73
+msgid "inci"
+msgstr ""
+
+#: _backup/blocks/product.php:74
+msgid "ingredients"
+msgstr ""
+
+#: _backup/blocks/product.php:83
+msgid "Custom title"
+msgstr ""
+
+#: _backup/blocks/product.php:89
+msgid "Select product"
+msgstr ""
+
+#: _backup/blocks/product.php:95
+msgid "Show link"
+msgstr ""
+
+#: _backup/blocks/product.php:102
+msgid "Hide ingredient list"
+msgstr ""
+
+#: _backup/blocks/product.php:109
+msgid "Hide safety"
 msgstr ""
