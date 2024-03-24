@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $version = '1.6.4';
+		public $version = '1.6.5';
 
 		/**
 		 * Release.
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $revision = 4;
+		public $revision = 5;
 
 		/**
 		 * Plugin name
@@ -189,7 +189,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			$term = get_term_by( 'id', $term_id, 'source' );
 			$url  = get_term_meta( $term_id, 'source_url', true );
 
-			echo '<a href="' . $url . '" target="_blank">' . $term->name . ' &#x2197;</a>';
+			echo '<a href="' . esc_url( $url ) . '" target="_blank">' . esc_attr( $term->name ) . ' &#x2197;</a>';
 		}
 
 		/**

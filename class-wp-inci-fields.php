@@ -140,7 +140,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				'value' => $active_value,
 			);
 
-			if ( $escaped_value == $active_value ) {
+			if ( $escaped_value === $active_value ) {
 				$args['checked'] = 'checked="checked"';
 			} else {
 				$args['checked'] = '';
