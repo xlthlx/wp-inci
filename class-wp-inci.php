@@ -24,67 +24,12 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 	 */
 	class WP_Inci {
 
-
 		/**
 		 * A static reference to track the single instance of this class.
 		 *
 		 * @var object
 		 */
 		private static $_instance;
-
-		/**
-		 * Plugin version.
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $version = '1.6.5';
-
-		/**
-		 * Release.
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $release = 1;
-		/**
-		 * Minor.
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $minor = 6;
-		/**
-		 * Revision.
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $revision = 5;
-
-		/**
-		 * Plugin name
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $plugin_name = 'WP INCI';
-
-		/**
-		 * Main plugin slug.
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $plugin_slug = 'wp-inci';
-
-		/**
-		 * Setting from main file to __FILE__.
-		 *
-		 * @since 1.0
-		 * @var   string
-		 */
-		public $plugin_file = 'wp-inci/wp-inci.php';
 
 		/**
 		 * Options array containing all options for this plugin.
@@ -109,13 +54,6 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public function __construct() {
 			$this->init();
-			/**
-			 * Split version for more detail.
-			 */
-			$split_version  = explode( '.', $this->version );
-			$this->release  = $split_version[0];
-			$this->minor    = $split_version[1];
-			$this->revision = $split_version[2];
 
 			/**
 			 * Sets url for the plugin.
