@@ -309,14 +309,12 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			wp_register_script(
 				'jquery-autocomplete',
 				$this->url . '/admin/js/jquery.autocomplete.min.js',
-				array( 'jquery' ),
-				$this->version
+				array( 'jquery' )
 			);
 			wp_register_script(
 				'search-ajax',
 				$this->url . '/admin/js/search-ajax.min.js',
-				array( 'jquery', 'jquery-autocomplete', 'jquery-ui-sortable' ),
-				$this->version
+				array( 'jquery', 'jquery-autocomplete', 'jquery-ui-sortable' )
 			);
 			wp_localize_script(
 				'search-ajax',
@@ -332,8 +330,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			wp_register_script(
 				'multiple-search-ajax',
 				$this->url . '/admin/js/multiple-search-ajax.min.js',
-				array( 'jquery' ),
-				$this->version
+				array( 'jquery' )
 			);
 			wp_localize_script(
 				'multiple-search-ajax',
