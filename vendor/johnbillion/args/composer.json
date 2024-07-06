@@ -36,7 +36,7 @@
 			"@php bin/shape.php"
 		],
 		"test:phpcs": [
-			"phpcs -p -d error_reporting=24575 --cache=tests/cache/phpcs.json --basepath='./' ."
+			"phpcs -p --basepath='./' ."
 		],
 		"test:phpunit": [
 			"phpunit --testdox"
@@ -115,7 +115,7 @@
 		"phpstan/phpstan-strict-rules": "^1.1",
 		"phpunit/phpunit": "^9.0",
 		"roots/wordpress-core-installer": "^1.0.0",
-		"roots/wordpress-full": "~6.4.0"
+		"roots/wordpress-full": "~6.5.0"
 	},
 	"funding": [
 		{

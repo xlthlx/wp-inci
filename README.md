@@ -1,8 +1,7 @@
 # ![WP INCI](https://ps.w.org/wp-inci/assets/banner-772x250.png "WordPress Plugin")
 
-[![Version](https://img.shields.io/badge/version-1.6.5-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3%2B-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
-![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet)
-[![Maintainability](https://api.codeclimate.com/v1/badges/f744e8a17b364a569db5/maintainability)](https://codeclimate.com/github/xlthlx/wp-inci/maintainability)
+[![Version](https://img.shields.io/badge/version-1.6.5-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet) [![WP compatibility](https://plugintests.com/plugins/wporg/wp-inci/wp-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![PHP compatibility](https://plugintests.com/plugins/wporg/wp-inci/php-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest)
 
 
 **Contributors:** xlthlx \
@@ -50,26 +49,31 @@ If you need support or have a feature request, please use the [support forum](ht
 
 ### 1. Ingredients list and single ingredient
 
-![Ingredients list and single ingredient](https://ps.w.org/wp-inci/assets/screenshot-1.gif)
+![Ingredients list and single ingredient](assets/screenshot-1.gif)
 
 ### 2. Product list and single product
 
-![Product list and single product](https://ps.w.org/wp-inci/assets/screenshot-2.gif)
+![Product list and single product](assets/screenshot-2.gif)
 
 ### 3. How to manage options
 
-![How to manage options](https://ps.w.org/wp-inci/assets/screenshot-3.gif)
+![How to manage options](assets/screenshot-3.gif)
 
 ### 4. How to use the product shortcode
 
-![How to use the product shortcode](https://ps.w.org/wp-inci/assets/screenshot-4.gif)
+![How to use the product shortcode](assets/screenshot-4.gif)
 
 ### 5. Post example
 
-![Post example](https://ps.w.org/wp-inci/assets/screenshot-5.gif)
+![Post example](assets/screenshot-5.gif)
 
 
 ## Changelog
+
+### 1.6.6
+
+* Tested up to 6.6
+* Updated dependencies
 
 ### 1.6.5
 

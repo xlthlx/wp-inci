@@ -18,13 +18,13 @@
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 	</rule>
 
-    <arg name="cache" value="./phpcs.cache"/>
+    <arg name="cache" value="./phpcs.xml.cache"/>
 
     <rule ref="WordPress-Docs"/>
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="digital-catalogue"/>
+			<property name="text_domain" type="array" value="wp-inci"/>
 		</properties>
 	</rule>
 

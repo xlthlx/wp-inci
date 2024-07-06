@@ -4,8 +4,9 @@
     "https://downloads.wordpress.org/theme/twentytwentyfour.zip"
   ],
   "plugins": [
-    "https://downloads.wordpress.org/plugin/wordpress-beta-tester.zip",
+    "https://downloads.wordpress.org/plugin/plugin-check.zip",
     "https://downloads.wordpress.org/plugin/query-monitor.zip",
+    "https://downloads.wordpress.org/plugin/wordpress-beta-tester.zip",
     "."
   ],
   "mappings": {

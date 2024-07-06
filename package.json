@@ -1,6 +1,5 @@
 {
   "name": "wp-inci",
-  "version": "1.6.4",
   "description": "WP INCI plugin",
   "author": "xlthlx",
   "keywords": [
@@ -15,14 +14,15 @@
     "watch:css": "onchange 'admin/css/*.css' -- npm run minify:css && onchange 'public/css/*.css' -- npm run minify:css",
     "watch:js": "onchange 'admin/js/*.js' -- npm run minify:js",
     "watch": "run-p watch:*",
-    "build": "npm run minify:css && npm run minify:js"
+    "build": "npm run minify:css && npm run minify:js",
+    "wp-env": "wp-env"
   },
   "devDependencies": {
-    "@wordpress/env": "^9.6.0",
+    "@wordpress/env": "^10.2.0",
     "clean-css-cli": "^5.6.3",
-    "imagemin-cli": "^2.1.0",
+    "imagemin-cli": "^8.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "uglify-js": "^3.17.4"
+    "uglify-js": "^3.18.0"
   }
 }

@@ -91,7 +91,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'object_types'     => array( 'term' ),
 					'taxonomies'       => array( 'source' ),
 					'new_term_section' => true,
-				) 
+				)
 			);
 
 			$cmb_term->add_field(
@@ -101,7 +101,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'type'         => 'text_url',
 					'protocols'    => array( 'http', 'https' ),
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 		}
@@ -121,9 +121,8 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'context'      => 'normal',
 					'priority'     => 'high',
 					'show_names'   => false,
-				) 
+				)
 			);
-
 
 			$ingredients->add_field(
 				array(
@@ -141,7 +140,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 						'orderby'        => 'title',
 					),
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 			$may_contain = new_cmb2_box(
@@ -152,7 +151,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'context'      => 'normal',
 					'priority'     => 'default',
 					'show_names'   => false,
-				) 
+				)
 			);
 
 			$may_contain->add_field(
@@ -171,7 +170,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 						'orderby'        => 'title',
 					),
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 		}
@@ -191,7 +190,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'context'      => 'side',
 					'priority'     => 'default',
 					'show_names'   => true,
-				) 
+				)
 			);
 
 			$safety->add_field(
@@ -209,21 +208,21 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 						'5' => __( 'Double red', 'wp-inci' ),
 					),
 					'show_in_rest'     => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 			$safety->add_field(
 				array(
 					'id'   => 'cosing_id',
 					'type' => 'hidden',
-				) 
+				)
 			);
 
 			$safety->add_field(
 				array(
 					'id'   => 'last_update',
 					'type' => 'hidden',
-				) 
+				)
 			);
 
 			/**
@@ -235,7 +234,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'id'           => 'cas_number',
 					'type'         => 'text_small',
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 			/**
@@ -247,7 +246,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'id'           => 'ec_number',
 					'type'         => 'text_small',
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 			/**
@@ -259,7 +258,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'id'           => 'restriction',
 					'type'         => 'text_small',
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 		}
 
@@ -272,7 +271,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @return void
 		 */
 		public function beforeSafety( $field_args, $field ) {
-			echo ( WP_Inci::get_instance() )->get_safety_html( $field->object_id );
+			echo esc_attr( ( WP_Inci::get_instance() )->get_safety_html( $field->object_id ) );
 		}
 
 		/**
@@ -336,15 +335,16 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @return void
 		 */
 		public function copyButton() {
-			echo '<script>var wi_style=`' . $this->defaultStyle() . '`;';
-			echo "const wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>";
-			echo '<button id="copy_style" type="button" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>';
+			echo esc_attr( '<script>const wi_style=`' . $this->defaultStyle() . '`;' );
+			echo esc_attr( "const wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>" );
+			echo esc_attr( '<button id="copy_style" type="button" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>' );
 		}
 
 		/**
 		 * Create WP INCI Settings page.
 		 *
 		 * @return void
+		 * @throws JsonException Json exception.
 		 */
 		public function registerPageSettings() {
 
@@ -363,7 +363,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 
 			$desc = __(
 				'You can disable the WP INCI style and add your own to your theme.<br/>Just copy the standard WP INCI style above into your style.css and customize it.',
-				'wp-inci' 
+				'wp-inci'
 			);
 
 			/**
@@ -388,12 +388,13 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 									'mode'     => 'css',
 									'readOnly' => 'nocursor',
 								),
-							) 
+							),
+							JSON_THROW_ON_ERROR
 						),
 					),
 					'after_field'  => array( $this, 'copyButton' ),
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 			$main_options->add_field(
@@ -406,7 +407,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'active_value'   => 'on',
 					'inactive_value' => 'off',
 					'show_in_rest'   => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 			/**
@@ -435,7 +436,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'type'         => 'textarea_code',
 					'default_cb'   => array( $this, 'get_default_disclaimer' ),
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 
 		}
@@ -480,7 +481,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		public function optionsPageMessageCallback( $cmb, $args ) {
 			if ( ! empty( $args['should_notify'] ) ) {
 
-				if ( ( 'updated' == $args['type'] ) || ( 'notice-warning' == $args['type'] ) ) {
+				if ( ( 'updated' === $args['type'] ) || ( 'notice-warning' === $args['type'] ) ) {
 					$args['message'] = __( 'Settings saved.', 'wp-inci' );
 				}
 
@@ -504,7 +505,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'context'      => 'side',
 					'priority'     => 'default',
 					'show_names'   => false,
-				) 
+				)
 			);
 
 			$brand->add_field(
@@ -516,7 +517,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'type'         => 'taxonomy_select',
 					'after_field'  => '<br/><a style="" target="_blank" href="' . esc_url( admin_url( 'edit-tags.php?taxonomy=brand' ) ) . '" class="button brand">' . __( 'Add new brand', 'wp-inci' ) . '</a>',
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
-				) 
+				)
 			);
 		}
 
@@ -528,11 +529,11 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		public function removeGutenbergTips() {
 			global $pagenow;
 
-			if ( 'post.php' == $pagenow && isset( $_GET['post'] ) ) {
+			if ( 'post.php' === $pagenow && isset( $_GET['post'] ) ) {
 
-				$post_type = get_post_type( $_GET['post'] );
+				$post_type = get_post_type( sanitize_key( wp_unslash( $_GET['post'] ) ) );
 
-				if ( ( 'ingredient' == $post_type ) || ( 'product' == $post_type ) ) {
+				if ( ( 'ingredient' === $post_type ) || ( 'product' === $post_type ) ) {
 					?>
 					<style>
 						.components-modal__frame.components-guide {
@@ -556,10 +557,10 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		public function disableEditorFullscreen() {
 			global $pagenow;
 
-			if ( 'post.php' == $pagenow && isset( $_GET['post'] ) ) {
+			if ( 'post.php' === $pagenow && isset( $_GET['post'] ) ) {
 
-				$post_type = get_post_type( $_GET['post'] );
-				if ( ( 'ingredient' == $post_type ) || ( 'product' == $post_type ) ) {
+				$post_type = get_post_type( sanitize_key( wp_unslash( $_GET['post'] ) ) );
+				if ( ( 'ingredient' === $post_type ) || ( 'product' === $post_type ) ) {
 
 					$script = "window.onload = function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } }";
 

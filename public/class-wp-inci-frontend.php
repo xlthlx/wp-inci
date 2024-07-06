@@ -53,7 +53,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			load_plugin_textdomain(
 				'wp-inci',
 				false,
-				dirname( plugin_basename( $this->plugin_file ) ) . '/languages/' 
+				WPINCI_BASE_PATH . 'languages/'
 			);
 
 			/**
@@ -67,7 +67,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				'the_content',
 				array( $this, 'wiContentIngredients' ),
 				10,
-				1 
+				1
 			);
 			add_action( 'init', array( $this, 'wiAddProductShortcode' ) );
 		}
@@ -93,16 +93,16 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 */
 		public function wiEnqueueStyle() {
 
-			$disable_style = cmb2_get_option( 'wi_settings', 'wi_disable_style' );
+			$disable_style = cmb2_get_option( 'wi_settings', 'wi_disable_style' )[0];
 
 			wp_enqueue_style( 'wp-inci', esc_url( plugins_url( 'css/wp-inci.min.css', __FILE__ ) ), array(), '1.6.2' );
 
-			if ( 'on' == $disable_style ) {
+			if ( 'on' === $disable_style ) {
 				wp_dequeue_style( 'wp-inci' );
 			}
 
 		}
-		
+
 		/**
 		 * Gets the HTML for a single ingredient.
 		 *
@@ -121,7 +121,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				if ( $functions_list && ! is_wp_error( $functions_list ) ) {
 					$functions = ' (' . implode(
 						' / ',
-						wp_list_pluck( $functions_list, 'name' ) 
+						wp_list_pluck( $functions_list, 'name' )
 					) . ')';
 				}
 
@@ -183,7 +183,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				'wi_disclaimer',
 				'textarea_disclaimer',
 				$this->get_default_disclaimer()
-			) . '</div>';
+			)[0] . '</div>';
 
 			return $output;
 		}
@@ -200,7 +200,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			$output = '';
 
 			if ( is_singular() && is_main_query() ) {
-				if ( 'product' == $post->post_type ) {
+				if ( 'product' === $post->post_type ) {
 					$output = '<div class="wp-inci">' . $this->getIngredientsTable( $post->ID ) . '</div>';
 				}
 
@@ -280,7 +280,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				if ( 'true' === $atts['list'] ) {
 					$output .= $this->getIngredientsTable(
 						$atts['id'],
-						$atts['safety'] 
+						$atts['safety']
 					);
 				}
 

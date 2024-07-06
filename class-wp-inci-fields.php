@@ -68,7 +68,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			add_action( 'wp_ajax_cmb2_search_ajax_get_results', array( $this, 'cmb2SearchAjaxGetResults' ) );
 			add_action(
 				'wp_ajax_cmb2_multiple_search_ajax_get_results',
-				array( $this, 'cmb2MultipleSearchAjaxGetResults' ) 
+				array( $this, 'cmb2MultipleSearchAjaxGetResults' )
 			);
 
 		}
@@ -89,7 +89,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 
 		/**
 		 * Title filter.
-		 * 
+		 *
 		 * @param string $where    Query where.
 		 * @param object $wp_query WP query.
 		 *
@@ -133,11 +133,8 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			}
 
 			$args = array(
-				'type'  => 'checkbox',
 				'id'    => $field_name,
 				'name'  => $field_name,
-				'desc'  => '',
-				'value' => $active_value,
 			);
 
 			if ( $escaped_value === $active_value ) {
@@ -147,7 +144,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			}
 
 			echo '<label class="cmb2-switch">
-				    <input type="checkbox" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . esc_attr( $active_value ) . '" data-inactive-value="' . esc_attr( $inactive_value ) . '" ' . $args['checked'] . ' />
+				    <input type="checkbox" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . esc_attr( $active_value ) . '" data-inactive-value="' . esc_attr( $inactive_value ) . '" ' . esc_attr( $args['checked'] ) . ' />
 				    <span class="cmb2-slider round"></span>
 			      </label>';
 
@@ -168,11 +165,11 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			?>
 			<style>
 				input:checked + .cmb2-slider {
-					background-color: <?php echo $toggle_color; ?>;
+					background-color: <?php echo esc_attr( $toggle_color ); ?>;
 				}
 
 				input:focus + .cmb2-slider {
-					box-shadow: 0 0 1px<?php echo $toggle_color; ?>;
+					box-shadow: 0 0 1px<?php echo esc_attr( $toggle_color ); ?>;
 				}
 			</style>
 			<?php
@@ -181,81 +178,85 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		/**
 		 * Render Search Ajax field.
 		 *
-		 * @param object $field       The field object.
-		 * @param string $value       Field value.
-		 * @param int    $object_id   Object ID.
+		 * @param object $field The field object.
+		 * @param array  $values Field values.
+		 * @param int    $object_id Object ID.
 		 * @param string $object_type Object type.
-		 * @param object $field_type  The type object.
+		 * @param object $field_type The type object.
 		 *
 		 * @return void
+		 * @throws JsonException Json exception.
 		 */
-		public function renderSearchAjax( $field, $value, $object_id, $object_type, $field_type ) {
+		public function renderSearchAjax( $field, $values, $object_id, $object_type, $field_type ) {
 			$field_name = $field->_name();
 
 			echo '<div class="container-search-left">';
-			echo '<h2 class="wi_single">' . __( 'Search', 'wp-inci' ) . '</h2>';
+			echo '<h2 class="wi_single">' . esc_attr( __( 'Search', 'wp-inci' ) ) . '</h2>';
 
 			$field_value = '';
 
-			echo $field_type->input(
-				array(
-					'type'           => 'text',
-					'name'           => $field_name,
-					'id'             => $field_name,
-					'class'          => 'cmb2-search-ajax',
-					'value'          => $field_value,
-					'desc'           => false,
-					'data-limit'     => ( null !== $field->args( 'limit' ) ) ? $field->args( 'limit' ) : '1',
-					'data-sortable'  => ( null !== $field->args( 'sortable' ) ) ? $field->args( 'sortable' ) : '0',
-					'data-object'    => ( null !== $field->args( 'object_type' ) ) ? $field->args( 'object_type' ) : 'post',
-					'data-queryargs' => ( null !== $field->args( 'query_args' ) ) ? htmlspecialchars(
-						json_encode( $field->args( 'query_args' ) ),
-						ENT_QUOTES,
-						'UTF-8' 
-					) : '',
-				) 
+			echo esc_attr(
+				$field_type->input(
+					array(
+						'type'           => 'text',
+						'name'           => $field_name,
+						'id'             => $field_name,
+						'class'          => 'cmb2-search-ajax',
+						'value'          => $field_value,
+						'desc'           => false,
+						'data-limit'     => $field->args( 'limit' ) ?? '1',
+						'data-sortable'  => $field->args( 'sortable' ) ?? '0',
+						'data-object'    => $field->args( 'object_type' ) ?? 'post',
+						'data-queryargs' => ( null !== $field->args( 'query_args' ) ) ? htmlspecialchars(
+							json_encode( $field->args( 'query_args' ), JSON_THROW_ON_ERROR ),
+							ENT_QUOTES,
+							'UTF-8'
+						) : '',
+					)
+				)
 			);
 
-			echo '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb2-search-ajax-spinner" />';
+			echo esc_html( '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb2-search-ajax-spinner" />' );
 
 			$field_type->_desc( true, true );
 
-			echo '<a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add new ingredient', 'wp-inci' ) . '</a>';
+			echo esc_html( '<a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add new ingredient', 'wp-inci' ) . '</a>' );
 
-			echo '<h2 class="wi_multiple">' . __( 'Multiple search', 'wp-inci' ) . '</h2>';
+			echo esc_html( '<h2 class="wi_multiple">' . __( 'Multiple search', 'wp-inci' ) . '</h2>' );
 
-			echo $field_type->textarea(
-				array(
-					'type'  => 'textarea',
-					'name'  => __( 'Multiple search', 'wp-inci' ),
-					'id'    => $field_name . '_textarea_search',
-					'class' => 'cmb2-multiple-search-ajax',
-					'value' => false,
-					'desc'  => '<p class="cmb2-metabox-description">' . __(
-						'Enter multiple ingredients separated by a comma, then click on "Search Ingredients".',
-						'wp-inci' 
-					) . '</p>',
-				) 
+			echo esc_attr(
+				$field_type->textarea(
+					array(
+						'type'  => 'textarea',
+						'name'  => __( 'Multiple search', 'wp-inci' ),
+						'id'    => $field_name . '_textarea_search',
+						'class' => 'cmb2-multiple-search-ajax',
+						'value' => false,
+						'desc'  => '<p class="cmb2-metabox-description">' . __(
+							'Enter multiple ingredients separated by a comma, then click on "Search Ingredients".',
+							'wp-inci'
+						) . '</p>',
+					)
+				)
 			);
 
-			echo '<button id="' . $field_name . '_button_search" type="button" class="button desc">' . __(
-				'Search Ingredients',
-				'wp-inci' 
-			) . '</button>';
+			echo esc_html(
+				'<button id="' . $field_name . '_button_search" type="button" class="button desc">' . __(
+					'Search Ingredients',
+					'wp-inci'
+				) . '</button>'
+			);
 
-			echo '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb2-multiple-search-ajax-spinner" />';
+			echo esc_html( '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb2-multiple-search-ajax-spinner" />' );
 
-			echo '</div>';
+			echo esc_html( '</div>' );
 
-			echo '<div class="container-search-right">';
+			echo esc_html( '<div class="container-search-right">' );
 
 			if ( 1 !== $field->args( 'limit' ) ) {
-				echo '<ol class="cmb2-search-ajax-results" id="' . $field_name . '_results">';
-				if ( isset( $value ) && ! empty( $value ) ) {
-					if ( ! is_array( $value ) ) {
-						$value = array( $value );
-					}
-					foreach ( $value as $val ) {
+				echo esc_html( '<ol class="cmb2-search-ajax-results" id="' . $field_name . '_results">' );
+				if ( ! empty( $values ) ) {
+					foreach ( $values as $val ) {
 						$handle = ( $field->args( 'sortable' ) ) ? '<span class="handle"></span>' : '';
 						if ( $field->args( 'object_type' ) === 'user' ) {
 							$guid  = get_edit_user_link( $val );
@@ -269,7 +270,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 						$safety = ( WP_Inci::get_instance() )->get_safety_html( $val );
 						$title  = '<div class="wi_wrapper">' . $safety . '<div class="wi_value">' . $title . '</div></div>';
 
-						echo '<li><input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '">' . $handle . '<a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
+						echo esc_html( '<li><input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '">' . $handle . '<a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>' );
 					}
 				}
 				echo '</ol>';
@@ -283,7 +284,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * Sanitize the Ajax search.
 		 *
 		 * @param string $override_value The override value.
-		 * @param string $value          The field value.
+		 * @param array  $value          The field value.
 		 * @param int    $object_id      The object ID.
 		 * @param array  $field_args     The field args.
 		 *
@@ -294,7 +295,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			if ( ! empty( $field_args['render_row_cb'][0]->data_to_save[ $fid . '_results' ] ) ) {
 				$value = $field_args['render_row_cb'][0]->data_to_save[ $fid . '_results' ];
 			} elseif ( ! defined( 'DOING_AJAX' ) ) {
-				$value = false;
+				$value = array();
 			}
 
 			return $value;
@@ -309,12 +310,14 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			wp_register_script(
 				'jquery-autocomplete',
 				$this->url . '/admin/js/jquery.autocomplete.min.js',
-				array( 'jquery' )
+				array( 'jquery' ),
+				get_bloginfo( 'version' )
 			);
 			wp_register_script(
 				'search-ajax',
 				$this->url . '/admin/js/search-ajax.min.js',
-				array( 'jquery', 'jquery-autocomplete', 'jquery-ui-sortable' )
+				array( 'jquery', 'jquery-autocomplete', 'jquery-ui-sortable' ),
+				get_bloginfo( 'version' )
 			);
 			wp_localize_script(
 				'search-ajax',
@@ -323,14 +326,16 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 					'ajaxurl'    => admin_url( 'admin-ajax.php' ),
 					'nonce'      => wp_create_nonce( 'cmb2_search_ajax_get_results' ),
 					'notice'     => __( 'No results found.', 'wp-inci' ),
-				)
+				),
+				get_bloginfo( 'version' )
 			);
 			wp_enqueue_script( 'search-ajax' );
 
 			wp_register_script(
 				'multiple-search-ajax',
 				$this->url . '/admin/js/multiple-search-ajax.min.js',
-				array( 'jquery' )
+				array( 'jquery' ),
+				get_bloginfo( 'version' )
 			);
 			wp_localize_script(
 				'multiple-search-ajax',
@@ -338,7 +343,8 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				array(
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
 					'nonce'   => wp_create_nonce( 'cmb2_multiple_search_ajax_get_results' ),
-				) 
+				),
+				get_bloginfo( 'version' )
 			);
 			wp_enqueue_script( 'multiple-search-ajax' );
 
@@ -351,39 +357,38 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * @throws JsonException Throws an exception.
 		 */
 		public function cmb2SearchAjaxGetResults() {
-			if ( ! wp_verify_nonce( $_POST['wicheck'], 'cmb2_search_ajax_get_results' ) ) {
-				// @codingStandardsIgnoreStart
+			if ( isset( $_POST['wicheck'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wicheck'] ) ), 'cmb2_search_ajax_get_results' ) ) {
 				die( json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
-				// @codingStandardsIgnoreEnd
 			}
 
-			// @codingStandardsIgnoreStart
-			$args = json_decode( stripslashes( wp_specialchars_decode( $_POST['query_args'] ) ), true, 512, JSON_THROW_ON_ERROR );
-			// @codingStandardsIgnoreEnd
-			add_filter( 'posts_where', array( $this, 'setTitleFilter' ), 10, 2 );
-			$args['title_filter'] = $_POST['query'];
-			$data                 = array();
+			if ( isset( $_POST['query_args'] ) ) {
+				$args = json_decode( esc_url_raw( wp_unslash( $_POST['query_args'] ) ), true, 512, JSON_THROW_ON_ERROR );
+				add_filter( 'posts_where', array( $this, 'setTitleFilter' ), 10, 2 );
 
-			$results = new WP_Query( $args );
-			if ( $results->have_posts() ) :
-				while ( $results->have_posts() ) :
-					$results->the_post();
-					// Define filter "cmb2_search_ajax_result" to allow customize ajax results.
-					$data[] = apply_filters(
-						'cmb2_search_ajax_result',
-						array(
-							'value'  => get_the_title(),
-							'data'   => get_the_ID(),
-							'guid'   => get_edit_post_link(),
-							'safety' => ( WP_Inci::get_instance() )->get_safety_html( get_the_ID() ),
-						) 
-					);
-				endwhile;
-			endif;
+				$args['title_filter'] = isset( $_POST['query'] ) ? esc_url_raw( wp_unslash( $_POST['query'] ) ) : '';
+				$data                 = array();
 
-			wp_reset_postdata();
-			remove_filter( 'posts_where', array( $this, 'setTitleFilter' ) );
-			die( json_encode( $data ) );
+				$results = new WP_Query( $args );
+				if ( $results->have_posts() ) :
+					while ( $results->have_posts() ) :
+						$results->the_post();
+						// Define filter "cmb2_search_ajax_result" to allow customize ajax results.
+						$data[] = apply_filters(
+							'cmb2_search_ajax_result',
+							array(
+								'value'  => get_the_title(),
+								'data'   => get_the_ID(),
+								'guid'   => get_edit_post_link(),
+								'safety' => ( WP_Inci::get_instance() )->get_safety_html( get_the_ID() ),
+							)
+						);
+					endwhile;
+				endif;
+
+				wp_reset_postdata();
+				remove_filter( 'posts_where', array( $this, 'setTitleFilter' ) );
+				die( json_encode( $data ) );
+			}
 		}
 
 		/**
@@ -395,18 +400,17 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		public function cmb2MultipleSearchAjaxGetResults() {
 			global $wpdb;
 
-			if ( ! wp_verify_nonce( $_POST['wimucheck'], 'cmb2_multiple_search_ajax_get_results' ) ) {
-				// @codingStandardsIgnoreStart
+			if ( isset( $_POST['wimucheck'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wimucheck'] ) ), 'cmb2_multiple_search_ajax_get_results' ) ) {
 				die( json_encode( array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
-				// @codingStandardsIgnoreEnd
 			}
 
 			$string = '';
 			$data   = array();
 			$i      = 0;
 
-			$results  = explode( ',', trim( $_POST['text'] ) );
-			$field_id = $_POST['field_id'];
+			$text     = isset( $_POST['text'] ) ? sanitize_text_field( wp_unslash( $_POST['text'] ) ) : '';
+			$results  = explode( ',', trim( $text ) );
+			$field_id = isset( $_POST['field_id'] ) ? sanitize_key( wp_unslash( $_POST['field_id'] ) ) : '';
 
 			foreach ( $results as $result ) {
 				$i ++;
@@ -425,7 +429,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 						$name,
 						$like_single,
 						$like_double
-					) 
+					)
 				);
 
 				if ( $ingredient_id ) {

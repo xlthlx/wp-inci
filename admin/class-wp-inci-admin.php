@@ -162,7 +162,9 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		public function pluginAdminStyles() {
 			wp_register_style(
 				'wp-inci-admin-css',
-				$this->admin_url . '/css/wp-inci-admin.min.css'
+				$this->admin_url . '/css/wp-inci-admin.min.css',
+				array(),
+				get_bloginfo( 'version' )
 			);
 			wp_enqueue_style( 'wp-inci-admin-css' );
 		}
@@ -173,14 +175,15 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 * @return void
 		 */
 		public function pluginAdminScripts() {
-			if ( ! wp_script_is( 'jquery', 'enqueued' ) ) {
+			if ( ! wp_script_is( 'jquery' ) ) {
 				wp_enqueue_script( 'jquery' );
 			}
 
 			wp_register_script(
 				'wp-inci-admin-js',
 				$this->admin_url . '/js/wp-inci-admin.min.js',
-				array( 'jquery' )
+				array( 'jquery' ),
+				get_bloginfo( 'version' )
 			);
 			wp_enqueue_script( 'wp-inci-admin-js' );
 		}
@@ -214,7 +217,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 			if ( plugin_basename( 'wp-inci/wp-inci.php' ) === $plugin_file ) {
 				$new_actions['wi_settings'] = '<a href="' . esc_url( admin_url( 'options-general.php?page=wi_settings' ) ) . '">' . __(
 					'Settings',
-					'wp-inci' 
+					'wp-inci'
 				) . '</a>';
 			}
 

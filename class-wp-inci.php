@@ -113,7 +113,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public function show_safety_html() {
 			global $post;
-			echo $this->get_safety_html( $post->ID );
+			echo esc_attr( $this->get_safety_html( $post->ID ) );
 		}
 
 		/**
@@ -164,7 +164,6 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				'parent_item_colon'     => __( 'Parent Ingredient:', 'wp-inci' ),
 				'menu_name'             => __( 'Ingredients', 'wp-inci' ),
 			);
-
 
 			register_extended_post_type(
 				'ingredient',
@@ -230,7 +229,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					'singular' => __( 'Ingredient', 'wp-inci' ),
 					'plural'   => __( 'Ingredients', 'wp-inci' ),
 					'slug'     => __( 'ingredient', 'wp-inci' ),
-				) 
+				)
 			);
 
 			$functions_labels = array(
@@ -275,7 +274,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					'plural'   => __( 'Functions', 'wp-inci' ),
 					'slug'     => __( 'functions', 'wp-inci' ),
 
-				) 
+				)
 			);
 
 			$source_labels = array(
@@ -325,7 +324,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					'plural'   => __( 'Sources', 'wp-inci' ),
 					'slug'     => __( 'source', 'wp-inci' ),
 
-				) 
+				)
 			);
 
 		}
@@ -389,7 +388,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public function click_on_shortcode() {
 			global $post;
-			echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . $post->ID . ']">';
+			echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . esc_attr( $post->ID ) . ']">';
 		}
 
 		/**
@@ -483,7 +482,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					'plural'   => __( 'Products', 'wp-inci' ),
 					'slug'     => __( 'product', 'wp-inci' ),
 
-				) 
+				)
 			);
 
 			$brand_labels = array(
@@ -527,7 +526,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 					'plural'   => __( 'Brands', 'wp-inci' ),
 					'slug'     => __( 'brand', 'wp-inci' ),
 
-				) 
+				)
 			);
 
 		}
@@ -540,7 +539,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		public function get_default_disclaimer() {
 			return __(
 				'The evaluation of these ingredients reflects the opinion of the author, who is not a specialist in this field. This evaluation is based on some online databases (e.g. <a title="CosIng - Cosmetic ingredients database" href="https://ec.europa.eu/growth/sectors/cosmetics/cosing/" target="_blank">CosIng</a>).',
-				'wp-inci' 
+				'wp-inci'
 			);
 		}
 
@@ -718,7 +717,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * Sets the post updated messages for the `brand` taxonomy.
 		 *
 		 * @param array $messages Post updated messages.
-		 * 
+		 *
 		 * @return array Messages for the `brand` taxonomy.
 		 */
 		public function brand_updated_messages( $messages ) {

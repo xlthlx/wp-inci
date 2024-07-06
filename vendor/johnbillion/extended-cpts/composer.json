@@ -18,7 +18,7 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
 		"johnbillion/falsey-assertequals-detector": "*",
 		"johnbillion/plugin-infrastructure": "dev-trunk",
-		"lucatume/wp-browser": "^3.0.21",
+		"lucatume/wp-browser": ">=3.0.21 <3.5",
 		"phpcompatibility/phpcompatibility-wp": "^2",
 		"phpstan/phpstan": "^1.0",
 		"phpstan/phpstan-phpunit": "^1.0",
@@ -52,10 +52,12 @@
 			"@composer validate --strict --no-check-lock",
 			"@test:phpstan",
 			"@test:phpcs",
-			"@test:integration"
+			"@test:start",
+			"@test:integration",
+			"@test:stop"
 		],
 		"test:destroy": [
-			"COMPOSE_PROJECT_NAME=extended-cpts docker compose down --volumes --remove-orphans"
+			"tests-destroy"
 		],
 		"test:integration": [
 			"integration-tests"
@@ -68,10 +70,10 @@
 			"phpstan analyze --memory-limit=1024M"
 		],
 		"test:start": [
-			"COMPOSE_PROJECT_NAME=extended-cpts docker compose up -d"
+			"tests-start"
 		],
 		"test:stop": [
-			"COMPOSE_PROJECT_NAME=extended-cpts docker compose down"
+			"tests-stop"
 		]
 	}
 }

@@ -131,6 +131,30 @@ class WP_Block_Type extends Shared\Base {
 	public array $block_hooks;
 
 	/**
+	 * Limits which block types can be inserted as children of this block type
+	 *
+	 * @var array<int, string>
+	 * @phpstan-var list<string>
+	 */
+	public array $allowed_blocks;
+
+	/**
+	 * Block type variations callback.
+	 *
+	 * @var callable
+	 * @phpstan-var callable(): list<array<string, mixed>>
+	 */
+	public $variation_callback;
+
+	/**
+	 * Block type front end only style handles.
+	 *
+	 * @var array<int, string>
+	 * @phpstan-var list<string>
+	 */
+	public array $view_style_handles;
+
+	/**
 	 * Block type editor script handle.
 	 *
 	 * @deprecated WordPress 6.1.0
