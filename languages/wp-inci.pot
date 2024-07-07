@@ -1,951 +1,956 @@
-# Copyright (C) 2023 xlthlx
+# Copyright (C) 2024 xlthlx
 # This file is distributed under the GPLv3+.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP INCI 1.6.3\n"
+"Project-Id-Version: WP INCI 1.6.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-inci\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-05T20:04:16+00:00\n"
+"POT-Creation-Date: 2024-07-07T15:09:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: wp-inci\n"
 
 #. Plugin Name of the plugin
-#: admin/class-wp-inci-meta.php:353
-#: admin/class-wp-inci-meta.php:419
+#: wp-inci.php
+#: admin/class-wp-inci-meta.php:354
+#: admin/class-wp-inci-meta.php:420
 msgid "WP INCI"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: wp-inci.php
 msgid "https://wordpress.org/plugins/wp-inci/"
 msgstr ""
 
 #. Description of the plugin
+#: wp-inci.php
 msgid "A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients)."
 msgstr ""
 
 #. Author of the plugin
+#: wp-inci.php
 msgid "xlthlx"
 msgstr ""
 
 #. Author URI of the plugin
+#: wp-inci.php
 msgid "https://profiles.wordpress.org/xlthlx/"
 msgstr ""
 
-#: admin/class-wp-inci-admin.php:218
-#: admin/class-wp-inci-meta.php:357
+#: admin/class-wp-inci-admin.php:219
+#: admin/class-wp-inci-meta.php:358
 msgid "Settings"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:90
-#: admin/class-wp-inci-meta.php:99
-#: class-wp-inci.php:379
+#: admin/class-wp-inci-meta.php:88
+#: admin/class-wp-inci-meta.php:97
+#: class-wp-inci.php:318
 msgid "Url"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:119
-#: class-wp-inci.php:203
-#: class-wp-inci.php:227
-#: class-wp-inci.php:293
+#: admin/class-wp-inci-meta.php:117
+#: class-wp-inci.php:143
+#: class-wp-inci.php:167
+#: class-wp-inci.php:232
 msgid "Ingredients"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:130
-#: class-wp-inci.php:204
-#: class-wp-inci.php:253
-#: class-wp-inci.php:292
+#: admin/class-wp-inci-meta.php:127
+#: class-wp-inci.php:144
+#: class-wp-inci.php:192
+#: class-wp-inci.php:231
 msgid "Ingredient"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:133
-#: admin/class-wp-inci-meta.php:163
+#: admin/class-wp-inci-meta.php:130
+#: admin/class-wp-inci-meta.php:160
 msgid "Start typing ingredient name, then select one from the list. No results found?"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:150
-#: admin/class-wp-inci-meta.php:160
+#: admin/class-wp-inci-meta.php:147
+#: admin/class-wp-inci-meta.php:157
 msgid "May Contain"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:189
+#: admin/class-wp-inci-meta.php:186
 msgid "INCI"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:205
+#: admin/class-wp-inci-meta.php:202
 msgid "Double green"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:206
+#: admin/class-wp-inci-meta.php:203
 msgid "Green"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:207
+#: admin/class-wp-inci-meta.php:204
 msgid "Yellow"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:208
+#: admin/class-wp-inci-meta.php:205
 msgid "Red"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:209
+#: admin/class-wp-inci-meta.php:206
 msgid "Double red"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:234
+#: admin/class-wp-inci-meta.php:231
 msgid "CAS #"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:246
+#: admin/class-wp-inci-meta.php:243
 msgid "EC #"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:258
+#: admin/class-wp-inci-meta.php:255
 msgid "Restrictions"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:340
+#: admin/class-wp-inci-meta.php:341
 msgid "Style copied to clipboard."
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:341
+#: admin/class-wp-inci-meta.php:342
 msgid "Copy style"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:364
+#: admin/class-wp-inci-meta.php:365
 msgid "You can disable the WP INCI style and add your own to your theme.<br/>Just copy the standard WP INCI style above into your style.css and customize it."
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:376
+#: admin/class-wp-inci-meta.php:377
 msgid "WP INCI Default Style"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:401
+#: admin/class-wp-inci-meta.php:402
 msgid "Disable WP INCI style"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:424
-#: admin/class-wp-inci-meta.php:432
+#: admin/class-wp-inci-meta.php:425
+#: admin/class-wp-inci-meta.php:433
 msgid "Disclaimer"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:433
+#: admin/class-wp-inci-meta.php:434
 msgid "Add a disclaimer after WP INCI table of ingredients."
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:484
+#: admin/class-wp-inci-meta.php:485
 msgid "Settings saved."
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:502
-#: admin/class-wp-inci-meta.php:512
-#: class-wp-inci.php:515
-#: class-wp-inci.php:588
+#: admin/class-wp-inci-meta.php:503
+#: admin/class-wp-inci-meta.php:513
+#: class-wp-inci.php:454
+#: class-wp-inci.php:527
 msgid "Brand"
 msgstr ""
 
-#: admin/class-wp-inci-meta.php:517
+#: admin/class-wp-inci-meta.php:518
 msgid "Add new brand"
 msgstr ""
 
-#: class-wp-inci-fields.php:196
+#: class-wp-inci-fields.php:187
 msgid "Search"
 msgstr ""
 
-#: class-wp-inci-fields.php:223
+#: class-wp-inci-fields.php:216
 msgid "Add new ingredient"
 msgstr ""
 
-#: class-wp-inci-fields.php:225
-#: class-wp-inci-fields.php:230
+#: class-wp-inci-fields.php:218
+#: class-wp-inci-fields.php:224
 msgid "Multiple search"
 msgstr ""
 
-#: class-wp-inci-fields.php:234
+#: class-wp-inci-fields.php:229
 msgid "Enter multiple ingredients separated by a comma, then click on \"Search Ingredients\"."
 msgstr ""
 
-#: class-wp-inci-fields.php:241
-#: class-wp-inci.php:223
+#: class-wp-inci-fields.php:238
+#: class-wp-inci.php:163
 msgid "Search Ingredients"
 msgstr ""
 
-#: class-wp-inci-fields.php:327
+#: class-wp-inci-fields.php:326
 msgid "No results found."
 msgstr ""
 
-#: class-wp-inci-fields.php:359
+#: class-wp-inci-fields.php:358
 msgid "Error : Unauthorized action"
 msgstr ""
 
-#: class-wp-inci-fields.php:403
+#: class-wp-inci-fields.php:399
 msgid "Error: Unauthorized action"
 msgstr ""
 
-#: class-wp-inci-fields.php:437
+#: class-wp-inci-fields.php:435
 msgid "Not found"
 msgstr ""
 
-#: class-wp-inci.php:205
+#: class-wp-inci.php:145
 msgid "All Ingredients"
 msgstr ""
 
-#: class-wp-inci.php:206
+#: class-wp-inci.php:146
 msgid "Ingredient Archives"
 msgstr ""
 
-#: class-wp-inci.php:207
+#: class-wp-inci.php:147
 msgid "Ingredient Attributes"
 msgstr ""
 
-#: class-wp-inci.php:208
+#: class-wp-inci.php:148
 msgid "Insert in Ingredient"
 msgstr ""
 
-#: class-wp-inci.php:209
+#: class-wp-inci.php:149
 msgid "Uploaded to this Ingredient"
 msgstr ""
 
-#: class-wp-inci.php:210
+#: class-wp-inci.php:150
 msgctxt "ingredient"
 msgid "Featured Image"
 msgstr ""
 
-#: class-wp-inci.php:211
+#: class-wp-inci.php:151
 msgctxt "ingredient"
 msgid "Set featured image"
 msgstr ""
 
-#: class-wp-inci.php:212
+#: class-wp-inci.php:152
 msgctxt "ingredient"
 msgid "Remove featured image"
 msgstr ""
 
-#: class-wp-inci.php:213
+#: class-wp-inci.php:153
 msgctxt "ingredient"
 msgid "Use as featured image"
 msgstr ""
 
-#: class-wp-inci.php:214
+#: class-wp-inci.php:154
 msgid "Filter Ingredients list"
 msgstr ""
 
-#: class-wp-inci.php:215
+#: class-wp-inci.php:155
 msgid "Ingredients list navigation"
 msgstr ""
 
-#: class-wp-inci.php:216
+#: class-wp-inci.php:156
 msgid "Ingredients list"
 msgstr ""
 
-#: class-wp-inci.php:217
+#: class-wp-inci.php:157
 msgid "New Ingredient"
 msgstr ""
 
-#: class-wp-inci.php:218
-#: class-wp-inci.php:480
+#: class-wp-inci.php:158
+#: class-wp-inci.php:419
 msgid "Add New"
 msgstr ""
 
-#: class-wp-inci.php:219
+#: class-wp-inci.php:159
 msgid "Add New Ingredient"
 msgstr ""
 
-#: class-wp-inci.php:220
+#: class-wp-inci.php:160
 msgid "Edit Ingredient"
 msgstr ""
 
-#: class-wp-inci.php:221
+#: class-wp-inci.php:161
 msgid "View Ingredient"
 msgstr ""
 
-#: class-wp-inci.php:222
+#: class-wp-inci.php:162
 msgid "View Ingredients"
 msgstr ""
 
-#: class-wp-inci.php:224
+#: class-wp-inci.php:164
 msgid "No Ingredients found"
 msgstr ""
 
-#: class-wp-inci.php:225
+#: class-wp-inci.php:165
 msgid "No Ingredients found in trash"
 msgstr ""
 
-#: class-wp-inci.php:226
+#: class-wp-inci.php:166
 msgid "Parent Ingredient:"
 msgstr ""
 
-#: class-wp-inci.php:257
+#: class-wp-inci.php:196
 msgid "Safety"
 msgstr ""
 
-#: class-wp-inci.php:261
-#: class-wp-inci.php:299
-#: class-wp-inci.php:316
-#: class-wp-inci.php:337
+#: class-wp-inci.php:200
+#: class-wp-inci.php:238
+#: class-wp-inci.php:255
+#: class-wp-inci.php:276
 msgid "Functions"
 msgstr ""
 
-#: class-wp-inci.php:265
-#: class-wp-inci.php:386
+#: class-wp-inci.php:204
+#: class-wp-inci.php:325
 msgid "Source"
 msgstr ""
 
-#: class-wp-inci.php:269
-#: class-wp-inci.php:523
+#: class-wp-inci.php:208
+#: class-wp-inci.php:462
 msgid "Author"
 msgstr ""
 
-#: class-wp-inci.php:273
-#: class-wp-inci.php:527
+#: class-wp-inci.php:212
+#: class-wp-inci.php:466
 msgid "Date"
 msgstr ""
 
-#: class-wp-inci.php:278
-#: class-wp-inci.php:303
+#: class-wp-inci.php:217
+#: class-wp-inci.php:242
 msgid "All Functions"
 msgstr ""
 
-#: class-wp-inci.php:282
-#: class-wp-inci.php:348
+#: class-wp-inci.php:221
+#: class-wp-inci.php:287
 msgid "All Sources"
 msgstr ""
 
-#: class-wp-inci.php:286
-#: class-wp-inci.php:536
+#: class-wp-inci.php:225
+#: class-wp-inci.php:475
 msgid "All Authors"
 msgstr ""
 
-#: class-wp-inci.php:294
+#: class-wp-inci.php:233
 msgid "ingredient"
 msgstr ""
 
-#: class-wp-inci.php:300
+#: class-wp-inci.php:239
 msgctxt "taxonomy general name"
 msgid "Function"
 msgstr ""
 
-#: class-wp-inci.php:301
+#: class-wp-inci.php:240
 msgid "Search Functions"
 msgstr ""
 
-#: class-wp-inci.php:302
+#: class-wp-inci.php:241
 msgid "Popular Functions"
 msgstr ""
 
-#: class-wp-inci.php:304
+#: class-wp-inci.php:243
 msgid "Parent Function"
 msgstr ""
 
-#: class-wp-inci.php:305
+#: class-wp-inci.php:244
 msgid "Parent Function:"
 msgstr ""
 
-#: class-wp-inci.php:306
+#: class-wp-inci.php:245
 msgid "Edit Function"
 msgstr ""
 
-#: class-wp-inci.php:307
+#: class-wp-inci.php:246
 msgid "Update Function"
 msgstr ""
 
-#: class-wp-inci.php:308
+#: class-wp-inci.php:247
 msgid "View Function"
 msgstr ""
 
-#: class-wp-inci.php:309
+#: class-wp-inci.php:248
 msgid "Add New Function"
 msgstr ""
 
-#: class-wp-inci.php:310
+#: class-wp-inci.php:249
 msgid "New Function"
 msgstr ""
 
-#: class-wp-inci.php:311
+#: class-wp-inci.php:250
 msgid "Separate Functions with commas"
 msgstr ""
 
-#: class-wp-inci.php:312
+#: class-wp-inci.php:251
 msgid "Add or remove Functions"
 msgstr ""
 
-#: class-wp-inci.php:313
+#: class-wp-inci.php:252
 msgid "Choose from the most used Functions"
 msgstr ""
 
-#: class-wp-inci.php:314
+#: class-wp-inci.php:253
 msgid "No Functions found."
 msgstr ""
 
-#: class-wp-inci.php:315
+#: class-wp-inci.php:254
 msgid "No Functions"
 msgstr ""
 
-#: class-wp-inci.php:317
+#: class-wp-inci.php:256
 msgid "Functions list navigation"
 msgstr ""
 
-#: class-wp-inci.php:318
+#: class-wp-inci.php:257
 msgid "Functions list"
 msgstr ""
 
-#: class-wp-inci.php:319
+#: class-wp-inci.php:258
 msgctxt "function"
 msgid "Most Used"
 msgstr ""
 
-#: class-wp-inci.php:320
+#: class-wp-inci.php:259
 msgid "&larr; Back to Functions"
 msgstr ""
 
-#: class-wp-inci.php:336
+#: class-wp-inci.php:275
 msgid "Function"
 msgstr ""
 
-#: class-wp-inci.php:338
+#: class-wp-inci.php:277
 msgid "functions"
 msgstr ""
 
-#: class-wp-inci.php:344
-#: class-wp-inci.php:361
-#: class-wp-inci.php:387
+#: class-wp-inci.php:283
+#: class-wp-inci.php:300
+#: class-wp-inci.php:326
 msgid "Sources"
 msgstr ""
 
-#: class-wp-inci.php:345
+#: class-wp-inci.php:284
 msgctxt "taxonomy general name"
 msgid "Source"
 msgstr ""
 
-#: class-wp-inci.php:346
+#: class-wp-inci.php:285
 msgid "Search Sources"
 msgstr ""
 
-#: class-wp-inci.php:347
+#: class-wp-inci.php:286
 msgid "Popular Sources"
 msgstr ""
 
-#: class-wp-inci.php:349
+#: class-wp-inci.php:288
 msgid "Parent Source"
 msgstr ""
 
-#: class-wp-inci.php:350
+#: class-wp-inci.php:289
 msgid "Parent Source:"
 msgstr ""
 
-#: class-wp-inci.php:351
+#: class-wp-inci.php:290
 msgid "Edit Source"
 msgstr ""
 
-#: class-wp-inci.php:352
+#: class-wp-inci.php:291
 msgid "Update Source"
 msgstr ""
 
-#: class-wp-inci.php:353
+#: class-wp-inci.php:292
 msgid "View Source"
 msgstr ""
 
-#: class-wp-inci.php:354
+#: class-wp-inci.php:293
 msgid "Add New Source"
 msgstr ""
 
-#: class-wp-inci.php:355
+#: class-wp-inci.php:294
 msgid "New Source"
 msgstr ""
 
-#: class-wp-inci.php:356
+#: class-wp-inci.php:295
 msgid "Separate Sources with commas"
 msgstr ""
 
-#: class-wp-inci.php:357
+#: class-wp-inci.php:296
 msgid "Add or remove Sources"
 msgstr ""
 
-#: class-wp-inci.php:358
+#: class-wp-inci.php:297
 msgid "Choose from the most used Sources"
 msgstr ""
 
-#: class-wp-inci.php:359
+#: class-wp-inci.php:298
 msgid "No Sources found."
 msgstr ""
 
-#: class-wp-inci.php:360
+#: class-wp-inci.php:299
 msgid "No Sources"
 msgstr ""
 
-#: class-wp-inci.php:362
+#: class-wp-inci.php:301
 msgid "Sources list navigation"
 msgstr ""
 
-#: class-wp-inci.php:363
+#: class-wp-inci.php:302
 msgid "Sources list"
 msgstr ""
 
-#: class-wp-inci.php:364
+#: class-wp-inci.php:303
 msgctxt "source"
 msgid "Most Used"
 msgstr ""
 
-#: class-wp-inci.php:365
+#: class-wp-inci.php:304
 msgid "&larr; Back to Sources"
 msgstr ""
 
-#: class-wp-inci.php:388
+#: class-wp-inci.php:327
 msgid "source"
 msgstr ""
 
-#: class-wp-inci.php:465
-#: class-wp-inci.php:489
-#: class-wp-inci.php:545
+#: class-wp-inci.php:404
+#: class-wp-inci.php:428
+#: class-wp-inci.php:484
 msgid "Products"
 msgstr ""
 
-#: class-wp-inci.php:466
-#: class-wp-inci.php:511
-#: class-wp-inci.php:544
+#: class-wp-inci.php:405
+#: class-wp-inci.php:450
+#: class-wp-inci.php:483
 msgid "Product"
 msgstr ""
 
-#: class-wp-inci.php:467
+#: class-wp-inci.php:406
 msgid "All Products"
 msgstr ""
 
-#: class-wp-inci.php:468
+#: class-wp-inci.php:407
 msgid "Product Archives"
 msgstr ""
 
-#: class-wp-inci.php:469
+#: class-wp-inci.php:408
 msgid "Product Attributes"
 msgstr ""
 
-#: class-wp-inci.php:470
+#: class-wp-inci.php:409
 msgid "Insert into Product"
 msgstr ""
 
-#: class-wp-inci.php:471
+#: class-wp-inci.php:410
 msgid "Uploaded to this Product"
 msgstr ""
 
-#: class-wp-inci.php:472
+#: class-wp-inci.php:411
 msgctxt "product"
 msgid "Featured Image"
 msgstr ""
 
-#: class-wp-inci.php:473
+#: class-wp-inci.php:412
 msgctxt "product"
 msgid "Set featured image"
 msgstr ""
 
-#: class-wp-inci.php:474
+#: class-wp-inci.php:413
 msgctxt "product"
 msgid "Remove featured image"
 msgstr ""
 
-#: class-wp-inci.php:475
+#: class-wp-inci.php:414
 msgctxt "product"
 msgid "Use as featured image"
 msgstr ""
 
-#: class-wp-inci.php:476
+#: class-wp-inci.php:415
 msgid "Filter Products list"
 msgstr ""
 
-#: class-wp-inci.php:477
+#: class-wp-inci.php:416
 msgid "Products list navigation"
 msgstr ""
 
-#: class-wp-inci.php:478
+#: class-wp-inci.php:417
 msgid "Products list"
 msgstr ""
 
-#: class-wp-inci.php:479
+#: class-wp-inci.php:418
 msgid "New Product"
 msgstr ""
 
-#: class-wp-inci.php:481
+#: class-wp-inci.php:420
 msgid "Add New Product"
 msgstr ""
 
-#: class-wp-inci.php:482
+#: class-wp-inci.php:421
 msgid "Edit Product"
 msgstr ""
 
-#: class-wp-inci.php:483
+#: class-wp-inci.php:422
 msgid "View Product"
 msgstr ""
 
-#: class-wp-inci.php:484
+#: class-wp-inci.php:423
 msgid "View Products"
 msgstr ""
 
-#: class-wp-inci.php:485
+#: class-wp-inci.php:424
 msgid "Search Products"
 msgstr ""
 
-#: class-wp-inci.php:486
+#: class-wp-inci.php:425
 msgid "No Products found"
 msgstr ""
 
-#: class-wp-inci.php:487
+#: class-wp-inci.php:426
 msgid "No Products found in trash"
 msgstr ""
 
-#: class-wp-inci.php:488
+#: class-wp-inci.php:427
 msgid "Parent Product:"
 msgstr ""
 
-#: class-wp-inci.php:519
+#: class-wp-inci.php:458
 msgid "Shortcode"
 msgstr ""
 
-#: class-wp-inci.php:532
-#: class-wp-inci.php:556
+#: class-wp-inci.php:471
+#: class-wp-inci.php:495
 msgid "All Brands"
 msgstr ""
 
-#: class-wp-inci.php:546
+#: class-wp-inci.php:485
 #: _backup/blocks/product.php:72
 msgid "product"
 msgstr ""
 
-#: class-wp-inci.php:552
-#: class-wp-inci.php:569
-#: class-wp-inci.php:589
+#: class-wp-inci.php:491
+#: class-wp-inci.php:508
+#: class-wp-inci.php:528
 msgid "Brands"
 msgstr ""
 
-#: class-wp-inci.php:553
+#: class-wp-inci.php:492
 msgctxt "taxonomy general name"
 msgid "Brand"
 msgstr ""
 
-#: class-wp-inci.php:554
+#: class-wp-inci.php:493
 msgid "Search Brands"
 msgstr ""
 
-#: class-wp-inci.php:555
+#: class-wp-inci.php:494
 msgid "Popular Brands"
 msgstr ""
 
-#: class-wp-inci.php:557
+#: class-wp-inci.php:496
 msgid "Parent Brand"
 msgstr ""
 
-#: class-wp-inci.php:558
+#: class-wp-inci.php:497
 msgid "Parent Brand:"
 msgstr ""
 
-#: class-wp-inci.php:559
+#: class-wp-inci.php:498
 msgid "Edit Brand"
 msgstr ""
 
-#: class-wp-inci.php:560
+#: class-wp-inci.php:499
 msgid "Update Brand"
 msgstr ""
 
-#: class-wp-inci.php:561
+#: class-wp-inci.php:500
 msgid "View Brand"
 msgstr ""
 
-#: class-wp-inci.php:562
+#: class-wp-inci.php:501
 msgid "Add New Brand"
 msgstr ""
 
-#: class-wp-inci.php:563
+#: class-wp-inci.php:502
 msgid "New Brand"
 msgstr ""
 
-#: class-wp-inci.php:564
+#: class-wp-inci.php:503
 msgid "Separate Brands with commas"
 msgstr ""
 
-#: class-wp-inci.php:565
+#: class-wp-inci.php:504
 msgid "Add or remove Brands"
 msgstr ""
 
-#: class-wp-inci.php:566
+#: class-wp-inci.php:505
 msgid "Choose from the most used Brands"
 msgstr ""
 
-#: class-wp-inci.php:567
+#: class-wp-inci.php:506
 msgid "No Brands found."
 msgstr ""
 
-#: class-wp-inci.php:568
+#: class-wp-inci.php:507
 msgid "No Brands"
 msgstr ""
 
-#: class-wp-inci.php:570
+#: class-wp-inci.php:509
 msgid "Brands list navigation"
 msgstr ""
 
-#: class-wp-inci.php:571
+#: class-wp-inci.php:510
 msgid "Brands list"
 msgstr ""
 
-#: class-wp-inci.php:572
+#: class-wp-inci.php:511
 msgctxt "brand"
 msgid "Most Used"
 msgstr ""
 
-#: class-wp-inci.php:573
+#: class-wp-inci.php:512
 msgid "&larr; Back to Brands"
 msgstr ""
 
-#: class-wp-inci.php:590
+#: class-wp-inci.php:529
 msgid "brand"
 msgstr ""
 
-#: class-wp-inci.php:603
+#: class-wp-inci.php:542
 msgid "The evaluation of these ingredients reflects the opinion of the author, who is not a specialist in this field. This evaluation is based on some online databases (e.g. <a title=\"CosIng - Cosmetic ingredients database\" href=\"https://ec.europa.eu/growth/sectors/cosmetics/cosing/\" target=\"_blank\">CosIng</a>)."
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:624
+#: class-wp-inci.php:563
 msgid "Ingredient updated. <a target=\"_blank\" href=\"%s\">View Ingredient</a>"
 msgstr ""
 
-#: class-wp-inci.php:625
-#: class-wp-inci.php:688
+#: class-wp-inci.php:564
+#: class-wp-inci.php:627
 msgid "Custom field updated."
 msgstr ""
 
-#: class-wp-inci.php:626
-#: class-wp-inci.php:689
+#: class-wp-inci.php:565
+#: class-wp-inci.php:628
 msgid "Custom field deleted."
 msgstr ""
 
-#: class-wp-inci.php:627
+#: class-wp-inci.php:566
 msgid "Ingredient updated."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: class-wp-inci.php:629
+#: class-wp-inci.php:568
 msgid "Ingredient restored to revision from %s"
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:631
+#: class-wp-inci.php:570
 msgid "Ingredient published. <a href=\"%s\">View Ingredient</a>"
 msgstr ""
 
-#: class-wp-inci.php:632
+#: class-wp-inci.php:571
 msgid "Ingredient saved."
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:634
+#: class-wp-inci.php:573
 msgid "Ingredient submitted. <a target=\"_blank\" href=\"%s\">Preview Ingredient</a>"
 msgstr ""
 
 #. translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink
-#: class-wp-inci.php:636
+#: class-wp-inci.php:575
 msgid "Ingredient scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Ingredient</a>"
 msgstr ""
 
 #. translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink
-#: class-wp-inci.php:636
-#: class-wp-inci.php:699
+#: class-wp-inci.php:575
+#: class-wp-inci.php:638
 msgid "M j, Y @ G:i"
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:638
+#: class-wp-inci.php:577
 msgid "Ingredient draft updated. <a target=\"_blank\" href=\"%s\">Preview Ingredient</a>"
 msgstr ""
 
 #. translators: %s: Number of Ingredients.
-#: class-wp-inci.php:657
+#: class-wp-inci.php:596
 msgid "%s Ingredient updated."
 msgid_plural "%s Ingredients updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-wp-inci.php:658
+#: class-wp-inci.php:597
 msgid "1 Ingredient not updated, somebody is editing it."
 msgstr ""
 
 #. translators: %s: Number of Ingredients.
-#: class-wp-inci.php:660
+#: class-wp-inci.php:599
 msgid "%s Ingredient not updated, somebody is editing it."
 msgid_plural "%s Ingredients not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of Ingredients.
-#: class-wp-inci.php:662
+#: class-wp-inci.php:601
 msgid "%s Ingredient permanently deleted."
 msgid_plural "%s Ingredients permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of Ingredients.
-#: class-wp-inci.php:664
+#: class-wp-inci.php:603
 msgid "%s Ingredient moved to the Trash."
 msgid_plural "%s Ingredients moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of Ingredients.
-#: class-wp-inci.php:666
+#: class-wp-inci.php:605
 msgid "%s Ingredient restored from the Trash."
 msgid_plural "%s Ingredients restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:687
+#: class-wp-inci.php:626
 msgid "Product updated. <a target=\"_blank\" href=\"%s\">View Product</a>"
 msgstr ""
 
-#: class-wp-inci.php:690
+#: class-wp-inci.php:629
 msgid "Product updated."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: class-wp-inci.php:692
+#: class-wp-inci.php:631
 msgid "Product restored to revision from %s"
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:694
+#: class-wp-inci.php:633
 msgid "Product published. <a href=\"%s\">View Product</a>"
 msgstr ""
 
-#: class-wp-inci.php:695
+#: class-wp-inci.php:634
 msgid "Product saved."
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:697
+#: class-wp-inci.php:636
 msgid "Product submitted. <a target=\"_blank\" href=\"%s\">Preview Product</a>"
 msgstr ""
 
 #. translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink
-#: class-wp-inci.php:699
+#: class-wp-inci.php:638
 msgid "Product scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Product</a>"
 msgstr ""
 
 #. translators: %s: post permalink
-#: class-wp-inci.php:701
+#: class-wp-inci.php:640
 msgid "Product draft updated. <a target=\"_blank\" href=\"%s\">Preview Product</a>"
 msgstr ""
 
 #. translators: %s: Number of Products.
-#: class-wp-inci.php:720
+#: class-wp-inci.php:659
 msgid "%s Product updated."
 msgid_plural "%s Products updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-wp-inci.php:721
+#: class-wp-inci.php:660
 msgid "1 Product not updated, somebody is editing it."
 msgstr ""
 
 #. translators: %s: Number of Products.
-#: class-wp-inci.php:723
+#: class-wp-inci.php:662
 msgid "%s Product not updated, somebody is editing it."
 msgid_plural "%s Products not updated, somebody is editing them."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of Products.
-#: class-wp-inci.php:725
+#: class-wp-inci.php:664
 msgid "%s Product permanently deleted."
 msgid_plural "%s Products permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of Products.
-#: class-wp-inci.php:727
+#: class-wp-inci.php:666
 msgid "%s Product moved to the Trash."
 msgid_plural "%s Products moved to the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of Products.
-#: class-wp-inci.php:729
+#: class-wp-inci.php:668
 msgid "%s Product restored from the Trash."
 msgid_plural "%s Products restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-wp-inci.php:746
+#: class-wp-inci.php:685
 msgid "Function added."
 msgstr ""
 
-#: class-wp-inci.php:747
+#: class-wp-inci.php:686
 msgid "Function deleted."
 msgstr ""
 
-#: class-wp-inci.php:748
+#: class-wp-inci.php:687
 msgid "Function updated."
 msgstr ""
 
-#: class-wp-inci.php:749
+#: class-wp-inci.php:688
 msgid "Function not added."
 msgstr ""
 
-#: class-wp-inci.php:750
+#: class-wp-inci.php:689
 msgid "Function not updated."
 msgstr ""
 
-#: class-wp-inci.php:751
+#: class-wp-inci.php:690
 msgid "Functions deleted."
 msgstr ""
 
-#: class-wp-inci.php:768
+#: class-wp-inci.php:707
 msgid "Source added."
 msgstr ""
 
-#: class-wp-inci.php:769
+#: class-wp-inci.php:708
 msgid "Source deleted."
 msgstr ""
 
-#: class-wp-inci.php:770
+#: class-wp-inci.php:709
 msgid "Source updated."
 msgstr ""
 
-#: class-wp-inci.php:771
+#: class-wp-inci.php:710
 msgid "Source not added."
 msgstr ""
 
-#: class-wp-inci.php:772
+#: class-wp-inci.php:711
 msgid "Source not updated."
 msgstr ""
 
-#: class-wp-inci.php:773
+#: class-wp-inci.php:712
 msgid "Sources deleted."
 msgstr ""
 
-#: class-wp-inci.php:790
+#: class-wp-inci.php:729
 msgid "Brand added."
 msgstr ""
 
-#: class-wp-inci.php:791
+#: class-wp-inci.php:730
 msgid "Brand deleted."
 msgstr ""
 
-#: class-wp-inci.php:792
+#: class-wp-inci.php:731
 msgid "Brand updated."
 msgstr ""
 
-#: class-wp-inci.php:793
+#: class-wp-inci.php:732
 msgid "Brand not added."
 msgstr ""
 
-#: class-wp-inci.php:794
+#: class-wp-inci.php:733
 msgid "Brand not updated."
 msgstr ""
 
-#: class-wp-inci.php:795
+#: class-wp-inci.php:734
 msgid "Brands deleted."
 msgstr ""
 
-#: public/class-wp-inci-frontend.php:170
+#: public/class-wp-inci-frontend.php:171
 msgid "MAY CONTAIN"
 msgstr ""
 
