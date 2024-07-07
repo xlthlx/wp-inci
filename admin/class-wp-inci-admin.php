@@ -43,7 +43,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 * Constructor.
 		 */
 		public function __construct() {
-			( WP_Inci::get_instance() )->__construct();
+			parent::__construct();
 			$this->init();
 			$this->admin_url = plugins_url( '', __FILE__ );
 		}
@@ -183,7 +183,8 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 				'wp-inci-admin-js',
 				$this->admin_url . '/js/wp-inci-admin.min.js',
 				array( 'jquery' ),
-				get_bloginfo( 'version' )
+				get_bloginfo( 'version' ),
+				array( 'in_footer' => true )
 			);
 			wp_enqueue_script( 'wp-inci-admin-js' );
 		}

@@ -68,3 +68,4 @@ package-lock.json
 /vendor/wp-coding-standards/
 /vendor/wpreadme2markdown/
 /vendor/wptrt/
+phpcs.xml.cache

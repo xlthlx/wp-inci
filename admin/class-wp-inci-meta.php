@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @since 1.0
 		 */
 		public function __construct() {
-			( WP_Inci::get_instance() )->__construct();
+			parent::__construct();
 			$this->init();
 			$this->url = plugins_url( '', __FILE__ );
 		}
@@ -59,8 +59,6 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 			add_action( 'cmb2_admin_init', array( $this, 'registerBrandMetabox' ) );
 			add_action( 'admin_init', array( $this, 'removeMenuPage' ) );
 			add_filter( 'parent_file', array( $this, 'selectOtherMenu' ) );
-			add_action( 'admin_head', array( $this, 'removeGutenbergTips' ) );
-			add_action( 'enqueue_block_editor_assets', array( $this, 'disableEditorFullscreen' ) );
 		}
 
 		/**
@@ -271,7 +269,9 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @return void
 		 */
 		public function beforeSafety( $field_args, $field ) {
-			echo esc_attr( ( WP_Inci::get_instance() )->get_safety_html( $field->object_id ) );
+			// @codingStandardsIgnoreStart
+			echo ( WP_Inci::get_instance() )->get_safety_html( esc_attr( $field->object_id ) );
+			// @codingStandardsIgnoreEnd
 		}
 
 		/**
@@ -335,16 +335,17 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 * @return void
 		 */
 		public function copyButton() {
-			echo esc_attr( '<script>const wi_style=`' . $this->defaultStyle() . '`;' );
-			echo esc_attr( "const wi_msg='" . __( 'Style copied to clipboard.', 'wp-inci' ) . "';</script>" );
-			echo esc_attr( '<button id="copy_style" type="button" class="button copy">' . __( 'Copy style', 'wp-inci' ) . '</button><span id="msg"></span>' );
+			// @codingStandardsIgnoreStart
+			echo '<script>const wi_style=`' . $this->defaultStyle() . '`;';
+			// @codingStandardsIgnoreEnd
+			echo "const wi_msg='" . esc_attr( __( 'Style copied to clipboard.', 'wp-inci' ) ) . "';</script>";
+			echo '<button id="copy_style" type="button" class="button copy">' . esc_attr( __( 'Copy style', 'wp-inci' ) ) . '</button><span id="msg"></span>';
 		}
 
 		/**
 		 * Create WP INCI Settings page.
 		 *
 		 * @return void
-		 * @throws JsonException Json exception.
 		 */
 		public function registerPageSettings() {
 
@@ -382,14 +383,13 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'attributes'   => array(
 						'readonly'        => 'readonly',
 						'disabled'        => 'disabled',
-						'data-codeeditor' => json_encode(
+						'data-codeeditor' => wp_json_encode(
 							array(
 								'codemirror' => array(
 									'mode'     => 'css',
 									'readOnly' => 'nocursor',
 								),
 							),
-							JSON_THROW_ON_ERROR
 						),
 					),
 					'after_field'  => array( $this, 'copyButton' ),
@@ -519,54 +519,6 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 					'show_in_rest' => WP_REST_Server::ALLMETHODS,
 				)
 			);
-		}
-
-		/**
-		 * Hides the very annoying Welcome Tips popup for Gutenberg.
-		 *
-		 * @return void
-		 */
-		public function removeGutenbergTips() {
-			global $pagenow;
-
-			if ( 'post.php' === $pagenow && isset( $_GET['post'] ) ) {
-
-				$post_type = get_post_type( sanitize_key( wp_unslash( $_GET['post'] ) ) );
-
-				if ( ( 'ingredient' === $post_type ) || ( 'product' === $post_type ) ) {
-					?>
-					<style>
-						.components-modal__frame.components-guide {
-							display: none !important;
-						}
-
-						.components-modal__screen-overlay {
-							display: none !important;
-						}
-					</style>
-					<?php
-				}
-			}
-		}
-
-		/**
-		 * Disable the very annoying fullscreen mode for Gutenberg.
-		 *
-		 * @return void
-		 */
-		public function disableEditorFullscreen() {
-			global $pagenow;
-
-			if ( 'post.php' === $pagenow && isset( $_GET['post'] ) ) {
-
-				$post_type = get_post_type( sanitize_key( wp_unslash( $_GET['post'] ) ) );
-				if ( ( 'ingredient' === $post_type ) || ( 'product' === $post_type ) ) {
-
-					$script = "window.onload = function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } }";
-
-					wp_add_inline_script( 'wp-blocks', $script );
-				}
-			}
 		}
 
 	}

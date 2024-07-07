@@ -36,7 +36,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * Constructor.
 		 */
 		public function __construct() {
-			( WP_Inci::get_instance() )->__construct();
+			parent::__construct();
 			$this->init();
 			$this->url = plugins_url( '', __FILE__ );
 		}
@@ -121,16 +121,9 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * @return void
 		 */
 		public function renderSwitch( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
-			$field_name   = $field->_name();
-			$active_value = 'on';
-			if ( null !== $field->args( 'active_value' ) ) {
-				$active_value = $field->args( 'active_value' );
-			}
-
-			$inactive_value = 'off';
-			if ( null !== $field->args( 'inactive_value' ) ) {
-				$inactive_value = $field->args( 'inactive_value' );
-			}
+			$field_name     = $field->_name();
+			$active_value   = $field->args( 'active_value' ) ?? 'on';
+			$inactive_value = $field->args( 'inactive_value' ) ?? 'off';
 
 			$args = array(
 				'id'    => $field_name,
@@ -195,66 +188,67 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 
 			$field_value = '';
 
-			echo esc_attr(
-				$field_type->input(
-					array(
-						'type'           => 'text',
-						'name'           => $field_name,
-						'id'             => $field_name,
-						'class'          => 'cmb2-search-ajax',
-						'value'          => $field_value,
-						'desc'           => false,
-						'data-limit'     => $field->args( 'limit' ) ?? '1',
-						'data-sortable'  => $field->args( 'sortable' ) ?? '0',
-						'data-object'    => $field->args( 'object_type' ) ?? 'post',
-						'data-queryargs' => ( null !== $field->args( 'query_args' ) ) ? htmlspecialchars(
-							json_encode( $field->args( 'query_args' ), JSON_THROW_ON_ERROR ),
-							ENT_QUOTES,
-							'UTF-8'
-						) : '',
-					)
+			// @codingStandardsIgnoreStart
+			echo $field_type->input(
+				array(
+					'type'           => 'text',
+					'name'           => $field_name,
+					'id'             => $field_name,
+					'class'          => 'cmb2-search-ajax',
+					'value'          => $field_value,
+					'desc'           => false,
+					'data-limit'     => $field->args( 'limit' ) ?? '1',
+					'data-sortable'  => $field->args( 'sortable' ) ?? '0',
+					'data-object'    => $field->args( 'object_type' ) ?? 'post',
+					'data-queryargs' => ( null !== $field->args( 'query_args' ) ) ? htmlspecialchars(
+						wp_json_encode( $field->args( 'query_args' ), JSON_THROW_ON_ERROR ),
+						ENT_QUOTES,
+						'UTF-8'
+					) : '',
 				)
 			);
+			// @codingStandardsIgnoreEnd
 
-			echo esc_html( '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb2-search-ajax-spinner" />' );
+			echo '<img src="' . esc_url( admin_url( 'images/spinner.gif' ) ) . '" class="cmb2-search-ajax-spinner" />';
 
 			$field_type->_desc( true, true );
 
-			echo esc_html( '<a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . __( 'Add new ingredient', 'wp-inci' ) . '</a>' );
+			echo '<a target="_blank" href="' . esc_url( admin_url( 'post-new.php?post_type=ingredient' ) ) . '" class="button desc">' . esc_attr( __( 'Add new ingredient', 'wp-inci' ) ) . '</a>';
 
-			echo esc_html( '<h2 class="wi_multiple">' . __( 'Multiple search', 'wp-inci' ) . '</h2>' );
+			echo '<h2 class="wi_multiple">' . esc_attr( __( 'Multiple search', 'wp-inci' ) ) . '</h2>';
 
-			echo esc_attr(
-				$field_type->textarea(
-					array(
-						'type'  => 'textarea',
-						'name'  => __( 'Multiple search', 'wp-inci' ),
-						'id'    => $field_name . '_textarea_search',
-						'class' => 'cmb2-multiple-search-ajax',
-						'value' => false,
-						'desc'  => '<p class="cmb2-metabox-description">' . __(
+			// @codingStandardsIgnoreStart
+			echo $field_type->textarea(
+				array(
+					'type'  => 'textarea',
+					'name'  => esc_attr( __( 'Multiple search', 'wp-inci' ) ),
+					'id'    => esc_attr( $field_name ) . '_textarea_search',
+					'class' => 'cmb2-multiple-search-ajax',
+					'value' => false,
+					'desc'  => '<p class="cmb2-metabox-description">' . esc_attr(
+						__(
 							'Enter multiple ingredients separated by a comma, then click on "Search Ingredients".',
 							'wp-inci'
-						) . '</p>',
-					)
+						)
+					) . '</p>',
 				)
 			);
 
-			echo esc_html(
-				'<button id="' . $field_name . '_button_search" type="button" class="button desc">' . __(
+			echo '<button id="' . $field_name . '_button_search" type="button" class="button desc">' .
+				__(
 					'Search Ingredients',
 					'wp-inci'
-				) . '</button>'
-			);
+				) . '</button>';
+			// @codingStandardsIgnoreEnd
 
-			echo esc_html( '<img src="' . admin_url( 'images/spinner.gif' ) . '" class="cmb2-multiple-search-ajax-spinner" />' );
+			echo '<img src="' . esc_url( admin_url( 'images/spinner.gif' ) ) . '" class="cmb2-multiple-search-ajax-spinner" />';
 
-			echo esc_html( '</div>' );
+			echo '</div>';
 
-			echo esc_html( '<div class="container-search-right">' );
+			echo '<div class="container-search-right">';
 
 			if ( 1 !== $field->args( 'limit' ) ) {
-				echo esc_html( '<ol class="cmb2-search-ajax-results" id="' . $field_name . '_results">' );
+				echo '<ol class="cmb2-search-ajax-results" id="' . esc_attr( $field_name ) . '_results">';
 				if ( ! empty( $values ) ) {
 					foreach ( $values as $val ) {
 						$handle = ( $field->args( 'sortable' ) ) ? '<span class="handle"></span>' : '';
@@ -270,7 +264,9 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 						$safety = ( WP_Inci::get_instance() )->get_safety_html( $val );
 						$title  = '<div class="wi_wrapper">' . $safety . '<div class="wi_value">' . $title . '</div></div>';
 
-						echo esc_html( '<li><input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '">' . $handle . '<a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>' );
+						// @codingStandardsIgnoreStart
+						echo '<li><input type="hidden" name="' . $field_name . '_results[]" value="' . $val . '">' . $handle . '<a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
+						// @codingStandardsIgnoreEnd
 					}
 				}
 				echo '</ol>';
@@ -311,13 +307,15 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				'jquery-autocomplete',
 				$this->url . '/admin/js/jquery.autocomplete.min.js',
 				array( 'jquery' ),
-				get_bloginfo( 'version' )
+				get_bloginfo( 'version' ),
+				array( 'in_footer' => true )
 			);
 			wp_register_script(
 				'search-ajax',
 				$this->url . '/admin/js/search-ajax.min.js',
 				array( 'jquery', 'jquery-autocomplete', 'jquery-ui-sortable' ),
-				get_bloginfo( 'version' )
+				get_bloginfo( 'version' ),
+				array( 'in_footer' => true )
 			);
 			wp_localize_script(
 				'search-ajax',
@@ -326,8 +324,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 					'ajaxurl'    => admin_url( 'admin-ajax.php' ),
 					'nonce'      => wp_create_nonce( 'cmb2_search_ajax_get_results' ),
 					'notice'     => __( 'No results found.', 'wp-inci' ),
-				),
-				get_bloginfo( 'version' )
+				)
 			);
 			wp_enqueue_script( 'search-ajax' );
 
@@ -335,7 +332,8 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				'multiple-search-ajax',
 				$this->url . '/admin/js/multiple-search-ajax.min.js',
 				array( 'jquery' ),
-				get_bloginfo( 'version' )
+				get_bloginfo( 'version' ),
+				array( 'in_footer' => true )
 			);
 			wp_localize_script(
 				'multiple-search-ajax',
@@ -343,8 +341,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				array(
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
 					'nonce'   => wp_create_nonce( 'cmb2_multiple_search_ajax_get_results' ),
-				),
-				get_bloginfo( 'version' )
+				)
 			);
 			wp_enqueue_script( 'multiple-search-ajax' );
 
@@ -354,54 +351,52 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * Ajax request: get results for single search.
 		 *
 		 * @return void
-		 * @throws JsonException Throws an exception.
+		 * @throws JsonException Json exception.
 		 */
 		public function cmb2SearchAjaxGetResults() {
 			if ( isset( $_POST['wicheck'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wicheck'] ) ), 'cmb2_search_ajax_get_results' ) ) {
-				die( json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
+				die( wp_json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
 			}
+			// @codingStandardsIgnoreStart
+            $args = isset( $_POST['query_args'] ) ? json_decode( wp_specialchars_decode( stripslashes( $_POST['query_args'] ) ), true, 512, JSON_THROW_ON_ERROR ) : '';
+            add_filter( 'posts_where', array( $this, 'setTitleFilter' ), 10, 2 );
 
-			if ( isset( $_POST['query_args'] ) ) {
-				$args = json_decode( esc_url_raw( wp_unslash( $_POST['query_args'] ) ), true, 512, JSON_THROW_ON_ERROR );
-				add_filter( 'posts_where', array( $this, 'setTitleFilter' ), 10, 2 );
+            $args['title_filter'] = $_POST['query'] ?? '';
+			// @codingStandardsIgnoreEnd
+			$data = array();
 
-				$args['title_filter'] = isset( $_POST['query'] ) ? esc_url_raw( wp_unslash( $_POST['query'] ) ) : '';
-				$data                 = array();
-
-				$results = new WP_Query( $args );
-				if ( $results->have_posts() ) :
-					while ( $results->have_posts() ) :
-						$results->the_post();
-						// Define filter "cmb2_search_ajax_result" to allow customize ajax results.
-						$data[] = apply_filters(
-							'cmb2_search_ajax_result',
-							array(
-								'value'  => get_the_title(),
-								'data'   => get_the_ID(),
-								'guid'   => get_edit_post_link(),
-								'safety' => ( WP_Inci::get_instance() )->get_safety_html( get_the_ID() ),
-							)
-						);
-					endwhile;
+			$results = new WP_Query( $args );
+			if ( $results->have_posts() ) :
+				while ( $results->have_posts() ) :
+					$results->the_post();
+					// Define filter "cmb2_search_ajax_result" to allow customize ajax results.
+					$data[] = apply_filters(
+						'cmb2_search_ajax_result',
+						array(
+							'value'  => get_the_title(),
+							'data'   => get_the_ID(),
+							'guid'   => get_edit_post_link(),
+							'safety' => ( WP_Inci::get_instance() )->get_safety_html( get_the_ID() ),
+						)
+					);
+				endwhile;
 				endif;
 
 				wp_reset_postdata();
 				remove_filter( 'posts_where', array( $this, 'setTitleFilter' ) );
-				die( json_encode( $data ) );
-			}
+				die( wp_json_encode( $data ) );
 		}
 
 		/**
 		 * Ajax request: get results for multiple search.
 		 *
 		 * @return void
-		 * @throws JsonException Throws an exception.
 		 */
 		public function cmb2MultipleSearchAjaxGetResults() {
 			global $wpdb;
 
 			if ( isset( $_POST['wimucheck'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wimucheck'] ) ), 'cmb2_multiple_search_ajax_get_results' ) ) {
-				die( json_encode( array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
+				die( wp_json_encode( array( 'error' => __( 'Error: Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
 			}
 
 			$string = '';
@@ -420,6 +415,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				$like_single = $wild . $wpdb->esc_like( $name ) . $wild;
 				$like_double = $wpdb->esc_like( $name ) . $wild;
 
+				// @codingStandardsIgnoreStart
 				$ingredient_id = $wpdb->get_col(
 					$wpdb->prepare(
 						"SELECT ID from $wpdb->posts 
@@ -431,6 +427,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 						$like_double
 					)
 				);
+				// @codingStandardsIgnoreEnd
 
 				if ( $ingredient_id ) {
 					$data['row'][] = $this->setResults( $ingredient_id[0], $field_id );
@@ -441,9 +438,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				$data['string'] = $string;
 			}
 
-			// @codingStandardsIgnoreStart
-			die( json_encode( $data, JSON_THROW_ON_ERROR ) );
-			// @codingStandardsIgnoreEnd
+			die( wp_json_encode( $data, JSON_THROW_ON_ERROR ) );
 		}
 
 		/**

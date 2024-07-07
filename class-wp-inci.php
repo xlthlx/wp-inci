@@ -113,7 +113,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 */
 		public function show_safety_html() {
 			global $post;
-			echo esc_attr( $this->get_safety_html( $post->ID ) );
+			// @codingStandardsIgnoreStart
+			echo $this->get_safety_html( esc_attr( $post->ID ) );
+			// @codingStandardsIgnoreEnd
 		}
 
 		/**

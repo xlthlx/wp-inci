@@ -36,7 +36,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 * Constructor.
 		 */
 		public function __construct() {
-			( WP_Inci::get_instance() )->__construct();
+			parent::__construct();
 			$this->init();
 		}
 
@@ -93,9 +93,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 */
 		public function wiEnqueueStyle() {
 
-			$disable_style = cmb2_get_option( 'wi_settings', 'wi_disable_style' )[0];
+			$disable_style = cmb2_get_option( 'wi_settings', 'wi_disable_style' );
 
-			wp_enqueue_style( 'wp-inci', esc_url( plugins_url( 'css/wp-inci.min.css', __FILE__ ) ), array(), '1.6.2' );
+			wp_enqueue_style( 'wp-inci', esc_url( plugins_url( 'css/wp-inci.min.css', __FILE__ ) ), array(), get_bloginfo( 'version' ) );
 
 			if ( 'on' === $disable_style ) {
 				wp_dequeue_style( 'wp-inci' );
@@ -149,6 +149,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 * @param string $safety  Show safety.
 		 *
 		 * @return string
+		 * @noinspection PhpArrayToStringConversionInspection
 		 */
 		public function getIngredientsTable( $post_id, $safety = 'true' ) {
 			$output      = '';
@@ -183,7 +184,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				'wi_disclaimer',
 				'textarea_disclaimer',
 				$this->get_default_disclaimer()
-			)[0] . '</div>';
+			) . '</div>';
 
 			return $output;
 		}
