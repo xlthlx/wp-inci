@@ -84,10 +84,8 @@ class wp_dropdown_categories extends WP_Term_Query {
 	 * Value of the option that should be selected.
 	 *
 	 * Default 0.
-	 *
-	 * @var int|string
 	 */
-	public $selected;
+	public int|string $selected;
 
 	/**
 	 * Term field that should be used to populate the 'value' attribute of the option elements.
@@ -116,8 +114,6 @@ class wp_dropdown_categories extends WP_Term_Query {
 	 * Walker object to use to build the output.
 	 *
 	 * Default empty which results in a `Walker_CategoryDropdown` instance being used.
-	 *
-	 * @var \Walker
 	 */
-	public $walker;
+	public \Walker $walker;
 }

@@ -106,6 +106,8 @@ class register_taxonomy extends Shared\Base {
 	/**
 	 * Provide a callback function for the meta box display. If not set, `post_categories_meta_box()` is used for hierarchical taxonomies, and `post_tags_meta_box()` is used for non-hierarchical. If false, no meta box is shown.
 	 *
+	 * The callback is called in `do_meta_boxes()`: https://github.com/WordPress/wordpress-develop/blob/6.6.0/src/wp-admin/includes/template.php#L1456
+	 *
 	 * @var false|callable
 	 * @phpstan-var false|callable(\WP_Post,mixed[]): void
 	 */
@@ -147,16 +149,14 @@ class register_taxonomy extends Shared\Base {
 	 *     ep_mask?: int,
 	 * }
 	 */
-	public $rewrite;
+	public bool|array $rewrite;
 
 	/**
 	 * Sets the query var key for this taxonomy.
 	 *
 	 * Default `$taxonomy` key. If false, a taxonomy cannot be loaded at `?{query_var}={term_slug}`. If a string, the query `?{query_var}={term_slug}` will be valid.
-	 *
-	 * @var string|bool
 	 */
-	public $query_var;
+	public string|bool $query_var;
 
 	/**
 	 * Works much like a hook, in that it will be called when the count is updated.
@@ -180,7 +180,7 @@ class register_taxonomy extends Shared\Base {
 	 *     description?: string,
 	 * }
 	 */
-	public $default_term;
+	public string|array $default_term;
 
 	/**
 	 * Whether terms in this taxonomy should be sorted in the order they are provided to `wp_set_object_terms()`.

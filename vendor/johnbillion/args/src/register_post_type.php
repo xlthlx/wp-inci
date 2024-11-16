@@ -91,10 +91,8 @@ class register_post_type extends Shared\Base {
 	 *   - If a string of an existing top level menu (eg. 'tools.php' or 'edit.php?post_type=page'), the post type will be placed as a sub-menu of that.
 	 *
 	 * Default is value of `$show_ui`.
-	 *
-	 * @var bool|string
 	 */
-	public $show_in_menu;
+	public bool|string $show_in_menu;
 
 	/**
 	 * Makes this post type available for selection in navigation menus.
@@ -263,7 +261,7 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Do `remove_meta_box()` and `add_meta_box()` calls in the callback.
 	 *
-	 * Default null.
+	 * The callback is called via the https://developer.wordpress.org/reference/hooks/add_meta_boxes_post_type/ action.
 	 *
 	 * @var callable
 	 * @phpstan-var callable(\WP_Post): void
@@ -287,10 +285,8 @@ class register_post_type extends Shared\Base {
 	 * Will generate the proper rewrite rules if `$rewrite` is enabled.
 	 *
 	 * Default false.
-	 *
-	 * @var bool|string
 	 */
-	public $has_archive;
+	public bool|string $has_archive;
 
 	/**
 	 * Triggers the handling of rewrites for this post type.
@@ -309,7 +305,7 @@ class register_post_type extends Shared\Base {
 	 *     ep_mask?: int,
 	 * }
 	 */
-	public $rewrite;
+	public bool|array $rewrite;
 
 	/**
 	 * Sets the query_var key for this post type.
@@ -318,10 +314,8 @@ class register_post_type extends Shared\Base {
 	 *
 	 *   - If false, a post type cannot be loaded at `?{query_var}={post_slug}`.
 	 *   - If specified as a string, the query `?{query_var_string}={post_slug}` will be valid.
-	 *
-	 * @var string|bool
 	 */
-	public $query_var;
+	public string|bool $query_var;
 
 	/**
 	 * Whether to allow this post type to be exported.
@@ -360,10 +354,9 @@ class register_post_type extends Shared\Base {
 	 *
 	 * Default false.
 	 *
-	 * @var string|false
 	 * @phpstan-var self::TEMPLATE_LOCK_*
 	 */
-	public $template_lock;
+	public string|false $template_lock;
 
 	/**
 	 * FOR INTERNAL USE ONLY! True if this post type is a native or "built-in" post_type.

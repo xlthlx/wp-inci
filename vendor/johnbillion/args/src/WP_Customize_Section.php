@@ -40,7 +40,7 @@ class WP_Customize_Section extends Shared\Base {
 	 *   0: string,
 	 * }
 	 */
-	public $theme_supports;
+	public string|array $theme_supports;
 
 	/**
 	 * Title of the section to show in UI.

@@ -108,7 +108,7 @@ class WP_Http extends Shared\Base {
 	 *
 	 * @var string|mixed[]
 	 */
-	public $body;
+	public string|array $body;
 
 	/**
 	 * Whether to compress the $body when sending the request.

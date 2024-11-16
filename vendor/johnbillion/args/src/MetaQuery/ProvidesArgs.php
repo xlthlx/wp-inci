@@ -13,14 +13,14 @@ trait ProvidesArgs {
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $meta_key;
+	public string|array $meta_key;
 
 	/**
 	 * Meta value or values to filter by.
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $meta_value;
+	public string|array $meta_value;
 
 	/**
 	 * MySQL operator used for comparing the meta value.

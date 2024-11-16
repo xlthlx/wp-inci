@@ -329,11 +329,14 @@ class TaxonomyAdmin {
 				remove_meta_box( "tagsdiv-{$this->taxo->taxonomy}", $post_type, 'side' );
 			}
 
+			$store = version_compare( $GLOBALS['wp_version'], '6.5', '>=' ) ? 'core/editor' : 'core/edit-post';
+
 			# Remove default meta box from block editor:
 			wp_add_inline_script(
 				'wp-edit-post',
 				sprintf(
-					'wp.data.dispatch( "core/edit-post" ).removeEditorPanel( "taxonomy-panel-%s" );',
+					'wp.data.dispatch( "%s" ).removeEditorPanel( "taxonomy-panel-%s" );',
+					$store,
 					$this->taxo->taxonomy
 				)
 			);

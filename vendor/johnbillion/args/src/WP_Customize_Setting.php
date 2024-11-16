@@ -36,7 +36,7 @@ class WP_Customize_Setting extends Shared\Base {
 	 *   0: string,
 	 * }
 	 */
-	public $theme_supports;
+	public string|array $theme_supports;
 
 	/**
 	 * Default value for the setting.

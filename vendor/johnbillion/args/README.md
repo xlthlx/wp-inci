@@ -12,23 +12,31 @@ $query = new WP_Query( [
 ] );
 ```
 
-This library provides well-documented classes which represent many of the associative array parameters used throughout WordPress. Using them at the point where you populate the arguments means you get autocompletion and intellisense in your code editor, and strict typing thanks to typed properties in PHP 7.4. Comprehensive types and constraints for [PHPStan](https://phpstan.org/) are also included.
+This library provides well-documented classes which represent many of the associative array parameters used throughout WordPress. Using them at the point where you populate the arguments means you get autocompletion and intellisense in your code editor, and strict typing thanks to typed properties. Comprehensive types and constraints for [PHPStan](https://phpstan.org/) are also included.
 
 ![](.github/assets/screenshot.png)
 
-## Current Status
+## Current status
 
-Last updated for WordPress 6.5.
+Last updated for WordPress 6.7.
 
 ## Requirements
 
-* PHP 7.4 or PHP 8+
+* PHP 8.0+
 
 ## Installation
 
 ```shell
 composer require johnbillion/args
 ```
+
+## Changes in version 2
+
+In Args version 2.0 and higher:
+
+* Many arguments have had their type strictness increased for added type safety.
+* The `Base` class which is implemented by all of the Args classes no longer implements `ArrayAccess`, `Countable`, or `IteratorAggregate`. [See this issue for further information](https://github.com/johnbillion/args/issues/40).
+* PHP 8.0+ is now required.
 
 ## Usage
 
@@ -54,7 +62,7 @@ $args->taxonomies = [ 'genre', 'audience' ];
 $story = register_post_type( 'story', $args->toArray() );
 ```
 
-## Meta Queries, Tax Queries, and Date Queries
+## Meta queries, tax queries, and date queries
 
 The query classes in WordPress support variously `meta_query`, `tax_query`, and `date_query` arguments. These are fully supported and you can construct them in a structured and strongly typed way.
 
@@ -123,7 +131,7 @@ $args->meta_query = $args->meta_query::fromArray( $array );
 $query = new \WP_Query( $args->toArray() );
 ```
 
-## What's Provided
+## What's provided
 
 ### Posts
 
@@ -135,7 +143,7 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\register_post_meta`
 * `\Args\register_post_status`
 
-### Taxonomies and Terms
+### Taxonomies and terms
 
 * `\Args\WP_Term_Query`
 * `\Args\register_taxonomy`
@@ -185,18 +193,19 @@ $query = new \WP_Query( $args->toArray() );
 * `\Args\WP_Customize_Section`
 * `\Args\WP_Customize_Setting`
 
-### Everything Else
+### Everything else
 
 * `\Args\paginate_links`
 * `\Args\register_meta`
 * `\Args\register_rest_field`
+* `\Args\register_setting`
 * `\Args\wp_get_nav_menus`
 * `\Args\wp_nav_menu`
 * `\Args\wp_die`
 * `\Args\wp_dropdown_languages`
 * `\Args\wp_generate_tag_cloud`
 
-## Type Checking
+## Type checking
 
 Typed class properties are implemented in this library where possible. If you pass a value of the wrong type to an argument that is typed, you'll get a fatal error as long as you're using strict types:
 
@@ -209,17 +218,17 @@ No more mysterious bugs due to incorrect types.
 
 Note that several parameters in WordPress accept multiple types, for example the `$ignore_sticky_posts` argument for `\WP_Query` can be a boolean or an integer. In some of these cases I've opted to type the parameter with the most appropriate type even though it can technically accept other types.
 
-## Static Analysis
+## Static analysis
 
 PHPStan-specific `@phpstan-var` tags are used for properties that have a fixed set of values or other constraints. This allows for even greater type and value checking via static analysis with PHPStan.
 
-Ensure you're using PHPStan 1.0 or higher to make the best use of these constraints.
+Ensure you're using a recent version of PHPStan to make the best use of these constraints.
 
 ## Contributing
 
 Check out [CONTRIBUTING.md](CONTRIBUTING.md) for information about generating your own Args definitions or contributing to the Args library.
 
-## But Why?
+## But why?
 
 I have a name for these array-type parameters for passing arguments. I call them *Stockholm Parameters*. We've gotten so used to using them that we forget what a terrible design pattern it is. This library exists to work around the immediate issue without rearchitecting the whole of WordPress.
 
@@ -231,7 +240,7 @@ The time that I spend maintaining this library and others is in part sponsored b
 
 Plus all my kind sponsors on GitHub:
 
-[![Sponsors](.github/assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
+[![Sponsors](https://cdn.jsdelivr.net/gh/johnbillion/johnbillion/sponsors.svg)](https://github.com/sponsors/johnbillion)
 
 [Click here to find out about supporting this library and my other WordPress development tools and plugins](https://github.com/sponsors/johnbillion).
 

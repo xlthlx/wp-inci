@@ -27,10 +27,8 @@ class get_posts extends WP_Query {
 	 * Category ID or comma-separated list of IDs (this or any children). Is an alias of `$cat` in `WP_Query`.
 	 *
 	 * Default 0.
-	 *
-	 * @var int|string
 	 */
-	public $category;
+	public int|string $category;
 
 	/**
 	 * An array of post IDs to retrieve, sticky posts will be included. Is an alias of `$post__in` in `WP_Query`.

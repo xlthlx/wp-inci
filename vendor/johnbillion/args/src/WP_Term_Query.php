@@ -28,14 +28,14 @@ class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $taxonomy;
+	public string|array $taxonomy;
 
 	/**
 	 * Object ID, or array of object IDs. Results will be limited to terms associated with these objects.
 	 *
 	 * @var int|array<int,int>
 	 */
-	public $object_ids;
+	public int|array $object_ids;
 
 	/**
 	 * Field(s) to order terms by.
@@ -140,32 +140,25 @@ class WP_Term_Query extends Shared\Base implements MetaQuery\WithArgs {
 	public string $fields;
 
 	/**
-	 * Whether to return a term count. If true, will take precedence over `$fields`.
-	 *
-	 * Default false.
-	 */
-	public bool $count;
-
-	/**
 	 * Name or array of names to return term(s) for.
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $name;
+	public string|array $name;
 
 	/**
 	 * Slug or array of slugs to return term(s) for.
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $slug;
+	public string|array $slug;
 
 	/**
 	 * Term taxonomy ID, or array of term taxonomy IDs, to match when querying terms.
 	 *
 	 * @var int|array<int,int>
 	 */
-	public $term_taxonomy_id;
+	public int|array $term_taxonomy_id;
 
 	/**
 	 * Whether to include terms that have non-empty descendants (even if `$hide_empty` is set to true).

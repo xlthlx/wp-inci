@@ -38,10 +38,8 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 
 	/**
 	 * Author ID, or comma-separated list of IDs.
-	 *
-	 * @var int|string
 	 */
-	public $author;
+	public int|string $author;
 
 	/**
 	 * User 'user_nicename'.
@@ -71,10 +69,8 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 
 	/**
 	 * Category ID or comma-separated list of IDs (this or any children).
-	 *
-	 * @var int|string
 	 */
-	public $cat;
+	public int|string $cat;
 
 	/**
 	 * An array of category IDs (AND in).
@@ -113,7 +109,7 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 	 *     compare: self::COMMENT_COUNT_COMPARE_*,
 	 * }|int
 	 */
-	public $comment_count;
+	public array|int $comment_count;
 
 	/**
 	 * Comment status.
@@ -270,7 +266,7 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $orderby;
+	public string|array $orderby;
 
 	/**
 	 * Post ID.
@@ -363,14 +359,14 @@ class WP_Query extends Shared\Base implements DateQuery\WithArgs, MetaQuery\With
 	 *
 	 * @var string|array<int, string>
 	 */
-	public $post_type;
+	public string|array $post_type;
 
 	/**
 	 * A post status (string) or array of post statuses.
 	 *
 	 * @var string|array<int, string>
 	 */
-	public $post_status;
+	public string|array $post_status;
 
 	/**
 	 * The number of posts to query for. Use -1 to request all posts.

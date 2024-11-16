@@ -23,7 +23,7 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * @var string|int|array<int,string>|array<int,int>
 	 */
-	public $terms;
+	public string|int|array $terms;
 
 	/**
 	 * Field to match `$terms` against. Accepts:

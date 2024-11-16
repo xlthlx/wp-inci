@@ -15,10 +15,8 @@ class WP_Customize_Manager extends Shared\Base {
 	 * Changeset UUID, the `post_name` for the customize_changeset post containing the customized state.
 	 *
 	 * Defaults to `null` resulting in a UUID to be immediately generated. If `false` is provided, then then the changeset UUID will be determined during `after_setup_theme`: when the `customize_changeset_branching` filter returns false, then the default UUID will be that of the most recent `customize_changeset` post that has a status other than 'auto-draft', 'publish', or 'trash'. Otherwise, if changeset branching is enabled, then a random UUID will be used.
-	 *
-	 * @var null|string|false
 	 */
-	public $changeset_uuid;
+	public string|false|null $changeset_uuid;
 
 	/**
 	 * Theme to be previewed (for theme switch).

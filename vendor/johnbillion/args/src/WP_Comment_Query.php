@@ -159,7 +159,7 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $orderby;
+	public string|array $orderby;
 
 	/**
 	 * How to order retrieved comments. Accepts 'ASC', 'DESC'.
@@ -252,7 +252,7 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $post_status;
+	public string|array $post_status;
 
 	/**
 	 * Post type or array of post types to retrieve affiliated comments for. Pass 'any' to match any value.
@@ -261,7 +261,7 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $post_type;
+	public string|array $post_type;
 
 	/**
 	 * Post name to retrieve affiliated comments for.
@@ -296,7 +296,7 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $status;
+	public string|array $status;
 
 	/**
 	 * Include comments of a given type, or array of types. Accepts:
@@ -309,7 +309,7 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $type;
+	public string|array $type;
 
 	/**
 	 * Include comments from a given array of comment types.
@@ -347,10 +347,9 @@ class WP_Comment_Query extends Shared\Base implements DateQuery\WithArgs, MetaQu
 	 *
 	 * Default: false.
 	 *
-	 * @var false|string
 	 * @phpstan-var self::HIERARCHICAL_*
 	 */
-	public $hierarchical;
+	public false|string $hierarchical;
 
 	/**
 	 * Unique cache key to be produced when this query is stored in an object cache.

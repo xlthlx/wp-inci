@@ -29,7 +29,7 @@ class WP_Customize_Panel extends Shared\Base {
 	 *   0: string,
 	 * }
 	 */
-	public $theme_supports;
+	public string|array $theme_supports;
 
 	/**
 	 * Title of the panel to show in UI.

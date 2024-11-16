@@ -11,5 +11,5 @@ interface Arrayable {
 	/**
 	 * @return ?array<string|int,mixed>
 	 */
-	public function toArray() :? array;
+	public function toArray() : ?array;
 }

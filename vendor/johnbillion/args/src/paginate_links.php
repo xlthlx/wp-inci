@@ -101,7 +101,7 @@ class paginate_links extends Shared\Base {
 	 *
 	 * Default false.
 	 *
-	 * @var mixed[]
+	 * @var array<string,mixed>
 	 */
 	public array $add_args;
 

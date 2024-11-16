@@ -73,7 +73,7 @@ final class Query implements Arrayable, Values {
 	/**
 	 * @return ?array<string|int,mixed>
 	 */
-	final public function toArray() :? array {
+	final public function toArray() : ?array {
 		if ( ! isset( $this->clauses ) || count( $this->clauses ) === 0 ) {
 			return null;
 		}

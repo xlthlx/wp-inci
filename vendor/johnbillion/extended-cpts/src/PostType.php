@@ -160,7 +160,7 @@ class PostType {
 			'singular_name'            => $this->post_singular,
 			'menu_name'                => $this->post_plural,
 			'name_admin_bar'           => $this->post_singular,
-			'add_new'                  => 'Add New',
+			'add_new'                  => sprintf( 'Add New %s', $this->post_singular ),
 			'add_new_item'             => sprintf( 'Add New %s', $this->post_singular ),
 			'edit_item'                => sprintf( 'Edit %s', $this->post_singular ),
 			'new_item'                 => sprintf( 'New %s', $this->post_singular ),
@@ -187,6 +187,7 @@ class PostType {
 			'item_link'                => sprintf( '%s Link', $this->post_singular ),
 			'item_link_description'    => sprintf( 'A link to a %s.', $this->post_singular_low ),
 			'item_trashed'             => sprintf( '%s trashed.', $this->post_singular ),
+			'template_name'            => sprintf( 'Single item: %s', $this->post_singular ),
 		];
 
 		# Build the featured image labels:

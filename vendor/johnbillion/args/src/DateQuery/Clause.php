@@ -23,7 +23,7 @@ final class Clause implements Arrayable, Values {
 	 *   day?: numeric-string,
 	 * }
 	 */
-	public $before;
+	public string|array $before;
 
 	/**
 	 * Date to retrieve posts after. Accepts `strtotime()`-compatible string, or array of 'year', 'month', 'day' values.
@@ -35,7 +35,7 @@ final class Clause implements Arrayable, Values {
 	 *   day?: numeric-string,
 	 * }
 	 */
-	public $after;
+	public string|array $after;
 
 	/**
 	 * Used to add a clause comparing a column other than
@@ -73,9 +73,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1000,9999>|list<int<1000,9999>>
 	 */
-	public $year;
+	public int|array $year;
 
 	/**
 	 * The two-digit month number. Accepts numbers 1-12 or an
@@ -83,10 +84,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<1,12>|array<int, int<1,12>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1,12>|list<int<1,12>>
 	 */
-	public $month;
+	public int|array $month;
 
 	/**
 	 * The week number of the year. Accepts numbers 0-53 or an
@@ -94,10 +95,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<0,53>|array<int, int<0,53>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<0,53>|list<int<0,53>>
 	 */
-	public $week;
+	public int|array $week;
 
 	/**
 	 * The day number of the year. Accepts numbers 1-366 or an
@@ -105,10 +106,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<1,366>|array<int, int<1,366>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1,366>|list<int<1,366>>
 	 */
-	public $dayofyear;
+	public int|array $dayofyear;
 
 	/**
 	 * The day of the month. Accepts numbers 1-31 or an array
@@ -116,10 +117,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<1,31>|array<int, int<1,31>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1,31>|list<int<1,31>>
 	 */
-	public $day;
+	public int|array $day;
 
 	/**
 	 * The day number of the week. Accepts numbers 1-7 (1 is
@@ -127,10 +128,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<1,7>|array<int, int<1,7>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1,7>|list<int<1,7>>
 	 */
-	public $dayofweek;
+	public int|array $dayofweek;
 
 	/**
 	 * The day number of the week (ISO). Accepts numbers 1-7
@@ -138,10 +139,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<1,7>|array<int, int<1,7>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1,7>|list<int<1,7>>
 	 */
-	public $dayofweek_iso;
+	public int|array $dayofweek_iso;
 
 	/**
 	 * The hour of the day. Accepts numbers 0-23 or an array
@@ -149,10 +150,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<1,23>|array<int, int<1,23>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<1,23>|list<int<1,23>>
 	 */
-	public $hour;
+	public int|array $hour;
 
 	/**
 	 * The minute of the hour. Accepts numbers 0-59 or an array
@@ -160,10 +161,10 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<0,59>|array<int, int<0,59>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<0,59>|list<int<0,59>>
 	 */
-	public $minute;
+	public int|array $minute;
 
 	/**
 	 * The second of the minute. Accepts numbers 0-59 or an
@@ -171,9 +172,9 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * Default empty.
 	 *
-	 * @var int|int[]
-	 * @phpstan-var int<0,59>|array<int, int<0,59>>
+	 * @var int|array<int,int>
+	 * @phpstan-var int<0,59>|list<int<0,59>>
 	 */
-	public $second;
+	public int|array $second;
 
 }

@@ -44,7 +44,7 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $role;
+	public string|array $role;
 
 	/**
 	 * An array of role names. Matched users must have at least one of these roles.
@@ -125,7 +125,7 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 *
 	 * @var string|mixed[]
 	 */
-	public $orderby;
+	public string|array $orderby;
 
 	/**
 	 * Designates ascending or descending order of users. Order values passed as part of an `$orderby` array take precedence over this parameter. Accepts 'ASC', 'DESC'.
@@ -184,7 +184,7 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 * @var string|array<int, string>
 	 * @phpstan-var (self::FIELD_*|'all'|'all_with_meta')|array<int,(self::FIELD_*)>
 	 */
-	public $fields;
+	public string|array $fields;
 
 	/**
 	 * Type of users to query. Accepts 'authors'.
@@ -202,7 +202,7 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 *
 	 * @var true|array<int,string>
 	 */
-	public $has_published_posts;
+	public bool|array $has_published_posts;
 
 	/**
 	 * The user nicename.
@@ -270,7 +270,7 @@ class WP_User_Query extends Shared\Base implements MetaQuery\WithArgs {
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $capability;
+	public string|array $capability;
 
 	/**
 	 * An array of capability names. Matched users must have at least one of these capabilities.

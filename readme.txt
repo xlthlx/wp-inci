@@ -50,6 +50,10 @@ If you need support or have a feature request, please use the [support forum](ht
 
 == Changelog ==
 
+= 1.6.7 =
+* Tested up to 6.7
+* Updated dependencies
+
 = 1.6.6 =
 * Tested up to 6.6
 * Updated dependencies

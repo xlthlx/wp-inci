@@ -17,10 +17,8 @@ class wp_nav_menu extends Shared\Base {
 	 * Desired menu. Accepts a menu ID, slug, name, or object.
 	 *
 	 * Default empty.
-	 *
-	 * @var int|string|WP_Term
 	 */
-	public $menu;
+	public int|string|WP_Term $menu;
 
 	/**
 	 * CSS class to use for the ul element which forms the menu.
@@ -120,10 +118,8 @@ class wp_nav_menu extends Shared\Base {
 	 * Instance of a custom walker class.
 	 *
 	 * Default empty.
-	 *
-	 * @var Walker
 	 */
-	public object $walker;
+	public Walker $walker;
 
 	/**
 	 * Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.

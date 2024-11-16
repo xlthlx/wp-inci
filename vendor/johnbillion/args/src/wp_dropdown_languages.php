@@ -29,16 +29,21 @@ class wp_dropdown_languages extends Shared\Base {
 	 *
 	 * Default empty array.
 	 *
-	 * @var mixed[]
+	 * @var array<int,string>
 	 */
 	public array $languages;
 
 	/**
-	 * List of available translations.
+	 * List of available translations, keyed by locale.
 	 *
 	 * Default result of wp_get_available_translations().
 	 *
-	 * @var mixed[]
+	 * @var array<string,array>
+	 * @phpstan-var array<string,array{
+	 *   language: string,
+	 *   native_name: string,
+	 *   iso: list<string>,
+	 * }>
 	 */
 	public array $translations;
 

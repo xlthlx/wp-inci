@@ -18,14 +18,14 @@ final class Clause implements Arrayable, Values {
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $key;
+	public string|array $key;
 
 	/**
 	 * Meta value or values to filter by.
 	 *
 	 * @var string|array<int,string>
 	 */
-	public $value;
+	public string|array $value;
 
 	/**
 	 * MySQL operator used for comparing the meta value.
