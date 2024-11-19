@@ -1,6 +1,6 @@
 # ![WP INCI](https://ps.w.org/wp-inci/assets/banner-772x250.png "WordPress Plugin")
 
-[![Version](https://img.shields.io/badge/version-1.6.7-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/version-1.6.8-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet) [![WP compatibility](https://plugintests.com/plugins/wporg/wp-inci/wp-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![PHP compatibility](https://plugintests.com/plugins/wporg/wp-inci/php-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest)
 
 
@@ -9,7 +9,7 @@
 **Tags:** INCI, ingredients, cosmetics, makeup \
 **Requires at least:** 5.9 \
 **Tested up to:** 6.7 \
-**Stable tag:** 1.6.7 \
+**Stable tag:** 1.6.8 \
 **Requires PHP:** 7.4 \
 **License:** GPLv3 or later \
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.html
@@ -69,6 +69,9 @@ If you need support or have a feature request, please use the [support forum](ht
 
 
 ## Changelog
+
+### 1.6.8
+* Fixed dependencies
 
 ### 1.6.7
 
