@@ -3,8 +3,8 @@ Contributors: xlthlx
 Donate link: https://paypal.me/xlthlx
 Tags: INCI, ingredients, cosmetics, makeup
 Requires at least: 5.9
-Tested up to: 6.6
-Stable tag: 1.6.6
+Tested up to: 6.7
+Stable tag: 1.6.7
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
