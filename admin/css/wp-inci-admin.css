@@ -128,7 +128,7 @@ table.wp-inci tr {
 
 table.wp-inci td {
     padding: 5px 5px 0;
-    vertical-align: middle;
+    vertical-align: top;
     min-width: 60px;
     border: 0;
     word-break: break-all
@@ -159,11 +159,12 @@ table.wp-inci div {
     -moz-border-radius: 3px;
     border-radius: 3px;
     border: 0;
-    height: 22px;
-    width: 22px;
-    max-width: 22px;
-    max-height: 22px;
-    display: inline-table
+    height: 26px;
+    width: 26px;
+    max-width: 26px;
+    max-height: 26px;
+    display: inline-table;
+    font-size: medium
 }
 
 table.wp-inci div.g {
