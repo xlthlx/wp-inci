@@ -2,17 +2,18 @@
 
 .distignore
 .git
+.github
 .gitignore
 bin
 build
 .circleci
 .circleci/config.yml
 composer.json
-composer.lock
 package.json
 package-lock.json
 README.md
 .wp-env.json
+phpcs.xml.cache
 
 # Ignore packaged files
 *.7z
@@ -44,20 +45,7 @@ node_modules
 
 # Project specific
 wp-content
-vendor/dealerdirect/
-vendor/eftec/
-vendor/gettext/
-vendor/guzzlehttp/
-vendor/mck89/
-vendor/bin/
-vendor/mustache/
-vendor/php-parallel-lint/
-vendor/phpcompatibility/
-vendor/psr/
-vendor/ralouphie/
-vendor/squizlabs/
-vendor/symfony/
-vendor/wp-cli/
-vendor/wp-coding-standards/
-vendor/wpreadme2markdown/
-vendor/wptrt/
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+README.md
+SECURITY.md

@@ -11,9 +11,6 @@
 # Do NOT ignore .readme.md
 !README.md
 
-# Do NOT ignore .circleci
-!.circleci
-
 # Do NOT ignore .wp-env.json
 !.wp-env.json
 
@@ -47,25 +44,9 @@ Thumbs.db
 # Build Tools
 .idea
 package-lock.json
+composer.lock
 /node_modules
 
 # Project specific
 /wp-content/
-/vendor/dealerdirect/
-/vendor/eftec/
-/vendor/gettext/
-/vendor/guzzlehttp/
-/vendor/mck89/
-/vendor/bin/
-/vendor/mustache/
-/vendor/php-parallel-lint/
-/vendor/phpcompatibility/
-/vendor/psr/
-/vendor/ralouphie/
-/vendor/squizlabs/
-/vendor/symfony/
-/vendor/wp-cli/
-/vendor/wp-coding-standards/
-/vendor/wpreadme2markdown/
-/vendor/wptrt/
 phpcs.xml.cache

@@ -418,7 +418,7 @@ class TaxonomyAdmin {
 	 * @param bool    $show_none Optional. Whether to include a 'none' item in the term list. Default false.
 	 * @param string  $type      Optional. The taxonomy list type (checklist or dropdown). Default 'checklist'.
 	 */
-	protected function do_meta_box( WP_Post $post, \Walker $walker = null, bool $show_none = false, string $type = 'checklist' ): void {
+	protected function do_meta_box( WP_Post $post, ?\Walker $walker = null, bool $show_none = false, string $type = 'checklist' ): void {
 		$taxonomy = $this->taxo->taxonomy;
 		/** @var WP_Taxonomy */
 		$tax = get_taxonomy( $taxonomy );
