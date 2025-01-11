@@ -1,0 +1,25 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/product/giorgio-armani-neo-nude-glow-foundation/",
+  "login": true,
+  "preferredVersions": {
+    "php": "8.0",
+    "wp": "latest"
+  },
+  "siteOptions": {
+    "blogname": "WP INCI",
+    "blogdescription": "A WordPress plugin to manage INCI (International Nomenclature of Cosmetic Ingredients)."
+  },
+  "plugins": [
+    "wp-inci"
+  ],
+  "steps": [
+    {
+      "step": "importWxr",
+      "file": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/xlthlx/wp-inci/main/data/wpinci-products-sample.xml"
+      }
+    }
+  ]
+}
