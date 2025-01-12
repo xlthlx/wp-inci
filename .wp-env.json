@@ -15,10 +15,11 @@
   "port": 1060,
   "testsPort": 1061,
   "config": {
-    "WP_DEBUG": true,
-    "WP_DEBUG_LOG": true,
-    "WP_DEBUG_DISPLAY": false,
+    "ALTERNATE_WP_CRON": true,
     "SCRIPT_DEBUG": true,
-    "ALTERNATE_WP_CRON": true
+    "WP_DEBUG": true,
+    "WP_DEBUG_DISPLAY": false,
+    "WP_DEBUG_LOG": true,
+    "WP_DEVELOPMENT_MODE": "plugin"
   }
 }
