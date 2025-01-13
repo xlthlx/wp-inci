@@ -5,9 +5,6 @@
 # Do NOT ignore .gitignore
 !.gitignore
 
-# Do NOT ignore .distignore
-!.distignore
-
 # Do NOT ignore .readme.md
 !README.md
 
@@ -25,15 +22,15 @@
 *.iso
 *.jar
 *.rar
-*.tar
-*.zip
 *.sql
+*.tar
 *.tar.gz
+*.zip
 
 # Ignore OS generated files
-ehthumbs.db
-Thumbs.db
 .DS_Store
+Thumbs.db
+ehthumbs.db
 
 # Ignore log files
 *.log
@@ -43,9 +40,9 @@ Thumbs.db
 
 # Build Tools
 .idea
-package-lock.json
-composer.lock
 /node_modules
+composer.lock
+package-lock.json
 
 # Project specific
 /wp-content/
