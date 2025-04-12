@@ -15,8 +15,7 @@
 <!--    existing user on the site or to create a new user. -->
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
-
-	<!-- generator="WordPress/6.4-RC3" created="2023-11-06 09:01" -->
+<!-- generator="WordPress/6.8" created="2025-04-12 18:16" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -27,13 +26,13 @@
 
 <channel>
 	<title>WP INCI</title>
-	<link>http://localhost:1060</link>
+	<link>http://localhost</link>
 	<description></description>
-	<pubDate>Mon, 06 Nov 2023 09:01:08 +0000</pubDate>
+	<pubDate>Sat, 12 Apr 2025 18:16:51 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
-	<wp:base_site_url>http://localhost:1060</wp:base_site_url>
-	<wp:base_blog_url>http://localhost:1060</wp:base_blog_url>
+	<wp:base_site_url>http://localhost</wp:base_site_url>
+	<wp:base_blog_url>http://localhost</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[wordpress@example.com]]></wp:author_email><wp:author_display_name><![CDATA[admin]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
@@ -340,11 +339,11 @@
 		<wp:term_name><![CDATA[viscosity controlling]]></wp:term_name>
 	</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.4-RC3</generator>
+	<generator>https://wordpress.org/?v=6.8</generator>
 
 		<item>
 		<title><![CDATA[AQUA]]></title>
-		<link>http://localhost:1060/?ingredient=aqua</link>
+		<link>http://localhost/?ingredient=aqua</link>
 		<pubDate>Thu, 23 Jul 2020 18:02:30 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=35</guid>
@@ -393,7 +392,7 @@
 							</item>
 					<item>
 		<title><![CDATA[GLYCERIN]]></title>
-		<link>http://localhost:1060/?ingredient=glycerin</link>
+		<link>http://localhost/?ingredient=glycerin</link>
 		<pubDate>Thu, 23 Jul 2020 18:05:21 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=37</guid>
@@ -432,7 +431,7 @@
 							</item>
 					<item>
 		<title><![CDATA[CAPRYLYL METHICONE]]></title>
-		<link>http://localhost:1060/?ingredient=caprylyl-methicone</link>
+		<link>http://localhost/?ingredient=caprylyl-methicone</link>
 		<pubDate>Thu, 23 Jul 2020 18:08:13 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=39</guid>
@@ -442,8 +441,8 @@
 		<wp:post_id>39</wp:post_id>
 		<wp:post_date><![CDATA[2020-07-23 18:08:13]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-07-23 18:08:13]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-04 23:57:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-04 23:57:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2020-07-23 18:08:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2020-07-23 18:08:13]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[caprylyl-methicone]]></wp:post_name>
@@ -482,7 +481,7 @@
 							</item>
 					<item>
 		<title><![CDATA[PROPANEDIOL]]></title>
-		<link>http://localhost:1060/?ingredient=propanediol</link>
+		<link>http://localhost/?ingredient=propanediol</link>
 		<pubDate>Thu, 23 Jul 2020 18:13:36 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=41</guid>
@@ -523,7 +522,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[DIMETHICONE]]></title>
-		<link>http://localhost:1060/?ingredient=dimethicone</link>
+		<link>http://localhost/?ingredient=dimethicone</link>
 		<pubDate>Thu, 23 Jul 2020 18:17:25 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=43</guid>
@@ -563,7 +562,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[PENTYLENE GLYCOL]]></title>
-		<link>http://localhost:1060/?ingredient=pentylene-glycol</link>
+		<link>http://localhost/?ingredient=pentylene-glycol</link>
 		<pubDate>Thu, 23 Jul 2020 18:36:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=45</guid>
@@ -603,7 +602,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[DIMETHICONE/PEG-10/15 CROSSPOLYMER]]></title>
-		<link>http://localhost:1060/?ingredient=dimethicone-peg-10-15-crosspolymer</link>
+		<link>http://localhost/?ingredient=dimethicone-peg-10-15-crosspolymer</link>
 		<pubDate>Thu, 23 Jul 2020 18:38:41 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=48</guid>
@@ -641,7 +640,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[ALCOHOL DENAT.]]></title>
-		<link>http://localhost:1060/?ingredient=alcohol-denat</link>
+		<link>http://localhost/?ingredient=alcohol-denat</link>
 		<pubDate>Thu, 23 Jul 2020 18:39:49 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=50</guid>
@@ -651,8 +650,8 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 		<wp:post_id>50</wp:post_id>
 		<wp:post_date><![CDATA[2020-07-23 18:39:49]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-07-23 18:39:49]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-04 23:55:37]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-04 23:55:37]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2020-07-23 18:39:49]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2020-07-23 18:39:49]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[alcohol-denat]]></wp:post_name>
@@ -679,7 +678,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[SODIUM CHLORIDE]]></title>
-		<link>http://localhost:1060/?ingredient=sodium-chloride</link>
+		<link>http://localhost/?ingredient=sodium-chloride</link>
 		<pubDate>Thu, 23 Jul 2020 18:41:50 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=52</guid>
@@ -718,7 +717,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[TRIETHOXYSILYLETHYL POLYDIMETHYLSILOXYETHYL DIMETHICONE]]></title>
-		<link>http://localhost:1060/?ingredient=triethoxysilylethyl-polydimethylsiloxyethyl-dimethicone</link>
+		<link>http://localhost/?ingredient=triethoxysilylethyl-polydimethylsiloxyethyl-dimethicone</link>
 		<pubDate>Thu, 23 Jul 2020 18:42:45 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=55</guid>
@@ -756,7 +755,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[ISOPROPYL TITANIUM TRIISOSTEARATE]]></title>
-		<link>http://localhost:1060/?ingredient=isopropyl-titanium-triisostearate</link>
+		<link>http://localhost/?ingredient=isopropyl-titanium-triisostearate</link>
 		<pubDate>Thu, 23 Jul 2020 18:44:25 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=57</guid>
@@ -795,7 +794,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[ALUMINA]]></title>
-		<link>http://localhost:1060/?ingredient=alumina</link>
+		<link>http://localhost/?ingredient=alumina</link>
 		<pubDate>Thu, 23 Jul 2020 18:47:57 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=59</guid>
@@ -837,7 +836,7 @@ It's quite a multi-tasker: can be used to improve skin moisturization, as a solv
 							</item>
 					<item>
 		<title><![CDATA[CAPRYLYL GLYCOL]]></title>
-		<link>http://localhost:1060/?ingredient=caprylyl-glycol</link>
+		<link>http://localhost/?ingredient=caprylyl-glycol</link>
 		<pubDate>Thu, 23 Jul 2020 18:51:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=61</guid>
@@ -880,7 +879,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[PHENOXYETHANOL]]></title>
-		<link>http://localhost:1060/?ingredient=phenoxyethanol</link>
+		<link>http://localhost/?ingredient=phenoxyethanol</link>
 		<pubDate>Thu, 23 Jul 2020 18:54:59 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=66</guid>
@@ -919,7 +918,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[DISODIUM EDTA]]></title>
-		<link>http://localhost:1060/?ingredient=disodium-edta</link>
+		<link>http://localhost/?ingredient=disodium-edta</link>
 		<pubDate>Fri, 24 Jul 2020 07:55:56 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=71</guid>
@@ -958,7 +957,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[DIPROPYLENE GLYCOL]]></title>
-		<link>http://localhost:1060/?ingredient=dipropylene-glycol</link>
+		<link>http://localhost/?ingredient=dipropylene-glycol</link>
 		<pubDate>Fri, 24 Jul 2020 07:57:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=73</guid>
@@ -997,7 +996,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[SODIUM HYALURONATE]]></title>
-		<link>http://localhost:1060/?ingredient=sodium-hyaluronate</link>
+		<link>http://localhost/?ingredient=sodium-hyaluronate</link>
 		<pubDate>Fri, 24 Jul 2020 07:58:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=75</guid>
@@ -1036,7 +1035,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[SODIUM CITRATE]]></title>
-		<link>http://localhost:1060/?ingredient=sodium-citrate</link>
+		<link>http://localhost/?ingredient=sodium-citrate</link>
 		<pubDate>Fri, 24 Jul 2020 08:00:04 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=77</guid>
@@ -1075,7 +1074,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[TOCOPHEROL]]></title>
-		<link>http://localhost:1060/?ingredient=tocopherol</link>
+		<link>http://localhost/?ingredient=tocopherol</link>
 		<pubDate>Fri, 24 Jul 2020 08:01:22 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=79</guid>
@@ -1115,7 +1114,7 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[MICA]]></title>
-		<link>http://localhost:1060/?ingredient=mica</link>
+		<link>http://localhost/?ingredient=mica</link>
 		<pubDate>Sun, 09 Aug 2020 18:57:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?ingredient=mica</guid>
@@ -1127,8 +1126,8 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<wp:post_id>405</wp:post_id>
 		<wp:post_date><![CDATA[2020-08-09 18:57:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-08-09 18:57:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:30:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:30:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2020-08-09 18:57:34]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2020-08-09 18:57:34]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[mica]]></wp:post_name>
@@ -1167,10 +1166,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[Navigation]]></title>
-		<link>http://localhost:1060/2023/08/navigation/</link>
+		<link>http://localhost/2023/08/navigation/</link>
 		<pubDate>Mon, 28 Aug 2023 12:04:19 +0000</pubDate>
 		<dc:creator><![CDATA[]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?p=4</guid>
+		<guid isPermaLink="false">http://localhost/?p=4</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:page-list /-->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1191,10 +1190,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 														</item>
 					<item>
 		<title><![CDATA[Custom Styles]]></title>
-		<link>http://localhost:1060/2023/11/wp-global-styles-twentytwentyfour/</link>
+		<link>http://localhost/2023/11/wp-global-styles-twentytwentyfour/</link>
 		<pubDate>Sat, 04 Nov 2023 23:39:21 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?p=6</guid>
+		<guid isPermaLink="false">http://localhost/?p=6</guid>
 		<description></description>
 		<content:encoded><![CDATA[{"settings":{"color":{"duotone":{"theme":[{"colors":["#272727","#f9f9f9"],"slug":"duotone-1","name":"Dark gray and white"},{"colors":["#272727","#5F584F"],"slug":"duotone-2","name":"Dark gray and walnut"},{"colors":["#272727","#973C20"],"slug":"duotone-3","name":"Dark gray and cinnamon"},{"colors":["#272727","#4D5B48"],"slug":"duotone-4","name":"Dark gray and olive"},{"colors":["#272727","#4F5959"],"slug":"duotone-5","name":"Dark gray and steel"}]},"gradients":{"theme":[{"slug":"gradient-1","gradient":"linear-gradient(to bottom, #5F584F 0%, #272727 100%)","name":"Vertical soft driftwood to dark gray"},{"slug":"gradient-2","gradient":"linear-gradient(to bottom, #6D533C 0%, #272727 100%)","name":"Vertical soft walnut to dark gray"},{"slug":"gradient-3","gradient":"linear-gradient(to bottom, #973C20 0%, #272727 100%)","name":"Vertical soft cinnamon to dark gray"},{"slug":"gradient-4","gradient":"linear-gradient(to bottom, #4D5B48 0%, #272727 100%)","name":"Vertical soft olive to dark gray"},{"slug":"gradient-5","gradient":"linear-gradient(to bottom, #4F5959 0%, #272727 100%)","name":"Vertical soft steel to dark gray"},{"slug":"gradient-6","gradient":"linear-gradient(to bottom, #909090 0%, #272727 100%)","name":"Vertical soft pewter to dark gray"},{"slug":"gradient-7","gradient":"linear-gradient(to bottom, #5F584F 50%, #272727 50%)","name":"Vertical hard beige to dark gray"},{"slug":"gradient-8","gradient":"linear-gradient(to bottom, #6D533C 50%, #272727 50%)","name":"Vertical hard walnut to dark gray"},{"slug":"gradient-9","gradient":"linear-gradient(to bottom, #973C20 50%, #272727 50%)","name":"Vertical hard cinnamon to dark gray"},{"slug":"gradient-10","gradient":"linear-gradient(to bottom, #4D5B48 50%, #272727 50%)","name":"Vertical hard olive to dark gray"},{"slug":"gradient-11","gradient":"linear-gradient(to bottom, #4F5959 50%, #272727 50%)","name":"Vertical hard steel to dark gray"},{"slug":"gradient-12","gradient":"linear-gradient(to bottom, #A4A4A4 50%, #272727 50%)","name":"Vertical hard pewter to dark gray"}]},"palette":{"theme":[{"color":"#272727","name":"Base","slug":"base"},{"color":"#303030","name":"Base \/ Two","slug":"base-2"},{"color":"#ffffff26","name":"Base \/ Three","slug":"base-3"},{"color":"#f9f9f9","name":"Contrast","slug":"contrast"},{"color":"#B7B7B7","name":"Contrast \/ Two","slug":"contrast-2"},{"color":"#909090","name":"Contrast \/ Three","slug":"contrast-3"},{"color":"#5F584F","name":"Accent","slug":"accent"},{"color":"#6D533C","name":"Accent \/ Two","slug":"accent-2"},{"color":"#973C20","name":"Accent \/ Three","slug":"accent-3"},{"color":"#4D5B48","name":"Accent \/ Four","slug":"accent-4"},{"color":"#4F5959","name":"Accent \/ Five","slug":"accent-5"}]}}},"isGlobalStylesUserThemeJSON":true,"version":2}]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1215,95 +1214,8 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 										<category domain="wp_theme" nicename="twentytwentyfour"><![CDATA[twentytwentyfour]]></category>
 						</item>
 					<item>
-		<title><![CDATA[Header]]></title>
-		<link>http://localhost:1060/2023/11/header/</link>
-		<pubDate>Sat, 04 Nov 2023 23:40:12 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?p=7</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"20px","bottom":"20px"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-base-background-color has-background" style="padding-top:20px;padding-bottom:20px"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
-<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0px"}}} -->
-<div class="wp-block-group"><!-- wp:site-title {"level":0} /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
-
-<!-- wp:navigation {"ref":4,"layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"},"blockGap":"var:preset|spacing|20"},"layout":{"selfStretch":"fit","flexSize":null}}} /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>7</wp:post_id>
-		<wp:post_date><![CDATA[2023-11-04 23:40:12]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2023-11-04 23:40:12]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-04 23:40:12]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-04 23:40:12]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[header]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[wp_template_part]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="wp_template_part_area" nicename="header"><![CDATA[header]]></category>
-		<category domain="wp_theme" nicename="twentytwentyfour"><![CDATA[twentytwentyfour]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[origin]]></wp:meta_key>
-		<wp:meta_value><![CDATA[theme]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Pages]]></title>
-		<link>http://localhost:1060/2023/11/page/</link>
-		<pubDate>Sat, 04 Nov 2023 23:43:53 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?p=9</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:template-part {"slug":"header","theme":"twentytwentyfour","tagName":"header","area":"header"} /-->
-
-<!-- wp:group {"tagName":"main"} -->
-<main class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:post-title {"textAlign":"center","level":1} /-->
-
-<!-- wp:spacer {"height":"var:preset|spacing|30","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div>
-<!-- /wp:group -->
-
-<!-- wp:post-content {"lock":{"move":false,"remove":true},"layout":{"type":"constrained"}} /--></main>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"twentytwentyfour","tagName":"footer","area":"footer"} /-->]]></content:encoded>
-		<excerpt:encoded><![CDATA[Display all static pages unless a custom template has been applied or a dedicated template exists.]]></excerpt:encoded>
-		<wp:post_id>9</wp:post_id>
-		<wp:post_date><![CDATA[2023-11-04 23:43:53]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2023-11-04 23:43:53]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-04 23:43:53]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-04 23:43:53]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[page]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[wp_template]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="wp_theme" nicename="twentytwentyfour"><![CDATA[twentytwentyfour]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[origin]]></wp:meta_key>
-		<wp:meta_value><![CDATA[theme]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
 		<title><![CDATA[Giorgio Armani Neo Nude Glow Foundation]]></title>
-		<link>http://localhost:1060/product/giorgio-armani-neo-nude-glow-foundation/</link>
+		<link>http://localhost/product/giorgio-armani-neo-nude-glow-foundation/</link>
 		<pubDate>Thu, 23 Jul 2020 18:18:09 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://localhost/?post_type=product&#038;p=31</guid>
@@ -1336,6 +1248,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="brand" nicename="giorgio-armani"><![CDATA[Giorgio Armani]]></category>
 						<wp:postmeta>
+		<wp:meta_key><![CDATA[may_contain]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
@@ -1343,17 +1259,13 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<wp:meta_key><![CDATA[ingredients]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:19:{i:0;s:2:"35";i:1;s:2:"37";i:2;s:2:"39";i:3;s:2:"41";i:4;s:2:"43";i:5;s:2:"45";i:6;s:2:"48";i:7;s:2:"50";i:8;s:2:"52";i:9;s:2:"55";i:10;s:2:"57";i:11;s:2:"59";i:12;s:2:"61";i:13;s:2:"66";i:14;s:2:"71";i:15;s:2:"73";i:16;s:2:"75";i:17;s:2:"77";i:18;s:2:"79";}]]></wp:meta_value>
 		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[ingredients]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[L'Oréal Paris True Match Pressed Powder Foundation]]></title>
-		<link>http://localhost:1060/product/true-match-pressed-powder-foundation/</link>
+		<link>http://localhost/product/true-match-pressed-powder-foundation/</link>
 		<pubDate>Sun, 05 Nov 2023 00:48:07 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=product&#038;p=424</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=product&#038;p=424</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>This ultra-soft, light-textured powder perfectly matches the colour and texture of your skin for a flawless finish. The micro-fine formula lets you apply a translucent layer or build up more intense coverage to even your skin tone and cover imperfections. It blends so seamlessly it is almost as if you are not wearing make-up.</p>
@@ -1362,8 +1274,8 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<wp:post_id>424</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:48:07]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:48:07]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 17:25:08]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 17:25:08]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-04-12 18:14:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-04-12 18:14:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[true-match-pressed-powder-foundation]]></wp:post_name>
@@ -1389,10 +1301,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[TALC]]></title>
-		<link>http://localhost:1060/?ingredient=talc</link>
+		<link>http://localhost/?ingredient=talc</link>
 		<pubDate>Sun, 05 Nov 2023 00:07:57 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=427</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=427</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1422,18 +1334,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[NYLON-12]]></title>
-		<link>http://localhost:1060/?ingredient=nylon-12</link>
+		<link>http://localhost/?ingredient=nylon-12</link>
 		<pubDate>Sun, 05 Nov 2023 00:11:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=429</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=429</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>429</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:11:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:11:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:11:09]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:11:09]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:11:08]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:11:08]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[nylon-12]]></wp:post_name>
@@ -1456,18 +1368,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[ZEA MAYS STARCH]]></title>
-		<link>http://localhost:1060/?ingredient=corn-starch</link>
+		<link>http://localhost/?ingredient=corn-starch</link>
 		<pubDate>Sun, 05 Nov 2023 00:13:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=431</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=431</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>431</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:13:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:13:00]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:29:52]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:29:52]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:13:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:13:00]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[corn-starch]]></wp:post_name>
@@ -1502,18 +1414,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[ISONONYL ISONONANOATE]]></title>
-		<link>http://localhost:1060/?ingredient=isononyl-isononanoate</link>
+		<link>http://localhost/?ingredient=isononyl-isononanoate</link>
 		<pubDate>Sun, 05 Nov 2023 00:12:11 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=432</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=432</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>432</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:12:11]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:12:11]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:31:55]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:31:55]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:12:11]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:12:11]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[isononyl-isononanoate]]></wp:post_name>
@@ -1546,18 +1458,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[MAGNESIUM STEARATE]]></title>
-		<link>http://localhost:1060/?ingredient=magnesium-stearate</link>
+		<link>http://localhost/?ingredient=magnesium-stearate</link>
 		<pubDate>Sun, 05 Nov 2023 00:12:25 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=434</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=434</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>434</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:12:25]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:12:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:34:47]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:34:47]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:12:25]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:12:25]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[magnesium-stearate]]></wp:post_name>
@@ -1591,18 +1503,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[SYNTHETIC FLUORPHLOGOPITE]]></title>
-		<link>http://localhost:1060/?ingredient=synthetic-fluorphlogopite</link>
+		<link>http://localhost/?ingredient=synthetic-fluorphlogopite</link>
 		<pubDate>Sun, 05 Nov 2023 00:13:58 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=437</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=437</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>437</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:13:58]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:13:58]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:36:31]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:36:31]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:13:58]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:13:58]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[synthetic-fluorphlogopite]]></wp:post_name>
@@ -1634,18 +1546,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[VINYL DIMETHICONE/METHICONE SILSESQUIOXANE CROSSPOLYMER]]></title>
-		<link>http://localhost:1060/?ingredient=vinyl-dimethicone-crosspolymer</link>
+		<link>http://localhost/?ingredient=vinyl-dimethicone-crosspolymer</link>
 		<pubDate>Sun, 05 Nov 2023 00:18:44 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=441</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=441</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>441</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:18:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:18:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:39:09]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:39:09]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:18:44]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:18:44]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[vinyl-dimethicone-crosspolymer]]></wp:post_name>
@@ -1668,18 +1580,18 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[SILK POWDER]]></title>
-		<link>http://localhost:1060/?ingredient=silk-powder</link>
+		<link>http://localhost/?ingredient=silk-powder</link>
 		<pubDate>Sun, 05 Nov 2023 00:19:39 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=443</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=443</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>443</wp:post_id>
 		<wp:post_date><![CDATA[2023-11-05 00:19:39]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-11-05 00:19:39]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2023-11-05 00:20:29]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2023-11-05 00:20:29]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2023-11-05 00:19:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-11-05 00:19:39]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[silk-powder]]></wp:post_name>
@@ -1706,10 +1618,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[METHICONE SILSESQUIOXANE CROSSPOLYMER]]></title>
-		<link>http://localhost:1060/?ingredient=methicone-silsesquioxane-crosspolymer</link>
+		<link>http://localhost/?ingredient=methicone-silsesquioxane-crosspolymer</link>
 		<pubDate>Sun, 05 Nov 2023 00:24:45 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=446</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=446</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1739,10 +1651,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[TITANIUM DIOXIDE]]></title>
-		<link>http://localhost:1060/?ingredient=titanium-dioxide</link>
+		<link>http://localhost/?ingredient=titanium-dioxide</link>
 		<pubDate>Sun, 05 Nov 2023 00:44:01 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=457</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=457</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1784,10 +1696,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[CI 77491]]></title>
-		<link>http://localhost:1060/?ingredient=ci-77491</link>
+		<link>http://localhost/?ingredient=ci-77491</link>
 		<pubDate>Sun, 05 Nov 2023 00:45:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=459</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=459</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1825,10 +1737,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[CI 77492]]></title>
-		<link>http://localhost:1060/?ingredient=ci-77492</link>
+		<link>http://localhost/?ingredient=ci-77492</link>
 		<pubDate>Sun, 05 Nov 2023 00:46:03 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=461</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=461</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1859,10 +1771,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[CI 77499 / IRON OXIDES]]></title>
-		<link>http://localhost:1060/?ingredient=ci-77499-iron-oxides</link>
+		<link>http://localhost/?ingredient=ci-77499-iron-oxides</link>
 		<pubDate>Sun, 05 Nov 2023 00:47:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?post_type=ingredient&#038;p=463</guid>
+		<guid isPermaLink="false">http://localhost/?post_type=ingredient&#038;p=463</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1893,10 +1805,10 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 							</item>
 					<item>
 		<title><![CDATA[True Match Pressed Powder Foundation]]></title>
-		<link>http://localhost:1060/2023/11/product/</link>
+		<link>http://localhost/2023/11/product/</link>
 		<pubDate>Sun, 05 Nov 2023 16:40:24 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:1060/?p=466</guid>
+		<guid isPermaLink="false">http://localhost/?p=466</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
 [wp_inci_product id=424]
@@ -1929,7 +1841,42 @@ The blend of these two (caprylyl glycol + phenoxyethanol) is called Optiphen, wh
 		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
-							</item>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generateblocks_dynamic_css_version]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1.8.2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generateblocks_dynamic_css_version]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1.8.2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generateblocks_dynamic_css_version]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1.8.2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
 				</channel>
 </rss>
 	

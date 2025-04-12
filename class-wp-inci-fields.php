@@ -63,6 +63,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 				array( $this, 'cmb2MultipleSearchAjaxGetResults' )
 			);
 
+			add_action( 'save_post', array( $this, 'saveIngredients' ) );
 		}
 
 		/**
@@ -106,13 +107,13 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @param object $field             The field object.
 		 * @param string $escaped_value     The escaped value.
-		 * @param int    $object_id         Object ID.
+		 * @param string $object_id         Object ID.
 		 * @param string $object_type       Object type.
 		 * @param object $field_type_object The type object.
 		 *
 		 * @return void
 		 */
-		public function renderSwitch( object $field, string $escaped_value, int $object_id, string $object_type, object $field_type_object ): void {
+		public function renderSwitch( object $field, string $escaped_value, string $object_id, string $object_type, object $field_type_object ): void {
 			$field_name     = $field->_name();
 			$active_value   = $field->args( 'active_value' ) ?? 'on';
 			$inactive_value = $field->args( 'inactive_value' ) ?? 'off';
@@ -163,16 +164,16 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		/**
 		 * Render Search Ajax field.
 		 *
-		 * @param object $field The field object.
-		 * @param array  $values Field values.
-		 * @param int    $object_id Object ID.
-		 * @param string $object_type Object type.
-		 * @param object $field_type The type object.
+		 * @param object       $field The field object.
+		 * @param array|string $values Field values.
+		 * @param int          $object_id Object ID.
+		 * @param string       $object_type Object type.
+		 * @param object       $field_type The type object.
 		 *
 		 * @return void
 		 * @throws JsonException Json exception.
 		 */
-		public function renderSearchAjax( object $field, array $values, int $object_id, string $object_type, object $field_type ): void {
+		public function renderSearchAjax( object $field, array|string $values, int $object_id, string $object_type, object $field_type ): void {
 			$field_name = $field->_name();
 
 			echo '<div class="container-search-left">';
@@ -449,6 +450,29 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 			$title  = '<div class="wi_wrapper">' . $safety . '<div class="wi_value">' . $post->post_title . '</div></div>';
 
 			return '<li><span class="handle"></span><input type="hidden" name="' . $field_id . '_results[]" value="' . $post->ID . '"><a href="' . $guid . '" target="_blank" class="edit-link">' . $title . '</a><a class="remover"><span class="dashicons dashicons-no"></span><span class="dashicons dashicons-dismiss"></span></a></li>';
+
+		}
+
+		/**
+		 * Save ingredients.
+		 *
+		 * @param int $post_id Post ID.
+		 *
+		 * @return void
+		 */
+		public function saveIngredients( $post_id ): void {
+			$post = get_post( $post_id );
+			if ( 'product' !== $post->post_type ) {
+				return;
+			}
+
+			// @codingStandardsIgnoreStart
+			$ingredients = isset( $_POST['ingredients_results'] ) ? array_map( 'sanitize_key', wp_unslash( $_POST['ingredients_results'] ) ) : array();
+            update_post_meta( $post->ID, 'ingredients', $ingredients );
+
+			$may_contain = isset( $_POST['may_contain_results'] ) ? array_map( 'sanitize_key', wp_unslash( $_POST['may_contain_results'] ) ) : array();
+            update_post_meta( $post->ID, 'may_contain', $may_contain );
+			// @codingStandardsIgnoreEnd
 
 		}
 	}
