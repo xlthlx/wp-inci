@@ -3,7 +3,7 @@
         'name' => 'xlthlx/wp-inci',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '464fab0eb148ea01d3278090543e228fd34a7494',
+        'reference' => 'c80c6c6a61010344caf71024280dc4b2a67835be',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,7 +49,7 @@
         'xlthlx/wp-inci' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '464fab0eb148ea01d3278090543e228fd34a7494',
+            'reference' => 'c80c6c6a61010344caf71024280dc4b2a67835be',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

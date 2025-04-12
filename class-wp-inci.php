@@ -15,21 +15,14 @@
 if ( ! class_exists( 'WP_Inci', false ) ) {
 	/**
 	 * Main class for subclassing backend and frontend class.
-	 *
-	 * @category Plugin
-	 * @package  Wpinci
-	 * @author   xlthlx <wp-inci@piccioni.london>
-	 * @license  https://www.gnu.org/licenses/gpl-3.0.html GPL 3
-	 * @link     https://wordpress.org/plugins/wp-inci/
 	 */
 	class WP_Inci {
-
 		/**
 		 * A static reference to track the single instance of this class.
 		 *
-		 * @var object
+		 * @var object|null
 		 */
-		private static $_instance;
+		private static ?object $_instance = null;
 
 		/**
 		 * Options array containing all options for this plugin.
@@ -37,7 +30,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   array
 		 */
-		public $options = array();
+		public array $options = array();
 
 		/**
 		 * This plugin url.
@@ -45,7 +38,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 * @since 1.0
 		 * @var   string
 		 */
-		public $url = '';
+		public string $url = '';
 
 		/**
 		 * Constructor.
@@ -67,7 +60,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function init() {
+		public function init(): void {
 			/**
 			 * Add Custom Post Types and Taxonomies.
 			 */
@@ -86,7 +79,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return WP_Inci|null
 		 */
-		public static function get_instance() {
+		public static function get_instance(): WP_Inci|null {
 
 			if ( null === self::$_instance ) {
 				self::$_instance = new WP_Inci();
@@ -100,10 +93,9 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function post_type_init() {
+		public function post_type_init(): void {
 			$this->ingredients_post_type();
 			$this->products_post_type();
-
 		}
 
 		/**
@@ -111,7 +103,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function show_safety_html() {
+		public function show_safety_html(): void {
 			global $post;
 			// @codingStandardsIgnoreStart
 			echo $this->get_safety_html( esc_attr( $post->ID ) );
@@ -125,7 +117,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function show_source( $term_id ) {
+		public function show_source( int $term_id ): void {
 			$term = get_term_by( 'id', $term_id, 'source' );
 			$url  = get_term_meta( $term_id, 'source_url', true );
 
@@ -137,7 +129,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function ingredients_post_type() {
+		public function ingredients_post_type(): void {
 
 			$ingredients_labels = array(
 				'name'                  => __( 'Ingredients', 'wp-inci' ),
@@ -334,11 +326,11 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Returns the safety custom meta with HTML.
 		 *
-		 * @param int|false $post_id The post ID.
+		 * @param false|int $post_id The post ID.
 		 *
 		 * @return string
 		 */
-		public function get_safety_html( $post_id ) {
+		public function get_safety_html( false|int $post_id ): string {
 
 			$safety = $this->get_safety_value( $post_id );
 
@@ -348,38 +340,22 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		/**
 		 * Gets the value of safety custom meta and fills the gaps.
 		 *
-		 * @param int|false $post_id The post ID.
+		 * @param false|int $post_id The post ID.
 		 *
 		 * @return array $safety
 		 */
-		public function get_safety_value( $post_id ) {
+		public function get_safety_value( false|int $post_id ): array {
 
 			$safety = get_post_meta( $post_id, 'safety', true );
 
-			switch ( $safety ) {
-				case '1':
-					$safety = array( 'g', 'g' );
-					break;
-				case '2':
-					$safety = array( 'g', 'w' );
-					break;
-				case '3':
-					$safety = array( 'y', 'w' );
-					break;
-				case '4':
-					$safety = array( 'r', 'w' );
-					break;
-				case '5':
-					$safety = array( 'r', 'r' );
-					break;
-				case '':
-					$safety = array( 'w', 'w' );
-					break;
-				default:
-					$safety = array( 'w', 'w' );
-			}
-
-			return $safety;
+			return match ( $safety ) {
+				'1' => array( 'g', 'g' ),
+				'2' => array( 'g', 'w' ),
+				'3' => array( 'y', 'w' ),
+				'4' => array( 'r', 'w' ),
+				'5' => array( 'r', 'r' ),
+				default => array( 'w', 'w' ),
+			};
 
 		}
 
@@ -388,7 +364,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function click_on_shortcode() {
+		public function click_on_shortcode(): void {
 			global $post;
 			echo '<input readonly="readonly" type="text" onclick="copyShort(this)" value="[wp_inci_product id=' . esc_attr( $post->ID ) . ']">';
 		}
@@ -398,7 +374,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function products_post_type() {
+		public function products_post_type(): void {
 
 			$product_labels = array(
 				'name'                  => __( 'Products', 'wp-inci' ),
@@ -538,7 +514,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function get_default_disclaimer() {
+		public function get_default_disclaimer(): string {
 			return __(
 				'The evaluation of these ingredients reflects the opinion of the author, who is not a specialist in this field. This evaluation is based on some online databases (e.g. <a title="CosIng - Cosmetic ingredients database" href="https://ec.europa.eu/growth/sectors/cosmetics/cosing/" target="_blank">CosIng</a>).',
 				'wp-inci'
@@ -552,7 +528,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Messages for the `ingredient` post type.
 		 */
-		public function ingredient_updated_messages( $messages ) {
+		public function ingredient_updated_messages( array $messages ): array {
 			global $post;
 
 			$permalink = get_permalink( $post );
@@ -589,7 +565,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Bulk messages for the `ingredient` post type.
 		 */
-		public function ingredient_bulk_updated_messages( $bulk_messages, $bulk_counts ) {
+		public function ingredient_bulk_updated_messages( array $bulk_messages, array $bulk_counts ): array {
 
 			$bulk_messages['ingredient'] = array(
 				/* translators: %s: Number of Ingredients. */
@@ -615,7 +591,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Messages for the `product` post type.
 		 */
-		public function product_updated_messages( $messages ) {
+		public function product_updated_messages( array $messages ): array {
 			global $post;
 
 			$permalink = get_permalink( $post );
@@ -652,7 +628,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Bulk messages for the `product` post type.
 		 */
-		public function product_bulk_updated_messages( $bulk_messages, $bulk_counts ) {
+		public function product_bulk_updated_messages( array $bulk_messages, array $bulk_counts ): array {
 
 			$bulk_messages['product'] = array(
 				/* translators: %s: Number of Products. */
@@ -678,7 +654,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Messages for the `function` taxonomy.
 		 */
-		public function function_updated_messages( $messages ) {
+		public function function_updated_messages( array $messages ): array {
 
 			$messages['function'] = array(
 				0 => '', // Unused. Messages start at index 1.
@@ -700,7 +676,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Messages for the `source` taxonomy.
 		 */
-		public function source_updated_messages( $messages ) {
+		public function source_updated_messages( array $messages ): array {
 
 			$messages['source'] = array(
 				0 => '', // Unused. Messages start at index 1.
@@ -722,7 +698,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @return array Messages for the `brand` taxonomy.
 		 */
-		public function brand_updated_messages( $messages ) {
+		public function brand_updated_messages( array $messages ): array {
 
 			$messages['brand'] = array(
 				0 => '', // Unused. Messages start at index 1.

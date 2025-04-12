@@ -23,21 +23,19 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 	 * @link     https://wordpress.org/plugins/wp-inci/
 	 */
 	class WP_Inci_Admin extends WP_Inci {
-
-
 		/**
 		 * A static reference to track the single instance of this class.
 		 *
-		 * @var object
+		 * @var object|null
 		 */
-		private static $_instance;
+		private static ?object $_instance = null;
 
 		/**
 		 * Url for the admin folder.
 		 *
 		 * @var string
 		 */
-		public $admin_url = '';
+		public string $admin_url = '';
 
 		/**
 		 * Constructor.
@@ -53,7 +51,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function init() {
+		public function init(): void {
 			/**
 			 * Load localizations if available.
 			 */
@@ -72,7 +70,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return WP_Inci_Admin|null
 		 */
-		public static function get_instanceAdmin() {
+		public static function get_instanceAdmin(): WP_Inci_Admin|null {
 
 			if ( null === self::$_instance ) {
 				self::$_instance = new WP_Inci_Admin();
@@ -86,7 +84,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginInit() {
+		public function pluginInit(): void {
 
 			register_activation_hook( __FILE__, 'pluginActivation' );
 			register_deactivation_hook( __FILE__, 'pluginDeactivation' );
@@ -98,14 +96,12 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginActivation() {
+		public function pluginActivation(): void {
 			if ( ! current_user_can( 'activate_plugins' ) ) {
 				return;
 			}
 
-			// @codingStandardsIgnoreStart
 			flush_rewrite_rules();
-			// @codingStandardsIgnoreEnd
 		}
 
 		/**
@@ -113,14 +109,12 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginDeactivation() {
+		public function pluginDeactivation(): void {
 			if ( ! current_user_can( 'activate_plugins' ) ) {
 				return;
 			}
 
-			// @codingStandardsIgnoreStart
 			flush_rewrite_rules();
-			// @codingStandardsIgnoreEnd
 		}
 
 		/**
@@ -128,7 +122,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginUninstall() {
+		public function pluginUninstall(): void {
 			if ( ! current_user_can( 'activate_plugins' ) ) {
 				return;
 			}
@@ -147,7 +141,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginSetup() {
+		public function pluginSetup(): void {
 
 			$this->pluginAdminStyles();
 			$this->pluginAdminScripts();
@@ -159,7 +153,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginAdminStyles() {
+		public function pluginAdminStyles(): void {
 			wp_register_style(
 				'wp-inci-admin-css',
 				$this->admin_url . '/css/wp-inci-admin.min.css',
@@ -174,7 +168,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function pluginAdminScripts() {
+		public function pluginAdminScripts(): void {
 			if ( ! wp_script_is( 'jquery' ) ) {
 				wp_enqueue_script( 'jquery' );
 			}
@@ -194,7 +188,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function registerPluginSettings() {
+		public function registerPluginSettings(): void {
 			add_action(
 				'plugin_action_links',
 				array( $this, 'addPluginSettings' ),
@@ -212,7 +206,7 @@ if ( ! class_exists( 'WP_Inci_Admin', false ) ) {
 		 * @return array
 		 * @since  1.0
 		 */
-		public function addPluginSettings( $plugin_actions, $plugin_file ) {
+		public function addPluginSettings( array $plugin_actions, string $plugin_file ): array {
 			$new_actions = array();
 
 			if ( plugin_basename( 'wp-inci/wp-inci.php' ) === $plugin_file ) {

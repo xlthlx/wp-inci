@@ -12,7 +12,7 @@
                     showNoSuggestionNotice: true,
                     noSuggestionNotice: wi.notice,
                     transformResult: function (r) {
-                        const suggestions = $.parseJSON(r);
+                        const suggestions = JSON.parse(r);
                         if ( $('#' + fid + '_results li').length ) {
                             const selected_vals = Array();
                             let d = 0;
@@ -55,7 +55,7 @@
                             if ( limit === $('#' + lid + ' li').length ) {
                                 $(this).prop('disabled', 'disabled');
                             } else {
-                                $(this).focus();
+                                $(this).trigger('focus')();
                             }
                         } else {
                             $('input[name=' + lid + ']').val(suggestion.data);

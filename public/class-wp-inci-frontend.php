@@ -23,14 +23,12 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 	 * @link     https://wordpress.org/plugins/wp-inci/
 	 */
 	class Wp_Inci_Frontend extends WP_Inci {
-
-
 		/**
 		 * A static reference to track the single instance of this class.
 		 *
-		 * @var object
+		 * @var object|null
 		 */
-		private static $_instance;
+		private static ?object $_instance = null;
 
 		/**
 		 * Constructor.
@@ -45,7 +43,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function init() {
+		public function init(): void {
 
 			/**
 			 * Load the plugin text domain for frontend translation.
@@ -65,9 +63,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			);
 			add_filter(
 				'the_content',
-				array( $this, 'wiContentIngredients' ),
-				10,
-				1
+				array( $this, 'wiContentIngredients' )
 			);
 			add_action( 'init', array( $this, 'wiAddProductShortcode' ) );
 		}
@@ -77,7 +73,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return Wp_Inci_Frontend|null
 		 */
-		public static function get_instanceFrontend() {
+		public static function get_instanceFrontend(): Wp_Inci_Frontend|null {
 
 			if ( null === self::$_instance ) {
 				self::$_instance = new Wp_Inci_Frontend();
@@ -91,9 +87,10 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function wiEnqueueStyle() {
+		public function wiEnqueueStyle(): void {
 
 			$disable_style = cmb2_get_option( 'wi_settings', 'wi_disable_style' );
+			$disable_style = is_array( $disable_style ) ? $disable_style[0] : $disable_style;
 
 			wp_enqueue_style( 'wp-inci', esc_url( plugins_url( 'css/wp-inci.min.css', __FILE__ ) ), array(), get_bloginfo( 'version' ) );
 
@@ -111,7 +108,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return false|string
 		 */
-		public function getIngredient( $ingredient, $safety = 'true' ) {
+		public function getIngredient( int $ingredient, string $safety = 'true' ): false|string {
 			$output = false;
 			$post   = get_post( $ingredient );
 
@@ -151,7 +148,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 * @return string
 		 * @noinspection PhpArrayToStringConversionInspection
 		 */
-		public function getIngredientsTable( $post_id, $safety = 'true' ) {
+		public function getIngredientsTable( int $post_id, string $safety = 'true' ): string {
 			$output      = '';
 			$ingredients = get_post_meta( $post_id, 'ingredients', true );
 			if ( ! empty( $ingredients ) ) {
@@ -196,7 +193,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function wiContentIngredients( $content ) {
+		public function wiContentIngredients( string $content ): string {
 			global $post;
 			$output = '';
 
@@ -216,7 +213,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function wiAddProductShortcode() {
+		public function wiAddProductShortcode(): void {
 			if ( ! shortcode_exists( 'wp_inci_product' ) ) {
 				// @codingStandardsIgnoreStart
 				add_shortcode(
@@ -236,7 +233,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function wiProductShortcode( $atts, $content, $shortcode ) {
+		public function wiProductShortcode( array $atts, string $content, string $shortcode ): string {
 
 			// Example: [wp_inci_product id="33591" title="My custom title" link="true" list="false" safety="false"].
 			// Basic use: [wp_inci_product id="33591"].

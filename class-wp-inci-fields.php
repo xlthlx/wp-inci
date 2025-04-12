@@ -14,23 +14,15 @@
  */
 if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 	/**
-	 * Class for custom CMB2 fields
-	 *
-	 * @category Plugin
-	 * @package  Wpinci
-	 * @author   xlthlx <wp-inci@piccioni.london>
-	 * @license  https://www.gnu.org/licenses/gpl-3.0.html GPL 3
-	 * @link     https://wordpress.org/plugins/wp-inci/
+	 * Class for custom CMB2 fields.
 	 */
 	class WP_Inci_Fields extends WP_Inci {
-
-
 		/**
 		 * A static reference to track the single instance of this class.
 		 *
-		 * @var object
+		 * @var object|null
 		 */
-		private static $_instance;
+		private static ?object $_instance = null;
 
 		/**
 		 * Constructor.
@@ -46,7 +38,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function init() {
+		public function init(): void {
 			/**
 			 * Add hooks and queue.
 			 */
@@ -78,7 +70,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return WP_Inci_Fields|null
 		 */
-		public static function get_instanceFields() {
+		public static function get_instanceFields(): WP_Inci_Fields|null {
 
 			if ( null === self::$_instance ) {
 				self::$_instance = new WP_Inci_Fields();
@@ -95,7 +87,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function setTitleFilter( $where, $wp_query ) {
+		public function setTitleFilter( string $where, object $wp_query ): string {
 
 			global $wpdb;
 			$search_term = $wp_query->get( 'title_filter' );
@@ -120,7 +112,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function renderSwitch( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
+		public function renderSwitch( object $field, string $escaped_value, int $object_id, string $object_type, object $field_type_object ): void {
 			$field_name     = $field->_name();
 			$active_value   = $field->args( 'active_value' ) ?? 'on';
 			$inactive_value = $field->args( 'inactive_value' ) ?? 'off';
@@ -149,7 +141,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function adminFooter() {
+		public function adminFooter(): void {
 			global $_wp_admin_css_colors;
 			if ( ! empty( $_wp_admin_css_colors[ get_user_option( 'admin_color' ) ] ) ) {
 				$scheme_colors = $_wp_admin_css_colors[ get_user_option( 'admin_color' ) ]->colors;
@@ -180,7 +172,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * @return void
 		 * @throws JsonException Json exception.
 		 */
-		public function renderSearchAjax( $field, $values, $object_id, $object_type, $field_type ) {
+		public function renderSearchAjax( object $field, array $values, int $object_id, string $object_type, object $field_type ): void {
 			$field_name = $field->_name();
 
 			echo '<div class="container-search-left">';
@@ -286,7 +278,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return bool|mixed
 		 */
-		public function sanitizeSearchAjax( $override_value, $value, $object_id, $field_args ) {
+		public function sanitizeSearchAjax( string $override_value, array $value, int $object_id, array $field_args ): mixed {
 			$fid = $field_args['id'];
 			if ( ! empty( $field_args['render_row_cb'][0]->data_to_save[ $fid . '_results' ] ) ) {
 				$value = $field_args['render_row_cb'][0]->data_to_save[ $fid . '_results' ];
@@ -302,7 +294,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function setupAdminScripts() {
+		public function setupAdminScripts(): void {
 			wp_register_script(
 				'jquery-autocomplete',
 				$this->url . '/admin/js/jquery.autocomplete.min.js',
@@ -353,7 +345,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 * @return void
 		 * @throws JsonException Json exception.
 		 */
-		public function cmb2SearchAjaxGetResults() {
+		public function cmb2SearchAjaxGetResults(): void {
 			if ( isset( $_POST['wicheck'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wicheck'] ) ), 'cmb2_search_ajax_get_results' ) ) {
 				die( wp_json_encode( array( 'error' => __( 'Error : Unauthorized action', 'wp-inci' ) ), JSON_THROW_ON_ERROR ) );
 			}
@@ -392,7 +384,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function cmb2MultipleSearchAjaxGetResults() {
+		public function cmb2MultipleSearchAjaxGetResults(): void {
 			global $wpdb;
 
 			if ( isset( $_POST['wimucheck'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wimucheck'] ) ), 'cmb2_multiple_search_ajax_get_results' ) ) {
@@ -449,7 +441,7 @@ if ( ! class_exists( 'WP_Inci_Fields', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function setResults( $post_id, $field_id ) {
+		public function setResults( int $post_id, int $field_id ): string {
 			$post = get_post( $post_id );
 
 			$guid   = get_edit_post_link( $post->ID );

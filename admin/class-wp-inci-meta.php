@@ -23,14 +23,12 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 	 * @link     https://wordpress.org/plugins/wp-inci/
 	 */
 	class WP_Inci_Meta extends WP_Inci {
-
-
 		/**
 		 * A static reference to track the single instance of this class.
 		 *
-		 * @var object
+		 * @var object|null
 		 */
-		private static $_instance;
+		private static ?object $_instance = null;
 
 		/**
 		 * Constructor.
@@ -48,7 +46,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function init() {
+		public function init(): void {
 			/**
 			 * Include and setup custom meta boxes and fields.
 			 */
@@ -66,7 +64,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return WP_Inci_Meta|null
 		 */
-		public static function get_instanceMeta() {
+		public static function get_instanceMeta(): WP_Inci_Meta|null {
 
 			if ( null === self::$_instance ) {
 				self::$_instance = new WP_Inci_Meta();
@@ -80,7 +78,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function registerSourceUrl() {
+		public function registerSourceUrl(): void {
 
 			$cmb_term = new_cmb2_box(
 				array(
@@ -109,7 +107,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function registerIngredientsRepeater() {
+		public function registerIngredientsRepeater(): void {
 
 			$ingredients = new_cmb2_box(
 				array(
@@ -178,7 +176,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function registerSafetySelect() {
+		public function registerSafetySelect(): void {
 
 			$safety = new_cmb2_box(
 				array(
@@ -268,7 +266,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function beforeSafety( $field_args, $field ) {
+		public function beforeSafety( array $field_args, object $field ): void {
 			// @codingStandardsIgnoreStart
 			echo ( WP_Inci::get_instance() )->get_safety_html( esc_attr( $field->object_id ) );
 			// @codingStandardsIgnoreEnd
@@ -277,14 +275,14 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		/**
 		 * Check filesystem credentials.
 		 *
-		 * @param string $url     The url.
-		 * @param string $method  The method.
-		 * @param string $context The context.
-		 * @param array  $fields  The fields.
+		 * @param string     $url     The url.
+		 * @param string     $method  The method.
+		 * @param string     $context The context.
+		 * @param array|null $fields  The fields.
 		 *
 		 * @return bool
 		 */
-		public function connect( $url, $method, $context, $fields = null ) {
+		public function connect( string $url, string $method, string $context, array $fields = null ): bool {
 			$credentials = request_filesystem_credentials( $url, $method, false, $context, $fields );
 
 			if ( false === $credentials ) {
@@ -305,7 +303,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function defaultStyle() {
+		public function defaultStyle(): string {
 			global $wp_filesystem;
 
 			$url = wp_nonce_url( 'options-general.php?page=settings' );
@@ -334,7 +332,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function copyButton() {
+		public function copyButton(): void {
 			// @codingStandardsIgnoreStart
 			echo '<script>const wi_style=`' . $this->defaultStyle() . '`;';
 			// @codingStandardsIgnoreEnd
@@ -347,7 +345,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function registerPageSettings() {
+		public function registerPageSettings(): void {
 
 			$args = array(
 				'id'           => 'wi_settings',
@@ -446,7 +444,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function removeMenuPage() {
+		public function removeMenuPage(): void {
 			remove_submenu_page( 'options-general.php', 'wi_disclaimer' );
 		}
 
@@ -457,7 +455,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return string
 		 */
-		public function selectOtherMenu( $parent_file ) {
+		public function selectOtherMenu( string $parent_file ): string {
 			global $plugin_page;
 
 			if ( 'wi_disclaimer' === $plugin_page ) {
@@ -473,12 +471,12 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		/**
 		 * Modify the updated message.
 		 *
-		 * @param string $cmb  The cmb.
+		 * @param object $cmb  The cmb.
 		 * @param array  $args The args.
 		 *
 		 * @return void
 		 */
-		public function optionsPageMessageCallback( $cmb, $args ) {
+		public function optionsPageMessageCallback( object $cmb, array $args ): void {
 			if ( ! empty( $args['should_notify'] ) ) {
 
 				if ( ( 'updated' === $args['type'] ) || ( 'notice-warning' === $args['type'] ) ) {
@@ -495,7 +493,7 @@ if ( ! class_exists( 'WP_Inci_Meta', false ) ) {
 		 *
 		 * @return void
 		 */
-		public function registerBrandMetabox() {
+		public function registerBrandMetabox(): void {
 
 			$brand = new_cmb2_box(
 				array(

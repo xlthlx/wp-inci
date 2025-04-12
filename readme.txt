@@ -3,8 +3,8 @@ Contributors: xlthlx
 Donate link: https://paypal.me/xlthlx
 Tags: INCI, ingredients, cosmetics, makeup
 Requires at least: 5.9
-Tested up to: 6.7
-Stable tag: 1.6.9
+Tested up to: 6.8
+Stable tag: 1.7.0
 Requires PHP: 8.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -49,6 +49,10 @@ If you need support or have a feature request, please use the [support forum](ht
 5. Post example
 
 == Changelog ==
+
+= 1.7.0=
+* Tested up to 6.8
+* Updated dependencies
 
 = 1.6.9 =
 * Updated screenshots
