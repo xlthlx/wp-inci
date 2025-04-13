@@ -28,7 +28,7 @@
     "wpreadme2markdown/wp2md": "^4.1.2"
   },
   "scripts": {
-    "check": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -s . --standard=PHPCompatibility --runtime-set testVersion 8.0 --ignore=vendor/*,node_modules/*,wp-content/*,_backup --extensions=php",
+    "check": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -s . --standard=PHPCompatibility --runtime-set testVersion 8.4 --ignore=vendor/*,node_modules/*,wp-content/*,_backup --extensions=php",
     "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor/*,node_modules/*,wp-content/*,_backup/* --extensions=php . -n -v --report-file=report.txt",
     "lint:wpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor/*,node_modules/*,wp-content/*,_backup/* --extensions=php .",
     "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
