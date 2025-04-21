@@ -53,3 +53,5 @@ if ( is_admin() ) {
 } else {
 	include_once WPINCI_BASE_PATH . 'public/class-wp-inci-frontend.php';
 }
+
+include_once WPINCI_BASE_PATH . 'blocks/wp-inci-product/class-wp-inci-product.php';

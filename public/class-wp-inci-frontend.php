@@ -103,8 +103,8 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Gets the HTML for a single ingredient.
 		 *
-		 * @param int    $ingredient Ingredient ID.
-		 * @param string $safety     Show safety.
+		 * @param int $ingredient Ingredient ID.
+		 * @param string $safety Show safety.
 		 *
 		 * @return false|string
 		 */
@@ -117,9 +117,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				$functions_list = get_the_terms( $post->ID, 'functions' );
 				if ( $functions_list && ! is_wp_error( $functions_list ) ) {
 					$functions = ' (' . implode(
-						' / ',
-						wp_list_pluck( $functions_list, 'name' )
-					) . ')';
+							' / ',
+							wp_list_pluck( $functions_list, 'name' )
+						) . ')';
 				}
 
 				$output = '<tr>';
@@ -142,46 +142,52 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Gets the HTML for all ingredients.
 		 *
-		 * @param int    $post_id Post ID.
-		 * @param string $safety  Show safety.
+		 * @param int $post_id Post ID.
+		 * @param string $safety (Optional) Show safety.
+		 * @param string $disclaimer (Optional) Show disclaimer.
 		 *
 		 * @return string
 		 * @noinspection PhpArrayToStringConversionInspection
 		 */
-		public function getIngredientsTable( int $post_id, string $safety = 'true' ): string {
-			$output      = '';
-			$ingredients = get_post_meta( $post_id, 'ingredients', true );
-			if ( ! empty( $ingredients ) ) {
-				$output .= '
+		public function getIngredientsTable( int $post_id, string $safety = 'true', string $disclaimer = 'true' ): string {
+			$output = '';
+
+			if ( 0 !== $post_id ) {
+				$ingredients = get_post_meta( $post_id, 'ingredients', true );
+				if ( ! empty( $ingredients ) ) {
+					$output .= '
 				<table class="wp-inci">
 						<tbody>';
-				foreach ( $ingredients as $ingredient ) {
-					$output .= $this->getIngredient( $ingredient, $safety );
+					foreach ( $ingredients as $ingredient ) {
+						$output .= $this->getIngredient( $ingredient, $safety );
+					}
+
+					$output .= '</tbody>
+					</table>';
 				}
 
-				$output .= '</tbody>
-					</table>';
-			}
-
-			$may_contain = get_post_meta( $post_id, 'may_contain', true );
-			if ( ! empty( $may_contain ) ) {
-				$output .= '<h4>' . __( 'MAY CONTAIN', 'wp-inci' ) . '</h4>';
-				$output .= '
+				$may_contain = get_post_meta( $post_id, 'may_contain', true );
+				if ( ! empty( $may_contain ) ) {
+					$output .= '<h4>' . __( 'MAY CONTAIN', 'wp-inci' ) . '</h4>';
+					$output .= '
 				<table class="wp-inci">
 						<tbody>';
-				foreach ( $may_contain as $may ) {
-					$output .= $this->getIngredient( $may, $safety );
+					foreach ( $may_contain as $may ) {
+						$output .= $this->getIngredient( $may, $safety );
+					}
+
+					$output .= '</tbody>
+					</table>';
 				}
 
-				$output .= '</tbody>
-					</table>';
+				if ( 'true' !== $disclaimer ) {
+					$output .= '<div class="disclaimer">' . cmb2_get_option(
+							'wi_disclaimer',
+							'textarea_disclaimer',
+							$this->get_default_disclaimer()
+						) . '</div>';
+				}
 			}
-
-			$output .= '<div class="disclaimer">' . cmb2_get_option(
-				'wi_disclaimer',
-				'textarea_disclaimer',
-				$this->get_default_disclaimer()
-			) . '</div>';
 
 			return $output;
 		}
@@ -227,16 +233,16 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Set up the shortcode to show the product.
 		 *
-		 * @param array  $atts      Shortcode attributes.
-		 * @param string $content   Post content.
+		 * @param array $atts Shortcode attributes.
+		 * @param string $content Post content.
 		 * @param string $shortcode Shortcode name.
 		 *
 		 * @return string
 		 */
 		public function wiProductShortcode( array $atts, string $content, string $shortcode ): string {
 
-			// Example: [wp_inci_product id="33591" title="My custom title" link="true" list="false" safety="false"].
-			// Basic use: [wp_inci_product id="33591"].
+			// Example: [wp_inci_product id="31" title="Neo Nude Glow Foundation" link="true" list="false" safety="false" content="true" disclaimer="true"].
+			// Basic use: [wp_inci_product id="31"].
 
 			// Normalize attribute keys, lowercase.
 			$atts = array_change_key_case( $atts );
@@ -244,11 +250,13 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 			// Sets shortcode attributes with defaults.
 			$atts = shortcode_atts(
 				array(
-					'id'     => 0,
-					'title'  => '',
-					'link'   => 'false',
-					'list'   => 'true',
-					'safety' => 'true',
+					'id'         => 0,
+					'content'    => 'false',
+					'disclaimer' => 'true',
+					'link'       => 'false',
+					'list'       => 'true',
+					'safety'     => 'true',
+					'title'      => '',
 				),
 				$atts,
 				$shortcode
@@ -275,10 +283,17 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 
 				$output .= $start . $title . $end;
 
+				$product_content = get_the_content( '', '', $atts['id'] );
+
+				if ( ( 'true' === $atts['content'] ) && '' !== $product_content ) {
+					$output .= $product_content;
+				}
+
 				if ( 'true' === $atts['list'] ) {
 					$output .= $this->getIngredientsTable(
 						$atts['id'],
-						$atts['safety']
+						$atts['safety'],
+						$atts['disclaimer']
 					);
 				}
 

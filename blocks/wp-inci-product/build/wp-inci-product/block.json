@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wp-inci/product",
+  "version": "0.1.0",
+  "title": "WP INCI Product",
+  "category": "text",
+  "description": "Show a Product into the content of any post type.",
+  "keywords": [
+    "product",
+    "wp-inci"
+  ],
+  "supports": {
+    "html": false,
+    "customClassName": false
+  },
+  "textdomain": "wp-inci",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./../../../../public/css/wp-inci.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

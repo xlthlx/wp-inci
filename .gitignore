@@ -40,7 +40,7 @@ ehthumbs.db
 
 # Build Tools
 .idea
-/node_modules
+node_modules
 composer.lock
 package-lock.json
 
