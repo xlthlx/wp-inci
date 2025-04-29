@@ -31,10 +31,14 @@ There are two example products with ingredients into the `data` directory that c
 * Shortcode: in the product list, there is a column where you can copy the 'basic' shortcode relative to a specific product.
 If you need a different way to display it, you can:
 
-    1. specify a different title. Example: [wp_inci_product id="33591" title="My custom title"]
-    2. automatically insert the product permalink. Example: [wp_inci_product id="33591" link="true"]
-    3. remove the ingredients listing. Example: [wp_inci_product id="33591" link="true" list="false"]
-    4. remove the safety from ingredients listing. Example: [wp_inci_product id="33591" safety="false"]
+    1. specify a different title. Example: [wp_inci_product id="31" title="My custom title"]
+    2. automatically insert the product permalink. Example: [wp_inci_product id="31" link="true"]
+    3. remove the ingredients listing. Example: [wp_inci_product id="31" link="true" list="false"]
+    4. remove the safety from ingredients listing. Example: [wp_inci_product id="31" safety="false"]
+    5. show the product content. Example: [wp_inci_product id="31" content="true"]
+    6. hide the disclaimer. Example: [wp_inci_product id="31" disclaimer="true"]
+* NEW - Custom Block: custom product block to insert a product into the Block Editor. It has the same options as the shortcode.
+
 
 * Languages: English, Italian.
 
