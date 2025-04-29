@@ -103,7 +103,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Gets the HTML for a single ingredient.
 		 *
-		 * @param int $ingredient Ingredient ID.
+		 * @param int    $ingredient Ingredient ID.
 		 * @param string $safety Show safety.
 		 *
 		 * @return false|string
@@ -117,9 +117,9 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 				$functions_list = get_the_terms( $post->ID, 'functions' );
 				if ( $functions_list && ! is_wp_error( $functions_list ) ) {
 					$functions = ' (' . implode(
-							' / ',
-							wp_list_pluck( $functions_list, 'name' )
-						) . ')';
+						' / ',
+						wp_list_pluck( $functions_list, 'name' )
+					) . ')';
 				}
 
 				$output = '<tr>';
@@ -142,7 +142,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Gets the HTML for all ingredients.
 		 *
-		 * @param int $post_id Post ID.
+		 * @param int    $post_id Post ID.
 		 * @param string $safety (Optional) Show safety.
 		 * @param string $disclaimer (Optional) Show disclaimer.
 		 *
@@ -182,10 +182,10 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 
 				if ( 'true' !== $disclaimer ) {
 					$output .= '<div class="disclaimer">' . cmb2_get_option(
-							'wi_disclaimer',
-							'textarea_disclaimer',
-							$this->get_default_disclaimer()
-						) . '</div>';
+						'wi_disclaimer',
+						'textarea_disclaimer',
+						$this->get_default_disclaimer()
+					) . '</div>';
 				}
 			}
 
@@ -233,7 +233,7 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		/**
 		 * Set up the shortcode to show the product.
 		 *
-		 * @param array $atts Shortcode attributes.
+		 * @param array  $atts Shortcode attributes.
 		 * @param string $content Post content.
 		 * @param string $shortcode Shortcode name.
 		 *

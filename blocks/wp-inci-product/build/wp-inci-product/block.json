@@ -14,10 +14,33 @@
     "html": false,
     "customClassName": false
   },
+  "attributes": {
+    "productId": {
+      "type": "string",
+      "default": "0"
+    },
+    "productLink": {
+      "type": "string"
+    },
+    "productContent": {
+      "type": "string"
+    },
+    "customTitle": {
+      "type": "string"
+    },
+    "ingredientsList": {
+      "type": "string"
+    },
+    "ingredientsSafety": {
+      "type": "string"
+    },
+    "disclaimer": {
+      "type": "string"
+    }
+  },
   "textdomain": "wp-inci",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./../../../../public/css/wp-inci.css",
   "style": "file:./style-index.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "render": "file:./render.php"
 }

@@ -46,7 +46,6 @@ if ( ! class_exists( 'Wp_Inci_Product', false ) ) {
 		 */
 		public function init(): void {
 			add_action( 'init', array( $this, 'create_block_wp_inci_product_init' ) );
-			add_action( 'init', array( $this, 'block_register_fields' ) );
 			add_action( 'rest_api_init', array( $this, 'register_endpoint_ingredients_table' ) );
 		}
 
@@ -88,41 +87,6 @@ if ( ! class_exists( 'Wp_Inci_Product', false ) ) {
 		}
 
 		/**
-		 * Register custom meta fields for the Product block.
-		 *
-		 * @return void
-		 */
-		public function block_register_fields(): void {
-
-			$wp_inci_block_meta = array(
-				'wi-product-id'         => __( 'Product', 'wp-inci' ),
-				'wi-product-link'       => __( 'Link to Product', 'wp-inci' ),
-				'wi-product-content'    => __( 'Product content', 'wp-inci' ),
-				'wi-custom-title'       => __( 'Custom title', 'wp-inci' ),
-				'wi-ingredients-list'   => __( 'Show Ingredients List', 'wp-inci' ),
-				'wi-ingredients-safety' => __( 'Show Ingredients Safety', 'wp-inci' ),
-				'wi-disclaimer'         => __( 'Disclaimer', 'wp-inci' ),
-			);
-
-			foreach ( $wp_inci_block_meta as $key => $value ) {
-				register_post_meta(
-					'',
-					$key,
-					array(
-						'description'       => $value,
-						'show_in_rest'      => true,
-						'type'              => 'string',
-						'single'            => true,
-						'sanitize_callback' => 'sanitize_text_field',
-						'auth_callback'     => static function () {
-							return current_user_can( 'edit_posts' );
-						},
-					)
-				);
-			}
-		}
-
-		/**
 		 * Register the ingredients table endpoint.
 		 *
 		 * @return void
@@ -136,7 +100,7 @@ if ( ! class_exists( 'Wp_Inci_Product', false ) ) {
 					'methods'             => WP_REST_Server::READABLE,
 					'callback'            => array( $this, 'get_ingredients_table' ),
 					'permission_callback' => array( $this, 'permissions_check' ),
-					'args'                => $this->get_arguments()
+					'args'                => $this->get_arguments(),
 				)
 			);
 		}

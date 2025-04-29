@@ -2,7 +2,6 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import { decodeEntities } from '@wordpress/html-entities';
-import { useEntityProp } from '@wordpress/core-data';
 import {
 	PanelBody,
 	PanelRow,
@@ -16,56 +15,50 @@ import { useState, useEffect } from '@wordpress/element';
 import HTMLReactParser from 'html-react-parser';
 import './../../../../public/css/wp-inci.css';
 
-export default function Edit() {
-	const postType = useSelect(
-		( select ) => select( 'core/editor' ).getCurrentPostType(),
-		[]
-	);
-
-	const [ meta, setMeta ] = useEntityProp( 'postType', postType, 'meta' );
-
+export default function Edit( props ) {
+	const { attributes } = props;
+	const { setAttributes } = props;
 	const products = useSelect( ( select ) => {
 		return select( 'core' ).getEntityRecords( 'postType', 'product', {
 			status: 'publish',
 		} );
 	}, [] );
 
-	const productId = meta[ 'wi-product-id' ];
-	const customTitle = meta[ 'wi-custom-title' ];
-	const hasLink = meta[ 'wi-product-link' ] === 'Yes';
-	const hasProductContent = meta[ 'wi-product-content' ] === 'Yes';
-	const hasList = meta[ 'wi-ingredients-list' ] === 'Yes';
-	const hasSafety = meta[ 'wi-ingredients-safety' ] === 'Yes';
-	const hasDisclaimer = meta[ 'wi-disclaimer' ] === 'Yes';
-	const safety = meta[ 'wi-ingredients-safety' ] === 'Yes' ? '' : 'true';
-	const disclaimer = meta[ 'wi-disclaimer' ] === 'Yes' ? 'true' : 'false';
+	const productId = attributes.productId ? attributes.productId : '0';
+	const customTitle = attributes.customTitle;
+	const hasLink = attributes.productLink === 'Yes';
+	const hasProductContent = attributes.productContent === 'Yes';
+	const hasList = attributes.ingredientsList === 'No';
+	const hasSafety = attributes.ingredientsSafety === 'No';
+	const hasDisclaimer = attributes.disclaimer === 'No';
+	const safety = attributes.ingredientsSafety === 'No' ? '' : 'true';
+	const disclaimer = attributes.disclaimer === 'No' ? 'true' : 'false';
 
 	const updateProduct = ( newValue ) => {
-		setMeta( { ...meta, 'wi-product-id': newValue } );
+		setAttributes( { productId: newValue } );
 	};
 	const updateTitle = ( newValue ) => {
-		setMeta( { ...meta, 'wi-custom-title': newValue } );
+		setAttributes( { customTitle: newValue } );
 	};
 	const setLink = ( newValue ) => {
-		setMeta( { ...meta, 'wi-product-link': newValue ? 'Yes' : '' } );
+		setAttributes( { productLink: newValue ? 'Yes' : '' } );
 	};
 	const setProductContent = ( newValue ) => {
-		setMeta( { ...meta, 'wi-product-content': newValue ? 'Yes' : '' } );
+		setAttributes( { productContent: newValue ? 'Yes' : '' } );
 	};
 	const setList = ( newValue ) => {
-		setMeta( { ...meta, 'wi-ingredients-list': newValue ? 'Yes' : '' } );
+		setAttributes( { ingredientsList: newValue ? 'No' : '' } );
 	};
 	const setSafety = ( newValue ) => {
-		setMeta( { ...meta, 'wi-ingredients-safety': newValue ? 'Yes' : '' } );
+		setAttributes( { ingredientsSafety: newValue ? 'No' : '' } );
 	};
 
 	const setDisclaimer = ( newValue ) => {
-		setMeta( { ...meta, 'wi-disclaimer': newValue ? 'Yes' : '' } );
+		setAttributes( { disclaimer: newValue ? 'No' : '' } );
 	};
 
 	const options = [];
-	let selProduct,
-		selLink,
+	let selLink,
 		selContent = '';
 	if ( products ) {
 		options.push( { value: 0, label: 'Select a product' } );
@@ -75,7 +68,6 @@ export default function Edit() {
 				label: decodeEntities( product.title.rendered ),
 			} );
 			if ( product.id === Number( productId ) ) {
-				selProduct = decodeEntities( product.title.rendered );
 				selLink = product.link;
 				selContent = HTMLReactParser(
 					String( product.content.rendered )
@@ -86,28 +78,39 @@ export default function Edit() {
 		options.push( { value: 0, label: 'Loading...' } );
 	}
 
-	const tempTitle =
-		productId !== '' ? selProduct : __( 'Select a product', 'wp-inci' );
-	const tempCustom = customTitle !== '' ? customTitle : tempTitle;
-	const renderTitle = hasLink ? (
-		<a title={ tempCustom } href={ selLink }>
-			{ tempCustom }
+	let renderTitle;
+	if ( productId === '0' ) {
+		renderTitle = __( 'Select a product', 'wp-inci' );
+	} else {
+		let selProduct = '';
+		if ( products ) {
+			products.forEach( ( product ) => {
+				if ( product.id === Number( productId ) ) {
+					selProduct = decodeEntities( product.title.rendered );
+				}
+			} );
+		}
+		renderTitle = customTitle ? customTitle : selProduct;
+	}
+
+	renderTitle = hasLink ? (
+		<a title={ renderTitle } href={ selLink }>
+			{ renderTitle }
 		</a>
 	) : (
-		tempCustom
+		renderTitle
 	);
-
-	const queryParams = {
-		product_id: productId,
-		safety,
-		disclaimer,
-	};
 
 	const [ error, setError ] = useState( null );
 	const [ table, setTable ] = useState( null );
 	const [ isLoaded, setIsLoaded ] = useState( false );
 
 	useEffect( () => {
+		const queryParams = {
+			product_id: productId,
+			safety,
+			disclaimer,
+		};
 		apiFetch( {
 			path: addQueryArgs( '/wp-inci/v1/get-table', queryParams ),
 		} ).then(
@@ -120,7 +123,7 @@ export default function Edit() {
 				setError( error );
 			}
 		);
-	}, [ queryParams ] );
+	}, [ productId, safety, disclaimer ] );
 
 	let renderTable = '';
 	if ( error ) {

@@ -17,11 +17,34 @@ return array(
 			'html' => false,
 			'customClassName' => false
 		),
+		'attributes' => array(
+			'productId' => array(
+				'type' => 'string',
+				'default' => '0'
+			),
+			'productLink' => array(
+				'type' => 'string'
+			),
+			'productContent' => array(
+				'type' => 'string'
+			),
+			'customTitle' => array(
+				'type' => 'string'
+			),
+			'ingredientsList' => array(
+				'type' => 'string'
+			),
+			'ingredientsSafety' => array(
+				'type' => 'string'
+			),
+			'disclaimer' => array(
+				'type' => 'string'
+			)
+		),
 		'textdomain' => 'wp-inci',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./../../../../public/css/wp-inci.css',
 		'style' => 'file:./style-index.css',
-		'render' => 'file:./render.php',
-		'viewScript' => 'file:./view.js'
+		'render' => 'file:./render.php'
 	)
 );
