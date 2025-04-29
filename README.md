@@ -32,12 +32,16 @@ There are two example products with ingredients into the `data` directory that c
 If you need a different way to display it, you can:
 
     1. specify a different title
+  
     Example: [wp_inci_product id="33591" title="My custom title"]
     2. automatically insert the product permalink
+  
     Example: [wp_inci_product id="33591" link="true"]
     3. remove the ingredients listing
+  
     Example: [wp_inci_product id="33591" link="true" list="false"]
     4. remove the safety from ingredients listing
+  
     Example: [wp_inci_product id="33591" safety="false"]
 
 * Languages: English, Italian.
