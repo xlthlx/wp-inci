@@ -1,7 +1,4 @@
-# ![WP INCI](https://ps.w.org/wp-inci/assets/banner-772x250.png "WordPress Plugin")
-
-[![Version](https://img.shields.io/badge/version-1.8.0-blueviolet)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![License](https://img.shields.io/badge/license-GPL_v3-blueviolet)](https://github.com/xlthlx/wp-inci/blob/main/LICENSE)
-![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/wp-inci?color=blueviolet) [![WP compatibility](https://plugintests.com/plugins/wporg/wp-inci/wp-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest) [![PHP compatibility](https://plugintests.com/plugins/wporg/wp-inci/php-badge.svg)](https://plugintests.com/plugins/wporg/wp-inci/latest)
+# ![WP INCI](assets/banner.png "WP INCI")
 
 [![Preview](https://img.shields.io/badge/live-preview-blueviolet?logo=wordpress&style=for-the-badge)](https://playground.wordpress.net/?mode=seamless#{%22$schema%22:%22https://playground.wordpress.net/blueprint-schema.json%22,%22landingPage%22:%22/product/giorgio-armani-neo-nude-glow-foundation/%22,%22login%22:true,%22preferredVersions%22:{%22php%22:%228.0%22,%22wp%22:%22latest%22},%22siteOptions%22:{%22blogname%22:%22WP%20INCI%22,%22blogdescription%22:%22A%20WordPress%20plugin%20to%20manage%20INCI%20(International%20Nomenclature%20of%20Cosmetic%20Ingredients).%22},%22plugins%22:[%22wp-inci%22],%22steps%22:[{%22step%22:%22importWxr%22,%22file%22:{%22resource%22:%22url%22,%22url%22:%22https://raw.githubusercontent.com/xlthlx/wp-inci/main/data/wpinci-products-sample.xml%22}}]})
 
@@ -31,50 +28,56 @@ There are two example products with ingredients into the `data` directory that c
 * Shortcode: in the product list, there is a column where you can copy the 'basic' shortcode relative to a specific product.
 If you need a different way to display it, you can:
 
-    1. specify a different title. Example: [wp_inci_product id="31" title="My custom title"]
-    2. automatically insert the product permalink. Example: [wp_inci_product id="31" link="true"]
-    3. remove the ingredients listing. Example: [wp_inci_product id="31" link="true" list="false"]
-    4. remove the safety from ingredients listing. Example: [wp_inci_product id="31" safety="false"]
-    5. show the product content. Example: [wp_inci_product id="31" content="true"]
-    6. hide the disclaimer. Example: [wp_inci_product id="31" disclaimer="true"]
+    1. specify a different title
+    Example: [wp_inci_product id="31" title="My custom title"]
+    2. automatically insert the product permalink
+    Example: [wp_inci_product id="31" link="true"]
+    3. remove the ingredients listing
+    Example: [wp_inci_product id="31" link="true" list="false"]
+    4. remove the safety from ingredients listing
+    Example: [wp_inci_product id="31" safety="false"]
+    5. show the product content. 
+    Example: [wp_inci_product id="31" content="true"]
+    6. hide the disclaimer. 
+    Example: [wp_inci_product id="31" disclaimer="true"]
+
 * NEW - Custom Block: custom product block to insert a product into the Block Editor. It has the same options as the shortcode.
 
-
 * Languages: English, Italian.
-
-## Support
-
-If you need support or have a feature request, please use the [support forum](https://wordpress.org/support/plugin/wp-inci/).
 
 ## Screenshots
 
 ### 1. Ingredients list and single ingredient
 
-![Ingredients list and single ingredient](assets/screenshot-1.gif)
+[missing image]
 
 ### 2. Product list and single product
 
-![Product list and single product](assets/screenshot-2.gif)
+[missing image]
 
 ### 3. How to manage options
 
-![How to manage options](assets/screenshot-3.gif)
+[missing image]
 
 ### 4. How to use the product shortcode
 
-![How to use the product shortcode](assets/screenshot-4.gif)
+[missing image]
 
 ### 5. Post example
 
-![Post example](assets/screenshot-5.gif)
+[missing image]
 
+
+## Frequently Asked Questions
+
+N/A
 
 ## Changelog
 
 ### 1.8.0
 
 * Added options to shortcode
-* Added custom block
+* Added Product Gutenberg block
 
 ### 1.7.0
 
@@ -206,24 +209,13 @@ If you need support or have a feature request, please use the [support forum](ht
 
 ## Upgrade Notice
 
-### 1.6.4
+N/A
 
-* If you were using the Product Gutenberg block,
-you should change every block into a shortcode before upgrading.
+## Licence
 
-## Installation
-
-1. Upload `wp-inci` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Enjoy
+WP INCI is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with WP INCI. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 
 ## Credits
 
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
-
-## Frequently Asked Questions
-
-### Can I translate the plugin interface?
-
-Yes, just use the .POT file in the `languages` folder.

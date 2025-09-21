@@ -42,10 +42,6 @@ If you need a different way to display it, you can:
 
 * Languages: English, Italian.
 
-== Support ==
-
-If you need support or have a feature request, please use the [support forum](https://wordpress.org/support/plugin/wp-inci/).
-
 == Screenshots ==
 
 1. Ingredients list and single ingredient
@@ -54,13 +50,17 @@ If you need support or have a feature request, please use the [support forum](ht
 4. How to use the product shortcode
 5. Post example
 
+== Frequently Asked Questions ==
+
+N/A
+
 == Changelog ==
 
-= 1.8.0=
+= 1.8.0 =
 * Added options to shortcode
-* Added custom block
+* Added Product Gutenberg block
 
-= 1.7.0=
+= 1.7.0 =
 * Tested up to 6.8
 * Updated dependencies
 
@@ -166,22 +166,12 @@ If you need support or have a feature request, please use the [support forum](ht
 
 == Upgrade Notice ==
 
-= 1.6.4 =
-* If you were using the Product Gutenberg block,
-you should change every block into a shortcode before upgrading.
+N/A
 
-== Installation ==
+== Licence ==
 
-1. Upload `wp-inci` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Enjoy
+WP INCI is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with WP INCI. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 
 == Credits ==
 * [CMB2](https://en-gb.wordpress.org/plugins/cmb2/) by [CMB2 team](https://cmb2.io/)
 * [Extended CPTs](https://github.com/johnbillion/extended-cpts) by [John Blackbourn](https://johnblackbourn.com/)
-
-== Frequently Asked Questions ==
-
-= Can I translate the plugin interface? =
-
-Yes, just use the .POT file in the `languages` folder.
