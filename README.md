@@ -1,7 +1,5 @@
 # ![WP INCI](assets/banner.png "WP INCI")
 
-[![Preview](https://img.shields.io/badge/live-preview-blueviolet?logo=wordpress&style=for-the-badge)](https://playground.wordpress.net/?mode=seamless#{%22$schema%22:%22https://playground.wordpress.net/blueprint-schema.json%22,%22landingPage%22:%22/product/giorgio-armani-neo-nude-glow-foundation/%22,%22login%22:true,%22preferredVersions%22:{%22php%22:%228.0%22,%22wp%22:%22latest%22},%22siteOptions%22:{%22blogname%22:%22WP%20INCI%22,%22blogdescription%22:%22A%20WordPress%20plugin%20to%20manage%20INCI%20(International%20Nomenclature%20of%20Cosmetic%20Ingredients).%22},%22plugins%22:[%22wp-inci%22],%22steps%22:[{%22step%22:%22importWxr%22,%22file%22:{%22resource%22:%22url%22,%22url%22:%22https://raw.githubusercontent.com/xlthlx/wp-inci/main/data/wpinci-products-sample.xml%22}}]})
-
 **Contributors:** xlthlx \
 **Donate link:** https://paypal.me/xlthlx \
 **Tags:** INCI, ingredients, cosmetics, makeup \
