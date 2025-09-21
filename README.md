@@ -39,36 +39,35 @@ If you need a different way to display it, you can:
     6. hide the disclaimer. 
     Example: [wp_inci_product id="31" disclaimer="true"]
 
-* NEW - Custom Block: custom product block to insert a product into the Block Editor. It has the same options as the shortcode.
+## Installation
 
-* Languages: English, Italian.
+N/A
+
+## Frequently Asked Questions
+
+N/A
 
 ## Screenshots
 
 ### 1. Ingredients list and single ingredient
 
-[missing image]
+![Ingredients list and single ingredient](assets/screenshot-1.gif)
 
 ### 2. Product list and single product
 
-[missing image]
+![Product list and single product](assets/screenshot-2.gif)
 
 ### 3. How to manage options
 
-[missing image]
+![How to manage options](assets/screenshot-3.gif)
 
 ### 4. How to use the product shortcode
 
-[missing image]
+![How to use the product shortcode](assets/screenshot-4.gif)
 
 ### 5. Post example
 
-[missing image]
-
-
-## Frequently Asked Questions
-
-N/A
+![Post example](assets/screenshot-5.gif)
 
 ## Changelog
 
