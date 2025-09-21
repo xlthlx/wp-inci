@@ -19,6 +19,7 @@
     }
   },
   "homepage": "https://github.com/xlthlx/wp-inci/",
+  "license": "GPL-3.0-or-later",
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
