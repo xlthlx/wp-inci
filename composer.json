@@ -1,5 +1,5 @@
 {
-  "name": "xlthlx/wp-inci",
+  "name": "wp-inci",
   "description": "A WordPress plugin to manage INCI",
   "keywords": [
     "WordPress",
@@ -8,7 +8,7 @@
   "authors": [
     {
       "name": "xlthlx",
-      "homepage": "https://piccioni.london"
+      "homepage": "https://github.com/xlthlx/wp-inci/"
     }
   ],
   "extra": {
@@ -18,7 +18,7 @@
       ]
     }
   },
-  "homepage": "https://github.com/xlthlx",
+  "homepage": "https://github.com/xlthlx/wp-inci/",
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
@@ -32,7 +32,6 @@
     "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor/*,node_modules/*,wp-content/*,_backup/* --extensions=php . -n -v --report-file=report.txt",
     "lint:wpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor/*,node_modules/*,wp-content/*,_backup/* --extensions=php .",
     "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-    "make:pot": "wp i18n make-pot . languages/wp-inci.pot --exclude=vendor,node_modules,wp-content,_backup",
     "readme": "@php ./vendor/wpreadme2markdown/wp2md/bin/wp2md -i readme.txt -o README.md"
   },
   "config": {

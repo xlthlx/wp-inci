@@ -46,15 +46,6 @@ if ( ! class_exists( 'Wp_Inci_Frontend', false ) ) {
 		public function init(): void {
 
 			/**
-			 * Load the plugin text domain for frontend translation.
-			 */
-			load_plugin_textdomain(
-				'wp-inci',
-				false,
-				WPINCI_BASE_PATH . 'languages/'
-			);
-
-			/**
 			 * Add CSS into queue, add content filter for ingredients table and product shortcode.
 			 */
 			add_action(
