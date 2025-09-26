@@ -12,7 +12,7 @@
  * Plugin Name:       WP INCI
  * Plugin URI:        https://github.com/xlthlx/wp-inci/
  * Description:       Sets of tools for WordPress admin and frontend.
- * Version:           1.8.0
+ * Version:           1.8.1
  * Requires at least: 5.9
  * Requires PHP:      8.0
  * License:           GPLv3+
