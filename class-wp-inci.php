@@ -1,12 +1,36 @@
 <?php
 /**
- * WP_Inci
+ * WP INCI
  *
- * @category Plugin
- * @package  Wpinci
- * @author   xlthlx <wp-inci@piccioni.london>
- * @license  https://www.gnu.org/licenses/gpl-3.0.html GPL 3
- * @link     https://wordpress.org/plugins/wp-inci/
+ * @category  Plugin
+ * @package   Wpinci
+ * @author    xlthlx <wp-inci@piccioni.london>
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL 3
+ * @link      https://github.com/xlthlx/wp-inci/
+ *
+ * @wordpress-plugin
+ * Plugin Name:       WP INCI
+ * Plugin URI:        https://github.com/xlthlx/wp-inci/
+ * Description:       Sets of tools for WordPress admin and frontend.
+ * Version:           1.8.0
+ * Requires at least: 5.9
+ * Requires PHP:      8.0
+ * License:           GPLv3+
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
+ * Text Domain:       site-toolkit
+ *
+ * WP INCI is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * WP INCI is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with WP INCI. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
  */
 
 /**
@@ -534,23 +558,25 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			$permalink = get_permalink( $post );
 
 			$messages['ingredient'] = array(
-				0  => '', // Unused. Messages start at index 1.
-			/* translators: %s: post permalink */
+				0  => '',
+				// Unused. Messages start at index 1.
+				/* translators: %s: post permalink */
 				1  => sprintf( __( 'Ingredient updated. <a target="_blank" href="%s">View Ingredient</a>', 'wp-inci' ), esc_url( $permalink ) ),
 				2  => __( 'Custom field updated.', 'wp-inci' ),
 				3  => __( 'Custom field deleted.', 'wp-inci' ),
 				4  => __( 'Ingredient updated.', 'wp-inci' ),
 				/* translators: %s: date and time of the revision */
-				5  => isset( $_GET['revision'] ) ? sprintf( __( 'Ingredient restored to revision from %s', 'wp-inci' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			/* translators: %s: post permalink */
-			6      => sprintf( __( 'Ingredient published. <a href="%s">View Ingredient</a>', 'wp-inci' ), esc_url( $permalink ) ),
-			7      => __( 'Ingredient saved.', 'wp-inci' ),
-			/* translators: %s: post permalink */
-			8      => sprintf( __( 'Ingredient submitted. <a target="_blank" href="%s">Preview Ingredient</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
-			/* translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink */
-			9      => sprintf( __( 'Ingredient scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Ingredient</a>', 'wp-inci' ), date_i18n( __( 'M j, Y @ G:i', 'wp-inci' ), strtotime( $post->post_date ) ), esc_url( $permalink ) ),
-			/* translators: %s: post permalink */
-			10     => sprintf( __( 'Ingredient draft updated. <a target="_blank" href="%s">Preview Ingredient</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
+				5  => isset( $_GET['revision'] ) ? sprintf( __( 'Ingredient restored to revision from %s', 'wp-inci' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				/* translators: %s: post permalink */
+				6  => sprintf( __( 'Ingredient published. <a href="%s">View Ingredient</a>', 'wp-inci' ), esc_url( $permalink ) ),
+				7  => __( 'Ingredient saved.', 'wp-inci' ),
+				/* translators: %s: post permalink */
+				8  => sprintf( __( 'Ingredient submitted. <a target="_blank" href="%s">Preview Ingredient</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
+				/* translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink */
+				9  => sprintf( __( 'Ingredient scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Ingredient</a>', 'wp-inci' ), date_i18n( __( 'M j, Y @ G:i', 'wp-inci' ), strtotime( $post->post_date ) ), esc_url( $permalink ) ),
+				/* translators: %s: post permalink */
+				10 => sprintf( __( 'Ingredient draft updated. <a target="_blank" href="%s">Preview Ingredient</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
 			);
 
 			return $messages;
@@ -561,7 +587,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @param array $bulk_messages Arrays of messages, each keyed by the corresponding post type. Messages are
 		 *                             keyed with 'updated', 'locked', 'deleted', 'trashed', and 'untrashed'.
-		 * @param int[] $bulk_counts   Array of item counts for each message, used to build internationalized strings.
+		 * @param int[] $bulk_counts Array of item counts for each message, used to build internationalized strings.
 		 *
 		 * @return array Bulk messages for the `ingredient` post type.
 		 */
@@ -571,8 +597,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				/* translators: %s: Number of Ingredients. */
 				'updated'   => _n( '%s Ingredient updated.', '%s Ingredients updated.', $bulk_counts['updated'], 'wp-inci' ),
 				'locked'    => ( 1 === $bulk_counts['locked'] ) ? __( '1 Ingredient not updated, somebody is editing it.', 'wp-inci' ) :
-				/* translators: %s: Number of Ingredients. */
-				_n( '%s Ingredient not updated, somebody is editing it.', '%s Ingredients not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-inci' ),
+					/* translators: %s: Number of Ingredients. */
+					_n( '%s Ingredient not updated, somebody is editing it.', '%s Ingredients not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-inci' ),
 				/* translators: %s: Number of Ingredients. */
 				'deleted'   => _n( '%s Ingredient permanently deleted.', '%s Ingredients permanently deleted.', $bulk_counts['deleted'], 'wp-inci' ),
 				/* translators: %s: Number of Ingredients. */
@@ -597,23 +623,25 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 			$permalink = get_permalink( $post );
 
 			$messages['product'] = array(
-				0  => '', // Unused. Messages start at index 1.
-			/* translators: %s: post permalink */
+				0  => '',
+				// Unused. Messages start at index 1.
+				/* translators: %s: post permalink */
 				1  => sprintf( __( 'Product updated. <a target="_blank" href="%s">View Product</a>', 'wp-inci' ), esc_url( $permalink ) ),
 				2  => __( 'Custom field updated.', 'wp-inci' ),
 				3  => __( 'Custom field deleted.', 'wp-inci' ),
 				4  => __( 'Product updated.', 'wp-inci' ),
 				/* translators: %s: date and time of the revision */
-				5  => isset( $_GET['revision'] ) ? sprintf( __( 'Product restored to revision from %s', 'wp-inci' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			/* translators: %s: post permalink */
-			6      => sprintf( __( 'Product published. <a href="%s">View Product</a>', 'wp-inci' ), esc_url( $permalink ) ),
-			7      => __( 'Product saved.', 'wp-inci' ),
-			/* translators: %s: post permalink */
-			8      => sprintf( __( 'Product submitted. <a target="_blank" href="%s">Preview Product</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
-			/* translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink */
-			9      => sprintf( __( 'Product scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Product</a>', 'wp-inci' ), date_i18n( __( 'M j, Y @ G:i', 'wp-inci' ), strtotime( $post->post_date ) ), esc_url( $permalink ) ),
-			/* translators: %s: post permalink */
-			10     => sprintf( __( 'Product draft updated. <a target="_blank" href="%s">Preview Product</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
+				5  => isset( $_GET['revision'] ) ? sprintf( __( 'Product restored to revision from %s', 'wp-inci' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				/* translators: %s: post permalink */
+				6  => sprintf( __( 'Product published. <a href="%s">View Product</a>', 'wp-inci' ), esc_url( $permalink ) ),
+				7  => __( 'Product saved.', 'wp-inci' ),
+				/* translators: %s: post permalink */
+				8  => sprintf( __( 'Product submitted. <a target="_blank" href="%s">Preview Product</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
+				/* translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink */
+				9  => sprintf( __( 'Product scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Product</a>', 'wp-inci' ), date_i18n( __( 'M j, Y @ G:i', 'wp-inci' ), strtotime( $post->post_date ) ), esc_url( $permalink ) ),
+				/* translators: %s: post permalink */
+				10 => sprintf( __( 'Product draft updated. <a target="_blank" href="%s">Preview Product</a>', 'wp-inci' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
 			);
 
 			return $messages;
@@ -624,7 +652,7 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 		 *
 		 * @param array $bulk_messages Arrays of messages, each keyed by the corresponding post type. Messages are
 		 *                             keyed with 'updated', 'locked', 'deleted', 'trashed', and 'untrashed'.
-		 * @param int[] $bulk_counts   Array of item counts for each message, used to build internationalized strings.
+		 * @param int[] $bulk_counts Array of item counts for each message, used to build internationalized strings.
 		 *
 		 * @return array Bulk messages for the `product` post type.
 		 */
@@ -634,8 +662,8 @@ if ( ! class_exists( 'WP_Inci', false ) ) {
 				/* translators: %s: Number of Products. */
 				'updated'   => _n( '%s Product updated.', '%s Products updated.', $bulk_counts['updated'], 'wp-inci' ),
 				'locked'    => ( 1 === $bulk_counts['locked'] ) ? __( '1 Product not updated, somebody is editing it.', 'wp-inci' ) :
-				/* translators: %s: Number of Products. */
-				_n( '%s Product not updated, somebody is editing it.', '%s Products not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-inci' ),
+					/* translators: %s: Number of Products. */
+					_n( '%s Product not updated, somebody is editing it.', '%s Products not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-inci' ),
 				/* translators: %s: Number of Products. */
 				'deleted'   => _n( '%s Product permanently deleted.', '%s Products permanently deleted.', $bulk_counts['deleted'], 'wp-inci' ),
 				/* translators: %s: Number of Products. */
